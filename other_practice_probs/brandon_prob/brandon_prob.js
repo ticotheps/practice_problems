@@ -111,9 +111,19 @@
 
 //------------Brandon's Code Challenge---------------
 
-const friends = ['Jake', 'Ryan', 'Jamie', 'Brandon', 'Julian', 'Lowell'];
-// const fetch_friends = false;
+// const friends = ['Jake', 'Ryan', 'Jamie', 'Brandon', 'Julian', 'Lowell'];
+const friends = [
+  'Jake',
+  'Ryan',
+  'Jamie',
+  'Brandon',
+  'Brandons_New_Work_Buddy',
+  'Julian',
+  'Lowell',
+];
+
 const fetch_friends = true;
+// const fetch_friends = false;
 
 function get_friends_data(arr, callback) {
   return new Promise((resolve, reject) => {
@@ -124,12 +134,23 @@ function get_friends_data(arr, callback) {
     }
   })
     .then(arr => {
-      arr.map(friend_name => {
-        console.log(friend_name);
-      });
+      for (let i = 0; i < friends.length; i++) {
+        if (friends[i] != 'Brandons_New_Work_Buddy') {
+          console.log(friends[i]);
+        } else {
+          console.log(
+            '\nGUYS! Brandon has moved on, okay?! :( His new best friend is:',
+            friends[i]
+          );
+          return false;
+        }
+      }
+      console.log('\nDudes!!! Brandon still loves us! :)');
+      return true;
     })
     .catch(message => {
       console.log(message);
+      return false;
     });
 }
 
