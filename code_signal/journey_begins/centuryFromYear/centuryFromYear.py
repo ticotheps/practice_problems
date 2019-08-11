@@ -56,3 +56,7 @@ def centuryFromYear(year):
   
 
 print(centuryFromYear(1905))  # should print "20"
+print(centuryFromYear(12))  # should print "1"
+print(centuryFromYear(195))  # should print "2"
+print(centuryFromYear(2005))  # should print "21"
+print(centuryFromYear(2035))  # should print "This is not a valid year. Please try again."
