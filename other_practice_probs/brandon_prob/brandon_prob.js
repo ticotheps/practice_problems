@@ -111,19 +111,19 @@
 
 //------------Brandon's Code Challenge---------------
 
-const friends = ['Jake', 'Ryan', 'Jamie', 'Tico', 'Julian', 'Lowell'];
-// const friends = [
-//   'Jake',
-//   'Ryan',
-//   'Jamie',
-//   'Tico',
-//   'Brandons_New_Work_Buddy',
-//   'Julian',
-//   'Lowell',
-// ];
+// const friends = ['Jake', 'Ryan', 'Jamie', 'Tico', 'Julian', 'Lowell'];
+const friends = [
+  'Jake',
+  'Ryan',
+  'Jamie',
+  'Tico',
+  'Brandons_New_Work_Buddy',
+  'Julian',
+  'Lowell',
+];
 
-// const async_fetch_brandons_friends = true;
-const async_fetch_brandons_friends = false;
+const async_fetch_brandons_friends = true;
+// const async_fetch_brandons_friends = false;
 
 function get_friends_data(arr, callback) {
   return new Promise((resolve, reject) => {
