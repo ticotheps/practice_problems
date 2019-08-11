@@ -1,11 +1,11 @@
 //---------------------PROMISE example-------------------
 
 // let p = new Promise((resolve, reject) => {
-//   let a = 1 + 1;
-//   if (a == 2) {
-//     resolve('Success!');
+//   let fetch_friends = false;
+//   if (fetch_friends) {
+//     resolve('Yay! We got data!');
 //   } else {
-//     reject('Failed!');
+//     reject('Boo! No data!');
 //   }
 // });
 
@@ -79,17 +79,17 @@
 
 //------------MULTIPLE PROMISES EXAMPLE---------------
 
-const recordVideoOne = new Promise((resolve, reject) => {
-  resolve('Video 1 Recorded');
-});
+// const recordVideoOne = new Promise((resolve, reject) => {
+//   resolve('Video 1 Recorded');
+// });
 
-const recordVideoTwo = new Promise((resolve, reject) => {
-  resolve('Video 2 Recorded');
-});
+// const recordVideoTwo = new Promise((resolve, reject) => {
+//   resolve('Video 2 Recorded');
+// });
 
-const recordVideoThree = new Promise((resolve, reject) => {
-  resolve('Video 3 Recorded');
-});
+// const recordVideoThree = new Promise((resolve, reject) => {
+//   resolve('Video 3 Recorded');
+// });
 
 // Promise.all waits for all of these promises to resolve before doing anything.
 // This allows all of these separate processes to happen simultaneously.
@@ -103,31 +103,34 @@ const recordVideoThree = new Promise((resolve, reject) => {
 //    to resolve, it only waits for ONE of these promises to resolve before doing anything.
 // This still allows all of these separate processes to happen simultaneously, but now they
 //    are racing one another to see which one can resolve first.
-Promise.race([recordVideoOne, recordVideoTwo, recordVideoThree]).then(
-  messages => {
-    console.log(messages);
-  }
-);
+// Promise.race([recordVideoOne, recordVideoTwo, recordVideoThree]).then(
+//   messages => {
+//     console.log(messages);
+//   }
+// );
 
 //------------Brandon's Code Challenge---------------
 
-// friends = ['Jake', 'Ryan', 'Brandon', 'Jamie', 'Julian', 'Lowell'];
+const friends = ['Jake', 'Ryan', 'Jamie', 'Brandon', 'Julian', 'Lowell'];
+// const fetch_friends = false;
+const fetch_friends = true;
 
-// function fetch_ticos_friends(arr) {
-//   return new Promise(function(resolve, reject) {
-//     get_friends(arr, function(error, result) {
-//       if (error) {
-//         reject(error);
-//       } else {
-//         resolve(result);
-//       }
-//     });
-//   });
-// }
+function get_friends_data(arr, callback) {
+  return new Promise((resolve, reject) => {
+    if (fetch_friends) {
+      resolve(arr);
+    } else {
+      reject('Boo! No data!');
+    }
+  })
+    .then(arr => {
+      arr.map(friend_name => {
+        console.log(friend_name);
+      });
+    })
+    .catch(message => {
+      console.log(message);
+    });
+}
 
-// async function get_ticos_async_friends_data(value) {
-//   const result = await fetch_ticos_friends(value);
-//   return result;
-// }
-
-// console.log(get_ticos_async_friends_data());
+get_friends_data(friends, get_friends_data);
