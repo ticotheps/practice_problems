@@ -91,7 +91,19 @@ const recordVideoThree = new Promise((resolve, reject) => {
   resolve('Video 3 Recorded');
 });
 
-Promise.all([recordVideoOne, recordVideoTwo, recordVideoThree]).then(
+// Promise.all waits for all of these promises to resolve before doing anything.
+// This allows all of these separate processes to happen simultaneously.
+// Promise.all([recordVideoOne, recordVideoTwo, recordVideoThree]).then(
+//   messages => {
+//     console.log(messages);
+//   }
+// );
+
+// Promise.race is similar to Promise.all, but instead of waiting for ALL the promises
+//    to resolve, it only waits for ONE of these promises to resolve before doing anything.
+// This still allows all of these separate processes to happen simultaneously, but now they
+//    are racing one another to see which one can resolve first.
+Promise.race([recordVideoOne, recordVideoTwo, recordVideoThree]).then(
   messages => {
     console.log(messages);
   }
