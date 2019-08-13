@@ -19,6 +19,8 @@
 
 def checkPalindrome(inputString):
     str_length = len(inputString)
-    print(str_length)
     
+    if (str_length > 0) and (str_length < 1000000):
+        print(str_length)
+        
 checkPalindrome("tico")
