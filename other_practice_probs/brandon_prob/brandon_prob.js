@@ -51,31 +51,31 @@
 // -replace all instances of 'callback' with 'resolve'
 // -replace all instances of 'errorCall
 
-// function watchTutorialPromise() {
-//   return new Promise((resolve, reject) => {
-//     if (userLeft) {
-//       reject({
-//         name: 'User Left',
-//         message: ':(',
-//       });
-//     } else if (userWatchingCatVideo) {
-//       reject({
-//         name: 'User Watching Cat Video',
-//         message: 'WebDevSimplified < Cat',
-//       });
-//     } else {
-//       resolve('Thumbs up and Subscribe!');
-//     }
-//   });
-// }
+function watchTutorialPromise() {
+  return new Promise((resolve, reject) => {
+    if (userLeft) {
+      reject({
+        name: 'User Left',
+        message: ':(',
+      });
+    } else if (userWatchingCatVideo) {
+      reject({
+        name: 'User Watching Cat Video',
+        message: 'WebDevSimplified < Cat',
+      });
+    } else {
+      resolve('Thumbs up and Subscribe!');
+    }
+  });
+}
 
-// watchTutorialPromise()
-//   .then(message => {
-//     console.log('Success: ' + message);
-//   })
-//   .catch(error => {
-//     console.log(error.name + ' ' + error.message);
-//   });
+watchTutorialPromise()
+  .then(message => {
+    console.log('Success: ' + message);
+  })
+  .catch(error => {
+    console.log(error.name + ' ' + error.message);
+  });
 
 //------------MULTIPLE PROMISES EXAMPLE---------------
 
@@ -112,46 +112,46 @@
 //------------Brandon's Code Challenge---------------
 
 // const friends = ['Jake', 'Ryan', 'Jamie', 'Tico', 'Julian', 'Lowell'];
-const friends = [
-  'Jake',
-  'Ryan',
-  'Jamie',
-  'Tico',
-  'Brandons_New_Work_Buddy',
-  'Julian',
-  'Lowell',
-];
+// const friends = [
+//   'Jake',
+//   'Ryan',
+//   'Jamie',
+//   'Tico',
+//   'Brandons_New_Work_Buddy',
+//   'Julian',
+//   'Lowell',
+// ];
 
-const async_fetch_brandons_friends = true;
-// const async_fetch_brandons_friends = false;
+// const async_fetch_brandons_friends = true;
+// // const async_fetch_brandons_friends = false;
 
-function get_friends_data(arr, callback) {
-  return new Promise((resolve, reject) => {
-    if (async_fetch_brandons_friends) {
-      resolve(arr);
-    } else {
-      reject("Sorry! Unable to fetch Brandon's Friends Data! :(");
-    }
-  })
-    .then(arr => {
-      for (let i = 0; i < friends.length; i++) {
-        if (friends[i] != 'Brandons_New_Work_Buddy') {
-          console.log(friends[i]);
-        } else {
-          console.log(
-            '\nGUYS! Brandon has moved on, okay?! :( His new best friend is:',
-            friends[i]
-          );
-          return false;
-        }
-      }
-      console.log('\nDudes!!! Brandon still loves us! :)');
-      return true;
-    })
-    .catch(message => {
-      console.log(message);
-      return false;
-    });
-}
+// function get_friends_data(arr, callback) {
+//   return new Promise((resolve, reject) => {
+//     if (async_fetch_brandons_friends) {
+//       resolve(arr);
+//     } else {
+//       reject("Sorry! Unable to fetch Brandon's Friends Data! :(");
+//     }
+//   })
+//     .then(arr => {
+//       for (let i = 0; i < friends.length; i++) {
+//         if (friends[i] != 'Brandons_New_Work_Buddy') {
+//           console.log(friends[i]);
+//         } else {
+//           console.log(
+//             '\nGUYS! Brandon has moved on, okay?! :( His new best friend is:',
+//             friends[i]
+//           );
+//           return false;
+//         }
+//       }
+//       console.log('\nDudes!!! Brandon still loves us! :)');
+//       return true;
+//     })
+//     .catch(message => {
+//       console.log(message);
+//       return false;
+//     });
+// }
 
-get_friends_data(friends, get_friends_data);
+// get_friends_data(friends, get_friends_data);

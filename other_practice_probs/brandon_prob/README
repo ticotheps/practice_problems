@@ -1,4 +1,6 @@
 Brandon: 
-    I have a fairly simple coding challenge for you guys. Create a function which takes an array and an asynchronous callback. Provide each index of the array as an argument to the callback, and if any result returns false, your function must return false also. Otherwise,return true.
+    I have a fairly simple coding challenge for you guys. Create a function which takes an array and an asynchronous callback. 
+    
+    Provide each index of the array as an argument to the callback, and if any result returns false, your function must return false also. Otherwise,return true.
 
     Would love to see how you guys approach it :grinning:. We have been using as a little warm up question in interviews recently.
