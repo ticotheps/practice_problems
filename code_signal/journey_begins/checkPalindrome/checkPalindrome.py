@@ -16,12 +16,24 @@
 #     (4) ...there are no more matches...or
 #     (5) ...the indices cross paths.
 
+import math
 
 def checkPalindrome(inputString):
     str_length = len(inputString)
-    
+    num_ideal_matches = math.floor(str_length/2)
+    num_real_matches = 0
     if (str_length > 0) and (str_length < 1000000):
-        for i in range(str_length):
-            print(inputString[i])
+        for i in range(math.floor(str_length/2)):
+            front_counter = inputString[i]
+            back_counter = inputString[str_length-i-1]
+            # print(front_counter, back_counter)
+            if front_counter == back_counter:
+                num_real_matches += 1
+                # print("We have a match")
+        if num_real_matches == num_ideal_matches:
+            # print("Total matches:", num_real_matches)
+            return True
+        else:
+            return False
         
-checkPalindrome("tico")
+print(checkPalindrome("ooroo"))
