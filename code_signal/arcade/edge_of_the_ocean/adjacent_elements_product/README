@@ -25,6 +25,7 @@ The largest product of adjacent elements.
 
 [Python3] Syntax Tips
 
+
 # Prints help message to the console
 # Returns a string
 def helloWorld(name):
