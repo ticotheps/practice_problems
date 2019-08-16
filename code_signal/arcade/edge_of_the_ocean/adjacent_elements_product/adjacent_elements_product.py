@@ -1,5 +1,6 @@
 num_arr = [3, 6, -2, -5, 7, 3]
 
+
 def adjacentElementsProduct(inputArray):
     arr_length = len(inputArray)
     largest_product = []
