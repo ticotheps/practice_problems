@@ -27,4 +27,24 @@ The Interview Process
         -Have you made good technical decisions in the past?
         -Have you built interesting, challenging projects?
         -Have you shown drive, initiative, and other important factors?
+    -Culture Fit/Communication Skills: 
+        -Do your personality and values fit with the company and team?
+        -Did you communicate well with your interviewer?
+
+=Why do companies still do whiteboarding interviews?
+    -The most common complaints against whiteboarding interviews:
+        -"Lots of great candidates don't do well in these sorts of 
+          interviews."
+        -"You could look up the answer if it did ever come up."
+        -"You rarely have to use data structures such as binary search
+          trees in the real world. If you did need to, you could surely
+          learn it."
+        -"Whiteboard coding is an artificial environment. You would never
+          code on the whiteboard in the real world, obviously."
+    -The reasons why whiteboarding is still used:
+        -False negatives are acceptable.
+        -Problem-solving skills are valuable.
+        -Basic data structure and algorithm knowledge is useful.
+        -Whiteboards let you focus on what matters.
+        
 
