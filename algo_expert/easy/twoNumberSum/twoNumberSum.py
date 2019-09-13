@@ -8,4 +8,4 @@ def twoNumberSum(array, targetSum):
 				return [firstNum, secondNum]
 	return []
 
-print(twoNumberSum([1,2,3,4], 6))
+print(twoNumberSum([-1,2,-3,4,9,10], 1))
