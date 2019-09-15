@@ -54,3 +54,6 @@ function getPerimeter(length, width) {
   perimeter = 2 * (length + width);
   return perimeter;
 }
+
+console.log(getArea(4, 6)); // should return 24
+console.log(getPerimeter(3, 5)); // should return 16
