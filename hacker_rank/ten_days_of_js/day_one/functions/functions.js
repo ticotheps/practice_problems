@@ -28,13 +28,12 @@ function readLine() {
 function factorial(n) {
   let product = 1;
   for (let i = n; i > 0; i--) {
-    console.log(i);
     product *= i;
-    console.log('product=', product);
   }
+  return product;
 }
 
-factorial(4);
+console.log(factorial(4)); // should return 24
 
 function main() {
   const n = +readLine();
