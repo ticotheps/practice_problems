@@ -24,9 +24,12 @@ process.stdin.on('end', _ => {
 function readLine() {
   return inputString[currentLine++];
 }
-/*
- * Create the function factorial here
- */
+
+function factorial(n) {
+  console.log(n);
+}
+
+factorial(4);
 
 function main() {
   const n = +readLine();
