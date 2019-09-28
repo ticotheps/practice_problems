@@ -34,6 +34,7 @@ function factorial(n) {
 }
 
 console.log(factorial(4)); // should return 24
+console.log(factorial(6)); // should return 720
 
 function main() {
   const n = +readLine();
