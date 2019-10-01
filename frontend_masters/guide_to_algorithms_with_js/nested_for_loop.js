@@ -35,3 +35,5 @@ console.log(isUnique([11, 35, 51, 91, 82, 51])); // should return false
 console.log(isUnique([1, 1, 3])); // should return false
 console.log(isUnique([1, 2, 3])); // should return true
 console.log(isUnique([-1, 2, 3])); // should return true
+
+// Runtime Complexity of nested 'for' loops = O(n^2); Quadratic time
