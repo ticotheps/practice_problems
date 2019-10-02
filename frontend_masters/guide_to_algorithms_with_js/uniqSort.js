@@ -9,8 +9,18 @@ It should not return any duplicate values in the sorted array.
 
 const uniqSort = arr => {
   const breadcrumbs = {};
+  const uniqNumsArr = [];
 
-  return arr.sort((a, b) => a - b);
+  for (let i = 0; i < arr.length; i++) {
+    console.log(`~~~~ LOOP ~~~~ i === ${i}`);
+
+    if (!breadcrumbs[arr[i]]) {
+      breadcrumbs[arr[i]] = true;
+      uniqNumsArr.push(arr[i]);
+    }
+  }
+
+  return uniqNumsArr.sort((a, b) => a - b);
 };
 
-uniqSort([4, 2, 2, 3, 2, 2, 2]); // => [2, 3, 4]
+console.log(uniqSort([4, 2, 2, 3, 2, 2, 2])); // => [2, 3, 4]
