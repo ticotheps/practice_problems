@@ -29,3 +29,5 @@ const isUnique = arr => {
 
 console.log(isUnique([1, 2, 3])); // should return true
 console.log(isUnique([1, 1, 3])); // should return false
+
+// Runtime Complexity of Breadcrumbs (caching) Method = O(n)
