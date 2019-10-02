@@ -9,3 +9,23 @@ Expected Output:
 Constraints:
   - none
 */
+
+const isUnique = arr => {
+  const breadcrumbs = {};
+  let uniqueNumsInArr = true;
+
+  for (let i = 0; i < arr.length; i++) {
+    console.log(`~~~~ Loop ~~~~ i === ${i}`);
+
+    if (breadcrumbs[arr[i]]) {
+      uniqueNumsInArr = false;
+    } else {
+      breadcrumbs[arr[i]] = true;
+    }
+  }
+
+  return uniqueNumsInArr;
+};
+
+console.log(isUnique([1, 2, 3]) === true);
+console.log(isUnique([1, 1, 3]) === false);
