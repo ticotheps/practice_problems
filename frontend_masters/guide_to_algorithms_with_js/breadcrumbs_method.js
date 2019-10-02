@@ -27,5 +27,5 @@ const isUnique = arr => {
   return uniqueNumsInArr;
 };
 
-console.log(isUnique([1, 2, 3]) === true);
-console.log(isUnique([1, 1, 3]) === false);
+console.log(isUnique([1, 2, 3])); // should return true
+console.log(isUnique([1, 1, 3])); // should return false
