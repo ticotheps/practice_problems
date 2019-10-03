@@ -15,7 +15,7 @@ const isUnique = arr => {
   let uniqueNumsInArr = true;
 
   for (let i = 0; i < arr.length; i++) {
-    console.log(`\n~~~LOOP~~~ i === ${i}; arr[${i}] = ${arr[i]}`);
+    console.log(`\n~~LOOP~~ i === ${i}; arr[${i}] = ${arr[i]}`);
     console.log('breadcrumbs =', breadcrumbs);
 
     if (breadcrumbs[arr[i]]) {
