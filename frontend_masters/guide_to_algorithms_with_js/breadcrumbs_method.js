@@ -15,19 +15,18 @@ const isUnique = arr => {
   let uniqueNumsInArr = true;
 
   for (let i = 0; i < arr.length; i++) {
-    console.log(`\n~~LOOP~~ i === ${i}; arr[${i}] = ${arr[i]}`);
-    console.log('breadcrumbs =', breadcrumbs);
+    console.log(`\nLOOP, i === ${i}`);
+    console.log('~~~ breadcrumbs =', breadcrumbs);
+    console.log(`~~~ arr[${i}] = ${arr[i]}`);
 
     if (breadcrumbs[arr[i]]) {
-      console.log(
-        `The value, ${arr[i]}, ALREADY DOES exist as a key in breadcrumbs`
-      );
+      console.log(`~~~ The value, ${arr[i]}, ALREADY DOES exist as a key in`);
+      console.log(`~~~ the 'breadcrumbs' object. We have a DUPLICATE!`);
       uniqueNumsInArr = false;
       return uniqueNumsInArr;
     } else {
-      console.log(
-        `The value, ${arr[i]}, DOES NOT yet exist as a key in breadcrumbs`
-      );
+      console.log(`~~~ The value, ${arr[i]}, DOES NOT yet exist as a key in`);
+      console.log(`~~~ the 'breadcrumbs' object so we will add it in.`);
       breadcrumbs[arr[i]] = true;
     }
   }
