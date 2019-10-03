@@ -25,3 +25,4 @@ const uniqSort = arr => {
 
 console.log(uniqSort([4, 2, 2, 3, 2, 2, 2])); // => [2, 3, 4]
 console.log(uniqSort([-7, 2, 3, 3, 10, 3, 5])); // => [-7, 2, 3, 5, 10]
+console.log(uniqSort([-7, -22, 3, 45, 4, 199, 4])); // => [-7, 2, 3, 5, 10]
