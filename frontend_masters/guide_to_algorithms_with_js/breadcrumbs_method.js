@@ -15,7 +15,7 @@ const isUnique = arr => {
   let uniqueNumsInArr = true;
 
   for (let i = 0; i < arr.length; i++) {
-    console.log(`~~LOOP~~ i === ${i}`);
+    console.log(`~~~LOOP~~~ i === ${i}`);
 
     if (breadcrumbs[arr[i]]) {
       uniqueNumsInArr = false;
@@ -26,5 +26,5 @@ const isUnique = arr => {
   return uniqueNumsInArr;
 };
 
-console.log(isUnique([1, 2, 3])); // should return true
 console.log(isUnique([1, 1, 3])); // should return false
+// console.log(isUnique([1, 2, 3])); // should return true
