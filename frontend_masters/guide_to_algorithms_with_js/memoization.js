@@ -1,5 +1,5 @@
-// Task 1: Write a function, 'times10', that takes an argument, 'n', and multiplies 'n' by 10
-// a simple multiplication fn
+// Task 1: Write a function, 'times10', that takes an argument, 'n', and multiplies 'n' by 10.
+// (This will be a simple multiplication function)
 const times10 = n => {
   let product = n * 10;
   return product;
