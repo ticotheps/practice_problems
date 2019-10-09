@@ -1,4 +1,4 @@
-/* 
+/* UNDERSTANDING THE PROBLEM
 Expected Inputs:
 - 2 inputs
   - (1) type: array
@@ -19,7 +19,10 @@ Expected Outputs:
 Any Constraints?
   - Can the integers be negative?
     -Yes
-  - Integers: whole numbers only; no fractions
+  - Define 'integers' 
+    -whole numbers only; no fractions
+  - Assume that there will be AT MOST only ONE pair of integers that sum
+    up to the provided second input
 */
 
 /*
@@ -44,4 +47,32 @@ Example Output:
   - Output #3: [-1, 5]
 
   - Output #4: [-5, 22]
+*/
+
+/* DEVISING A PLAN
+
+BRUTE FORCE SOLUTION:
+  - Iterate through the array using nested 'for' loops to individually
+    check for any pairs of numbers that sum up to the target sum.
+    - Runtime Complexity: O(n^2); quadratic
+    - Space Complexity: O(1); constant
+  
+  - Pseudocode:
+    - (1) Create a variable 'resultArr' and set it equal to an empty array
+    - (2) Iterate through the array using the first of two 'for' loops
+    - (3) While inside of the first 'for' loop, iterate AGAIN through the
+          array with a nested 'for' loop
+    - (4) While inside of the nested 'for' loop, evaluate whether or not
+          your two 'for' loop variables sum up to the 'targetSum' input
+          that was initially provided
+    - (5) While inside the conditional 'if' statement, if the 2 integers
+          being compared DO sum up to the target sum, evaluate which of
+          the two integers is smaller and push that integer into the
+          resultArr' first, and then push the other integer into the
+          'resultArr' afterwards.
+    - (6) While inside the conditional 'if' statement, if any 2 integers
+          being compared DO NOT sum up to the target sum, continue on to
+          the next interation.
+    - (7) After completely iterating through both nested 'for' loops,
+          return 'resultArr'.
 */
