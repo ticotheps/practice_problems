@@ -26,26 +26,21 @@ Any Constraints?
 */
 
 /*
-Example Inputs:
+Examples:
   - Input #1a: [1, 2, 3, 4, 5]
   - Input #1b: 8
+  - Output #1: [3, 5]
 
   - Input #2a: [2, 4, 6, 8, 10]
   - Input #2b: 15
+  - Output #2: []
 
   - Input #3a: [-1, 1, 3, 5, 7]
   - Input #3b: 4
+  - Output #3: [-1, 5]
 
   - Input #4a: [-8, 22, 4, -5, 3]
   - Input #4b: 17
-
-Example Output: 
-  - Output #1: [3, 5]
-
-  - Output #2: []
-
-  - Output #3: [-1, 5]
-
   - Output #4: [-5, 22]
 */
 
@@ -58,7 +53,7 @@ BRUTE FORCE SOLUTION:
     - Space Complexity: O(1); constant
   
   - Pseudocode:
-    - (1) Create a variable 'resultArr' and set it equal to an empty array
+    - (1) Create a variable 'resultArray' and set it equal to an empty array
     - (2) Iterate through the array using the first of two 'for' loops
     - (3) While inside of the first 'for' loop, iterate AGAIN through the
           array with a nested 'for' loop
@@ -68,11 +63,41 @@ BRUTE FORCE SOLUTION:
     - (5) While inside the conditional 'if' statement, if the 2 integers
           being compared DO sum up to the target sum, evaluate which of
           the two integers is smaller and push that integer into the
-          resultArr' first, and then push the other integer into the
-          'resultArr' afterwards.
+          resultArray' first, and then push the other integer into the
+          'resultArray' afterwards.
     - (6) While inside the conditional 'if' statement, if any 2 integers
           being compared DO NOT sum up to the target sum, continue on to
           the next interation.
     - (7) After completely iterating through both nested 'for' loops,
-          return 'resultArr'.
+          return 'resultArray'.
 */
+
+// IMPLEMENTING THE PLAN
+
+const array1 = [1, 2, 3, 4, 5];
+const targetSum1 = 8;
+
+const twoNumberSum = (array, targetSum) => {
+  const resultArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    console.log(`OUTER LOOP; i = ${i}`);
+    for (let j = 0; j < array.length; j++) {
+      console.log(`---INNER LOOP; j = ${j}`);
+      if (i !== j && array[i] + array[j] === targetSum) {
+        console.log('We have a pair of ints that add up to targetSum!');
+        if (array[i] < array[j]) {
+          resultArray.push(array[i]);
+          resultArray.push(array[j]);
+        } else {
+          resultArray.push(array[j]);
+          resultArray.push(array[i]);
+        }
+        return resultArray;
+      }
+    }
+  }
+  return resultArray;
+};
+
+console.log(twoNumberSum(array1, targetSum1));
