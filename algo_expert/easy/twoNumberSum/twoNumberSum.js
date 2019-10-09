@@ -178,6 +178,6 @@ console.log(twoNumberSumImproved([2, 4, 6, 8, 10], 15)); // returns []
 console.log(twoNumberSumImproved([-1, 2, 3, 5, 7], 4)); // returns [-1, 5]
 console.log(twoNumberSumImproved([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
 console.log(
-  twoNumberSum([-123, -492, 40, 181, 319, 79, -43, -12, 3, 99], -393)
+  twoNumberSumImproved([-123, -492, 40, 181, 319, 79, -43, -12, 3, 99], -393)
 ); // returns [-492, 99]
 console.log('---------------IMPROVED SOLUTION---------------\n');
