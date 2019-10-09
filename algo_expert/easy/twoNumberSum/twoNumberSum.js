@@ -1,4 +1,4 @@
-/* UNDERSTANDING THE PROBLEM
+/*----------UNDERSTANDING THE PROBLEM----------
 Expected Inputs:
 - 2 inputs
   - (1) type: array
@@ -35,7 +35,7 @@ Examples:
   - Input #2b: 15
   - Output #2: []
 
-  - Input #3a: [-1, 1, 3, 5, 7]
+  - Input #3a: [-1, 2, 3, 5, 7]
   - Input #3b: 4
   - Output #3: [-1, 5]
 
@@ -44,7 +44,7 @@ Examples:
   - Output #4: [-5, 22]
 */
 
-/* DEVISING A PLAN
+/*----------DEVISING A PLAN----------
 
 BRUTE FORCE SOLUTION:
   - Runtime Complexity: O(n^2); quadratic
@@ -53,13 +53,14 @@ BRUTE FORCE SOLUTION:
     check for any pairs of numbers that sum up to the target sum.
 
   - Pseudocode:
-    - (1) Create a variable 'resultArray' and set it equal to an empty array
-    - (2) Iterate through the array using the first of two 'for' loops
+    - (1) Create a variable 'resultArray' and set it equal to an empty 
+          array.
+    - (2) Iterate through the array using the first of two 'for' loops.
     - (3) While inside of the first 'for' loop, iterate AGAIN through the
-          array with a nested 'for' loop
+          array with a nested 'for' loop.
     - (4) While inside of the nested 'for' loop, evaluate whether or not
           your two 'for' loop variables sum up to the 'targetSum' input
-          that was initially provided
+          that was initially provided.
     - (5) While inside the conditional 'if' statement, if the 2 integers
           being compared DO sum up to the target sum, evaluate which of
           the two integers is smaller and push that integer into the
@@ -72,37 +73,37 @@ BRUTE FORCE SOLUTION:
           return 'resultArray'.
 */
 
-// IMPLEMENTING THE PLAN
+//----------IMPLEMENTING THE PLAN----------
 
-const twoNumberSum = (array, targetSum) => {
-  const resultArray = [];
+// const twoNumberSum = (array, targetSum) => {
+//   const resultArray = [];
 
-  for (let i = 0; i < array.length; i++) {
-    // console.log(`OUTER LOOP; i = ${i}`);
-    for (let j = 0; j < array.length; j++) {
-      // console.log(`---INNER LOOP; j = ${j}`);
-      if (i !== j && array[i] + array[j] === targetSum) {
-        // console.log('We have a pair of ints that add up to targetSum!');
-        if (array[i] < array[j]) {
-          resultArray.push(array[i]);
-          resultArray.push(array[j]);
-        } else {
-          resultArray.push(array[j]);
-          resultArray.push(array[i]);
-        }
-        return resultArray;
-      }
-    }
-  }
-  return resultArray;
-};
+//   for (let i = 0; i < array.length; i++) {
+//     // console.log(`OUTER LOOP; i = ${i}`);
+//     for (let j = 0; j < array.length; j++) {
+//       // console.log(`---INNER LOOP; j = ${j}`);
+//       if (i !== j && array[i] + array[j] === targetSum) {
+//         // console.log('We have a pair of ints that add up to targetSum!');
+//         if (array[i] < array[j]) {
+//           resultArray.push(array[i]);
+//           resultArray.push(array[j]);
+//         } else {
+//           resultArray.push(array[j]);
+//           resultArray.push(array[i]);
+//         }
+//         return resultArray;
+//       }
+//     }
+//   }
+//   return resultArray;
+// };
 
-console.log(twoNumberSum([1, 2, 3, 4, 5], 8)); // returns [3, 5]
-console.log(twoNumberSum([2, 4, 6, 8, 10], 15)); // returns []
-console.log(twoNumberSum([-1, 1, 3, 5, 7], 4)); // returns [-1, 5]
-console.log(twoNumberSum([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
+// console.log(twoNumberSum([1, 2, 3, 4, 5], 8)); // returns [3, 5]
+// console.log(twoNumberSum([2, 4, 6, 8, 10], 15)); // returns []
+// console.log(twoNumberSum([-1, 2, 3, 5, 7], 4)); // returns [-1, 5]
+// console.log(twoNumberSum([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
 
-/* REFLECTING/ITERATING
+/*----------REFLECTING/ITERATING----------
 - Brute Force Solution Runtime Complexity: O(n^2)
 - Brute Force Solution Space Complexity: O(1)
 
@@ -137,3 +138,32 @@ console.log(twoNumberSum([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
   - Return an empty array if there are no satisfied conditions from all
     the iterations of the 'for' loop.
 */
+
+const twoNumberSum = (array, targetSum) => {
+  const cache = {};
+
+  for (let i = 0; i < array.length; i++) {
+    let diff = targetSum - array[i];
+    // console.log(`FOR LOOP; i = ${i}, diff = ${diff}`);
+
+    if (array[i] in cache) {
+      // console.log(`array[${i}] exists as a key in the 'cache' object!`);
+      const keysValue = cache[array[i]];
+
+      if (array[i] < keysValue) {
+        return [array[i], keysValue];
+      } else {
+        return [keysValue, array[i]];
+      }
+    } else {
+      // console.log("Just added a new key-value pair to the 'cache'!");
+      cache[diff] = array[i];
+    }
+  }
+  return [];
+};
+
+console.log(twoNumberSum([1, 2, 3, 4, 5], 8)); // returns [3, 5]
+console.log(twoNumberSum([2, 4, 6, 8, 10], 15)); // returns []
+console.log(twoNumberSum([-1, 2, 3, 5, 7], 4)); // returns [-1, 5]
+console.log(twoNumberSum([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
