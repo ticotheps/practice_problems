@@ -74,18 +74,15 @@ BRUTE FORCE SOLUTION:
 
 // IMPLEMENTING THE PLAN
 
-const array1 = [1, 2, 3, 4, 5];
-const targetSum1 = 8;
-
 const twoNumberSum = (array, targetSum) => {
   const resultArray = [];
 
   for (let i = 0; i < array.length; i++) {
-    console.log(`OUTER LOOP; i = ${i}`);
+    // console.log(`OUTER LOOP; i = ${i}`);
     for (let j = 0; j < array.length; j++) {
-      console.log(`---INNER LOOP; j = ${j}`);
+      // console.log(`---INNER LOOP; j = ${j}`);
       if (i !== j && array[i] + array[j] === targetSum) {
-        console.log('We have a pair of ints that add up to targetSum!');
+        // console.log('We have a pair of ints that add up to targetSum!');
         if (array[i] < array[j]) {
           resultArray.push(array[i]);
           resultArray.push(array[j]);
@@ -100,4 +97,7 @@ const twoNumberSum = (array, targetSum) => {
   return resultArray;
 };
 
-console.log(twoNumberSum(array1, targetSum1));
+console.log(twoNumberSum([1, 2, 3, 4, 5], 8)); // returns [3, 5]
+console.log(twoNumberSum([2, 4, 6, 8, 10], 15)); // returns []
+console.log(twoNumberSum([-1, 1, 3, 5, 7], 4)); // returns [-1, 5]
+console.log(twoNumberSum([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
