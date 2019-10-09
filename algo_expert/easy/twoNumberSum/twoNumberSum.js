@@ -47,11 +47,11 @@ Examples:
 /* DEVISING A PLAN
 
 BRUTE FORCE SOLUTION:
-  - Iterate through the array using nested 'for' loops to individually
+  - Runtime Complexity: O(n^2); quadratic
+  - Space Complexity: O(1); constant
+  - Iterates through the array using nested 'for' loops to individually
     check for any pairs of numbers that sum up to the target sum.
-    - Runtime Complexity: O(n^2); quadratic
-    - Space Complexity: O(1); constant
-  
+
   - Pseudocode:
     - (1) Create a variable 'resultArray' and set it equal to an empty array
     - (2) Iterate through the array using the first of two 'for' loops
@@ -101,3 +101,39 @@ console.log(twoNumberSum([1, 2, 3, 4, 5], 8)); // returns [3, 5]
 console.log(twoNumberSum([2, 4, 6, 8, 10], 15)); // returns []
 console.log(twoNumberSum([-1, 1, 3, 5, 7], 4)); // returns [-1, 5]
 console.log(twoNumberSum([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
+
+/* REFLECTING/ITERATING
+- Brute Force Solution Runtime Complexity: O(n^2)
+- Brute Force Solution Space Complexity: O(1)
+
+- Can I make my brute force solution FASTER?
+  - Yes.
+- How much faster & space-efficient will your new solution be?
+  - O(n) runtime complexity; O(n) space complexity
+- How will you do it?
+  - First, create a new variable called 'cache' and set it equal to
+    an empty object (i.e. - {}). We will achieve O(1), linear time,
+    with lookup using this object instead of an array.
+  - Use ONE 'for' loop + 'caching' instead of using 2 nested 'for' loops.
+  - The single 'for' loop will iterate through the given array.
+    - While inside of the 'for' loop, the difference between 'array[i]' &
+      'targetSum' will be calculated and stored as an integer in a new
+      locally-scoped variable calledd 'diff'.
+    - While still inside of the 'for' loop, we will evaluate whether or 
+      not 'array[i]' exists as a value for any of the keys in the 'cache'
+      object.
+        - If 'array[i]' ALREADY exists as a key in the 'cache' object, 
+          this means that 'array[i]' can be added to the matching key's 
+          value (another integer from the input array) to sum up to the
+          'targetSum'.
+          - If 'array[i]' is smaller than 'cache[key]', then return an
+            an array '[array[i], cache[key]]'.
+          - If 'array[i]' is larger than 'cache[key]', then return an
+            an array '[cache[key], array[i]]'.
+        - If 'array[i]' DOES NOT ALREADY exist as a key in the 'cache'
+          object, store a new key-value pair in the 'cache' object,
+          where the calculated integer value of 'diff' is the key
+          and 'array[i]' is the value of that key.
+  - Return an empty array if there are no satisfied conditions from all
+    the iterations of the 'for' loop.
+*/
