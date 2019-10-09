@@ -1,4 +1,4 @@
-/*----------UNDERSTANDING THE PROBLEM----------
+/*---------------UNDERSTANDING THE PROBLEM---------------
 Expected Inputs:
 - 2 inputs
   - (1) type: array
@@ -42,9 +42,13 @@ Examples:
   - Input #4a: [-8, 22, 4, -5, 3]
   - Input #4b: 17
   - Output #4: [-5, 22]
+
+  - Input #5a: [-123, -492, 40, 181, 319, 79, -43, -12, 3, 99]
+  - Input #5b: -393
+  - Output #5: [-492, 99]
 */
 
-/*----------DEVISING A PLAN----------
+/*---------------DEVISING A PLAN---------------
 
 BRUTE FORCE SOLUTION:
   - Runtime Complexity: O(n^2); quadratic
@@ -73,37 +77,42 @@ BRUTE FORCE SOLUTION:
           return 'resultArray'.
 */
 
-//----------IMPLEMENTING THE PLAN----------
+//---------------IMPLEMENTING THE PLAN---------------
 
-// const twoNumberSum = (array, targetSum) => {
-//   const resultArray = [];
+const twoNumberSum = (array, targetSum) => {
+  const resultArray = [];
 
-//   for (let i = 0; i < array.length; i++) {
-//     // console.log(`OUTER LOOP; i = ${i}`);
-//     for (let j = 0; j < array.length; j++) {
-//       // console.log(`---INNER LOOP; j = ${j}`);
-//       if (i !== j && array[i] + array[j] === targetSum) {
-//         // console.log('We have a pair of ints that add up to targetSum!');
-//         if (array[i] < array[j]) {
-//           resultArray.push(array[i]);
-//           resultArray.push(array[j]);
-//         } else {
-//           resultArray.push(array[j]);
-//           resultArray.push(array[i]);
-//         }
-//         return resultArray;
-//       }
-//     }
-//   }
-//   return resultArray;
-// };
+  for (let i = 0; i < array.length; i++) {
+    // console.log(`OUTER LOOP; i = ${i}`);
+    for (let j = 0; j < array.length; j++) {
+      // console.log(`---INNER LOOP; j = ${j}`);
+      if (i !== j && array[i] + array[j] === targetSum) {
+        // console.log('We have a pair of ints that add up to targetSum!');
+        if (array[i] < array[j]) {
+          resultArray.push(array[i]);
+          resultArray.push(array[j]);
+        } else {
+          resultArray.push(array[j]);
+          resultArray.push(array[i]);
+        }
+        return resultArray;
+      }
+    }
+  }
+  return resultArray;
+};
 
-// console.log(twoNumberSum([1, 2, 3, 4, 5], 8)); // returns [3, 5]
-// console.log(twoNumberSum([2, 4, 6, 8, 10], 15)); // returns []
-// console.log(twoNumberSum([-1, 2, 3, 5, 7], 4)); // returns [-1, 5]
-// console.log(twoNumberSum([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
+console.log('\n---------------BRUTE FORCE SOLUTION---------------');
+console.log(twoNumberSum([1, 2, 3, 4, 5], 8)); // returns [3, 5]
+console.log(twoNumberSum([2, 4, 6, 8, 10], 15)); // returns []
+console.log(twoNumberSum([-1, 2, 3, 5, 7], 4)); // returns [-1, 5]
+console.log(twoNumberSum([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
+console.log(
+  twoNumberSum([-123, -492, 40, 181, 319, 79, -43, -12, 3, 99], -393)
+); // returns [-492, 99]
+console.log('---------------BRUTE FORCE SOLUTION---------------\n');
 
-/*----------REFLECTING/ITERATING----------
+/*---------------REFLECTING/ITERATING---------------
 - Brute Force Solution Runtime Complexity: O(n^2)
 - Brute Force Solution Space Complexity: O(1)
 
@@ -139,7 +148,7 @@ BRUTE FORCE SOLUTION:
     the iterations of the 'for' loop.
 */
 
-const twoNumberSum = (array, targetSum) => {
+const twoNumberSumImproved = (array, targetSum) => {
   const cache = {};
 
   for (let i = 0; i < array.length; i++) {
@@ -163,7 +172,12 @@ const twoNumberSum = (array, targetSum) => {
   return [];
 };
 
-console.log(twoNumberSum([1, 2, 3, 4, 5], 8)); // returns [3, 5]
-console.log(twoNumberSum([2, 4, 6, 8, 10], 15)); // returns []
-console.log(twoNumberSum([-1, 2, 3, 5, 7], 4)); // returns [-1, 5]
-console.log(twoNumberSum([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
+console.log('---------------IMPROVED SOLUTION---------------');
+console.log(twoNumberSumImproved([1, 2, 3, 4, 5], 8)); // returns [3, 5]
+console.log(twoNumberSumImproved([2, 4, 6, 8, 10], 15)); // returns []
+console.log(twoNumberSumImproved([-1, 2, 3, 5, 7], 4)); // returns [-1, 5]
+console.log(twoNumberSumImproved([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
+console.log(
+  twoNumberSum([-123, -492, 40, 181, 319, 79, -43, -12, 3, 99], -393)
+); // returns [-492, 99]
+console.log('---------------IMPROVED SOLUTION---------------\n');
