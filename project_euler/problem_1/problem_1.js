@@ -48,7 +48,21 @@ Examples:
 */
 
 /*---------------DEVISING A PLAN---------------
-
+BRUTE FORCE SOLUTION:
+  - Pseudocode:
+    - (1) Create a variable called 'sum' and set it equal to 0. This
+          number will represent the sum total of all the natural numbers
+          under the given input, n, that are also multiples of 3 or 5.
+    - (2) Use a 'for' loop to add every natural number below the given
+          input, n, to a new variable called 'natural_nums', which is initalized with an empty array.
+    - (3) Use another 'for' loop to iterate through the
+          'natural_nums' array to evaluate whether or not 
+          'natural_nums[j]' is a multiple of 3 or 5.
+    - (4) If 'natural_nums[j] IS INDEED a multiple of 3 or 5, we will add
+          'natural_nums[j]' to the 'sum' variable that we created in step
+          (1). 
+    - (5) Once the second 'for' loop has completely executed, we will
+          return 'sum'.
 */
 
 //---------------IMPLEMENTING THE PLAN---------------
