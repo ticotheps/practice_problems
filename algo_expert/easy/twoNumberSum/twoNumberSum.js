@@ -48,13 +48,7 @@ Examples:
 */
 
 /*---------------DEVISING A PLAN---------------
-
 BRUTE FORCE SOLUTION:
-  - Runtime Complexity: O(n^2); quadratic
-  - Space Complexity: O(1); constant
-  - Iterates through the array using nested 'for' loops to individually
-    check for any pairs of numbers that sum up to the target sum.
-
   - Pseudocode:
     - (1) Create a variable 'resultArray' and set it equal to an empty 
           array.
@@ -74,6 +68,11 @@ BRUTE FORCE SOLUTION:
           the next interation.
     - (7) After completely iterating through both nested 'for' loops,
           return 'resultArray'.
+
+  - Runtime Complexity: O(n^2); quadratic
+  - Space Complexity: O(1); constant
+  - Iterates through the array using nested 'for' loops to individually
+    check for any pairs of numbers that sum up to the target sum.
 */
 
 //---------------IMPLEMENTING THE PLAN---------------
