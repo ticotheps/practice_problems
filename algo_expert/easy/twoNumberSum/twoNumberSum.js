@@ -1,20 +1,21 @@
 /*---------------UNDERSTANDING THE PROBLEM---------------
 Expected Inputs:
-- 2 inputs
-  - (1) type: array
-    - non-empty
-    - contains DISTINCT integer
-  - (2) type: integer
-    - represents a target sum
+  - 2 inputs
+    - (1) type: array
+      - non-empty
+      - contains DISTINCT integer
+    - (2) type: integer
+      - represents a target sum
 
 Expected Outputs:
-- 1 output
-  - type: array
-    - contains one of the following:
-      - (a) two integers, from the input array, IF those two integers sum
-            up to the second provided input (target sum integer)
-      - (b) no contents (empty), IF no two integers from teh input array
-            sum up to the second provided input (target sum integer)
+  - 1 output
+    - type: array
+      - contains one of the following:
+        - (a) two integers, from the input array, IF those two integers 
+              sum up to the second provided input (target sum integer).
+        - (b) no contents (empty), IF no two integers from the input 
+              array sum up to the second provided input (target sum 
+              integer).
 
 Any Constraints?
   - Can the integers be negative?
@@ -87,7 +88,7 @@ const twoNumberSum = (array, targetSum) => {
     for (let j = 0; j < array.length; j++) {
       // console.log(`---INNER LOOP; j = ${j}`);
       if (i !== j && array[i] + array[j] === targetSum) {
-        // console.log('We have a pair of ints that add up to targetSum!');
+        // console.log('We have ints that add up to targetSum!');
         if (array[i] < array[j]) {
           resultArray.push(array[i]);
           resultArray.push(array[j]);
@@ -156,7 +157,7 @@ const twoNumberSumImproved = (array, targetSum) => {
     // console.log(`FOR LOOP; i = ${i}, diff = ${diff}`);
 
     if (array[i] in cache) {
-      // console.log(`array[${i}] exists as a key in the 'cache' object!`);
+      // console.log(`array[${i}] exists as a key in the 'cache'!`);
       const keysValue = cache[array[i]];
 
       if (array[i] < keysValue) {
