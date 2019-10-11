@@ -96,9 +96,10 @@ const multiples_of_3_or_5 = n => {
   return sum;
 };
 
-console.log(multiples_of_3_or_5(10)); // should be 23
-console.log(multiples_of_3_or_5(20)); // should be 78
-console.log(multiples_of_3_or_5(50)); // should be 543
+// console.log(multiples_of_3_or_5(10)); // should be 23
+// console.log(multiples_of_3_or_5(20)); // should be 78
+// console.log(multiples_of_3_or_5(50)); // should be 543
+console.log(multiples_of_3_or_5(1000)); // should be 233,168
 
 /*---------------REFLECTING/ITERATING---------------
 
