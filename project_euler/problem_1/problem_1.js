@@ -49,6 +49,12 @@ Examples:
 
 /*---------------DEVISING A PLAN---------------
 BRUTE FORCE SOLUTION:
+  - Strategy:
+    - Use a 'for' loop to iterate upwards to the given input, n, to add 
+      all the natural numbers below 'n' to a new array. Then, use a
+      second 'for' loop to evaluate whether or not a value was a multiple
+      of 3 or 5, in which case it would be added to a running 'sum' variable. 
+
   - Pseudocode:
     - (1) Create a variable called 'sum' and set it equal to 0. This
           number will represent the sum total of all the natural numbers
@@ -63,9 +69,36 @@ BRUTE FORCE SOLUTION:
           (1). 
     - (5) Once the second 'for' loop has completely executed, we will
           return 'sum'.
+
+  - Runtime Complexity: O(2n) => O(n); linear time
+  - Space Complexity: O(1 + 1) => O(2) => O(1); constant space
 */
 
 //---------------IMPLEMENTING THE PLAN---------------
+
+const multiples_of_3_or_5 = n => {
+  let sum = 0;
+  const natural_nums = [];
+
+  for (let i = 1; i < n; i++) {
+    // console.log(`1st FOR loop; i = ${i}`);
+    natural_nums.push(i);
+    // console.log(natural_nums);
+  }
+
+  for (let j = 0; j < natural_nums.length; j++) {
+    // console.log(`natural_nums[${j}] = ${natural_nums[j]}`);
+    if (natural_nums[j] % 3 === 0 || natural_nums[j] % 5 === 0) {
+      // console.log(`We have a multiple of 3 or 5: ${natural_nums[j]}`);
+      sum += natural_nums[j];
+    }
+  }
+  return sum;
+};
+
+console.log(multiples_of_3_or_5(10)); // should be 23
+console.log(multiples_of_3_or_5(20)); // should be 78
+console.log(multiples_of_3_or_5(50)); // should be 543
 
 /*---------------REFLECTING/ITERATING---------------
 
