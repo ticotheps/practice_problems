@@ -24,9 +24,7 @@ Any Constraints?
     -whole numbers only; no fractions
   - Assume that there will be AT MOST only ONE pair of integers that sum
     up to the provided second input
-*/
-
-/*
+    
 Examples:
   - Input #1a: [1, 2, 3, 4, 5]
   - Input #1b: 8
