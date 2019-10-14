@@ -59,15 +59,28 @@
 
 const fib_sum_even_nums = n => {
   const fib_nums_arr = [1, 2];
+  const even_fib_nums_arr = [2];
 
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 100; i++) {
     let next_num = fib_nums_arr[i] + fib_nums_arr[i + 1];
     fib_nums_arr.push(next_num);
-    console.log(fib_nums_arr);
+
+    if (next_num < n && next_num % 2 == 0) {
+      even_fib_nums_arr.push(next_num);
+    }
   }
+
+  console.log(`\nALL FIBONACCI NUMS = \n${fib_nums_arr}\n`);
+  console.log(`ONLY EVEN FIBONACCI NUMS = ${even_fib_nums_arr}\n`);
+
+  const even_nums_sum = even_fib_nums_arr.reduce((sum, number) => {
+    return sum + number;
+  }, 0);
+
+  return even_nums_sum;
 };
 
-console.log(fib_sum_even_nums(10));
+console.log(fib_sum_even_nums(4000000));
 
 /*---------------REFLECTING/ITERATING---------------
 - Brute Force Solution Runtime Complexity: O()
