@@ -40,6 +40,14 @@
 /*---------------DEVISING A PLAN---------------
 - BRUTE FORCE SOLUTION:
   - Strategy:
+    - Create a variable 'i' that allows you to use a 'while loop'.
+    - Use a 'while' loop to iterate as many times necessary until
+      a pre-calculated value, 'even_nums_fib_array[i]' is greater than
+      or equal to 'n'.
+    - Following complete execution of the 'while' loop, we will create
+      a 'for' loop to iterate through the 'fib_array' to evaluate for even values that are ALSO below 'n'.
+    - While inside the 'for' loop, evaluate each item in the 'fib_array'.
+      If the item IS below 'n' AND is also an even number, we will add it to a running sum total counter variable called 'evenSum', which is initialized with the value 0.
 
   - Pseudocode:
 
