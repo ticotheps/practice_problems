@@ -69,26 +69,38 @@ const fib_sum_even_nums = n => {
   const fib_nums_arr = [1, 2];
   const even_fib_nums_arr = [2];
 
-  for (let i = 2; i < 33; i++) {
+  let i = 2;
+  while (fib_nums_arr[i - 1] < 4000000) {
+    // for (let i = 2; i < 33; i++) {
     let next_num = fib_nums_arr[i - 1] + fib_nums_arr[i - 2];
     fib_nums_arr.push(next_num);
 
     if (next_num < n && next_num % 2 == 0) {
       even_fib_nums_arr.push(next_num);
     }
+
+    i++;
   }
 
-  console.log(`----------ALL FIBONACCI NUMBERS----------`);
-  fib_nums_arr.map(number => {
-    console.log(number);
-  });
-  console.log(`----------ALL FIBONACCI NUMBERS----------\n`);
+  {
+    console.log(`---------- ALL FIBONACCI NUMS ----------`);
+    let count = 1;
+    fib_nums_arr.map(number => {
+      console.log(`Loop #${count}: ${number}`);
+      count += 1;
+    });
+    console.log(`---------- ALL FIBONACCI NUMS ----------\n`);
+  }
 
-  console.log(`\n----***EVEN FIBONACCI NUMBERS ONLY***----`);
-  even_fib_nums_arr.map(number => {
-    console.log(number);
-  });
-  console.log(`----***EVEN FIBONACCI NUMBERS ONLY***----\n`);
+  {
+    console.log(`\n*------* EVEN FIBONACCI NUMS < 4,000,000 ONLY *------*`);
+    let count = 1;
+    even_fib_nums_arr.map(number => {
+      console.log(`Loop #${count}: ${number}`);
+      count += 1;
+    });
+    console.log(`*------* EVEN FIBONACCI NUMS < 4,000,000 ONLY *------*\n`);
+  }
 
   const even_nums_sum = even_fib_nums_arr.reduce((sum, number) => {
     return sum + number;
@@ -98,9 +110,8 @@ const fib_sum_even_nums = n => {
 };
 
 console.log(
-  `Total sum of all EVEN Fibonnaci Numbers that are also LESS THAN 4,000,000: ${fib_sum_even_nums(
-    4000000
-  )}`
+  `Sum of EVEN Fibonnaci Nums LESS THAN 4,000,000:
+~${fib_sum_even_nums(4000000)}~`
 );
 
 /*---------------REFLECTING/ITERATING---------------
