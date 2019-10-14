@@ -39,20 +39,28 @@
 
 /*---------------DEVISING A PLAN---------------
 - BRUTE FORCE SOLUTION:
-  - Strategy:
-    - Create a variable 'i' that allows you to use a 'while loop'.
-    - Use a 'while' loop to iterate as many times necessary until
-      a pre-calculated value, 'even_nums_fib_array[i]' is greater than
-      or equal to 'n'.
-    - Following complete execution of the 'while' loop, we will create
-      a 'for' loop to iterate through the 'fib_array' to evaluate for even values that are ALSO below 'n'.
-    - While inside the 'for' loop, evaluate each item in the 'fib_array'.
-      If the item IS below 'n' AND is also an even number, we will add it to a running sum total counter variable called 'evenSum', which is initialized with the value 0.
-
   - Pseudocode:
+    - Create a variable 'fib_nums_arr' and set it equal to an array where
+      1 & 2 are the first two values in the array, respectively. This
+      array will hold all of the fibonacci numbers that are produced.
+    - Create another variable 'even_fib_nums_arr' and set it equal to an
+      array with only ONE value, 2, inside of it. This array will contain
+      only the EVEN numbers from the 'fib_nums_arr'. 
+    - Using a 'for' loop, we will loop through the following block of
+      code 100 times to generate the next 100 values of the Fibonacci
+      sequence.
+    - While still inside the 'for' loop, we will add each calculated
+      value for 'next_num' to the 'fib_nums_arr'.
+    - While still inside the 'for' loop, if that value for 'next_num' is
+      even AND it is less than the value of our parameter, 'n', we will
+      also add that same value to the 'even_fib_nums_arr'.
+    - Then, once the 'for' loop has completed executing, we will perform
+      a '.reduce()' function on the 'even_fib_nums_arr' and set the
+      resulting value equal a new variable called 'even_nums_sum'.
+    - Lastly, we will return the 'even_nums_sum' value.
 
-  - Runtime Complexity: O()
-  - Space Complexity: O()
+  - Runtime Complexity: O(2n) => O(n); linear runtime
+  - Space Complexity: O(2) => O(1); constant space
 */
 
 //---------------IMPLEMENTING A PLAN---------------
@@ -61,8 +69,8 @@ const fib_sum_even_nums = n => {
   const fib_nums_arr = [1, 2];
   const even_fib_nums_arr = [2];
 
-  for (let i = 0; i < 100; i++) {
-    let next_num = fib_nums_arr[i] + fib_nums_arr[i + 1];
+  for (let i = 2; i < 100; i++) {
+    let next_num = fib_nums_arr[i - 1] + fib_nums_arr[i - 2];
     fib_nums_arr.push(next_num);
 
     if (next_num < n && next_num % 2 == 0) {
