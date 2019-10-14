@@ -116,9 +116,9 @@ console.log('---------------BRUTE FORCE SOLUTION---------------\n');
 - Brute Force Solution Runtime Complexity: O(n^2)
 - Brute Force Solution Space Complexity: O(1)
 
-- Can I make my brute force solution FASTER?
+- Can I make my brute force solution BETTER?
   - Yes.
-- How much faster & space-efficient will your new solution be?
+- How much faster or space-efficient will your new solution be?
   - O(n) runtime complexity; O(n) space complexity
 - How will you do it?
   - First, create a new variable called 'cache' and set it equal to
@@ -181,3 +181,18 @@ console.log(
   twoNumberSumImproved([-123, -492, 40, 181, 319, 79, -43, -12, 3, 99], -393)
 ); // returns [-492, 99]
 console.log('---------------IMPROVED SOLUTION---------------\n');
+
+/*---------------REFLECTING/ITERATING Part 2---------------
+- Improved Solution Runtime Complexity: O(n); linear
+- Improved Solution Space Complexity: O(n); linear
+
+- Can I make my Improved solution BETTER?
+  - Yes.
+- How much faster or space-efficient will your new solution be?
+  - O(n log n) runtime complexity (better than O(n) runtime complexity)
+  - O(1) space complexity (better than O(n) space complexity with use of
+    a hash table)
+- How will you do it?
+  - First, sort the array in ascending order.
+  - Create a 'left_pointer' variable and a 'right_pointer' variable
+*/
