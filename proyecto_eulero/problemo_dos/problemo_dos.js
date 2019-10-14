@@ -57,36 +57,17 @@
 
 //---------------IMPLEMENTING A PLAN---------------
 
-const fib_even_sum = n => {
-  const fib_arr = [1, 2];
-  let evenSum = 2;
+const fib_sum_even_nums = n => {
+  const fib_nums_arr = [1, 2];
 
-  for (let i = 0; i < fib_arr.length; i++) {
-    let first_num = fib_arr[i];
-    console.log(`first_num = ${first_num[i]}`);
-
-    for (let j = 1; j < fib_arr.length; j++) {
-      let second_num = fib_arr[i];
-      console.log(`second_num = ${second_num[j]}`);
-
-      if (first_num < n && second_num < n) {
-        let third_num = first_num + second_num;
-
-        if (third_num < n) {
-          fib_arr.push(third_num);
-
-          if (third_num % 2 == 0) {
-            evenSum += third_num;
-            console.log(`evenSum = ${evenSum}`);
-          }
-        }
-      }
-    }
+  for (let i = 0; i < 10; i++) {
+    let next_num = fib_nums_arr[i] + fib_nums_arr[i + 1];
+    fib_nums_arr.push(next_num);
+    console.log(fib_nums_arr);
   }
-  return evenSum;
 };
 
-console.log(fib_even_sum(4000000));
+console.log(fib_sum_even_nums(10));
 
 /*---------------REFLECTING/ITERATING---------------
 - Brute Force Solution Runtime Complexity: O()
