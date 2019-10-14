@@ -69,7 +69,7 @@ const fib_sum_even_nums = n => {
   const fib_nums_arr = [1, 2];
   const even_fib_nums_arr = [2];
 
-  for (let i = 2; i < 100; i++) {
+  for (let i = 2; i < 33; i++) {
     let next_num = fib_nums_arr[i - 1] + fib_nums_arr[i - 2];
     fib_nums_arr.push(next_num);
 
@@ -78,8 +78,17 @@ const fib_sum_even_nums = n => {
     }
   }
 
-  console.log(`\nALL FIBONACCI NUMS = \n${fib_nums_arr}\n`);
-  console.log(`ONLY EVEN FIBONACCI NUMS = ${even_fib_nums_arr}\n`);
+  console.log(`----------ALL FIBONACCI NUMBERS----------`);
+  fib_nums_arr.map(number => {
+    console.log(number);
+  });
+  console.log(`----------ALL FIBONACCI NUMBERS----------\n`);
+
+  console.log(`\n----***EVEN FIBONACCI NUMBERS ONLY***----`);
+  even_fib_nums_arr.map(number => {
+    console.log(number);
+  });
+  console.log(`----***EVEN FIBONACCI NUMBERS ONLY***----\n`);
 
   const even_nums_sum = even_fib_nums_arr.reduce((sum, number) => {
     return sum + number;
@@ -88,7 +97,11 @@ const fib_sum_even_nums = n => {
   return even_nums_sum;
 };
 
-console.log(fib_sum_even_nums(4000000));
+console.log(
+  `Total sum of all EVEN Fibonnaci Numbers that are also LESS THAN 4,000,000: ${fib_sum_even_nums(
+    4000000
+  )}`
+);
 
 /*---------------REFLECTING/ITERATING---------------
 - Brute Force Solution Runtime Complexity: O()
