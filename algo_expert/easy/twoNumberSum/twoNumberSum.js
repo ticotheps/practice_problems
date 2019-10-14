@@ -193,8 +193,14 @@ console.log('---------------IMPROVED SOLUTION---------------\n');
   - O(1) space complexity (better than O(n) space complexity with use of
     a hash table)
 - How will you do it?
-  - First, sort the array in ascending order.
-  - Create a 'left_pointer' variable and a 'right_pointer' variable.
+  - First, sort the array in ascending order using the 'quicksort()'
+    algorithm, which has a O(n log n) runtime complexity due to its
+    'divide and conquer' style.
+    - Create a 'left' pointer variable and initially set it equal to the
+      first item in the array.
+    - Create a 'right' pointer variable and initially set it equal to the
+      last item in the array.
+    - 
   - Use a conditional 'if' statement to evaluate whether or not the
     current 'left_pointer' plus current 'right_pointer' add up to 
     'targetSum'.
@@ -204,3 +210,49 @@ console.log('---------------IMPROVED SOLUTION---------------\n');
   - If they don't add up to the 'targetSum', continue to the next
     iteration.
 */
+
+const quickSort = (array, start_index, end_index) => {
+  if (start_index >= end_index) {
+    return;
+  }
+
+  let index = partition(array, start_index, end_index);
+  quickSort(array, start_index, index - 1);
+  quickSort(array, index + 1, end_index);
+  return array;
+};
+
+const partition = (array, start_index, end_index) => {
+  let pivotIndex = start_index;
+  let pivotValue = array[end_index];
+  for (let i = start_index; i < end_index; i++) {
+    if (array[i] < pivotValue) {
+      swap(array, i, pivotIndex);
+      pivotIndex++;
+    }
+  }
+  swap(array, pivotIndex, end_index);
+  return pivotIndex;
+};
+
+const swap = (array, a, b) => {
+  let temporaryContainer = array[a];
+  array[a] = array[b];
+  array[b] = temporaryContainer;
+};
+
+// const twoNumberSumBest = (array, targetSum) => {};
+
+// console.log('---------------BEST SOLUTION---------------');
+// console.log(twoNumberSumBest([1, 2, 3, 4, 5], 8)); // returns [3, 5]
+// console.log(twoNumberSumBest([2, 4, 6, 8, 10], 15)); // returns []
+// console.log(twoNumberSumBest([-1, 2, 3, 5, 7], 4)); // returns [-1, 5]
+// console.log(twoNumberSumBest([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
+// console.log(
+//   twoNumberSumBest([-123, -492, 40, 181, 319, 79, -43, -12, 3, 99], -393)
+// ); // returns [-492, 99]
+// console.log('---------------BEST SOLUTION---------------\n');
+
+console.log(
+  `Sorted Array: ${quickSort([2, 5, 12, 1, 3, 6, 39, 23, 34, 64], 0, 9)}`
+);
