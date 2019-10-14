@@ -194,5 +194,13 @@ console.log('---------------IMPROVED SOLUTION---------------\n');
     a hash table)
 - How will you do it?
   - First, sort the array in ascending order.
-  - Create a 'left_pointer' variable and a 'right_pointer' variable
+  - Create a 'left_pointer' variable and a 'right_pointer' variable.
+  - Use a conditional 'if' statement to evaluate whether or not the
+    current 'left_pointer' plus current 'right_pointer' add up to 
+    'targetSum'.
+  - If they do add up to 'targetSum', return an array with the
+    'left_pointer' variable in the zeroith index and the 'right_pointer'
+    variable in the first index of the array.
+  - If they don't add up to the 'targetSum', continue to the next
+    iteration.
 */
