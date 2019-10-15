@@ -242,15 +242,14 @@ const twoNumberSumBest = (array, targetSum) => {
     array[b] = temporaryContainer;
   };
 
-  console.log(
-    `Sorted Array: ${quickSort([2, 5, 12, 1, 3, 6, 39, 23, 34, 64], 0, 9)}`
-  );
-
   console.log(`TargetSum: ${targetSum}`);
+  const sorted_array = quickSort(array, 0, array.length - 1);
+
+  return sorted_array;
 };
 
 console.log('---------------BEST SOLUTION---------------');
-console.log(twoNumberSumBest([1, 2, 3, 4, 5], 8)); // returns [3, 5]
+console.log(twoNumberSumBest([5, 4, 3, 2, 1], 8)); // returns [3, 5]
 // console.log(twoNumberSumBest([2, 4, 6, 8, 10], 15)); // returns []
 // console.log(twoNumberSumBest([-1, 2, 3, 5, 7], 4)); // returns [-1, 5]
 // console.log(twoNumberSumBest([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
