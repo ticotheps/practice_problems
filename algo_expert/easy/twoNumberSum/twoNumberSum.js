@@ -242,18 +242,30 @@ const twoNumberSumBest = (array, targetSum) => {
     array[b] = temporaryContainer;
   };
 
-  console.log(`TargetSum: ${targetSum}`);
   const sorted_array = quickSort(array, 0, array.length - 1);
 
-  return sorted_array;
+  let left = 0;
+  let right = sorted_array.length - 1;
+
+  while (left < right) {
+    let currentSum = sorted_array[left] + sorted_array[right];
+    if (currentSum == targetSum) {
+      return [sorted_array[left], sorted_array[right]];
+    } else if (currentSum < targetSum) {
+      left += 1;
+    } else if (currentSum > targetSum) {
+      right += 1;
+    }
+  }
+  return [];
 };
 
 console.log('---------------BEST SOLUTION---------------');
 console.log(twoNumberSumBest([5, 4, 3, 2, 1], 8)); // returns [3, 5]
-// console.log(twoNumberSumBest([2, 4, 6, 8, 10], 15)); // returns []
-// console.log(twoNumberSumBest([-1, 2, 3, 5, 7], 4)); // returns [-1, 5]
-// console.log(twoNumberSumBest([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
-// console.log(
-//   twoNumberSumBest([-123, -492, 40, 181, 319, 79, -43, -12, 3, 99], -393)
-// ); // returns [-492, 99]
+console.log(twoNumberSumBest([10, 8, 6, 4, 2], 15)); // returns []
+console.log(twoNumberSumBest([5, 7, 3, -1, 2], 4)); // returns [-1, 5]
+console.log(twoNumberSumBest([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
+console.log(
+  twoNumberSumBest([-123, -492, 40, 181, 319, 79, -43, -12, 3, 99], -393)
+); // returns [-492, 99]
 console.log('---------------BEST SOLUTION---------------\n');
