@@ -211,48 +211,50 @@ console.log('---------------IMPROVED SOLUTION---------------\n');
     iteration.
 */
 
-const quickSort = (array, start_index, end_index) => {
-  if (start_index >= end_index) {
-    return;
-  }
-
-  let index = partition(array, start_index, end_index);
-  quickSort(array, start_index, index - 1);
-  quickSort(array, index + 1, end_index);
-  return array;
-};
-
-const partition = (array, start_index, end_index) => {
-  let pivotIndex = start_index;
-  let pivotValue = array[end_index];
-  for (let i = start_index; i < end_index; i++) {
-    if (array[i] < pivotValue) {
-      swap(array, i, pivotIndex);
-      pivotIndex++;
+const twoNumberSumBest = (array, targetSum) => {
+  const quickSort = (array, start_index, end_index) => {
+    if (start_index >= end_index) {
+      return;
     }
-  }
-  swap(array, pivotIndex, end_index);
-  return pivotIndex;
+
+    let index = partition(array, start_index, end_index);
+    quickSort(array, start_index, index - 1);
+    quickSort(array, index + 1, end_index);
+    return array;
+  };
+
+  const partition = (array, start_index, end_index) => {
+    let pivotIndex = start_index;
+    let pivotValue = array[end_index];
+    for (let i = start_index; i < end_index; i++) {
+      if (array[i] < pivotValue) {
+        swap(array, i, pivotIndex);
+        pivotIndex++;
+      }
+    }
+    swap(array, pivotIndex, end_index);
+    return pivotIndex;
+  };
+
+  const swap = (array, a, b) => {
+    let temporaryContainer = array[a];
+    array[a] = array[b];
+    array[b] = temporaryContainer;
+  };
+
+  console.log(
+    `Sorted Array: ${quickSort([2, 5, 12, 1, 3, 6, 39, 23, 34, 64], 0, 9)}`
+  );
+
+  console.log(`TargetSum: ${targetSum}`);
 };
 
-const swap = (array, a, b) => {
-  let temporaryContainer = array[a];
-  array[a] = array[b];
-  array[b] = temporaryContainer;
-};
-
-// const twoNumberSumBest = (array, targetSum) => {};
-
-// console.log('---------------BEST SOLUTION---------------');
-// console.log(twoNumberSumBest([1, 2, 3, 4, 5], 8)); // returns [3, 5]
+console.log('---------------BEST SOLUTION---------------');
+console.log(twoNumberSumBest([1, 2, 3, 4, 5], 8)); // returns [3, 5]
 // console.log(twoNumberSumBest([2, 4, 6, 8, 10], 15)); // returns []
 // console.log(twoNumberSumBest([-1, 2, 3, 5, 7], 4)); // returns [-1, 5]
 // console.log(twoNumberSumBest([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
 // console.log(
 //   twoNumberSumBest([-123, -492, 40, 181, 319, 79, -43, -12, 3, 99], -393)
 // ); // returns [-492, 99]
-// console.log('---------------BEST SOLUTION---------------\n');
-
-console.log(
-  `Sorted Array: ${quickSort([2, 5, 12, 1, 3, 6, 39, 23, 34, 64], 0, 9)}`
-);
+console.log('---------------BEST SOLUTION---------------\n');
