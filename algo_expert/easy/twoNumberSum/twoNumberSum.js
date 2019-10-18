@@ -211,64 +211,68 @@ console.log('---------------IMPROVED SOLUTION---------------\n');
     iteration.
 */
 
-const twoNumberSumBest = (array, targetSum) => {
-  const quickSort = (array, start_index, end_index) => {
-    if (start_index >= end_index) {
-      return;
-    }
+// const twoNumberSumBest = (array, targetSum) => {
+//   let unsorted_array = array;
+//   const quickSort = (unsorted_array, start_index, end_index) => {
+//     start_index = 0;
+//     end_index = unsorted_array.length - 1;
 
-    let index = partition(array, start_index, end_index);
-    quickSort(array, start_index, index - 1);
-    quickSort(array, index + 1, end_index);
-    return array;
-  };
+//     if (start_index >= end_index) {
+//       return;
+//     }
 
-  const partition = (array, start_index, end_index) => {
-    let pivotIndex = start_index;
-    let pivotValue = array[end_index];
-    for (let i = start_index; i < end_index; i++) {
-      if (array[i] < pivotValue) {
-        swap(array, i, pivotIndex);
-        pivotIndex++;
-      }
-    }
-    swap(array, pivotIndex, end_index);
-    return pivotIndex;
-  };
+//     let index = partition(unsorted_array, start_index, end_index);
+//     quickSort(unsorted_array, start_index, index - 1);
+//     quickSort(unsorted_array, index + 1, end_index);
+//     return array;
+//   };
 
-  const swap = (array, a, b) => {
-    let temporaryContainer = array[a];
-    array[a] = array[b];
-    array[b] = temporaryContainer;
-  };
+//   const partition = (unsorted_array, start_index, end_index) => {
+//     let pivotIndex = start_index;
+//     let pivotValue = unsorted_array[end_index];
+//     for (let i = start_index; i < end_index; i++) {
+//       if (unsorted_array[i] < pivotValue) {
+//         swap(unsorted_array, i, pivotIndex);
+//         pivotIndex++;
+//       }
+//     }
+//     swap(unsorted_array, pivotIndex, end_index);
+//     return pivotIndex;
+//   };
 
-  const sorted_array = quickSort(array, 0, array.length - 1);
+//   const swap = (array, a, b) => {
+//     let tempContainer = array[a];
+//     array[a] = array[b];
+//     array[b] = tempContainer;
+//   };
 
-  let left = 0;
-  let right = sorted_array.length - 1;
+//   const sorted_array = quickSort(array, 0, array.length - 1);
 
-  while (left < right) {
-    let currentSum = sorted_array[left] + sorted_array[right];
-    if (currentSum == targetSum) {
-      return [sorted_array[left], sorted_array[right]];
-    } else if (currentSum < targetSum) {
-      left += 1;
-    } else if (currentSum > targetSum) {
-      right += 1;
-    }
-  }
-  return [];
-};
+//   let left = 0;
+//   let right = sorted_array.length - 1;
 
-console.log('---------------BEST SOLUTION---------------');
-console.log(twoNumberSumBest([5, 4, 3, 2, 1], 8)); // returns [3, 5]
-console.log(twoNumberSumBest([10, 8, 6, 4, 2], 15)); // returns []
-console.log(twoNumberSumBest([5, 7, 3, -1, 2], 4)); // returns [-1, 5]
-console.log(twoNumberSumBest([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
-console.log(
-  twoNumberSumBest([-123, -492, 40, 181, 319, 79, -43, -12, 3, 99], -393)
-); // returns [-492, 99]
-console.log('---------------BEST SOLUTION---------------\n');
+//   while (left < right) {
+//     let currentSum = sorted_array[left] + sorted_array[right];
+//     if (currentSum == targetSum) {
+//       return [sorted_array[left], sorted_array[right]];
+//     } else if (currentSum < targetSum) {
+//       left += 1;
+//     } else if (currentSum > targetSum) {
+//       right += 1;
+//     }
+//   }
+//   return [];
+// };
+
+// console.log('---------------BEST SOLUTION---------------');
+// console.log(twoNumberSumBest([5, 4, 3, 2, 1], 8)); // returns [3, 5]
+// console.log(twoNumberSumBest([10, 8, 6, 4, 2], 15)); // returns []
+// console.log(twoNumberSumBest([5, 7, 3, -1, 2], 4)); // returns [-1, 5]
+// console.log(twoNumberSumBest([-8, 22, 4, -5, 3], 17)); // returns [-5, 22]
+// console.log(
+//   twoNumberSumBest([-123, -492, 40, 181, 319, 79, -43, -12, 3, 99], -393)
+// ); // returns [-492, 99]
+// console.log('---------------BEST SOLUTION---------------\n');
 
 /*---------------REFLECTING/ITERATING Part 3---------------
 - Best Solution Runtime Complexity: O(n Log(n)); logarithmic
