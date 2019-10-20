@@ -27,8 +27,9 @@
                   /  \
               3  5    5 => 3 x 5 x 5 = 75
   - Can it be a negative number? 
-    -
+    - No.
   - Can it be a floating number?
+    - No. 
 */
 
 /* DEVISING A PLAN */
