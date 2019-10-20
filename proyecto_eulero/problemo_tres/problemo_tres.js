@@ -36,7 +36,7 @@
 (1) Create function that takes in a given input, n, which is a positive
     integer.
 
-(2) Create a variable, largestPrimeFactor, that is set equal to n. This
+(2) Create a variable, largestPFactor, that is set equal to n. This
     number will represent the current largest prime factor while the
     second 'for' loop is evaluating all of the items in the cache. This
     variable will be returned at the end of the function.
@@ -52,15 +52,36 @@
     object to evaluate for any keys in the 'primeNumbers' object that
     evaluates to true for this statement: "n % key === 0". 
 
-    (6) If "n % key === 0" evaluates to true, then set largestPrimeFactor 
+    (6) If "n % key === 0" evaluates to true, then set 'largestPFactor' 
         equal to the value of key.
       
     (7) If "n % key === 0" evaluates to false, then do nothing.
 
-(8) Return largestPrimeFactor.
+(8) Return 'largestPFactor'.
 */
 
-/* IMPLEMENTING THE PLAN */
+/*----------IMPLEMENTING THE PLAN----------*/
+
+const findLargestPFactor = n => {
+  let largestPFactor = n;
+  // console.log(largestPFactor);
+
+  let primeNumbers = {};
+  // console.log(primeNumbers);
+
+  for (let i = 2; i < n; i++) {
+    if (n % i != 0) {
+      console.log(i);
+    }
+  }
+
+  return largestPFactor;
+};
+
+console.log(findLargestPFactor(3));
+// console.log(findLargestPFactor(9));
+// console.log(findLargestPFactor(13));
+// console.log(findLargestPFactor(29));
 
 /*----------REFLECTING/ITERATING----------
  */
