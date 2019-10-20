@@ -1,6 +1,4 @@
-/* UNDERSTANDING THE PROBLEM */
-
-/*
+/*----------UNDERSTANDING THE PROBLEM----------
 - Expected Input(s): 
   - Only ONE expected input.
   - Type: number.
@@ -16,7 +14,9 @@
 - Constraints:
   - Define a 'prime factor'?
     - Prime Number: a number that is only divisible by 1 and itself.
+      - "1" is NOT a prime number.
       - i.e. - 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31
+
   - What is 'prime factorization'?
     - Prime Factorization: breaking apart a number down to its lowest
       prime factors.
@@ -32,8 +32,35 @@
     - No. 
 */
 
-/* DEVISING A PLAN */
+/*----------DEVISING A PLAN----------
+(1) Create function that takes in a given input, n, which is a positive
+    integer.
+
+(2) Create a variable, largestPrimeFactor, that is set equal to n. This
+    number will represent the current largest prime factor while the
+    second 'for' loop is evaluating all of the items in the cache. This
+    variable will be returned at the end of the function.
+
+(3) Initialize an empty cache of prime numbers called 'primeNumbers' to 
+    allow for easy & fast lookups with JavaScript's hash table.
+
+(4) Use a 'for' loop to add ALL prime numbers, as keys, to the 
+    'primeNumbers' object (with a value of 'false' for each key), 
+    beginning with 2 all the way up to n.
+
+(5) Use a separate 'for' loop to iterate through the 'primeNumbers'
+    object to evaluate for any keys in the 'primeNumbers' object that
+    evaluates to true for this statement: "n % key === 0". 
+
+    (6) If "n % key === 0" evaluates to true, then set largestPrimeFactor 
+        equal to the value of key.
+      
+    (7) If "n % key === 0" evaluates to false, then do nothing.
+
+(8) Return largestPrimeFactor.
+*/
 
 /* IMPLEMENTING THE PLAN */
 
-/* REFLECTING/ITERATING */
+/*----------REFLECTING/ITERATING----------
+ */
