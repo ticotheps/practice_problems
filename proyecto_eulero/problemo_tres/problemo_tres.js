@@ -98,9 +98,10 @@ const findLargestPF = n => {
 console.log(findLargestPF(3)); // should be 3
 console.log(findLargestPF(11)); // should be 11
 console.log(findLargestPF(20)); // should be 5
-// console.log(findLargestPF(1000)); // should be 5
+console.log(findLargestPF(1000)); // should be 5
+console.log(findLargestPF(1302837)); // should be 5
 
-console.log(findLargestPF(600851475143));
+// console.log(findLargestPF(600851475143));
 
 /*----------REFLECTING/ITERATING----------
  */
