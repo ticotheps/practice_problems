@@ -1,0 +1,29 @@
+Find the Number!
+
+Given an unsorted array of n elements, find if the element, k, is present
+in the array or not.
+
+Complete the 'findNumber' function in the editor below. It has 2 
+parameters:
+
+1. An array of integers, arr, denoting the elements in the array.
+2. An integer, k, denoting the elements to be searched in the array.
+
+The function must return a string "YES" or "NO" denoting if the element 
+is present in the array or not.
+
+Constraints:
+  1 <= n <= 10^5 (100,000)
+  1 <= arr[i] <= 10^9 (1,000,000,000)
+
+Sample Input:
+5 => # of elements in the the array
+1 => zeroith index of the array
+2 => first index of the array
+3 => second index of the array
+4 => third index of the array
+5 => fourth index of the array
+1 => the integer, k, denoting the element that needs to be searched for.
+
+Sample Output: 
+YES => because k ('1') is included in the array.
