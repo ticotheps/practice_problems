@@ -22,10 +22,10 @@
 */
 
 /*----------DEVISING A PLAN---------- 
-(1) Nested 'For' Loop Approach
+(1) Nested 'For' Loop Approach (BRUTE FORCE SOLUTION)
   - Runtime Complexity: O(n^2) = quadratic
-  - Space Complexity: O(1)
-(2) Single 'For' Loop Approach + Caching
+  - Space Complexity: O(1) = constant
+(2) Single 'For' Loop Approach + Caching (IMPROVED SOLUTION)
   - Runtime Complexity: O(n) = linear
   - Space Complexity: O(n) = linear
 */
@@ -35,40 +35,24 @@
 const findNumber = (arr, k) => {
   for (let i = 0; i < arr.length; i++) {
     // console.log(`\n*i = ${i}*`);
-    for (let j = 0; j < arr.length; j++) {
-      // console.log(`j = ${j}`);
-      if (i != j && arr[i] == k) {
-        return 'YES';
-      }
+    if (arr[i] == k) {
+      return 'YES';
     }
   }
   return 'NO';
 };
 
-console.log(findNumber([1, 2, 3, 4, 5], 1)); // Should return 'YES'
+console.log(findNumber([1, 2, 3, 4, 5], 4)); // Should return 'YES'
 console.log(findNumber([1, 2, 3, 4, 5], 6)); // Should return 'NO'
-console.log(findNumber([5, 3, 1, 2, 4], 1)); // Should return 'YES'
+console.log(findNumber([5, 3, 1, 2, 4], 4)); // Should return 'YES'
 console.log(findNumber([5, 3, 1, 2, 4], 6)); // Should return 'NO'
-console.log(findNumber([120, 2214, 3212, 44, 521], 432)); // Should return 'NO'
+console.log(findNumber([120, 2214, 3212, 44, 521], 44)); // Should return 'NO'
 
-/*----------REFLECT/ITERATE ON THE PLAN---------- 
+/*----------REFLECTING/ITERATING ON THE PLAN---------- 
+- BRUTE FORCE SOLUTION ANALYSIS
+  - Runtime Complexity: O(n) = linear
+  - Space Complexity: O(1) = constant
 
+  - Can RC or SC be improved at all?
+    - No
 */
-
-// const findNumber = (arr, k) => {
-//   let cache = {};
-//   let kInCache = 'NO';
-
-//   for (let i = 0; i < arr.length; i++) {
-//     console.log(arr[i]);
-
-//     if (arr[i] in cache) {
-//       kInCache = 'YES';
-//     } else {
-//       cache[arr[i]] = true;
-//     }
-//     console.log(cache);
-//   }
-
-//   return kInCache;
-// };
