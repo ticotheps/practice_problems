@@ -41,21 +41,22 @@
     second 'for' loop is evaluating all of the items in the cache. This
     variable will be returned at the end of the function.
 
-(3) Initialize an empty cache of prime numbers called 'primeNumbers' to 
-    allow for easy & fast lookups with JavaScript's hash table.
+(3) Initialize an empty cache of all of n's factors called 'factorsOfN' to 
+    allow for easy & fast lookups later with JavaScript's hash table.
 
-(4) Use a 'for' loop to add ALL prime numbers, as keys, to the 
-    'primeNumbers' object (with a value of 'false' for each key), 
-    beginning with 2 all the way up to n.
+(4) Use a 'for' loop to iterate from "1" to n and add any numbers that n
+    can be divided by evenly, as keys to the 'factorsOfN' object (with 
+    a value of 'false' for each key).
 
-(5) Use a separate 'for' loop to iterate through the 'primeNumbers'
-    object to evaluate for any keys in the 'primeNumbers' object that
-    evaluates to true for this statement: "n % key === 0". 
+(5) Use a separate 'for' loop to iterate through the 'factorsOfN'
+    object to evaluate for any keys that are prime numbers. 
 
-    (6) If "n % key === 0" evaluates to true, then set 'largestPFactor' 
-        equal to the value of key.
+    (6) If "key in factorsOfN" is a prime number, then set the key's
+        value equal to 'true' and replace the value of 'largestPFactor'
+        with this key's value.
       
-    (7) If "n % key === 0" evaluates to false, then do nothing.
+    (7) If "key in factorsOfN" is NOT a prime number, then don't do 
+        anything.
 
 (8) Return 'largestPFactor'.
 */
@@ -69,14 +70,15 @@ const findLargestPFactor = n => {
   let primeNumbers = {};
   // console.log(primeNumbers);
 
-  for (let i = 2; i < n; i++) {
-    if (i % 2 != 0) {
-      if (i % 3 != 0) {
-        // console.log(`Added ${i} to the cache`);
-        primeNumbers[i] = false;
-        console.log(`Just set primeNumbers[${i}] = ${primeNumbers[i]}`);
-      }
-    }
+  for (let i = 2; i <= n; i++) {
+    // if (i % 2 != 0) {
+    //   if (i % 3 != 0) {
+    //     // console.log(`Added ${i} to the cache`);
+    //     primeNumbers[i] = false;
+    //     console.log(`Just set primeNumbers[${i}] = ${primeNumbers[i]}`);
+    //   }
+    // }
+    console.log(i);
   }
 
   // return largestPFactor;
@@ -84,7 +86,7 @@ const findLargestPFactor = n => {
 
 // console.log(findLargestPFactor(3));
 console.log(findLargestPFactor(9));
-// console.log(findLargestPFactor(13));
+// console.log(findLargestPFactor(10));
 // console.log(findLargestPFactor(29));
 
 /*----------REFLECTING/ITERATING----------
