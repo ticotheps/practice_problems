@@ -48,7 +48,7 @@ const oddNumbers = (l, r) => {
 
   for (let i = l; i <= r; i++) {
     if (i % 2 != 0) {
-      console.log(`${i} is an odd number!`);
+      // console.log(`${i} is an odd number!`);
       oddNumsArr.push(i);
     }
   }
@@ -60,5 +60,10 @@ console.log(oddNumbers(1, 10)); // Should be [1, 3, 5, 7, 9]
 console.log(oddNumbers(-10, 10)); // Should be [-9, -7, -5, -3, -1, 1, 3, 5, 7, 9]
 
 /*----------REFLECTING/ITERATING ON THE PLAN----------
+- BRUTE FORCE SOLUTION
+  - Runtime Complexity: O(n) = linear
+  - Space Complexity: O(1) = constant
 
+  - Can you improve the RC or the SP?
+    - No
 */
