@@ -70,16 +70,20 @@ const findLargestPFactor = n => {
   // console.log(primeNumbers);
 
   for (let i = 2; i < n; i++) {
-    if (n % i != 0) {
-      console.log(i);
+    if (i % 2 != 0) {
+      if (i % 3 != 0) {
+        // console.log(`Added ${i} to the cache`);
+        primeNumbers[i] = false;
+        console.log(`Just set primeNumbers[${i}] = ${primeNumbers[i]}`);
+      }
     }
   }
 
-  return largestPFactor;
+  // return largestPFactor;
 };
 
-console.log(findLargestPFactor(3));
-// console.log(findLargestPFactor(9));
+// console.log(findLargestPFactor(3));
+console.log(findLargestPFactor(9));
 // console.log(findLargestPFactor(13));
 // console.log(findLargestPFactor(29));
 
