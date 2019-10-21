@@ -33,14 +33,42 @@
 /*----------IMPLEMENTING THE PLAN----------*/
 
 const findNumber = (arr, k) => {
-  let cache = {};
-  let kInCache = 'YES';
-
-  return kInCache;
+  for (let i = 0; i < arr.length; i++) {
+    // console.log(`\n*i = ${i}*`);
+    for (let j = 0; j < arr.length; j++) {
+      // console.log(`j = ${j}`);
+      if (i != j && arr[i] == k) {
+        return 'YES';
+      }
+    }
+  }
+  return 'NO';
 };
 
-console.log(findNumber([1, 2, 3, 4, 5], 1));
+console.log(findNumber([1, 2, 3, 4, 5], 1)); // Should return 'YES'
+console.log(findNumber([1, 2, 3, 4, 5], 6)); // Should return 'NO'
+console.log(findNumber([5, 3, 1, 2, 4], 1)); // Should return 'YES'
+console.log(findNumber([5, 3, 1, 2, 4], 6)); // Should return 'NO'
+console.log(findNumber([120, 2214, 3212, 44, 521], 432)); // Should return 'NO'
 
 /*----------REFLECT/ITERATE ON THE PLAN---------- 
 
 */
+
+// const findNumber = (arr, k) => {
+//   let cache = {};
+//   let kInCache = 'NO';
+
+//   for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+
+//     if (arr[i] in cache) {
+//       kInCache = 'YES';
+//     } else {
+//       cache[arr[i]] = true;
+//     }
+//     console.log(cache);
+//   }
+
+//   return kInCache;
+// };
