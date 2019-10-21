@@ -62,58 +62,6 @@
 */
 
 /*----------IMPLEMENTING THE PLAN----------*/
-
-// const findLargestPFactor = n => {
-//   let largestPFactor = 0;
-//   // console.log(largestPFactor);
-
-//   let factorsOfN = {};
-//   // console.log(factorsOfN);
-
-//   for (let i = 2; i <= n; i++) {
-//     if (n % i === 0) {
-//       // console.log(`${i} is a factor of n! Add it to the cache!`);
-//       factorsOfN[i] = false;
-//       // console.log(`factorsOfN[${i}] = ${factorsOfN[i]}\n`);
-//     }
-//   }
-
-//   for (key in factorsOfN) {
-//     let factorCounter = 0;
-
-//     for (let j = 2; j < key; j++) {
-//       let otherFactors = [];
-//       console.log(`\nkey = ${key}`);
-//       console.log(`j = ${j}`);
-
-//       if (key % j == 0) {
-//         factorsOfN[key] = true;
-//         otherFactors.push(key);
-//         factorCounter += 1;
-//         console.log(`${key} can be divided by ${j} evenly!`);
-//       } else {
-//         console.log(`${key} CANNOT be divided by ${j} evenly!`);
-//       }
-//       console.log(`----------\nfactorCounter = ${factorCounter}\n`);
-
-//       if (factorCounter == 0) {
-//         largestPFactor = key;
-//         console.log(`${key} is a prime factor of ${n}!\n`);
-//       }
-
-//       console.log(`Other factors = ${otherFactors}`);
-//     }
-//   }
-
-//   // return largestPFactor;
-// };
-
-// console.log(findLargestPFactor(3));
-// console.log(findLargestPFactor(9));
-// console.log(findLargestPFactor(10));
-// console.log(findLargestPFactor(29));
-
-// ----NEW SOLUTION----
 const findLargestPF = n => {
   let primeNums = {};
   const primeArray = [];
@@ -130,31 +78,29 @@ const findLargestPF = n => {
         primeNums[key] = false;
       }
     }
-  }
-
-  for (key in primeNums) {
     if (primeNums[key] == true) {
       primeArray.unshift(key);
     }
   }
-  // console.log(`primeArray = ${primeArray}`);
 
   for (let k = 0; k < primeArray.length; k++) {
-    if (n % primeArray[k] == 0 && primeArray[k] > largestPrimeFactor) {
+    if (n % primeArray[k] == 0 && primeArray[k] >= largestPrimeFactor) {
       // console.log(`${primeArray[k]} is a prime factor of ${n}!`);
       largestPrimeFactor = primeArray[k];
     }
   }
 
   // console.log(primeNums);
+  // console.log(primeArray);
   return largestPrimeFactor;
 };
 
 console.log(findLargestPF(3)); // should be 3
 console.log(findLargestPF(11)); // should be 11
 console.log(findLargestPF(20)); // should be 5
+// console.log(findLargestPF(1000)); // should be 5
 
-// console.log(findLargestPF(600851475143));
+console.log(findLargestPF(600851475143));
 
 /*----------REFLECTING/ITERATING----------
  */
