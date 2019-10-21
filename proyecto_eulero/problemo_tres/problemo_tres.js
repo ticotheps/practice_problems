@@ -67,18 +67,15 @@ const findLargestPFactor = n => {
   let largestPFactor = n;
   // console.log(largestPFactor);
 
-  let primeNumbers = {};
-  // console.log(primeNumbers);
+  let factorsOfN = {};
+  // console.log(factorsOfN);
 
-  for (let i = 2; i <= n; i++) {
-    // if (i % 2 != 0) {
-    //   if (i % 3 != 0) {
-    //     // console.log(`Added ${i} to the cache`);
-    //     primeNumbers[i] = false;
-    //     console.log(`Just set primeNumbers[${i}] = ${primeNumbers[i]}`);
-    //   }
-    // }
-    console.log(i);
+  for (let i = 1; i <= n; i++) {
+    if (n % i === 0) {
+      console.log(`${i} is a factor of n! Add it to the cache!`);
+      factorsOfN[i] = false;
+      console.log(`factorsOfN[${i}] = ${factorsOfN[i]}\n`);
+    }
   }
 
   // return largestPFactor;
