@@ -48,7 +48,7 @@ const oddNumbers = (l, r) => {
 
   for (let i = l; i <= r; i++) {
     if (i % 2 != 0) {
-      console.log(`${i}` is an odd number!);
+      console.log(`${i} is an odd number!`);
       oddNumsArr.push(i);
     }
   }
