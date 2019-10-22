@@ -102,7 +102,6 @@ const makeAnagram = (a, b) => {
   const commonChars = [];
 
   for (let i = 0; i < lenOfA; i++) {
-    // console.log(`a[${i}] = ${a[i]}`);
     if (a[i] in cacheOfA) {
       cacheOfA[a[i]] += 1;
     } else {
@@ -111,26 +110,16 @@ const makeAnagram = (a, b) => {
   }
 
   for (let j = 0; j < lenOfB; j++) {
-    // console.log(`b[${j}] = ${b[j]}`);
     if (b[j] in cacheOfB) {
       cacheOfB[b[j]] += 1;
-      // console.log('here', cacheOfB[b[j]]);
     } else {
       cacheOfB[b[j]] = 1;
-      // console.log('here', cacheOfB[b[j]]);
     }
   }
 
   for (keyOfA in cacheOfA) {
-    // console.log(`\n***cacheOfA[${keyOfA}] = ${cacheOfA[keyOfA]}`);
     for (keyOfB in cacheOfB) {
-      // console.log(`cacheOfB[${keyOfB}] = ${cacheOfB[keyOfB]}`);
-
-      if (keyOfA != keyOfB) {
-        // console.log(`${keyOfA} != ${keyOfB}`);
-        // numOfDeletions += 1;
-      } else {
-        // console.log(`${keyOfA} == ${keyOfB}`);
+      if (keyOfA == keyOfB) {
         commonChars.push(keyOfA);
       }
     }
@@ -139,9 +128,6 @@ const makeAnagram = (a, b) => {
   const deletionsInA = lenOfA - commonChars.length;
   const deletionsInB = lenOfB - commonChars.length;
   numOfDeletions = deletionsInA + deletionsInB;
-  // console.log('Length of commonChars:', commonChars.length);
-  // console.log(cacheOfA);
-  // console.log(cacheOfB);
   return numOfDeletions;
 };
 
