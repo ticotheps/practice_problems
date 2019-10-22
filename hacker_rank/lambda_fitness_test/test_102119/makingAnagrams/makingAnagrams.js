@@ -137,14 +137,10 @@ console.log(makeAnagram('thepsourinthone', 'sour')); // should return 11
 console.log(makeAnagram('allred', 'red')); // should return 3
 
 /*----------REFLECTING/ITERATING ON THE PLAN----------
-- IMPROVED SOLUTION:
+- BRUTE FORCE SOLUTION ANALYSIS:
+  - Runtime Complexity: O(n^2 + 2n) => O(n^2) = quadratic
+  - Space Complexity: O(n)
 
-(1) Create a function called 'makeAnagram()' that will take in two
-    parameters (string, string) and return a single output (number).
-
-(2) Create a variable 'lengthOfA' to denote the length of string 'a'.
-
-(3) Create a variable 'lengthOfB' to denote the length of string 'b'.
-
-(4) Create a variable 'lengthOfA' to denote the length of string 'a'.
+  - Can you improve the RC or the SC?
+    - No
  */
