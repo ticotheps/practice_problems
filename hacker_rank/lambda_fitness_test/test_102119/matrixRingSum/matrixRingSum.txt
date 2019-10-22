@@ -1,0 +1,92 @@
+2. Matrix Ring Sum
+
+Given an N x N square matrix represented as a 2D array, we define a ring
+within the matrix to be a subset of values with indices that fall within
+a ring pattern, such as the following:
+
+a b c
+d   e
+f g h
+
+A ring sum is the sum of every element that makes up a ring within the
+matrix.
+
+For example, given the following matrix:
+
+-9 -9 -9  1  1  1
+ 0 -9  0  4  3  2 
+-9 -9 -9  1  2  3
+ 0  0  8  6  6  0
+ 0  0  0 -2  0  0
+ 0  0  1  2  4  0
+
+We calculate the following 16 ring sums:
+
+-54,  -39,  -10,  -15,
+-19,    1,   20,   25,
+-19,  -13,    6,   10,
+  9,   15,   27,   16
+
+Out of all these values, the highest rign sum is 27 from the ring:
+
+8 6 6
+0   0
+1 2 4
+
+Function Description
+
+Complete the function 'matrixRingMax()' in the editor below. It should 
+return an integer, the maximum ring sum in the matrix. 'matrixRingMax()'
+has the following parameters:
+
+  (1) matrix: a 2D array of integers
+
+Input Format
+
+The first line contains the number of rows of the input matrix.
+The second line contains the number of columns of the input matrix. Note
+that these numbers will always be equal. The following N lines contain N
+space-separated integers representing the matrix values.
+
+Output Format
+
+Print the largest (maximum) ring sum in the matrix.
+
+Sample Input:
+
+1 1 1 0 0 0 
+0 1 0 0 0 0 
+1 1 1 0 0 0 
+0 0 2 4 4 0
+0 0 0 2 0 0
+0 0 1 2 4 0
+
+Sample Output:
+
+17
+
+Explanation:
+
+The matrix contains the following rings:
+
+1 1 1     1 1 0     1 0 0     0 0 0 
+0   0     1   0     0   0     0   0
+1 1 1     1 1 0     1 0 0     0 0 0
+
+0 1 0     1 0 0     0 0 0     0 0 0
+1   1     1   0     1   0     0   0
+0 0 2     0 2 4     2 4 4     4 4 0
+
+1 1 1     1 1 0     1 0 0     0 0 0
+0   2     0   4     2   4     4   0
+0 0 0     0 0 2     0 2 0     2 0 0
+
+0 0 2     0 2 4     2 4 4     4 4 0
+0   0     0   2     0   0     2   0
+0 0 1     0 1 2     1 2 4     2 4 0
+
+The ring with the largest sum is:
+
+2 4 4 
+0   0
+1 2 4
