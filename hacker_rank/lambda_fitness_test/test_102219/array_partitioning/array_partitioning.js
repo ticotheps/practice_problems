@@ -112,14 +112,17 @@ const partitionArray = (k, numbers) => {
       }
     }
 
-    for (key in cache) {
+    for (let key = 0; key < cache.length; i++) {
+      console.log(`cache[key] = ${cache[key]}`);
       if (cache[key] > 1) {
         for (let j = 0; j < lenOfNums; j++) {
-          if (key == numbers[j] && key == numbers[k - 1]) {
+          if (key == numbers[j]) {
             console.log(
               `The key, ${key}, has duplicates within the same subsquence!`
             );
-            return 'No';
+            if (key == numbers[j + k - 1]) {
+              return 'No';
+            }
           } else {
             console.log(
               `The key, ${key}, DOES NOT have any duplicates within the same subsquence!`
@@ -127,24 +130,24 @@ const partitionArray = (k, numbers) => {
             return 'Yes';
           }
         }
-
-        console.log(numbers);
-      } else if (cache[key] == 1) {
-        console.log(
-          `The key, ${key}, is a DISTINCT integer in the given array!`
-        );
+      } else {
+        console.log(`\nEach key is a DISTINCT integer in the given array!`);
+        console.log(cache);
+        return 'Yes';
       }
-      console.log(cache);
-      return 'Yes';
     }
+  } else {
+    console.log(
+      `The given input array has a length that is not evenly divisible by 'k'.`
+    );
   }
-  console.log(cache);
   return 'No';
 };
 
-console.log(partitionArray(2, [1, 1, 3, 4, 5, 6])); // should return 'Yes'
-// console.log(partitionArray(3, [4, 8, 8, 8, 6, 4])); // should return 'No'
-// console.log(partitionArray(2, [1, 2, 3, 1, 4, 1])); // should return 'Yes'
+console.log(partitionArray(2, [1, 2, 3, 4, 5, 6])); // should return 'Yes'
+console.log(partitionArray(3, [4, 8, 8, 8, 6])); // should return 'No'
+console.log(partitionArray(3, [4, 8, 8, 8, 6, 7])); // should return 'No'
+console.log(partitionArray(2, [1, 2, 3, 1, 4, 1])); // should return 'Yes'
 
 /*----------REFLECTING/ITERATING ON THE PLAN----------
 
