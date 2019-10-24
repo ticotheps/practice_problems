@@ -62,41 +62,79 @@
 */
 
 /*----------IMPLEMENTING THE PLAN----------*/
+// const findLargestPF = n => {
+//   let primeNums = {};
+//   const primeArray = [];
+//   let largestPrimeFactor = 0;
+
+//   for (let i = n; i > 1; i--) {
+//     primeNums[i] = true;
+//   }
+
+//   for (key in primeNums) {
+//     for (let j = 2; j <= key; j++) {
+//       if (key != j && key % j == 0) {
+//         // console.log(`${key} is divisible by ${j}!`);
+//         primeNums[key] = false;
+//       }
+//     }
+//     if (primeNums[key] == true) {
+//       primeArray.unshift(key);
+//     }
+//   }
+
+//   for (let k = 0; k < primeArray.length; k++) {
+//     if (n % primeArray[k] == 0 && primeArray[k] >= largestPrimeFactor) {
+//       // console.log(`${primeArray[k]} is a prime factor of ${n}!`);
+//       largestPrimeFactor = primeArray[k];
+//     }
+//   }
+
+//   // console.log(primeNums);
+//   // console.log(primeArray);
+//   return largestPrimeFactor;
+// };
+
 const findLargestPF = n => {
-  let primeNums = {};
-  const primeArray = [];
+  let primeFactors = {};
+  const primeFactorsArr = [];
   let largestPrimeFactor = 0;
 
   for (let i = n; i > 1; i--) {
-    primeNums[i] = true;
-  }
-
-  for (key in primeNums) {
-    for (let j = 2; j <= key; j++) {
-      if (key != j && key % j == 0) {
-        // console.log(`${key} is divisible by ${j}!`);
-        primeNums[key] = false;
-      }
-    }
-    if (primeNums[key] == true) {
-      primeArray.unshift(key);
+    if (n % i == 0) {
+      primeFactors[i] = false;
+      primeFactorsArr.push(i);
+    } else {
+      primeFactors[i] = true;
     }
   }
 
-  for (let k = 0; k < primeArray.length; k++) {
-    if (n % primeArray[k] == 0 && primeArray[k] >= largestPrimeFactor) {
-      // console.log(`${primeArray[k]} is a prime factor of ${n}!`);
-      largestPrimeFactor = primeArray[k];
-    }
-  }
+  // for (key in primeFactors) {
+  //   for (let j = 2; j <= key; j++) {
+  //     if (key != j && key % j == 0) {
+  //       // console.log(`${key} is divisible by ${j}!`);
+  //       primeFactors[key] = false;
+  //     }
+  //   }
+  //   if (primeFactors[key] == true) {
+  //     primeArray.unshift(key);
+  //   }
+  // }
 
-  console.log(primeNums);
-  console.log(primeArray);
+  // for (let k = 0; k < primeArray.length; k++) {
+  //   if (n % primeArray[k] == 0 && primeArray[k] >= largestPrimeFactor) {
+  //     // console.log(`${primeArray[k]} is a prime factor of ${n}!`);
+  //     largestPrimeFactor = primeArray[k];
+  //   }
+  // }
+
+  console.log('primeFactors = ', primeFactors);
+  console.log('primeFactorsArr', primeFactorsArr);
   return largestPrimeFactor;
 };
 
-console.log(findLargestPF(3)); // should be 3
-// console.log(findLargestPF(11)); // should be 11
+// console.log(findLargestPF(3)); // should be 3
+console.log(findLargestPF(11)); // should be 11
 // console.log(findLargestPF(20)); // should be 5
 // console.log(findLargestPF(1000)); // should be 5
 // console.log(findLargestPF(13195)); // should be 29
