@@ -109,6 +109,8 @@ const findLargestPF = n => {
     }
   }
 
+  largestPrimeFactor = primeFactorsArr[primeFactorsArr.length - 1];
+
   // for (key in primeFactors) {
   //   for (let j = 2; j <= key; j++) {
   //     if (key != j && key % j == 0) {
@@ -128,12 +130,12 @@ const findLargestPF = n => {
   //   }
   // }
 
-  console.log('primeFactors = ', primeFactors);
-  console.log('primeFactorsArr', primeFactorsArr);
+  console.log('primeFactors =', primeFactors);
+  console.log('primeFactorsArr =', primeFactorsArr);
   return largestPrimeFactor;
 };
 
-// console.log(findLargestPF(3)); // should be 3
+console.log(findLargestPF(3)); // should be 3
 console.log(findLargestPF(11)); // should be 11
 // console.log(findLargestPF(20)); // should be 5
 // console.log(findLargestPF(1000)); // should be 5
