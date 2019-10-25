@@ -33,6 +33,12 @@
 */
 
 /*----------DEVISING A PLAN----------
+OVERALL PLAN:
+(1) Find all factors of 'n' first.
+(2) Search within that list of factors for prime numbers.
+(3) Add those prime numbers to a new array in ascending order.
+(4) Return the LAST item in the array to ensure the Largest Prime Factor.
+
 (1) Create function that takes in a given input, n, which is a positive
     integer.
 
