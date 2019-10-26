@@ -68,6 +68,7 @@ OVERALL PLAN:
 */
 
 /*----------IMPLEMENTING THE PLAN----------*/
+//--------------BRUTE FORCE SOLUTION-------------
 // const findLargestPF = n => {
 //   let primeNums = {};
 //   const primeArray = [];
@@ -101,53 +102,63 @@ OVERALL PLAN:
 //   return largestPrimeFactor;
 // };
 
+//--------------IMPROVED SOLUTION-------------
 const findLargestPF = n => {
-  let primeFactors = {};
+  let primeFactorsOfN = {};
   const primeFactorsArr = [];
   let largestPrimeFactor = 0;
 
-  for (let i = 1; i < n; i++) {
+  for (let i = 1; i <= n; i++) {
     if (n % i == 0) {
-      primeFactors[i] = false;
+      primeFactorsOfN[i] = false;
     } else {
-      primeFactors[i] = true;
-      // primeFactorsArr.push(i);
+      continue;
     }
   }
 
-  largestPrimeFactor = primeFactorsArr[primeFactorsArr.length - 1];
+  for (key in primeFactorsOfN) {
+    let numOfFactors = 0;
+    // console.log('Key = ', key);
 
-  // for (key in primeFactors) {
-  //   for (let j = 2; j <= key; j++) {
-  //     if (key != j && key % j == 0) {
-  //       // console.log(`${key} is divisible by ${j}!`);
-  //       primeFactors[key] = false;
-  //     }
-  //   }
-  //   if (primeFactors[key] == true) {
-  //     primeArray.unshift(key);
-  //   }
-  // }
+    for (let j = 1; j <= key; j++) {
+      // console.log('j = ', j);
+      if (key % j == 0) {
+        numOfFactors++;
+        // console.log(`+1 to numOfFactors for ${j}!`);
+      }
+    }
 
-  // for (let k = 0; k < primeArray.length; k++) {
-  //   if (n % primeArray[k] == 0 && primeArray[k] >= largestPrimeFactor) {
-  //     // console.log(`${primeArray[k]} is a prime factor of ${n}!`);
-  //     largestPrimeFactor = primeArray[k];
-  //   }
-  // }
+    if (key == 1 || numOfFactors > 2) {
+      // console.log(`SORRY! ${key} is NOT a prime factor of ${n}!\n`);
+    } else {
+      // console.log(`${key} is a prime factor of ${n}!\n`);
+      primeFactorsOfN[key] = true;
+      primeFactorsArr.push(key);
+      largestPrimeFactor = key;
+    }
+  }
 
-  console.log('primeFactors =', primeFactors);
-  console.log('primeFactorsArr =', primeFactorsArr);
+  // console.log('\nprimeFactorsOfN =', primeFactorsOfN);
+  // console.log('primeFactorsArr =', primeFactorsArr);
   return largestPrimeFactor;
 };
 
 console.log(findLargestPF(3)); // should be 3
 console.log(findLargestPF(11)); // should be 11
 console.log(findLargestPF(20)); // should be 5
-// console.log(findLargestPF(1000)); // should be 5
-// console.log(findLargestPF(13195)); // should be 29
+console.log(findLargestPF(1000)); // should be 5
+console.log(findLargestPF(13195)); // should be 29
 
 // console.log(findLargestPF(600851475143));
 
 /*----------REFLECTING/ITERATING----------
+- BRUTE FORCE SOLUTION ANALYSIS:
+  - Runtime Complexity: O(3n) => O(n) = linear; ***# of "for" loops: 4
+  - Space Complexity: O(n) = linear
+
+  - Can you improve the RC or SC?
+    - Yes.
+
+  - How?
+    - Continue using "for" loops + a cache, but only use 3 "for" loops
  */
