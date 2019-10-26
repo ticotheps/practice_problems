@@ -69,49 +69,49 @@ OVERALL PLAN:
 
 /*----------IMPLEMENTING THE PLAN----------*/
 //--------------BRUTE FORCE SOLUTION-------------
-console.time('findLargestPFbrute');
-const findLargestPFbrute = n => {
-  let primeFactorsOfN = {};
-  const primeFactorsArr = [];
-  let largestPrimeFactor = 0;
+// console.time('findLargestPFbrute');
+// const findLargestPFbrute = n => {
+//   let primeFactorsOfN = {};
+//   const primeFactorsArr = [];
+//   let largestPrimeFactor = 0;
 
-  for (let i = n; i > 1; i--) {
-    primeFactorsOfN[i] = true;
-  }
+//   for (let i = n; i > 1; i--) {
+//     primeFactorsOfN[i] = true;
+//   }
 
-  for (key in primeFactorsOfN) {
-    for (let j = 2; j <= key; j++) {
-      if (key != j && key % j == 0) {
-        // console.log(`${key} is divisible by ${j}!`);
-        primeFactorsOfN[key] = false;
-      }
-    }
-    if (primeFactorsOfN[key] == true) {
-      primeFactorsArr.unshift(key);
-    }
-  }
+//   for (key in primeFactorsOfN) {
+//     for (let j = 2; j <= key; j++) {
+//       if (key != j && key % j == 0) {
+//         // console.log(`${key} is divisible by ${j}!`);
+//         primeFactorsOfN[key] = false;
+//       }
+//     }
+//     if (primeFactorsOfN[key] == true) {
+//       primeFactorsArr.unshift(key);
+//     }
+//   }
 
-  for (let k = 0; k < primeFactorsArr.length; k++) {
-    if (
-      n % primeFactorsArr[k] == 0 &&
-      primeFactorsArr[k] >= largestPrimeFactor
-    ) {
-      // console.log(`${primeFactorsArr[k]} is a prime factor of ${n}!`);
-      largestPrimeFactor = primeFactorsArr[k];
-    }
-  }
+//   for (let k = 0; k < primeFactorsArr.length; k++) {
+//     if (
+//       n % primeFactorsArr[k] == 0 &&
+//       primeFactorsArr[k] >= largestPrimeFactor
+//     ) {
+//       // console.log(`${primeFactorsArr[k]} is a prime factor of ${n}!`);
+//       largestPrimeFactor = primeFactorsArr[k];
+//     }
+//   }
 
-  // console.log(primeFactorsOfN);
-  // console.log(primeFactorsArr);
-  return largestPrimeFactor;
-};
-console.timeEnd('findLargestPFbrute');
+//   // console.log(primeFactorsOfN);
+//   // console.log(primeFactorsArr);
+//   return largestPrimeFactor;
+// };
+// console.timeEnd('findLargestPFbrute');
 
 //--------------IMPROVED SOLUTION-------------
 console.time('findLargestPFimproved');
 const findLargestPFimproved = n => {
   let primeFactorsOfN = {};
-  const primeFactorsArr = [];
+  // const primeFactorsArr = [];
   let largestPrimeFactor = 0;
 
   for (let i = 1; i <= n; i++) {
@@ -139,8 +139,9 @@ const findLargestPFimproved = n => {
     } else {
       // console.log(`${key} is a prime factor of ${n}!\n`);
       primeFactorsOfN[key] = true;
-      primeFactorsArr.push(key);
+      // primeFactorsArr.push(key);
       largestPrimeFactor = key;
+      console.log('LPF = ', largestPrimeFactor);
     }
   }
 
@@ -148,7 +149,6 @@ const findLargestPFimproved = n => {
   // console.log('primeFactorsArr =', primeFactorsArr);
   return largestPrimeFactor;
 };
-console.timeEnd('findLargestPFimproved');
 
 // console.log(`\nfindLargestPFbrute(3): ${findLargestPFbrute(3)}`); // should be 3
 // console.log(`findLargestPFimproved(3): ${findLargestPFimproved(3)}`); // should be 3
@@ -163,16 +163,16 @@ console.timeEnd('findLargestPFimproved');
 // console.log(`findLargestPFimproved(1000): ${findLargestPFimproved(1000)}`); // should be 5
 
 // console.log(`\nfindLargestPFbrute(13195): ${findLargestPFbrute(13195)}`); // should be 29
-// console.log(`findLargestPFimproved(13195): ${findLargestPFimproved(13195)}`); // should be 29
+console.log(`findLargestPFimproved(13195): ${findLargestPFimproved(13195)}`); // should be 29
 
-console.log(
-  `\nfindLargestPFbrute(600851475143): ${findLargestPFbrute(600851475143)}`
-); // should be
-console.log(
-  `findLargestPFimproved(600851475143): ${findLargestPFimproved(600851475143)}`
-); // should be
+// console.log(
+//   `\nfindLargestPFbrute(600851475143): ${findLargestPFbrute(600851475143)}`
+// );
+// console.log(
+//   `findLargestPFimproved(600851475143): ${findLargestPFimproved(600851475143)}`
+// );
 
-// console.log(findLargestPF(600851475143));
+console.timeEnd('findLargestPFimproved');
 
 /*----------REFLECTING/ITERATING----------
 - BRUTE FORCE SOLUTION ANALYSIS:
