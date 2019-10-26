@@ -69,41 +69,47 @@ OVERALL PLAN:
 
 /*----------IMPLEMENTING THE PLAN----------*/
 //--------------BRUTE FORCE SOLUTION-------------
-// const findLargestPF = n => {
-//   let primeNums = {};
-//   const primeArray = [];
-//   let largestPrimeFactor = 0;
+console.time('findLargestPFbrute');
+const findLargestPFbrute = n => {
+  let primeFactorsOfN = {};
+  const primeFactorsArr = [];
+  let largestPrimeFactor = 0;
 
-//   for (let i = n; i > 1; i--) {
-//     primeNums[i] = true;
-//   }
+  for (let i = n; i > 1; i--) {
+    primeFactorsOfN[i] = true;
+  }
 
-//   for (key in primeNums) {
-//     for (let j = 2; j <= key; j++) {
-//       if (key != j && key % j == 0) {
-//         // console.log(`${key} is divisible by ${j}!`);
-//         primeNums[key] = false;
-//       }
-//     }
-//     if (primeNums[key] == true) {
-//       primeArray.unshift(key);
-//     }
-//   }
+  for (key in primeFactorsOfN) {
+    for (let j = 2; j <= key; j++) {
+      if (key != j && key % j == 0) {
+        // console.log(`${key} is divisible by ${j}!`);
+        primeFactorsOfN[key] = false;
+      }
+    }
+    if (primeFactorsOfN[key] == true) {
+      primeFactorsArr.unshift(key);
+    }
+  }
 
-//   for (let k = 0; k < primeArray.length; k++) {
-//     if (n % primeArray[k] == 0 && primeArray[k] >= largestPrimeFactor) {
-//       // console.log(`${primeArray[k]} is a prime factor of ${n}!`);
-//       largestPrimeFactor = primeArray[k];
-//     }
-//   }
+  for (let k = 0; k < primeFactorsArr.length; k++) {
+    if (
+      n % primeFactorsArr[k] == 0 &&
+      primeFactorsArr[k] >= largestPrimeFactor
+    ) {
+      // console.log(`${primeFactorsArr[k]} is a prime factor of ${n}!`);
+      largestPrimeFactor = primeFactorsArr[k];
+    }
+  }
 
-//   // console.log(primeNums);
-//   // console.log(primeArray);
-//   return largestPrimeFactor;
-// };
+  // console.log(primeFactorsOfN);
+  // console.log(primeFactorsArr);
+  return largestPrimeFactor;
+};
+console.timeEnd('findLargestPFbrute');
 
 //--------------IMPROVED SOLUTION-------------
-const findLargestPF = n => {
+console.time('findLargestPFimproved');
+const findLargestPFimproved = n => {
   let primeFactorsOfN = {};
   const primeFactorsArr = [];
   let largestPrimeFactor = 0;
@@ -142,12 +148,29 @@ const findLargestPF = n => {
   // console.log('primeFactorsArr =', primeFactorsArr);
   return largestPrimeFactor;
 };
+console.timeEnd('findLargestPFimproved');
 
-console.log(findLargestPF(3)); // should be 3
-console.log(findLargestPF(11)); // should be 11
-console.log(findLargestPF(20)); // should be 5
-console.log(findLargestPF(1000)); // should be 5
-console.log(findLargestPF(13195)); // should be 29
+// console.log(`\nfindLargestPFbrute(3): ${findLargestPFbrute(3)}`); // should be 3
+// console.log(`findLargestPFimproved(3): ${findLargestPFimproved(3)}`); // should be 3
+
+// console.log(`\nfindLargestPFbrute(11): ${findLargestPFbrute(11)}`); // should be 11
+// console.log(`findLargestPFimproved(11): ${findLargestPFimproved(11)}`); // should be 11
+
+// console.log(`\nfindLargestPFbrute(20): ${findLargestPFbrute(20)}`); // should be 5
+// console.log(`findLargestPFimproved(20): ${findLargestPFimproved(20)}`); // should be 5
+
+// console.log(`\nfindLargestPFbrute(1000): ${findLargestPFbrute(1000)}`); // should be 5
+// console.log(`findLargestPFimproved(1000): ${findLargestPFimproved(1000)}`); // should be 5
+
+// console.log(`\nfindLargestPFbrute(13195): ${findLargestPFbrute(13195)}`); // should be 29
+// console.log(`findLargestPFimproved(13195): ${findLargestPFimproved(13195)}`); // should be 29
+
+console.log(
+  `\nfindLargestPFbrute(600851475143): ${findLargestPFbrute(600851475143)}`
+); // should be
+console.log(
+  `findLargestPFimproved(600851475143): ${findLargestPFimproved(600851475143)}`
+); // should be
 
 // console.log(findLargestPF(600851475143));
 
@@ -161,4 +184,10 @@ console.log(findLargestPF(13195)); // should be 29
 
   - How?
     - Continue using "for" loops + a cache, but only use 3 "for" loops
+  
+  - Run Time Results?
+    - findLargestPFbrute(3): 0.087ms
+    - findLargestPFimproved(3): 0.005ms
+  
+  - Success!
  */
