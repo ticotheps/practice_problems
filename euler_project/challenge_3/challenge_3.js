@@ -110,59 +110,47 @@ OVERALL PLAN:
 //--------------IMPROVED SOLUTION-------------
 console.time('findLargestPFimproved');
 const findLargestPFimproved = n => {
-  let primeFactorsOfN = {};
-  // const primeFactorsArr = [];
-  let largestPrimeFactor = 0;
+  const primeNums = {};
+  let primeFactors = [];
 
-  for (let i = 1; i <= n; i++) {
-    if (n % i == 0) {
-      primeFactorsOfN[i] = false;
-    } else {
-      continue;
-    }
-  }
-
-  for (key in primeFactorsOfN) {
-    let numOfFactors = 0;
-    console.log('Key = ', key);
-
-    for (let j = 1; j <= key; j++) {
-      // console.log('j = ', j);
-      if (key % j == 0) {
-        numOfFactors++;
-        // console.log(`+1 to numOfFactors for ${j}!`);
+  for (let i = 2; i <= n; i++) {
+    // console.log('i = ', i);
+    let factorCount = 0;
+    for (let j = 1; j <= i; j++) {
+      if (factorCount <= 2) {
+        if (i % j == 0) {
+          factorCount++;
+        }
+        // console.log(`factorCount = ${factorCount}`);
       }
     }
-
-    if (key != 1 && numOfFactors <= 2) {
-      primeFactorsOfN[key] = true;
-      // primeFactorsArr.push(key);
-      largestPrimeFactor = key;
+    if (factorCount <= 2) {
+      primeNums[i] = true;
     }
-
-    // if (key == 1 || numOfFactors > 2) {
-    //   // console.log(`SORRY! ${key} is NOT a prime factor of ${n}!\n`);
-    // } else {
-    //   // console.log(`${key} is a prime factor of ${n}!\n`);
-    //   primeFactorsOfN[key] = true;
-    //   // primeFactorsArr.push(key);
-    //   largestPrimeFactor = key;
-    // }
   }
+  console.log(primeNums);
 
-  // console.log('\nprimeFactorsOfN =', primeFactorsOfN);
-  // console.log('primeFactorsArr =', primeFactorsArr);
+  for (let k = n; k > 0; k--) {
+    if (n % k == 0) {
+      if (primeNums[k] == true) {
+        // console.log(`Prime factor at ${k}!`);
+        primeFactors.push(k);
+      }
+    }
+  }
+  console.log(primeFactors);
+  const largestPrimeFactor = primeFactors[0];
   return largestPrimeFactor;
 };
 
 // console.log(`\nfindLargestPFbrute(3): ${findLargestPFbrute(3)}`); // should be 3
-// console.log(`findLargestPFimproved(3): ${findLargestPFimproved(3)}`); // should be 3
+console.log(`findLargestPFimproved(3): ${findLargestPFimproved(3)}`); // should be 3
 
 // console.log(`\nfindLargestPFbrute(11): ${findLargestPFbrute(11)}`); // should be 11
-// console.log(`findLargestPFimproved(11): ${findLargestPFimproved(11)}`); // should be 11
+console.log(`findLargestPFimproved(11): ${findLargestPFimproved(11)}`); // should be 11
 
 // console.log(`\nfindLargestPFbrute(20): ${findLargestPFbrute(20)}`); // should be 5
-// console.log(`findLargestPFimproved(20): ${findLargestPFimproved(20)}`); // should be 5
+console.log(`findLargestPFimproved(20): ${findLargestPFimproved(20)}`); // should be 5
 
 // console.log(`\nfindLargestPFbrute(1000): ${findLargestPFbrute(1000)}`); // should be 5
 // console.log(`findLargestPFimproved(1000): ${findLargestPFimproved(1000)}`); // should be 5
@@ -179,9 +167,7 @@ const findLargestPFimproved = n => {
 
 //---------TESTING-------------
 
-// console.log(
-//   `findLargestPFimproved(600851): ${findLargestPFimproved(600851)}`
-// );
+// console.log(`findLargestPFimproved(600851): ${findLargestPFimproved(600851)}`);
 // console.log(
 //   `findLargestPFimproved(6008514): ${findLargestPFimproved(6008514)}`
 // );
@@ -197,9 +183,9 @@ const findLargestPFimproved = n => {
 // console.log(
 //   `findLargestPFimproved(60085147514): ${findLargestPFimproved(60085147514)}`
 // );
-console.log(
-  `findLargestPFimproved(600851475143): ${findLargestPFimproved(600851475143)}`
-);
+// console.log(
+//   `findLargestPFimproved(600851475143): ${findLargestPFimproved(600851475143)}`
+// );
 
 console.timeEnd('findLargestPFimproved');
 
