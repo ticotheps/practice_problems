@@ -182,15 +182,15 @@ const findLargestPFimproved = n => {
 console.log(
   `findLargestPFimproved(600851475143): ${findLargestPFimproved(600851)}`
 );
-console.log(
-  `findLargestPFimproved(600851475143): ${findLargestPFimproved(6008514)}`
-);
-console.log(
-  `findLargestPFimproved(600851475143): ${findLargestPFimproved(60085147)}`
-);
-console.log(
-  `findLargestPFimproved(600851475143): ${findLargestPFimproved(600851475)}`
-);
+// console.log(
+//   `findLargestPFimproved(600851475143): ${findLargestPFimproved(6008514)}`
+// );
+// console.log(
+//   `findLargestPFimproved(600851475143): ${findLargestPFimproved(60085147)}`
+// );
+// console.log(
+//   `findLargestPFimproved(600851475143): ${findLargestPFimproved(600851475)}`
+// );
 
 console.timeEnd('findLargestPFimproved');
 
