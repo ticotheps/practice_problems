@@ -109,8 +109,10 @@ OVERALL PLAN:
 
 //--------------IMPROVED SOLUTION-------------
 console.time('findLargestPFimproved');
+
+let primeFactorsOfN = {};
 const findLargestPFimproved = n => {
-  let primeFactorsOfN = {};
+  // let primeFactorsOfN = {};
   // const primeFactorsArr = [];
   let largestPrimeFactor = 0;
 
