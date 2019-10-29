@@ -156,30 +156,23 @@ const findLargestPFimproved = n => {
 };
 
 // console.log(`\nfindLargestPFbrute(3): ${findLargestPFbrute(3)}`); // should be 3
-// console.log(`findLargestPFimproved(3): ${findLargestPFimproved(3)}`); // should be 3
+console.log(`findLargestPFimproved(3): ${findLargestPFimproved(3)}`); // should be 3
 
 // console.log(`\nfindLargestPFbrute(11): ${findLargestPFbrute(11)}`); // should be 11
-// console.log(`findLargestPFimproved(11): ${findLargestPFimproved(11)}`); // should be 11
+console.log(`findLargestPFimproved(11): ${findLargestPFimproved(11)}`); // should be 11
 
 // console.log(`\nfindLargestPFbrute(20): ${findLargestPFbrute(20)}`); // should be 5
-// console.log(`findLargestPFimproved(20): ${findLargestPFimproved(20)}`); // should be 5
+console.log(`findLargestPFimproved(20): ${findLargestPFimproved(20)}`); // should be 5
 
 // console.log(`\nfindLargestPFbrute(1000): ${findLargestPFbrute(1000)}`); // should be 5
-// console.log(`findLargestPFimproved(1000): ${findLargestPFimproved(1000)}`); // should be 5
+console.log(`findLargestPFimproved(1000): ${findLargestPFimproved(1000)}`); // should be 5
 
 // console.log(`\nfindLargestPFbrute(13195): ${findLargestPFbrute(13195)}`); // should be 29
-// console.log(`findLargestPFimproved(13195): ${findLargestPFimproved(13195)}`); // should be 29
+console.log(`findLargestPFimproved(13195): ${findLargestPFimproved(13195)}`); // should be 29
 
-// console.log(
-//   `\nfindLargestPFbrute(600851475143): ${findLargestPFbrute(600851475143)}`
-// );
-// console.log(
-//   `findLargestPFimproved(600851475143): ${findLargestPFimproved(600851475143)}`
-// );
+//---------TESTING TOWARDS ACTUAL N-------------
 
-//---------TESTING-------------
-
-console.log(`findLargestPFimproved(600851): ${findLargestPFimproved(600851)}`);
+// console.log(`findLargestPFimproved(600851): ${findLargestPFimproved(600851)}`);
 // console.log(
 //   `findLargestPFimproved(6008514): ${findLargestPFimproved(6008514)}`
 // );
