@@ -108,9 +108,9 @@ OVERALL PLAN:
 // console.timeEnd('findLargestPFbrute');
 
 //--------------IMPROVED SOLUTION-------------
-console.time('findLargestPF');
+console.time('findLargestPFbest');
 
-const findLargestPF = n => {
+const findLargestPFbest = n => {
   var divisor = 2; // smallest prime number that is not 1
   var nRemaining = n;
 
@@ -128,32 +128,41 @@ const findLargestPF = n => {
   return divisor;
 };
 
-// console.log(`findLargestPF(12): ${findLargestPF(12)}`); // should be 3
+// console.log(`findLargestPFbest(12): ${findLargestPFbest(12)}`); // should be 3
 
-// console.log(`findLargestPF(20): ${findLargestPF(20)}`); // should be 5
+// console.log(`findLargestPFbest(20): ${findLargestPFbest(20)}`); // should be 5
 
-// console.log(`findLargestPF(1000): ${findLargestPF(1000)}`); // should be 5
+// console.log(`findLargestPFbest(1000): ${findLargestPFbest(1000)}`); // should be 5
 
-// console.log(`findLargestPF(13195): ${findLargestPF(13195)}`); // should be 29
+// console.log(`findLargestPFbest(13195): ${findLargestPFbest(13195)}`); // should be 29
 
-console.log(`findLargestPF(600851475143) = ${findLargestPF(600851475143)}`);
+console.log(
+  `findLargestPFbest(600851475143) = ${findLargestPFbest(600851475143)}`
+); // should be 6857
 
-console.timeEnd('findLargestPF');
+console.timeEnd('findLargestPFbest');
 
 /*----------REFLECTING/ITERATING----------
 - BRUTE FORCE SOLUTION ANALYSIS:
-  - Runtime Complexity: O(3n) => O(n) = linear; ***# of "for" loops: 4
+  - Runtime Complexity: O(3n) => O(n) = linear; *** # of "for" loops: 4
   - Space Complexity: O(n) = linear
 
   - Can you improve the RC or SC?
-    - Yes.
+    - Yes. Both, RC and SC, can be improved.
 
   - How?
-    - Continue using "for" loops + a cache, but only use 3 "for" loops
+    - Using a single "while" loop with some global variables instead of 
+      3 "for" loops like a dum-dum.
   
   - Run Time Results?
-    - findLargestPFbrute(3): 0.087ms
-    - findLargestPFimproved(3): 0.005ms
+    - findLargestPFbest(600851475143): 7.042ms
   
+  - New Runtime Complexity: O(n) => linear
+  
+  - New Space Complexity: O(1) => constant
+
   - Success!
+
+  - What did you learn from this solution?
+    - That I like to overcomplicate things. 
  */
