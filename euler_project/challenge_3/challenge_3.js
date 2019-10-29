@@ -172,22 +172,28 @@ console.log(`findLargestPFimproved(13195): ${findLargestPFimproved(13195)}`); //
 
 //---------TESTING TOWARDS ACTUAL N-------------
 
-// console.log(`findLargestPFimproved(600851): ${findLargestPFimproved(600851)}`);
-// console.log(
-//   `findLargestPFimproved(6008514): ${findLargestPFimproved(6008514)}`
-// );
-// console.log(
-//   `findLargestPFimproved(60085147): ${findLargestPFimproved(60085147)}`
-// );
-// console.log(
-//   `findLargestPFimproved(600851475): ${findLargestPFimproved(600851475)}`
-// );
+console.log(`findLargestPFimproved(600851): ${findLargestPFimproved(600851)}`);
+
+console.log(
+  `findLargestPFimproved(6008514): ${findLargestPFimproved(6008514)}`
+);
+
+console.log(
+  `findLargestPFimproved(60085147): ${findLargestPFimproved(60085147)}`
+);
+
+console.log(
+  `findLargestPFimproved(600851475): ${findLargestPFimproved(600851475)}`
+);
+
 // console.log(
 //   `findLargestPFimproved(6008514751): ${findLargestPFimproved(6008514751)}`
 // );
+
 // console.log(
 //   `findLargestPFimproved(60085147514): ${findLargestPFimproved(60085147514)}`
 // );
+
 // console.log(
 //   `findLargestPFimproved(600851475143): ${findLargestPFimproved(600851475143)}`
 // );
