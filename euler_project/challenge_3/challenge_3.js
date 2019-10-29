@@ -108,99 +108,61 @@ OVERALL PLAN:
 // console.timeEnd('findLargestPFbrute');
 
 //--------------IMPROVED SOLUTION-------------
-console.time('findLargestPFimproved');
+console.time('findLPF');
 
-let primeFactorsOfN = {};
-const findLargestPFimproved = n => {
-  // let primeFactorsOfN = {};
-  // const primeFactorsArr = [];
-  let largestPrimeFactor = 0;
+const findLPF = n => {
+  let LPF = n;
+  console.log('n = ', n);
 
-  for (let i = 1; i <= n; i++) {
-    if (n % i == 0) {
-      primeFactorsOfN[i] = false;
+  let quotient;
+  for (divisor = 2; divisor < quotient; divisor++) {
+    if (n % divisor == 0) {
+      quotient = n / divisor;
+      console.log(quotient);
     } else {
-      continue;
     }
   }
 
-  for (key in primeFactorsOfN) {
-    let numOfFactors = 0;
-    console.log('Key = ', key);
-
-    for (let j = 1; j <= key; j++) {
-      // console.log('j = ', j);
-      if (key % j == 0) {
-        numOfFactors++;
-        // console.log(`+1 to numOfFactors for ${j}!`);
-      }
-    }
-
-    if (key != 1 && numOfFactors <= 2) {
-      primeFactorsOfN[key] = true;
-      // primeFactorsArr.push(key);
-      largestPrimeFactor = key;
-    }
-
-    // if (key == 1 || numOfFactors > 2) {
-    //   // console.log(`SORRY! ${key} is NOT a prime factor of ${n}!\n`);
-    // } else {
-    //   // console.log(`${key} is a prime factor of ${n}!\n`);
-    //   primeFactorsOfN[key] = true;
-    //   // primeFactorsArr.push(key);
-    //   largestPrimeFactor = key;
-    // }
-  }
-
-  // console.log('\nprimeFactorsOfN =', primeFactorsOfN);
-  // console.log('primeFactorsArr =', primeFactorsArr);
-  return largestPrimeFactor;
+  return LPF;
 };
 
-// console.log(`\nfindLargestPFbrute(3): ${findLargestPFbrute(3)}`); // should be 3
-console.log(`findLargestPFimproved(3): ${findLargestPFimproved(3)}`); // should be 3
+console.log(`findLPF(12): ${findLPF(12)}`); // should be 3
 
-// console.log(`\nfindLargestPFbrute(11): ${findLargestPFbrute(11)}`); // should be 11
-console.log(`findLargestPFimproved(11): ${findLargestPFimproved(11)}`); // should be 11
+// console.log(`findLPF(20): ${findLPF(20)}`); // should be 5
 
-// console.log(`\nfindLargestPFbrute(20): ${findLargestPFbrute(20)}`); // should be 5
-console.log(`findLargestPFimproved(20): ${findLargestPFimproved(20)}`); // should be 5
+// console.log(`findLPF(1000): ${findLPF(1000)}`); // should be 5
 
-// console.log(`\nfindLargestPFbrute(1000): ${findLargestPFbrute(1000)}`); // should be 5
-console.log(`findLargestPFimproved(1000): ${findLargestPFimproved(1000)}`); // should be 5
-
-// console.log(`\nfindLargestPFbrute(13195): ${findLargestPFbrute(13195)}`); // should be 29
-console.log(`findLargestPFimproved(13195): ${findLargestPFimproved(13195)}`); // should be 29
+// console.log(`findLPF(13195): ${findLPF(13195)}`); // should be 29
 
 //---------TESTING TOWARDS ACTUAL N-------------
 
-console.log(`findLargestPFimproved(600851): ${findLargestPFimproved(600851)}`);
-
-console.log(
-  `findLargestPFimproved(6008514): ${findLargestPFimproved(6008514)}`
-);
-
-console.log(
-  `findLargestPFimproved(60085147): ${findLargestPFimproved(60085147)}`
-);
-
-console.log(
-  `findLargestPFimproved(600851475): ${findLargestPFimproved(600851475)}`
-);
+// console.log(`findLPF(600851): ${findLPF(600851)}`);
 
 // console.log(
-//   `findLargestPFimproved(6008514751): ${findLargestPFimproved(6008514751)}`
+//   `findLPF(6008514): ${findLPF(6008514)}`
 // );
 
 // console.log(
-//   `findLargestPFimproved(60085147514): ${findLargestPFimproved(60085147514)}`
+//   `findLPF(60085147): ${findLPF(60085147)}`
 // );
 
 // console.log(
-//   `findLargestPFimproved(600851475143): ${findLargestPFimproved(600851475143)}`
+//   `findLPF(600851475): ${findLPF(600851475)}`
 // );
 
-console.timeEnd('findLargestPFimproved');
+// console.log(
+//   `findLPF(6008514751): ${findLPF(6008514751)}`
+// );
+
+// console.log(
+//   `findLPF(60085147514): ${findLPF(60085147514)}`
+// );
+
+// console.log(
+//   `findLPF(600851475143): ${findLPF(600851475143)}`
+// );
+
+console.timeEnd('findLPF');
 
 /*----------REFLECTING/ITERATING----------
 - BRUTE FORCE SOLUTION ANALYSIS:
@@ -215,7 +177,7 @@ console.timeEnd('findLargestPFimproved');
   
   - Run Time Results?
     - findLargestPFbrute(3): 0.087ms
-    - findLargestPFimproved(3): 0.005ms
+    - findLPF(3): 0.005ms
   
   - Success!
  */
