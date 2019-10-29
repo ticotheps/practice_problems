@@ -108,61 +108,37 @@ OVERALL PLAN:
 // console.timeEnd('findLargestPFbrute');
 
 //--------------IMPROVED SOLUTION-------------
-console.time('findLPF');
+console.time('findLargestPF');
 
-const findLPF = n => {
-  let LPF = n;
-  console.log('n = ', n);
+const findLargestPF = n => {
+  var divisor = 2; // smallest prime number that is not 1
+  var nRemaining = n;
 
-  let quotient;
-  for (divisor = 2; divisor < quotient; divisor++) {
-    if (n % divisor == 0) {
-      quotient = n / divisor;
-      console.log(quotient);
+  while (nRemaining > 1) {
+    // console.log('\nnRemaining =', nRemaining);
+    // console.log('divisor = ', divisor);
+
+    if (nRemaining % divisor == 0) {
+      nRemaining /= divisor;
     } else {
+      divisor++;
     }
+    // console.log('nRemaining =', nRemaining, '\n');
   }
-
-  return LPF;
+  return divisor;
 };
 
-console.log(`findLPF(12): ${findLPF(12)}`); // should be 3
+// console.log(`findLargestPF(12): ${findLargestPF(12)}`); // should be 3
 
-// console.log(`findLPF(20): ${findLPF(20)}`); // should be 5
+// console.log(`findLargestPF(20): ${findLargestPF(20)}`); // should be 5
 
-// console.log(`findLPF(1000): ${findLPF(1000)}`); // should be 5
+// console.log(`findLargestPF(1000): ${findLargestPF(1000)}`); // should be 5
 
-// console.log(`findLPF(13195): ${findLPF(13195)}`); // should be 29
+// console.log(`findLargestPF(13195): ${findLargestPF(13195)}`); // should be 29
 
-//---------TESTING TOWARDS ACTUAL N-------------
+console.log(`findLargestPF(600851475143) = ${findLargestPF(600851475143)}`);
 
-// console.log(`findLPF(600851): ${findLPF(600851)}`);
-
-// console.log(
-//   `findLPF(6008514): ${findLPF(6008514)}`
-// );
-
-// console.log(
-//   `findLPF(60085147): ${findLPF(60085147)}`
-// );
-
-// console.log(
-//   `findLPF(600851475): ${findLPF(600851475)}`
-// );
-
-// console.log(
-//   `findLPF(6008514751): ${findLPF(6008514751)}`
-// );
-
-// console.log(
-//   `findLPF(60085147514): ${findLPF(60085147514)}`
-// );
-
-// console.log(
-//   `findLPF(600851475143): ${findLPF(600851475143)}`
-// );
-
-console.timeEnd('findLPF');
+console.timeEnd('findLargestPF');
 
 /*----------REFLECTING/ITERATING----------
 - BRUTE FORCE SOLUTION ANALYSIS:
@@ -177,7 +153,7 @@ console.timeEnd('findLPF');
   
   - Run Time Results?
     - findLargestPFbrute(3): 0.087ms
-    - findLPF(3): 0.005ms
+    - findLargestPF(3): 0.005ms
   
   - Success!
  */
