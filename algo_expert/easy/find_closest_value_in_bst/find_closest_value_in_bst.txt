@@ -21,3 +21,19 @@ Write a function that finds the closest value to that target value
 contained in the BST.
 
 Assume that there will only be one closest value.
+
+Sample Input:
+
+                          10          , 12
+                         /  \
+                        /    \
+                       /      \
+                      5        15
+                     / \      /  \   
+                    2   5    13   22
+                   /          \
+                  1            14
+
+Sample Output: 13
+
+                    
