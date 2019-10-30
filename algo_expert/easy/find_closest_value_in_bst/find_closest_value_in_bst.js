@@ -72,8 +72,8 @@
 class Node {
   constructor(value) {
     this.value = value;
-    this.left = left;
-    this.right = right;
+    this.left = null;
+    this.right = null;
   }
 }
 
@@ -81,9 +81,42 @@ class BST {
   constructor() {
     this.root = null;
   }
+
+  insert(value) {
+    let newNode = new Node(value);
+
+    if (this.root === null) {
+      this.root = newNode;
+    } else {
+      this.insertNode(this.root, newNode);
+    }
+  }
+
+  insertNode(node, newNode) {
+    if (newNode.value < node.value) {
+      if (node.left === null) {
+        // if 'left' is vacant, insert node into value of 'left'
+        node.left = newNode;
+      } else {
+        /*  if 'left' is NOT vacant, call 'insertNode()' until you find a
+            null value where the newNode can be inserted. */
+        this.insertNode(node.left, newNode);
+      }
+    } else if (newNode.value > node.value) {
+      if (node.right === null) {
+        // if 'right' is vacant, insert node into value of 'right'
+        node.right = newNode;
+      } else {
+        /*  if 'right' is NOT vacant, call 'insertNode()' until you find a
+            null value where the newNode can be inserted. */
+        this.insertNode(node.right, newNode);
+      }
+    }
+  }
 }
 
 const bst = new BST();
+bst.insert(12);
 
 console.log(bst);
 
