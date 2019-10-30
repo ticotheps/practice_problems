@@ -5,12 +5,12 @@
     - "BST node":
       - Each node has 3 properties associated with it:
         (1) "value": integer value
-        (2) "left": another BST node that must have a value that is LESS
-            THAN the value of the current BST node.
-        (3) "right": another BST node that must have a value that is
-            GREATER THAN OR EQUAL TO the value of the current BST node.
+        (2) "left": a child BST node that must have a value that is LESS
+            THAN the value of the parent BST node.
+        (3) "right": a child BST node that must have a value that is
+            GREATER THAN OR EQUAL TO the value of the parent BST node.
       - Each BST node must have either: 2, 1, or 0 children nodes that
-        are BST nodes.
+        are also BST nodes.
         - Examples:
           - BST node #1:
             - "value": 12
@@ -39,8 +39,18 @@
   - Constraints:
     - Assume that there will only be ONE closest value.
 
+  - Clarifying Questions:
+    - What sort of data structure will hold the nodes of a BST?
+      - (Had to Google this)
+      - 
+
 
 /*---------------DEVISING A PLAN---------------
+  - BRUTE FORCE SOLUTION:
+    (1) Create a function called 'findClosestValueInBst()' that takes in
+        two arguments, 'tree' and 'target'.
+    
+    (2)     
  */
 
 /*------------IMPLEMENTING THE PLAN------------
