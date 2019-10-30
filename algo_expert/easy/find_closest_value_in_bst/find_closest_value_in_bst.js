@@ -68,7 +68,9 @@
 
 /*------------IMPLEMENTING THE PLAN------------
  */
+var assert = require('assert');
 
+// Declares a class that allows for the creation of new 'Node' instances
 class Node {
   constructor(value) {
     this.value = value;
@@ -77,15 +79,17 @@ class Node {
   }
 }
 
-class BST {
+class BinarySearchTree {
   constructor() {
     this.root = null;
   }
 
+  // adds new nodes to the BST
   insert(value) {
-    let newNode = new Node(value);
+    var newNode = new Node(value);
 
-    if (this.root === null) {
+    // if a root node doesn't exist, add it
+    if (!this.root) {
       this.root = newNode;
     } else {
       this.insertNode(this.root, newNode);
@@ -115,10 +119,45 @@ class BST {
   }
 }
 
-const bst = new BST();
-bst.insert(12);
-
+const bst = new BinarySearchTree();
+bst.insert(10);
+bst.insert(5);
+bst.insert(15);
+bst.insert(2);
+bst.insert(6);
+bst.insert(13);
+bst.insert(22);
+bst.insert(1);
+bst.insert(14);
 console.log(bst);
+
+// TESTS
+assert.equal(10, bst.root.value, 'the value of root is 10');
+
+assert.equal(5, bst.root.left.value, 'the value of root.left is 5');
+assert.equal(2, bst.root.left.left.value, 'the value of root.left.left is 2');
+assert.equal(6, bst.root.left.right.value, 'the value of root.left.right is 6');
+assert.equal(
+  1,
+  bst.root.left.left.left.value,
+  'the value of root.left.left.left is 1'
+);
+assert.equal(15, bst.root.right.value, 'the value of root.right is 15');
+assert.equal(
+  13,
+  bst.root.right.left.value,
+  'the value of root.right.left is 13'
+);
+assert.equal(
+  22,
+  bst.root.right.right.value,
+  'the value of root.right.right is 22'
+);
+assert.equal(
+  14,
+  bst.root.right.left.right.value,
+  'the value of root.right.left.right is 14'
+);
 
 /*-------------REFLECTING/ITERATING------------
  */
