@@ -1,0 +1,23 @@
+Find Closest Value in BST (Binary Search Tree)
+
+You are given a BST data structure consisting of BST nodes.
+
+Each node has an integer value stored in a property called "value" and
+two children nodes stored in properties called "left" and "right,"
+respectively.
+
+A node is said to be a BST node if and ONLY IF it satisfies the BST
+property: 
+  - its value is strictly GREATER THAN the values of every node to
+    its left.
+  - its value is LESS THAN OR EQUAL TO the values of every node to
+    its right. 
+  - both of its children nodes are either BST nodes themselves
+    or None (null) values.
+
+You are also given a target integer value.
+
+Write a function that finds the closest value to that target value 
+contained in the BST.
+
+Assume that there will only be one closest value.
