@@ -135,7 +135,7 @@ bst.insert(22);
 bst.insert(1);
 bst.insert(14);
 
-findClosestValueInBst(bst, 13);
+console.log(findClosestValueInBst(bst, 13));
 
 // TESTS
 assert.equal(10, bst.root.value, 'the value of root is 10');
