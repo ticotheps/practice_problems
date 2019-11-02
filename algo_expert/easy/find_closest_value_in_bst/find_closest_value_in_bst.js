@@ -119,6 +119,11 @@ class BinarySearchTree {
   }
 }
 
+const findClosestValueInBst = (tree, target) => {
+  console.log(tree);
+  return target;
+};
+
 const bst = new BinarySearchTree();
 bst.insert(10);
 bst.insert(5);
@@ -129,7 +134,8 @@ bst.insert(13);
 bst.insert(22);
 bst.insert(1);
 bst.insert(14);
-console.log(bst);
+
+findClosestValueInBst(bst, 13);
 
 // TESTS
 assert.equal(10, bst.root.value, 'the value of root is 10');
