@@ -66,6 +66,15 @@
     (5) Initialize a 'closest' variable that will contain the 'value' of
         the a traversed node that currently contains the closest value to
         the 'target' input.
+    
+    (6) Traverse through the BST and compare the absolute value of the 
+        (currentNodeValue - target) with the absolute value of 
+        (closest - target).
+
+    (7) Set the value of 'closest' equal to the value of whichever 
+        absolute value is the smallest.
+
+    (8)
  */
 
 /*------------IMPLEMENTING THE PLAN------------
