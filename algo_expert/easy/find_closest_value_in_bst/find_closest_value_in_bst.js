@@ -63,7 +63,9 @@
     (4) Create a function called 'findClosestValueInBst()' that takes in
         two arguments, 'tree' and 'target'.
     
-    (5)     
+    (5) Initialize a 'closest' variable that will contain the 'value' of
+        the a traversed node that currently contains the closest value to
+        the 'target' input.
  */
 
 /*------------IMPLEMENTING THE PLAN------------
