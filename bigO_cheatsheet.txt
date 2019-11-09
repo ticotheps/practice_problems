@@ -1,0 +1,4 @@
+Big O Cheat Sheet:
+
+- Big O Notations:
+  - O(1) Constant => No Loops
