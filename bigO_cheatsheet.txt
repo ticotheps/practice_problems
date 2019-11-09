@@ -1,3 +1,10 @@
+Data Structures = ways to store data
+Algorithms = ways to use data structures to write programs
+
+Data Structures + Algorithms = Programs
+
+------------------------------------------------------------
+
 Big O Cheat Sheet:
 
 - Big O Notations:
@@ -18,8 +25,9 @@ Big O Cheat Sheet:
   
   - O(n!) FACTORIAL => you are adding a loop for every element.
 
-  ***Iterating through half a collection is still O(n)
-  ***Two separate collections: O(a + b)
+  ****Iterating through half a collection is still O(n) because 
+      O(n/2) => O(n)
+  ****Two separate collections: O(a + b)
 
 - What can cause time in a function?
   - Operations (+, -, *, /)
@@ -32,6 +40,6 @@ Big O Cheat Sheet:
   - Rule #2: Remove constants
   - Rule #3: Different inputs should have different variables. O(a + b). 
     A and B arrays nested would be O(a*b).
-    - + for steps in order
-    - * for nested steps
+    - Addition for steps in order
+    - Multiplication for nested steps
   - Rule #4: Drop non-dominant terms
