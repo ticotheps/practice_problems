@@ -1,0 +1,15 @@
+- The Most Commonly Asked About Data Structures In Interviews:
+  - Arrays
+  - Stacks
+  - Queues
+  - Linked Lists
+  - Trees
+  - Tries
+  - Graphs
+  - Hash Tables
+
+- The Most Commonly Asked About Algorithms In Interviews:
+  - Sorting
+  - Dynamic Programming
+  - BFS + DFS (Searching)
+  - Recursion
