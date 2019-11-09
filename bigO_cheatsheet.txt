@@ -30,36 +30,40 @@ Big O Cheat Sheet:
       O(n/2) => O(n)
   ****Two separate collections: O(a + b)
 
-- What can cause time complexity in a function?
+- What causes time complexity in a function?
   - Operations (+, -, *, /)
   - Comparisons (<, >, ==) 
   - Looping (for, while)
   - Outside function call (function())
-
-- Big O Rule Book
-  - Rule #1: Always calculate worst case
-  - Rule #2: Remove constants
-  - Rule #3: Different inputs should have different variables. O(a + b). 
-    A and B arrays nested would be O(a*b).
-    - Addition for steps in order
-    - Multiplication for nested steps
-  - Rule #4: Drop non-dominant terms
-
-  ------------------------------------------------------------
-
-- 3 Pillars of Programming
-
-  1) Readable
-  2) Memory - Space Complexity
-    a) Heap - where we store variables
-    b) Stack - where we keep track of our function calls
-  3) Speed - Time Complexity
-
-  ------------------------------------------------------------
 
 - What causes space complexity?
   - Variables
   - Data Structures
   - Function calls
   - Allocations
+
+------------------------------------------------------------
+
+- Big O Rule Book
+
+  - Rule #1: Always calculate worst case
+
+  - Rule #2: Remove constants
+
+  - Rule #3: Different inputs should have different variables. O(a + b). 
+    A and B arrays nested would be O(a*b).
+    - Addition for steps in order
+    - Multiplication for nested steps
+
+  - Rule #4: Drop non-dominant terms
+
+------------------------------------------------------------
+
+- 3 Pillars of Good Code
+
+  1) Readable
+  2) Memory Efficient - Space Complexity
+    a) Heap - where we store variables
+    b) Stack - where we keep track of our function calls
+  3) Time Efficient - Time Complexity
 
