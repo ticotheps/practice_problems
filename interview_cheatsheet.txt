@@ -1,0 +1,14 @@
+- The 3 Pillars of Good Code:
+  (1) Readable
+  (2) Time Complexity
+  (3) Space Complexity
+
+- What skills are interviewers looking for?
+  - Analytic Skills: How can you think through problems and analyze 
+    things?
+  - Coding Skills: Do you code well? Is your code clean, simple, 
+    organized, and readable?
+  - Technical Knowledge: Do you know the fundamentals of the job you're
+    applying for?
+  - Communication Skills: Does your personality match the companies' 
+    culture? 
