@@ -23,13 +23,14 @@ Big O Cheat Sheet:
   - O(2^N) EXPONENTIAL => recursive algorithms that solve a problem of
     size N.
   
-  - O(n!) FACTORIAL => you are adding a loop for every element.
+  - O(n!) FACTORIAL => you are adding a loop for every element (not
+    encountered very often).
 
   ****Iterating through half a collection is still O(n) because 
       O(n/2) => O(n)
   ****Two separate collections: O(a + b)
 
-- What can cause time in a function?
+- What can cause time complexity in a function?
   - Operations (+, -, *, /)
   - Comparisons (<, >, ==) 
   - Looping (for, while)
@@ -43,3 +44,22 @@ Big O Cheat Sheet:
     - Addition for steps in order
     - Multiplication for nested steps
   - Rule #4: Drop non-dominant terms
+
+  ------------------------------------------------------------
+
+- 3 Pillars of Programming
+
+  1) Readable
+  2) Memory - Space Complexity
+    a) Heap - where we store variables
+    b) Stack - where we keep track of our function calls
+  3) Speed - Time Complexity
+
+  ------------------------------------------------------------
+
+- What causes space complexity?
+  - Variables
+  - Data Structures
+  - Function calls
+  - Allocations
+
