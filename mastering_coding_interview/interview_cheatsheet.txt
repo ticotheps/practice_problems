@@ -1,7 +1,7 @@
 - The 3 Pillars of Good Code:
   (1) Readable
-  (2) Time Complexity
-  (3) Space Complexity
+  (2) Good Time Complexity
+  (3) Good Space Complexity
 
 - What skills are interviewers looking for?
   - Analytic Skills: How can you think through problems and analyze 
@@ -90,3 +90,16 @@
       processing of the data, only read certain chunks of the input
       from disk into memory, and then write the output back to disk and 
       combine them later.
+
+- Good Code Checklist:
+  [ ] It works
+  [ ] Good use of data structures
+  [ ] D.R.Y. (Don't Repeat Yourself) Code
+  [ ] Modular - makes code more readable, maintainable, & testable
+  [ ] Runtime Complexity less than O(n^2) - avoid nested loops if 
+      possible because of how expensive they are. Two separate loops are
+      better than two nested loops.
+  [ ] Low space complexity => NOTE: recursion can cause stack overflow;
+      copying large arrays MAY exceed memory of the machine
+
+
