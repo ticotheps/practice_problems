@@ -13,5 +13,69 @@
   - Communication Skills: Does your personality match the companies' 
     culture? 
 
-- Step-by-Step Through A Problem
-  1. 
+- Step-by-Step Process for Solving Code Challenges In An Interview
+
+  1.  As the interviewer reads the problem to you, be sure to write down 
+      all of the key points and details to ensure your full understanding
+      of the problem.
+
+  2.  Identify the expected inputs and the expected outputs of the
+      problem.
+
+  3.  Between 'time,' 'space,' and 'memory,' which of these constraints 
+      is the main focus for optimization in our solution?
+
+  4.  Be conscientious of your time limit when asking your clarifying
+      questions.
+
+  5.  Provide a high-level overview for a BRUTE FORCE (AKA "First Pass") 
+      SOLUTION to the problem. This will clearly demonstrate your
+      critical thinking skills to the interviewer.
+
+  6.  If you know that you can improve the efficiency of your BRUTE
+      FORCE SOLUTION, talk about why this "First Pass Approach" is not
+      the best solution. This will prove to the interviewer you have a 
+      solid understanding of "tradeoffs" when it comes to various
+      solutions for the same problem.
+    
+  7.  Then, walk through your BRUTE FORCE SOLUTION, commenting on where & 
+      how you could improve upon the Big O notation of your BRUTE FORCE 
+      SOLUTION. Where can you break your own code? Did you use all of the
+      information that the interviewer gave you?
+
+  8.  Before you start coding, walk through your logic using an example
+      scenario with example inputs and example outputs. Write down your
+      psuedocode steps as you do this.
+
+  9.  Modularize your code from the very beginning. Make it as DRY as
+      possible to begin with.
+
+  10. Start writing your actual code NOW that you have thought through
+      all of the edge cases, constraints, and BRUTE FORCE SOLUTION. Never
+      start whiteboarding if you're unsure of how your solution is going
+      to work out.
+
+  11. Think about error checks and how you could possibly break your 
+      code. Never make assumptions about the input. Imagine that someone
+      is going to get paid $1,000,000 if they can break your code. Always
+      check for false inputs that you don't want. Make sure to write 
+      comments in your code that indicate where you'd write tests to try
+      and get your functions to fail.
+
+  12. Don't use bad/confusing variable names like "i" and "j". Write code 
+      code that reads well.
+
+  13. Test your code. Check for: 
+      - no parameters 
+      - 0 
+      - undefined 
+      - null 
+      - massive arrays
+      - asynchronous code
+      - repetitive code
+
+  14. Talk to the interviewer about where you would improve your code.
+      Does it work? Are there different approaches that you could take?
+      Is it readable? What would you google to improve? How could the
+      performance be improved? Possibly ask the interviewer about the
+      most interesting solution they have seen to this problem.
