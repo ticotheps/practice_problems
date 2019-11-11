@@ -79,3 +79,14 @@
       Is it readable? What would you google to improve? How could the
       performance be improved? Possibly ask the interviewer about the
       most interesting solution they have seen to this problem.
+
+  15. If the interviewer is happy with the solution, the interview
+      usually ends here. It is also common that the interviewer asks you
+      extension questions, such as how you'd handle the problem if the
+      whole input is too large to fit into memory, or if the input
+      arrives as a 'stream'. This is a common follow-up question at
+      Google, where they care a lot about scale. The answer is usually a
+      "divide-and-conquer" approach, where you'd perform distributed
+      processing of the data, only read certain chunks of the input
+      from disk into memory, and then write the output back to disk and 
+      combine them later.
