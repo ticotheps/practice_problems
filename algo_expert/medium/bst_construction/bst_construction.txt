@@ -1,0 +1,10 @@
+BST Construction
+
+Write a Binary Search Tree (BST) class. The class should have a "value"
+property set to be an integer, as well as "left" and "right" properties,
+both of which should point to either the None (null) value or another
+BST.
+
+A node is said to be a BST node if and only if it satisfies the BST
+property: its value is strictly greater than the value of every node to 
+its left; 
