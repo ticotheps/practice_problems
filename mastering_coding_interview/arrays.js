@@ -1,3 +1,5 @@
-class MyArray() {
-  
+class MyArray {
+  constructor(length) {
+    this.length = length;
+  }
 }
