@@ -1,0 +1,9 @@
+BINARY SEARCH TREES
+
+- What is a BST (Binary Search Tree)?
+  - A tree that must follow the "BST property":
+    - The value of a node MUST be GREATER than the values of all the 
+      nodes to the left of that node.
+    - The value of a node MUST be LESS than or equal to the values of all
+      the nodes to the right of that node.
+    - All children nodes of the node in the BST MUST also follow the BST     properties.
