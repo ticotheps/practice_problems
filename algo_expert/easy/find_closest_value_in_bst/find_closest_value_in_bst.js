@@ -79,102 +79,127 @@
 
 /*------------IMPLEMENTING THE PLAN------------
  */
-var assert = require('assert');
+// var assert = require('assert');
 
-// Declares a class that allows for the creation of new 'Node' instances
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-}
+// // Declares a class that allows for the creation of new 'Node' instances
+// class Node {
+//   constructor(value) {
+//     this.value = value;
+//     this.left = null;
+//     this.right = null;
+//   }
+// }
 
-class BinarySearchTree {
-  constructor() {
-    this.root = null;
-  }
+// class BinarySearchTree {
+//   constructor() {
+//     this.root = null;
+//   }
 
-  // adds new nodes to the BST
-  insert(value) {
-    var newNode = new Node(value);
+//   // adds new nodes to the BST
+//   insert(value) {
+//     var newNode = new Node(value);
 
-    // if a root node doesn't exist, add it
-    if (!this.root) {
-      this.root = newNode;
-    } else {
-      this.insertNode(this.root, newNode);
-    }
-  }
+//     // if a root node doesn't exist, add it
+//     if (!this.root) {
+//       this.root = newNode;
+//     } else {
+//       this.insertNode(this.root, newNode);
+//     }
+//   }
 
-  insertNode(node, newNode) {
-    if (newNode.value < node.value) {
-      if (node.left === null) {
-        // if 'left' is vacant, insert node into value of 'left'
-        node.left = newNode;
-      } else {
-        /*  if 'left' is NOT vacant, call 'insertNode()' until you find a
-            null value where the newNode can be inserted. */
-        this.insertNode(node.left, newNode);
-      }
-    } else if (newNode.value > node.value) {
-      if (node.right === null) {
-        // if 'right' is vacant, insert node into value of 'right'
-        node.right = newNode;
-      } else {
-        /*  if 'right' is NOT vacant, call 'insertNode()' until you find a
-            null value where the newNode can be inserted. */
-        this.insertNode(node.right, newNode);
-      }
-    }
-  }
-}
+//   insertNode(node, newNode) {
+//     if (newNode.value < node.value) {
+//       if (node.left === null) {
+//         // if 'left' is vacant, insert node into value of 'left'
+//         node.left = newNode;
+//       } else {
+//         /*  if 'left' is NOT vacant, call 'insertNode()' until you find a
+//             null value where the newNode can be inserted. */
+//         this.insertNode(node.left, newNode);
+//       }
+//     } else if (newNode.value > node.value) {
+//       if (node.right === null) {
+//         // if 'right' is vacant, insert node into value of 'right'
+//         node.right = newNode;
+//       } else {
+//         /*  if 'right' is NOT vacant, call 'insertNode()' until you find a
+//             null value where the newNode can be inserted. */
+//         this.insertNode(node.right, newNode);
+//       }
+//     }
+//   }
+// }
 
-const findClosestValueInBst = (tree, target) => {
-  console.log(tree);
-  return target;
-};
+// const findClosestValueInBst = (tree, target) => {
+//   console.log(tree);
+//   return target;
+// };
 
-const bst = new BinarySearchTree();
-bst.insert(10);
-bst.insert(5);
-bst.insert(15);
-bst.insert(2);
-bst.insert(6);
-bst.insert(13);
-bst.insert(22);
-bst.insert(1);
-bst.insert(14);
+// const bst = new BinarySearchTree();
+// bst.insert(10);
+// bst.insert(5);
+// bst.insert(15);
+// bst.insert(2);
+// bst.insert(6);
+// bst.insert(13);
+// bst.insert(22);
+// bst.insert(1);
+// bst.insert(14);
 
-console.log(findClosestValueInBst(bst, 13));
+// console.log(findClosestValueInBst(bst, 13));
 
-// TESTS
-assert.equal(10, bst.root.value, 'the value of root is 10');
+// // TESTS
+// assert.equal(10, bst.root.value, 'the value of root is 10');
 
-assert.equal(5, bst.root.left.value, 'the value of root.left is 5');
-assert.equal(2, bst.root.left.left.value, 'the value of root.left.left is 2');
-assert.equal(6, bst.root.left.right.value, 'the value of root.left.right is 6');
-assert.equal(
-  1,
-  bst.root.left.left.left.value,
-  'the value of root.left.left.left is 1'
-);
-assert.equal(15, bst.root.right.value, 'the value of root.right is 15');
-assert.equal(
-  13,
-  bst.root.right.left.value,
-  'the value of root.right.left is 13'
-);
-assert.equal(
-  22,
-  bst.root.right.right.value,
-  'the value of root.right.right is 22'
-);
-assert.equal(
-  14,
-  bst.root.right.left.right.value,
-  'the value of root.right.left.right is 14'
-);
+// assert.equal(5, bst.root.left.value, 'the value of root.left is 5');
+// assert.equal(2, bst.root.left.left.value, 'the value of root.left.left is 2');
+// assert.equal(6, bst.root.left.right.value, 'the value of root.left.right is 6');
+// assert.equal(
+//   1,
+//   bst.root.left.left.left.value,
+//   'the value of root.left.left.left is 1'
+// );
+// assert.equal(15, bst.root.right.value, 'the value of root.right is 15');
+// assert.equal(
+//   13,
+//   bst.root.right.left.value,
+//   'the value of root.right.left is 13'
+// );
+// assert.equal(
+//   22,
+//   bst.root.right.right.value,
+//   'the value of root.right.right is 22'
+// );
+// assert.equal(
+//   14,
+//   bst.root.right.left.right.value,
+//   'the value of root.right.left.right is 14'
+// );
 
 /*-------------REFLECTING/ITERATING------------
  */
+
+// Average: O(log(n)) time | O(1) space
+// Worst: O(n) time | O(1) space
+function findClosestValueInBst(tree, target) {
+  return findClosestValueInBstHelper(tree, target, Infinity);
+}
+
+function findClosestValueInBstHelper(tree, target, closest) {
+  let currentNode = tree;
+  while (currentNode !== null) {
+    if (Math.abs(target - closest) > Math.abs(target - currentNode.value)) {
+      closest = currentNode.value;
+    }
+    if (target < currentNode.value) {
+      currentNode = currentNode.left;
+    } else if (target > currentNode.value) {
+      currentNode = currentNode.right;
+    } else {
+      break;
+    }
+  }
+  return closest;
+}
+
+exports.findClosestValueInBst = findClosestValueInBst;
