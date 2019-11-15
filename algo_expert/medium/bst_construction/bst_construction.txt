@@ -14,3 +14,35 @@ or None (null) values.
 The BST class should support insertion, searching, and removal of values.
 The removal method should only remove the first instance of the target
 value. 
+
+Sample Input: 
+
+                          10
+                        /    \
+                      5        15
+                    /   \    /    \
+                  2      5  13     22
+                 /           \
+                1             14
+
+Sample Output (after inserting 12): 
+
+                          10
+                        /    \
+                      5        15
+                    /   \    /    \
+                  2      5  13     22
+                 /         /  \
+                1         12   14
+
+Sample Output (after removing 10): 
+
+                          12
+                        /    \
+                      5        15
+                    /   \    /    \
+                  2      5  13     22
+                 /            \
+                1              14
+
+Sample Output (after searching for 15): True
