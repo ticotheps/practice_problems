@@ -7,3 +7,12 @@ BINARY SEARCH TREES
     - The value of a node MUST be LESS than or equal to the values of all
       the nodes to the right of that node.
     - All children nodes of the node in the BST MUST also follow the BST     properties.
+
+- What methods are implemented inside of a BST class?
+  - Insertion
+  - Searching
+  - Deletion
+
+- Using binary search trees is very effective for finding the value of a
+  given node very quickly because it allows for the elimination of half 
+  of a subtree while traversing the tree.
