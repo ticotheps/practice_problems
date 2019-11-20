@@ -24,8 +24,8 @@
 
 /* ---------------DEVISING A PLAN--------------- 
 -BRUTE FORCE SOLUTION
-  (1) Create a function, 'checkPalindrome', that takes in a number and
-      returns 'True' if the number is a palindrome, or 'False' if the
+  (1) Create a function, 'checkPalindrome', that takes in a number, 'num'
+      & returns 'True' if the number is a palindrome, or 'False' if the
       number is NOT a palindrome.
   (2) Create a another function, 'findLargestPalindrome', that takes in
       one input, 'numDigits', & returns one output, 'largestPalindrome'.
@@ -40,7 +40,7 @@
             'palindromic number'.
             (i)     If the length of 'product' is equal to 0, return a
                     string that says "Please provide a valid input of 
-                    type 'integer'".
+                    type integer".
             (ii)    If the length of 'product' is equal to 1, set the
                     'largestPalindrome' variable equal to this product.
             (iii)   Else (If the length of 'product' is greater than 1),
@@ -53,5 +53,30 @@
 */
 
 /* IMPLEMENTING THE PLAN */
+const assert = require("assert");
+("use strict");
 
+function checkPalindrome(num) {
+  if (num == undefined) {
+    return "Please provide a valid input of type integer";
+  } else if (num.length === 1) {
+    return "The length is 1, so this is a palindrome";
+  } else if (num.length > 1) {
+    return "The length is GREATER than 1, so let's explore";
+  }
+}
+
+// assert.ifError(checkPalindrome(), Error);
+// assert.deepEqual(
+//   checkPalindrome(1),
+//   "The length is 1, so this is a palindrome"
+// );
+// assert.deepEqual(
+//   checkPalindrome(2),
+//   "The length is GREATER than 1, so let's explore"
+// );
+
+console.log(checkPalindrome(0));
+console.log(checkPalindrome(1));
+console.log(checkPalindrome(2));
 /* REFLECTING/ITERATING THE PLAN */
