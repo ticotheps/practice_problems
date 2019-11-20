@@ -57,26 +57,57 @@ const assert = require("assert");
 ("use strict");
 
 function checkPalindrome(num) {
-  if (num == undefined) {
-    return "Please provide a valid input of type integer";
-  } else if (num.length === 1) {
-    return "The length is 1, so this is a palindrome";
-  } else if (num.length > 1) {
-    return "The length is GREATER than 1, so let's explore";
+  let numString = num.toString();
+  // console.log("numString =", numString);
+  let lenNumString = numString.length;
+  // console.log("\nlenNumString =", lenNumString);
+
+  if (num == undefined || num == null) {
+    // console.log("\nNo valid input provided");
+    return false;
+  }
+
+  if (lenNumString === 1) {
+    // console.log(
+    //   `\nOne digit in '${num}';\nTherefore, '${num}' is palindromic!`
+    // );
+    return true;
+  } else if (lenNumString > 1) {
+    // console.log(`\n${lenNumString} digits in ${num}; so let's explore!`);
+    let leftPointer = 0;
+    let rightPointer = lenNumString - 1;
+
+    while (leftPointer < rightPointer) {
+      if (numString[leftPointer] === numString[rightPointer]) {
+        leftPointer += 1;
+        rightPointer -= 1;
+      } else {
+        // console.log(`Whoops! '${num}'; is NOT palindromic!`);
+        return false;
+      }
+    }
+    // console.log(`YAHOO! '${num}'; is palindromic!`);
+    return true;
   }
 }
 
-// assert.ifError(checkPalindrome(), Error);
-// assert.deepEqual(
-//   checkPalindrome(1),
-//   "The length is 1, so this is a palindrome"
-// );
-// assert.deepEqual(
-//   checkPalindrome(2),
-//   "The length is GREATER than 1, so let's explore"
-// );
+console.log("*-----* ALL TESTS HAVE PASSED! *-----*");
 
-console.log(checkPalindrome(0));
-console.log(checkPalindrome(1));
-console.log(checkPalindrome(2));
+assert.deepEqual(checkPalindrome(0), true, "0 is palindromic");
+assert.deepEqual(checkPalindrome(1), true, "1 is palindromic");
+assert.deepEqual(checkPalindrome(2), true, "2 is palindromic");
+assert.deepEqual(checkPalindrome(23), false, "23 is NOT palindromic");
+assert.deepEqual(checkPalindrome(120), false, "120 is NOT palindromic");
+assert.deepEqual(checkPalindrome(121), true, "121 is palindromic");
+assert.deepEqual(checkPalindrome(9283), false, "9283 is NOT palindromic");
+assert.deepEqual(checkPalindrome(92829), true, "92829 is palindromic");
+
+// console.log(checkPalindrome(0));
+// console.log(checkPalindrome(1));
+// console.log(checkPalindrome(2));
+// console.log(checkPalindrome(23));
+// console.log(checkPalindrome(120));
+// console.log(checkPalindrome(121));
+// console.log(checkPalindrome(9283));
+
 /* REFLECTING/ITERATING THE PLAN */
