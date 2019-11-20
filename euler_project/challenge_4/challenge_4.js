@@ -103,12 +103,10 @@ assert.deepEqual(checkPalindrome(9283), false, "9283 is NOT palindromic");
 assert.deepEqual(checkPalindrome(92829), true, "92829 is palindromic");
 assert.deepEqual(checkPalindrome(-9), true, "-9 is palindromic");
 
-// console.log(checkPalindrome(0));
-// console.log(checkPalindrome(1));
-// console.log(checkPalindrome(2));
-// console.log(checkPalindrome(23));
-// console.log(checkPalindrome(120));
-// console.log(checkPalindrome(121));
-// console.log(checkPalindrome(9283));
+function findLargestPalindrome(numDigits) {
+  console.log(numDigits);
+}
+
+findLargestPalindrome(2);
 
 /* REFLECTING/ITERATING THE PLAN */
