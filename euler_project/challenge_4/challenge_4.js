@@ -57,22 +57,22 @@ const assert = require("assert");
 ("use strict");
 
 function checkPalindrome(num) {
-  let numString = num.toString();
-  // console.log("numString =", numString);
-  let lenNumString = numString.length;
-  // console.log("\nlenNumString =", lenNumString);
-
   if (num == undefined || num == null) {
     // console.log("\nNo valid input provided");
     return false;
   }
+
+  let numString = Math.abs(num).toString();
+  // console.log("numString =", numString);
+  let lenNumString = numString.length;
+  // console.log("\nlenNumString =", lenNumString);
 
   if (lenNumString === 1) {
     // console.log(
     //   `\nOne digit in '${num}';\nTherefore, '${num}' is palindromic!`
     // );
     return true;
-  } else if (lenNumString > 1) {
+  } else if (lenNumString > 1 || lenNumString < 1) {
     // console.log(`\n${lenNumString} digits in ${num}; so let's explore!`);
     let leftPointer = 0;
     let rightPointer = lenNumString - 1;
@@ -92,7 +92,7 @@ function checkPalindrome(num) {
 }
 
 console.log("*-----* ALL TESTS HAVE PASSED! *-----*");
-
+assert.deepEqual(checkPalindrome(), false, "No input was provided");
 assert.deepEqual(checkPalindrome(0), true, "0 is palindromic");
 assert.deepEqual(checkPalindrome(1), true, "1 is palindromic");
 assert.deepEqual(checkPalindrome(2), true, "2 is palindromic");
@@ -101,6 +101,7 @@ assert.deepEqual(checkPalindrome(120), false, "120 is NOT palindromic");
 assert.deepEqual(checkPalindrome(121), true, "121 is palindromic");
 assert.deepEqual(checkPalindrome(9283), false, "9283 is NOT palindromic");
 assert.deepEqual(checkPalindrome(92829), true, "92829 is palindromic");
+assert.deepEqual(checkPalindrome(-9), true, "-9 is palindromic");
 
 // console.log(checkPalindrome(0));
 // console.log(checkPalindrome(1));
