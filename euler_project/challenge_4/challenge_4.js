@@ -27,7 +27,7 @@
   (1) Create a function, 'checkPalindrome', that takes in a number, 'num'
       & returns 'True' if the number is a palindrome, or 'False' if the
       number is NOT a palindrome.
-  (2) Create a another function, 'findLargestPalindrome', that takes in
+  (2) Create another function, 'findLargestPalindrome', that takes in
       one input, 'numDigits', & returns one output, 'largestPalindrome'.
   (3) Create a variable, 'largestPalindrome', with a 'let' keyword that
       will store the current largest palindromic number as in integer.
@@ -91,7 +91,7 @@ function checkPalindrome(num) {
   }
 }
 
-console.log("*-----* ALL TESTS HAVE PASSED! *-----*");
+console.log("*-----* ALL TESTS FOR 'checkPalindrome()' PASSED! *-----*");
 assert.deepEqual(checkPalindrome(), false, "No input was provided");
 assert.deepEqual(checkPalindrome(0), true, "0 is palindromic");
 assert.deepEqual(checkPalindrome(1), true, "1 is palindromic");
@@ -104,9 +104,38 @@ assert.deepEqual(checkPalindrome(92829), true, "92829 is palindromic");
 assert.deepEqual(checkPalindrome(-9), true, "-9 is palindromic");
 
 function findLargestPalindrome(numDigits) {
-  console.log(numDigits);
+  let largestPalindrome = 0;
+  let minRange = 10 ** (numDigits - 1);
+  let maxRange = 10 ** numDigits;
+
+  for (let i = minRange; i < maxRange; i++) {
+    for (let j = minRange; j < maxRange; j++) {
+      let product = i * j;
+      if (checkPalindrome(product) === true && product > largestPalindrome) {
+        largestPalindrome = product;
+      }
+    }
+  }
+  return largestPalindrome;
 }
 
-findLargestPalindrome(2);
+console.log("*-----* ALL TESTS FOR 'findLargestPalindrome()' PASSED! *-----*");
+assert.deepEqual(
+  findLargestPalindrome(1),
+  9,
+  "9 is the largest palindromic product of two 1-digit numbers"
+);
+assert.deepEqual(
+  findLargestPalindrome(2),
+  9009,
+  "9009 is the largest palindromic product of two 2-digit numbers"
+);
+assert.deepEqual(
+  findLargestPalindrome(3),
+  906609,
+  "906609 is the largest palindromic product of two 3-digit numbers"
+);
+
+console.log(findLargestPalindrome(3));
 
 /* REFLECTING/ITERATING THE PLAN */
