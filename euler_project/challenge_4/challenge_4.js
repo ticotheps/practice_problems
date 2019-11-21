@@ -16,7 +16,7 @@
   -Can the numbers be floating point numbers?
     -No.
   -Can the numbers be negative?
-    -No.
+    -Maybe?
 
 -Example Input: 2
 -Example Output: 9009 (91 * 99 = 9009)
@@ -31,6 +31,8 @@
       one input, 'numDigits', & returns one output, 'largestPalindrome'.
   (3) Create a variable, 'largestPalindrome', with a 'let' keyword that
       will store the current largest palindromic number as in integer.
+  (4) Create 2 new variables, 'minRange' and 'maxRange', that define will
+      define the boundaries for the nested 'for' loops.
     (4) Use 2 nested 'for' loops to iterate through every possible 
         product made from 2 integers that contain 'numDigits' number of 
         digits in each integer.
@@ -38,17 +40,9 @@
             the current product of the two numbers.
         (b) For each iteration, determine whether or not 'product' is a
             'palindromic number'.
-            (i)     If the length of 'product' is equal to 0, return a
-                    string that says "Please provide a valid input of 
-                    type integer".
-            (ii)    If the length of 'product' is equal to 1, set the
-                    'largestPalindrome' variable equal to this product.
-            (iii)   Else (If the length of 'product' is greater than 1),
-                    call the 'checkPalindrome()' function and pass in the
-                    'product' as the input. 
-                  (1) If 'True', set the value of 'largestPalindrome' 
-                      equal to the value of 'product'.
-                  (2) If 'False', do nothing.
+        (c) If 'product' is a palindromic number AND it is greater than
+            the current 'largestPalindrome', set 'largestPalindrome'
+            equal to the 'product'.
     (5) Return 'largestPalindrome'.
 */
 
