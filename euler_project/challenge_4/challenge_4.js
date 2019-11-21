@@ -52,22 +52,15 @@ const assert = require("assert");
 
 function checkPalindrome(num) {
   if (num == undefined || num == null) {
-    // console.log("\nNo valid input provided");
     return false;
   }
 
   let numString = Math.abs(num).toString();
-  // console.log("numString =", numString);
   let lenNumString = numString.length;
-  // console.log("\nlenNumString =", lenNumString);
 
   if (lenNumString === 1) {
-    // console.log(
-    //   `\nOne digit in '${num}';\nTherefore, '${num}' is palindromic!`
-    // );
     return true;
   } else if (lenNumString > 1 || lenNumString < 1) {
-    // console.log(`\n${lenNumString} digits in ${num}; so let's explore!`);
     let leftPointer = 0;
     let rightPointer = lenNumString - 1;
 
@@ -76,11 +69,9 @@ function checkPalindrome(num) {
         leftPointer += 1;
         rightPointer -= 1;
       } else {
-        // console.log(`Whoops! '${num}'; is NOT palindromic!`);
         return false;
       }
     }
-    // console.log(`YAHOO! '${num}'; is palindromic!`);
     return true;
   }
 }
