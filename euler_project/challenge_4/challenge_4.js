@@ -140,4 +140,9 @@ assert.deepEqual(
 
 console.log(findLargestPalindrome(3));
 
-/* REFLECTING/ITERATING THE PLAN */
+/* REFLECTING/ITERATING THE PLAN 
+- Can you improve the time/space complexity of your BRUTE FORCE SOLUTION?
+  - I don't believe so. I believe the nested 'for' loops are required to 
+    access to both variables, 'i' and 'j', for the purpose of getting
+    their product.
+*/
