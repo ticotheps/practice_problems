@@ -103,6 +103,8 @@ assert.deepEqual(checkPalindrome(9283), false, "9283 is NOT palindromic");
 assert.deepEqual(checkPalindrome(92829), true, "92829 is palindromic");
 assert.deepEqual(checkPalindrome(-9), true, "-9 is palindromic");
 
+// Time Complexity: O(n^2) = quadratic
+// Space Complexity: O(1) = constant
 function findLargestPalindrome(numDigits) {
   let largestPalindrome = 0;
   let minRange = 10 ** (numDigits - 1);
