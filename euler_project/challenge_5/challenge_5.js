@@ -145,14 +145,14 @@ assert.deepStrictEqual(
 console.log(findSmallestCommonMultiple(1, 10)); // should be 2520
 console.log(findSmallestCommonMultiple(1, 11)); // should be 27720
 console.log(findSmallestCommonMultiple(1, 12)); // should be 27720
-// console.log(findSmallestCommonMultiple(1, 13)); // should be 360360
-// console.log(findSmallestCommonMultiple(1, 14)); // should be 360360
-// console.log(findSmallestCommonMultiple(1, 15)); // should be 360360
-// console.log(findSmallestCommonMultiple(1, 16)); // should be 720720
-// console.log(findSmallestCommonMultiple(1, 17)); // should be 12252240
-// console.log(findSmallestCommonMultiple(1, 18)); // should be 12252240
-// console.log(findSmallestCommonMultiple(1, 19)); // should be 12252240
-// console.log(findSmallestCommonMultiple(1, 20)); // should be 12252240
+console.log(findSmallestCommonMultiple(1, 13)); // should be 360360
+console.log(findSmallestCommonMultiple(1, 14)); // should be 360360
+console.log(findSmallestCommonMultiple(1, 15)); // should be 360360
+console.log(findSmallestCommonMultiple(1, 16)); // should be 720720
+console.log(findSmallestCommonMultiple(1, 17)); // should be 12252240
+console.log(findSmallestCommonMultiple(1, 18)); // should be 12252240
+console.log(findSmallestCommonMultiple(1, 19)); // should be 232792560
+console.log(findSmallestCommonMultiple(1, 20)); // should be 232792560
 
 /* ------------REFLECTING/ITERATING-------------
 - BRUTE FORCE SOLUTION
