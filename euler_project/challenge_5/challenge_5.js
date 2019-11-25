@@ -60,7 +60,7 @@ const assert = require("assert");
 ("use strict");
 
 const cache = {};
-console.log("cache = ", cache);
+// console.log("cache = ", cache);
 
 function findSmallestCommonMultiple(startNum, endNum) {
   let smallestCommonMultiple = 0;
@@ -69,30 +69,30 @@ function findSmallestCommonMultiple(startNum, endNum) {
   // console.log("useCache = ", useCache);
 
   if (Object.keys(cache).length === 0) {
-    console.log(
-      `Currently, there are no keys in the 'cache' object to utilize :(`
-    );
+    // console.log(
+    //   `Currently, there are no keys in the 'cache' object to utilize :(`
+    // );
   } else {
     for (key in cache) {
       if (endNum >= key) {
-        console.log(
-          `'endNum' is greater than or equal to the key '${key}' in the 'cache' object!`
-        );
+        // console.log(
+        //   `'endNum' is greater than or equal to the key '${key}' in the 'cache' object!`
+        // );
         largestKey = key;
-        console.log("largestKey = ", largestKey);
+        // console.log("largestKey = ", largestKey);
       }
     }
     useCache = true;
-    console.log("useCache = ", useCache);
+    // console.log("useCache = ", useCache);
   }
 
   if (useCache) {
-    console.log("Let's use the 'cache' object to speed things up!");
+    // console.log("Let's use the 'cache' object to speed things up!");
     let currentMultipleWithCache = cache[largestKey];
-    console.log("currentMultipleWithCache = ", currentMultipleWithCache);
+    // console.log("currentMultipleWithCache = ", currentMultipleWithCache);
     if (currentMultipleWithCache % endNum === 0) {
       smallestCommonMultiple = currentMultipleWithCache;
-      return "smallestCommonMultiple = " + smallestCommonMultiple + "\n";
+      return smallestCommonMultiple;
     }
   }
 
@@ -122,8 +122,8 @@ function findSmallestCommonMultiple(startNum, endNum) {
         // );
 
         cache[endNum] = smallestCommonMultiple;
-        console.log("cache = ", cache);
-        return "smallestCommonMultiple = " + smallestCommonMultiple + "\n";
+        // console.log("cache = ", cache);
+        return smallestCommonMultiple;
       }
     }
     // console.log("currrentDivisor = ", currentDivisor);
@@ -136,15 +136,15 @@ function findSmallestCommonMultiple(startNum, endNum) {
   return "There is no common multiple for the range of numbers provided.";
 }
 
-// assert.deepStrictEqual(
-//   findSmallestCommonMultiple(1, 10),
-//   2520,
-//   "The smallest common multiple between 1 and 10 is 2520"
-// );
+assert.deepStrictEqual(
+  findSmallestCommonMultiple(1, 10),
+  2520,
+  "The smallest common multiple between 1 and 10 is 2520"
+);
 
 console.log(findSmallestCommonMultiple(1, 10)); // should be 2520
 console.log(findSmallestCommonMultiple(1, 11)); // should be 27720
-// console.log(findSmallestCommonMultiple(1, 12)); // should be 27720
+console.log(findSmallestCommonMultiple(1, 12)); // should be 27720
 // console.log(findSmallestCommonMultiple(1, 13)); // should be 360360
 // console.log(findSmallestCommonMultiple(1, 14)); // should be 360360
 // console.log(findSmallestCommonMultiple(1, 15)); // should be 360360
