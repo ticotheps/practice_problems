@@ -88,7 +88,7 @@ function findSmallestCommonMultiple(startNum, endNum) {
 
   if (useCache) {
     console.log("Let's use the 'cache' object to speed things up!");
-    let currentMultipleWithCache = largestKey;
+    let currentMultipleWithCache = cache[largestKey];
     console.log("currentMultipleWithCache = ", currentMultipleWithCache);
     if (currentMultipleWithCache % endNum === 0) {
       smallestCommonMultiple = currentMultipleWithCache;
