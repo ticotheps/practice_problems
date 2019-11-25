@@ -37,8 +37,8 @@
       statement. This variable will hold the current smallest multiple
       that can be evenly divided by each of the numbers in the range
       from 'startNum' to 'endNum' (inclusively).
-  (2) Use a 'for' loop to calculate multiples of the 'endNum' (the
-      largest number in the range of possible inclusive divisors).
+  (2) Use a 'while' loop to calculate multiples of the 'endNum' as long
+      as 'smallestCommonMultiple' is equal to 0.
   (3) Create a variable, 'currentDivisor', using a 'let' statement to
       hold the value of the current divisor being tested. Set the value
       of 'currentDivisor' to 'endNum - 1'.
@@ -53,11 +53,75 @@
           move to the next multiple and set the value of 'currentDivisor'
           back to 'endNum'.
   (5) Return 'smallestCommonMultiple'.
-
  */
 
-/* ------------IMPLEMENTING THE PLAN------------
- */
+/* ------------IMPLEMENTING THE PLAN------------ */
+const assert = require("assert");
+("use strict");
 
+function findSmallestCommonMultiple(startNum, endNum) {
+  let smallestCommonMultiple = 0;
+
+  let i = 1;
+  let j = 1;
+
+  while (smallestCommonMultiple === 0) {
+    let currentMultiple = endNum * i;
+    console.log("currrentMultiple = ", currentMultiple);
+
+    let currentDivisor = endNum - j;
+
+    while (currentMultiple % currentDivisor === 0) {
+      console.log("currrentDivisor = ", currentDivisor);
+      currentDivisor -= 1;
+      console.log(
+        `YAY! ${currentMultiple} IS divisible by ${currentDivisor}! :) \nOn to the next DIVISOR: ${currentDivisor}\n`
+      );
+
+      if (currentDivisor === startNum) {
+        console.log(
+          `YAY! ${currentMultiple} IS divisible by ${currentDivisor} too! ;)`
+        );
+        smallestCommonMultiple = currentMultiple;
+        console.log(
+          `Guess WHAT? \n${currentMultiple} is EVENLY divisible by ALL numbers between ${startNum} & ${endNum} (inclusive)!`
+        );
+        return smallestCommonMultiple;
+      }
+    }
+    console.log("currrentDivisor = ", currentDivisor);
+    console.log(
+      `SORRY! :( ${currentMultiple} is NOT divisible by ${currentDivisor}! \nOn to the next MULTIPLE of ${endNum}!\n`
+    );
+    i++;
+    j = 1;
+  }
+
+  // while (smallestCommonMultiple === 0) {
+  //   let remainder = currentMultiple % currentDivisor;
+  //   console.log("remainder = ", remainder);
+
+  //   if (currentDivisor === startNum) {
+  //     smallestCommonMultiple = currentMultiple;
+  //     return smallestCommonMultiple;
+  //   }
+
+  //   if (remainder === 0) {
+  //     currentDivisor -= 1;
+  //   }
+
+  //   currentDivisor = endNum - 1;
+  //   multipleCounter++;
+  // }
+  return "There is no common multiple for the range of numbers provided.";
+}
+
+console.log(findSmallestCommonMultiple(1, 10));
+
+// assert.deepStrictEqual(
+//   findSmallestCommonMultiple(1, 10),
+//   2520,
+//   "The smallest common multiple between 1 and 10 is 2520"
+// );
 /* ------------REFLECTING/ITERATING-------------
  */
