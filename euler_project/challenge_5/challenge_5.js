@@ -96,32 +96,32 @@ function findSmallestCommonMultiple(startNum, endNum) {
     i++;
     j = 1;
   }
-
-  // while (smallestCommonMultiple === 0) {
-  //   let remainder = currentMultiple % currentDivisor;
-  //   console.log("remainder = ", remainder);
-
-  //   if (currentDivisor === startNum) {
-  //     smallestCommonMultiple = currentMultiple;
-  //     return smallestCommonMultiple;
-  //   }
-
-  //   if (remainder === 0) {
-  //     currentDivisor -= 1;
-  //   }
-
-  //   currentDivisor = endNum - 1;
-  //   multipleCounter++;
-  // }
   return "There is no common multiple for the range of numbers provided.";
 }
-
-console.log(findSmallestCommonMultiple(1, 10));
 
 assert.deepStrictEqual(
   findSmallestCommonMultiple(1, 10),
   2520,
   "The smallest common multiple between 1 and 10 is 2520"
 );
+
+// console.log(findSmallestCommonMultiple(1, 10)); // should be 2520
+// console.log(findSmallestCommonMultiple(1, 11)); // should be 27720
+// console.log(findSmallestCommonMultiple(1, 12)); // should be 27720
+// console.log(findSmallestCommonMultiple(1, 13)); // should be 360360
+// console.log(findSmallestCommonMultiple(1, 14)); // should be 360360
+// console.log(findSmallestCommonMultiple(1, 15)); // should be 360360
+// console.log(findSmallestCommonMultiple(1, 16)); // should be 720720
+// console.log(findSmallestCommonMultiple(1, 17)); // should be 12252240
+// console.log(findSmallestCommonMultiple(1, 18)); // should be 12252240
+console.log(findSmallestCommonMultiple(1, 19)); // should be
+
 /* ------------REFLECTING/ITERATING-------------
+- BRUTE FORCE SOLUTION
+  - Were you able to find the lowest common multiple for the example 
+    input provided?
+    - Yes. I my brute force solution found it quickly.
+  - What was the Time/Space Complexity of this solution?
+    - Time Complexity: O(n^2) = quadratic time 
+    - Space Complexity: O(1) = constant space
  */
