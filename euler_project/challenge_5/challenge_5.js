@@ -60,36 +60,23 @@ const assert = require("assert");
 ("use strict");
 
 const cache = {};
-// console.log("cache = ", cache);
 
 function findSmallestCommonMultiple(startNum, endNum) {
   let smallestCommonMultiple = 0;
   let largestKey = 0;
   let useCache = false;
-  // console.log("useCache = ", useCache);
 
-  if (Object.keys(cache).length === 0) {
-    // console.log(
-    //   `Currently, there are no keys in the 'cache' object to utilize :(`
-    // );
-  } else {
+  if (!Object.keys(cache).length === 0) {
     for (key in cache) {
       if (endNum >= key) {
-        // console.log(
-        //   `'endNum' is greater than or equal to the key '${key}' in the 'cache' object!`
-        // );
         largestKey = key;
-        // console.log("largestKey = ", largestKey);
       }
     }
     useCache = true;
-    // console.log("useCache = ", useCache);
   }
 
   if (useCache) {
-    // console.log("Let's use the 'cache' object to speed things up!");
     let currentMultipleWithCache = cache[largestKey];
-    // console.log("currentMultipleWithCache = ", currentMultipleWithCache);
     if (currentMultipleWithCache % endNum === 0) {
       smallestCommonMultiple = currentMultipleWithCache;
       return smallestCommonMultiple;
@@ -101,35 +88,17 @@ function findSmallestCommonMultiple(startNum, endNum) {
 
   while (smallestCommonMultiple === 0) {
     let currentMultiple = endNum * i;
-    // console.log("currrentMultiple = ", currentMultiple);
-
     let currentDivisor = endNum - j;
 
     while (currentMultiple % currentDivisor === 0) {
-      // console.log("currrentDivisor = ", currentDivisor);
       currentDivisor -= 1;
-      // console.log(
-      //   `YAY! ${currentMultiple} IS divisible by ${currentDivisor}! :) \nOn to the next DIVISOR: ${currentDivisor}\n`
-      // );
 
       if (currentDivisor === startNum) {
-        // console.log(
-        //   `YAY! ${currentMultiple} IS divisible by ${currentDivisor} too! ;)`
-        // );
         smallestCommonMultiple = currentMultiple;
-        // console.log(
-        //   `Guess WHAT? \n${currentMultiple} is the smallest common multiple for all numbers between ${startNum} & ${endNum} (inclusive)!`
-        // );
-
         cache[endNum] = smallestCommonMultiple;
-        // console.log("cache = ", cache);
         return smallestCommonMultiple;
       }
     }
-    // console.log("currrentDivisor = ", currentDivisor);
-    // console.log(
-    //   `SORRY! :( ${currentMultiple} is NOT divisible by ${currentDivisor}! \nOn to the next MULTIPLE of ${endNum}!\n`
-    // );
     i++;
     j = 1;
   }
