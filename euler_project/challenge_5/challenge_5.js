@@ -124,4 +124,13 @@ console.log(findSmallestCommonMultiple(1, 19)); // should be
   - What was the Time/Space Complexity of this solution?
     - Time Complexity: O(n^2) = quadratic time 
     - Space Complexity: O(1) = constant space
+  - Could you improve the Time/Space Complexity of this solution?
+    - YES!
+    - How?
+      - Use a 'cache' object to store the lowest common multiples that 
+        were for calculated for previous inputs.
+      - If a provided input shares the same 'startNum' AND has a larger
+        'endNum' than the largest key in the 'cache' object, use the
+        O(1) lookup run time of the cache object to begin our search at
+        the value of the largest key in the 'cache' object.
  */
