@@ -182,8 +182,9 @@ console.log(`***** ALL TESTS HAVE PASSED *****`);
 /* ------------REFLECTING/ITERATING-------------
 - BRUTE FORCE SOLUTION
   - Were you able to find the lowest common multiple for the example 
-    input provided?
-    - Yes. I my brute force solution found it quickly.
+    input provided and for all numbers 1 to 20 (inclusive)?
+    - No. My brute force solution was only able to find the LCM for
+      numbers between 1 and 10 (inclusive).
   - What was the Time/Space Complexity of this solution?
     - Time Complexity: O(n^2) = quadratic time 
     - Space Complexity: O(1) = constant space
@@ -196,4 +197,13 @@ console.log(`***** ALL TESTS HAVE PASSED *****`);
         'endNum' than the largest key in the 'cache' object, use the
         O(1) lookup run time of the cache object to begin our search at
         the value of the largest key in the 'cache' object.
+
+- ITERATED SOLUTION
+  - Were you able to find the lowest common multiple for the example 
+    input provided and for all numbers 1 to 20 (inclusive)?
+    - Yes. My iterated solution was able to find the LCM for all
+      numbers between 1 and 20 (inclusive).
+  - What was the Time/Space Complexity of this solution?
+    - Time Complexity: O(n/2) = O(n) = linear time 
+    - Space Complexity: O(n) = linear space
  */
