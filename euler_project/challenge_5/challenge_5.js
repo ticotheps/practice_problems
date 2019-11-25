@@ -142,17 +142,73 @@ assert.deepStrictEqual(
   "The smallest common multiple between 1 and 10 is 2520"
 );
 
-console.log(findSmallestCommonMultiple(1, 10)); // should be 2520
-console.log(findSmallestCommonMultiple(1, 11)); // should be 27720
-console.log(findSmallestCommonMultiple(1, 12)); // should be 27720
-console.log(findSmallestCommonMultiple(1, 13)); // should be 360360
-console.log(findSmallestCommonMultiple(1, 14)); // should be 360360
-console.log(findSmallestCommonMultiple(1, 15)); // should be 360360
-console.log(findSmallestCommonMultiple(1, 16)); // should be 720720
-console.log(findSmallestCommonMultiple(1, 17)); // should be 12252240
-console.log(findSmallestCommonMultiple(1, 18)); // should be 12252240
-console.log(findSmallestCommonMultiple(1, 19)); // should be 232792560
-console.log(findSmallestCommonMultiple(1, 20)); // should be 232792560
+assert.deepStrictEqual(
+  findSmallestCommonMultiple(1, 11),
+  27720,
+  "The smallest common multiple between 1 and 11 is 27720"
+);
+
+assert.deepStrictEqual(
+  findSmallestCommonMultiple(1, 12),
+  27720,
+  "The smallest common multiple between 1 and 12 is 27720"
+);
+
+assert.deepStrictEqual(
+  findSmallestCommonMultiple(1, 13),
+  360360,
+  "The smallest common multiple between 1 and 13 is 360360"
+);
+
+assert.deepStrictEqual(
+  findSmallestCommonMultiple(1, 14),
+  360360,
+  "The smallest common multiple between 1 and 14 is 360360"
+);
+
+assert.deepStrictEqual(
+  findSmallestCommonMultiple(1, 15),
+  360360,
+  "The smallest common multiple between 1 and 15 is 360360"
+);
+
+assert.deepStrictEqual(
+  findSmallestCommonMultiple(1, 15),
+  360360,
+  "The smallest common multiple between 1 and 15 is 360360"
+);
+
+assert.deepStrictEqual(
+  findSmallestCommonMultiple(1, 16),
+  720720,
+  "The smallest common multiple between 1 and 16 is 720720"
+);
+
+assert.deepStrictEqual(
+  findSmallestCommonMultiple(1, 17),
+  12252240,
+  "The smallest common multiple between 1 and 17 is 12252240"
+);
+
+assert.deepStrictEqual(
+  findSmallestCommonMultiple(1, 18),
+  12252240,
+  "The smallest common multiple between 1 and 18 is 12252240"
+);
+
+assert.deepStrictEqual(
+  findSmallestCommonMultiple(1, 19),
+  232792560,
+  "The smallest common multiple between 1 and 19 is 232792560"
+);
+
+assert.deepStrictEqual(
+  findSmallestCommonMultiple(1, 20),
+  232792560,
+  "The smallest common multiple between 1 and 20 is 232792560"
+);
+
+console.log(`***** ALL TESTS HAVE PASSED *****`);
 
 /* ------------REFLECTING/ITERATING-------------
 - BRUTE FORCE SOLUTION
