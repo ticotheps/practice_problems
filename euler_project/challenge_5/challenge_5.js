@@ -59,54 +59,91 @@
 const assert = require("assert");
 ("use strict");
 
+const cache = {};
+console.log("cache = ", cache);
+
 function findSmallestCommonMultiple(startNum, endNum) {
   let smallestCommonMultiple = 0;
+  let largestKey = 0;
+  let useCache = false;
+  // console.log("useCache = ", useCache);
+
+  if (Object.keys(cache).length === 0) {
+    console.log(
+      `Currently, there are no keys in the 'cache' object to utilize :(`
+    );
+  } else {
+    for (key in cache) {
+      if (endNum >= key) {
+        console.log(
+          `'endNum' is greater than or equal to the key '${key}' in the 'cache' object!`
+        );
+        largestKey = key;
+        console.log("largestKey = ", largestKey);
+      }
+    }
+    useCache = true;
+    console.log("useCache = ", useCache);
+  }
+
+  if (useCache) {
+    console.log("Let's use the 'cache' object to speed things up!");
+    let currentMultipleWithCache = largestKey;
+    console.log("currentMultipleWithCache = ", currentMultipleWithCache);
+    if (currentMultipleWithCache % endNum === 0) {
+      smallestCommonMultiple = currentMultipleWithCache;
+      return "smallestCommonMultiple = " + smallestCommonMultiple + "\n";
+    }
+  }
 
   let i = 1;
   let j = 1;
 
   while (smallestCommonMultiple === 0) {
     let currentMultiple = endNum * i;
-    console.log("currrentMultiple = ", currentMultiple);
+    // console.log("currrentMultiple = ", currentMultiple);
 
     let currentDivisor = endNum - j;
 
     while (currentMultiple % currentDivisor === 0) {
-      console.log("currrentDivisor = ", currentDivisor);
+      // console.log("currrentDivisor = ", currentDivisor);
       currentDivisor -= 1;
-      console.log(
-        `YAY! ${currentMultiple} IS divisible by ${currentDivisor}! :) \nOn to the next DIVISOR: ${currentDivisor}\n`
-      );
+      // console.log(
+      //   `YAY! ${currentMultiple} IS divisible by ${currentDivisor}! :) \nOn to the next DIVISOR: ${currentDivisor}\n`
+      // );
 
       if (currentDivisor === startNum) {
-        console.log(
-          `YAY! ${currentMultiple} IS divisible by ${currentDivisor} too! ;)`
-        );
+        // console.log(
+        //   `YAY! ${currentMultiple} IS divisible by ${currentDivisor} too! ;)`
+        // );
         smallestCommonMultiple = currentMultiple;
-        console.log(
-          `Guess WHAT? \n${currentMultiple} is the smallest common multiple for ${startNum} & ${endNum} (inclusive)!`
-        );
-        return smallestCommonMultiple;
+        // console.log(
+        //   `Guess WHAT? \n${currentMultiple} is the smallest common multiple for all numbers between ${startNum} & ${endNum} (inclusive)!`
+        // );
+
+        cache[endNum] = smallestCommonMultiple;
+        console.log("cache = ", cache);
+        return "smallestCommonMultiple = " + smallestCommonMultiple + "\n";
       }
     }
-    console.log("currrentDivisor = ", currentDivisor);
-    console.log(
-      `SORRY! :( ${currentMultiple} is NOT divisible by ${currentDivisor}! \nOn to the next MULTIPLE of ${endNum}!\n`
-    );
+    // console.log("currrentDivisor = ", currentDivisor);
+    // console.log(
+    //   `SORRY! :( ${currentMultiple} is NOT divisible by ${currentDivisor}! \nOn to the next MULTIPLE of ${endNum}!\n`
+    // );
     i++;
     j = 1;
   }
   return "There is no common multiple for the range of numbers provided.";
 }
 
-assert.deepStrictEqual(
-  findSmallestCommonMultiple(1, 10),
-  2520,
-  "The smallest common multiple between 1 and 10 is 2520"
-);
+// assert.deepStrictEqual(
+//   findSmallestCommonMultiple(1, 10),
+//   2520,
+//   "The smallest common multiple between 1 and 10 is 2520"
+// );
 
-// console.log(findSmallestCommonMultiple(1, 10)); // should be 2520
-// console.log(findSmallestCommonMultiple(1, 11)); // should be 27720
+console.log(findSmallestCommonMultiple(1, 10)); // should be 2520
+console.log(findSmallestCommonMultiple(1, 11)); // should be 27720
 // console.log(findSmallestCommonMultiple(1, 12)); // should be 27720
 // console.log(findSmallestCommonMultiple(1, 13)); // should be 360360
 // console.log(findSmallestCommonMultiple(1, 14)); // should be 360360
@@ -114,7 +151,8 @@ assert.deepStrictEqual(
 // console.log(findSmallestCommonMultiple(1, 16)); // should be 720720
 // console.log(findSmallestCommonMultiple(1, 17)); // should be 12252240
 // console.log(findSmallestCommonMultiple(1, 18)); // should be 12252240
-console.log(findSmallestCommonMultiple(1, 19)); // should be
+// console.log(findSmallestCommonMultiple(1, 19)); // should be 12252240
+// console.log(findSmallestCommonMultiple(1, 20)); // should be 12252240
 
 /* ------------REFLECTING/ITERATING-------------
 - BRUTE FORCE SOLUTION
