@@ -84,7 +84,7 @@ function findSmallestCommonMultiple(startNum, endNum) {
         );
         smallestCommonMultiple = currentMultiple;
         console.log(
-          `Guess WHAT? \n${currentMultiple} is EVENLY divisible by ALL numbers between ${startNum} & ${endNum} (inclusive)!`
+          `Guess WHAT? \n${currentMultiple} is the smallest common multiple for ${startNum} & ${endNum} (inclusive)!`
         );
         return smallestCommonMultiple;
       }
@@ -118,10 +118,10 @@ function findSmallestCommonMultiple(startNum, endNum) {
 
 console.log(findSmallestCommonMultiple(1, 10));
 
-// assert.deepStrictEqual(
-//   findSmallestCommonMultiple(1, 10),
-//   2520,
-//   "The smallest common multiple between 1 and 10 is 2520"
-// );
+assert.deepStrictEqual(
+  findSmallestCommonMultiple(1, 10),
+  2520,
+  "The smallest common multiple between 1 and 10 is 2520"
+);
 /* ------------REFLECTING/ITERATING-------------
  */
