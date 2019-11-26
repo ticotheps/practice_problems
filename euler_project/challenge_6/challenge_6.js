@@ -43,10 +43,38 @@
  */
 
 /*---------------DEVISING A PLAN---------------
- */
+- BRUTE FORCE SOLUTION
+  (1) Create a function, 'findSumSquareDifference()', which takes in two
+      parameters, 'rangeStartNum' & 'rangeEndNum', and returns only one 
+      output.
+  (2) Create a variable using the 'let' keyword, 'sumOfSquares', to store
+      a TOTAL SUM of the squared values of each number between 
+      'rangeStartNum' and 'rangeEndNum' (inclusive).
+  (2) Create another variable using the 'const' keyword, 'squareOfSums', to
+      store the SQUARED VALUE of the total sum of all the numbers between 
+      'rangeStartNum' and 'rangeEndNum' (inclusive).
+  (3) Use a 'for' loop to iterate through each natural number between 
+      'rangeStartNum' and 'rangeEndNum' in order to: 
+      (a) find the squared value of the current natural number.
+      (b) add that value to the existing 'sumOfSquares' value.
+      (c) continue until each number in the range has been accounted for.
+  (4) Create a different variable using the 'let' keyword, 'sumOfNums',
+      to store the total sum of all the natural numbers in the range.
+  (5) Use a separate 'for' loop to iterate through each natural number in
+      the range in order to:
+      (a) add the value of the current natural number to the existing
+          'sumOfNums' value.
+      (b) continue until each number in the range has been accounted for.
+  (6) Find the squared value of 'sumOfNums' and set 'squareOfSums' equal 
+      to that value.
+  (7) Create a new variable using the 'const' keyword, 
+      'sumSquareDifference', and set the value of that variable equal to
+      'squareOfSums' minus 'sumOfSquares'.
+  (8) Return 'sumSquareDifference'.
 
-/*------------IMPLEMENTING THE PLAN------------
- */
+*/
+
+/*------------IMPLEMENTING THE PLAN------------*/
 
 /*------------REFLECTING/ITERATING-------------
  */
