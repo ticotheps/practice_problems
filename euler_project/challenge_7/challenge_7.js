@@ -60,34 +60,48 @@ const assert = require("assert");
 
 // A helper function that determines if the given input is prime
 function checkPrime(num) {
-  console.log("num = ", num);
-
-  if (num <= 1) {
-    console.log("1 is not a prime number");
+  if (num === undefined || num === null) {
+    console.log("Please provide a valid input (a positive integer)");
     return false;
-  } else if (num === undefined || num === null) {
-    console.log("Please provide an valid input (a positive integer)");
+  } else if (num <= 1) {
+    console.log(`${num} is not a prime number`);
+    return false;
   } else {
     let divisorCounter = 0;
     console.log("divisorCounter (start) = ", divisorCounter);
 
     while (divisorCounter <= 2) {
+      console.log("num = ", num);
       for (let i = 1; i <= num; i++) {
-        console.log("num = ", num);
-        console.log("i = ", i);
+        console.log("\ni = ", i);
         let remainder = num % i;
         console.log("remainder = ", remainder);
         if (remainder === 0) {
-          divisorcounter++;
+          divisorCounter++;
           console.log("divisorCounter (changed) = ", divisorCounter);
         }
       }
-      return false;
+      // 'num' has only 2 divisors (1 & itself) = it IS prime
+      return true;
     }
-    return true;
+    // 'num' has MORE THAN 2 divisors = it is NOT prime
+    return false;
   }
 }
 
-checkPrime(1);
+// assert.deepStrictEqual(checkPrime(null), false, "'null' is not a valid input");
+// assert.deepStrictEqual(
+//   checkPrime(undefined),
+//   false,
+//   "'undefined' is not a valid input"
+// );
+// assert.deepStrictEqual(checkPrime(0), false, "0 is not a prime number");
+// assert.deepStrictEqual(checkPrime(-1), false, "-1 is not a prime number");
+// assert.deepStrictEqual(checkPrime(1), false, "1 is not a prime number");
+assert.deepStrictEqual(checkPrime(3), true, "3 is a prime number");
+
+console.log("***** ALL TESTS FOR 'checkPrime()' HAVE PASSED");
+
+// console.log(checkPrime(1));
 
 /*-------------REFLECTING/ITERATING------------*/
