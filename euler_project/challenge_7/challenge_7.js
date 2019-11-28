@@ -54,4 +54,40 @@
 
 /*------------IMPLEMENTING THE PLAN------------*/
 
+const assert = require("assert");
+
+("use strict");
+
+// A helper function that determines if the given input is prime
+function checkPrime(num) {
+  console.log("num = ", num);
+
+  if (num <= 1) {
+    console.log("1 is not a prime number");
+    return false;
+  } else if (num === undefined || num === null) {
+    console.log("Please provide an valid input (a positive integer)");
+  } else {
+    let divisorCounter = 0;
+    console.log("divisorCounter (start) = ", divisorCounter);
+
+    while (divisorCounter <= 2) {
+      for (let i = 1; i <= num; i++) {
+        console.log("num = ", num);
+        console.log("i = ", i);
+        let remainder = num % i;
+        console.log("remainder = ", remainder);
+        if (remainder === 0) {
+          divisorcounter++;
+          console.log("divisorCounter (changed) = ", divisorCounter);
+        }
+      }
+      return false;
+    }
+    return true;
+  }
+}
+
+checkPrime(1);
+
 /*-------------REFLECTING/ITERATING------------*/
