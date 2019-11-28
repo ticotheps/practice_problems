@@ -110,8 +110,14 @@ assert.deepStrictEqual(
   "The sumSquareDifference for all natural numbers between 1 and 10 (inclusive) is 2640"
 );
 
+assert.deepStrictEqual(
+  findSumSquareDifference(1, 100),
+  25164150,
+  "The sumSquareDifference for all natural numbers between 1 and 10 (inclusive) is 25164150"
+);
+
 console.log(`*****ALL TESTS FOR sumSquareDifference() HAVE PASSED!*****`);
 
-console.log(findSumSquareDifference(1, 100));
+// console.log(findSumSquareDifference(1, 100));
 /*------------REFLECTING/ITERATING-------------
  */
