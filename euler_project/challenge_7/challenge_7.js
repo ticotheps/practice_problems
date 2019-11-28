@@ -25,7 +25,32 @@
   - Example Output: 13
 */
 
-/*---------------DEVISING A PLAN---------------*/
+/*---------------DEVISING A PLAN---------------
+- BRUTE FORCE SOLUTION:
+  (1) Create a helper function, 'checkPrime()', that will take in one 
+      parameter, 'num', and will determine if it is prime number, 
+      returning a Boolean value. If the input is prime, it will return
+      'true'. If it is not a prime number, it will return 'false'.
+  (2) Create a function, 'findPrimeNumAtIndex()', that will take in one
+      parameter, 'primeIndex', and will return one output, 
+      'primeNumAtIndex'.
+      (3) Create a new variable using the 'let' keyword, 
+          'primeNumsCounter', to store a running count of all the prime 
+          numbers encountered thus far.
+      (4) Create another variable using the 'const' keyword, 
+          'primeNumAtIndex', that will store the value of the prime 
+          number at the given 'primeIndex'.
+      (4) Create a 'while' loop that will continue to run as long as
+          'primeNumsCounter' is NOT equal to 'primeIndex'.
+          (5) Use a 'for' loop to iterate through a range of numbers 
+              beginning with 1 and ending with 'primeIndex'(inclusive).
+              (a) Determine if the number being evaluated is a prime 
+                  number by using the 'checkPrime()' helper function.
+                  (i)   If it is prime, increment the value of
+                        'primeNumsCounter' by 1.
+                  (ii)  If it is NOT prime, do nothing and continue.
+      (6) Return 'primeNumAtIndex'.
+*/
 
 /*------------IMPLEMENTING THE PLAN------------*/
 
