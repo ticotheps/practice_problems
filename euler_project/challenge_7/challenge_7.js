@@ -40,16 +40,16 @@
       (4) Create another variable using the 'const' keyword, 
           'primeNumAtIndex', that will store the value of the prime 
           number at the given 'primeIndex'.
-      (4) Create a 'while' loop that will continue to run as long as
+      (5) Create a 'while' loop that will continue to run as long as
           'primeNumsCounter' is NOT equal to 'primeIndex'.
-          (5) Use a 'for' loop to iterate through a range of numbers 
+          (6) Use a 'for' loop to iterate through a range of numbers 
               beginning with 1 and ending with 'primeIndex'(inclusive).
               (a) Determine if the number being evaluated is a prime 
                   number by using the 'checkPrime()' helper function.
                   (i)   If it is prime, increment the value of
                         'primeNumsCounter' by 1.
                   (ii)  If it is NOT prime, do nothing and continue.
-      (6) Return 'primeNumAtIndex'.
+      (7) Return 'primeNumAtIndex'.
 */
 
 /*------------IMPLEMENTING THE PLAN------------*/
