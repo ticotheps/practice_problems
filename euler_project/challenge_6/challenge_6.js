@@ -119,5 +119,14 @@ assert.deepStrictEqual(
 console.log(`*****ALL TESTS FOR sumSquareDifference() HAVE PASSED!*****`);
 
 // console.log(findSumSquareDifference(1, 100));
+
 /*------------REFLECTING/ITERATING-------------
+- BRUTE FORCE SOLUTION:
+  - Were you able to find the 'sumSquareDifference' for all natural 
+    numbers between 1 and 100 (inclusive)?
+    - Yes. 
+  - What was the time/space complexity of your BRUTE FORCE SOLUTION?
+    - Time Complexity: O(n) => linear time
+    - Space Complexity: O(1) => constant space
+  - Can you improve the time/space complexity in some way?
  */
