@@ -126,4 +126,14 @@ console.log(`*****ALL TESTS FOR sumSquareDifference() HAVE PASSED!*****`);
     - Space Complexity: O(1) => constant space
   - Can you improve the time/space complexity of the BRUTE FORCE SOLUTION
     in some way?
+    - Yes! I could consolidate the two 'for' loops into a single 'for' 
+      loop.
+
+- ITERATED SOLUTION:
+  - Were you able to find the 'sumSquareDifference' for all natural 
+    numbers between 1 and 100 (inclusive)?
+    - Yes. 
+  - What was the time/space complexity of your ITERATED SOLUTION?
+    - Time Complexity: O(n) => linear time
+    - Space Complexity: O(1) => constant space
  */
