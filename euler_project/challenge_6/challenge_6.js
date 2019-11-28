@@ -89,16 +89,11 @@ function findSumSquareDifference(rangeStartNum, rangeEndNum) {
     // console.log("\ni = ", i);
     // console.log("iSquared = ", iSquared);
     sumOfSquares += iSquared;
+    sumOfNums += i;
+    squareOfSum = sumOfNums ** 2;
   }
   // console.log("\nsumOfSquares = ", sumOfSquares);
 
-  for (let j = rangeStartNum; j <= rangeEndNum; j++) {
-    // console.log("\nj = ", j);
-    sumOfNums += j;
-    // console.log("sumOfNums = ", sumOfNums);
-    squareOfSum = sumOfNums ** 2;
-    // console.log("\nsquareOfSum = ", squareOfSum);
-  }
   const sumSquareDifference = squareOfSum - sumOfSquares;
   return sumSquareDifference;
 }
@@ -126,7 +121,8 @@ console.log(`*****ALL TESTS FOR sumSquareDifference() HAVE PASSED!*****`);
     numbers between 1 and 100 (inclusive)?
     - Yes. 
   - What was the time/space complexity of your BRUTE FORCE SOLUTION?
-    - Time Complexity: O(n) => linear time
+    - Time Complexity: O(2n) => O(n) => linear time
     - Space Complexity: O(1) => constant space
-  - Can you improve the time/space complexity in some way?
+  - Can you improve the time/space complexity of the BRUTE FORCE SOLUTION
+    in some way?
  */
