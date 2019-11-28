@@ -61,24 +61,24 @@ const assert = require("assert");
 // A helper function that determines if the given input is prime
 function checkPrime(num) {
   if (num === undefined || num === null) {
-    console.log("Please provide a valid input (a positive integer)");
+    // console.log("Please provide a valid input (a positive integer)");
     return false;
   } else if (num <= 1) {
-    console.log(`${num} is not a prime number`);
+    // console.log(`${num} is not a prime number`);
     return false;
   } else {
     let divisorCounter = 0;
-    console.log("divisorCounter (start) = ", divisorCounter);
+    // console.log("divisorCounter (start) = ", divisorCounter);
 
     while (divisorCounter <= 2) {
-      console.log("num = ", num);
+      // console.log("num = ", num);
       for (let i = 1; i <= num; i++) {
-        console.log("\ni = ", i);
+        // console.log("\ni = ", i);
         let remainder = num % i;
-        console.log("remainder = ", remainder);
+        // console.log("remainder = ", remainder);
         if (remainder === 0) {
           divisorCounter++;
-          console.log("divisorCounter (changed) = ", divisorCounter);
+          // console.log("divisorCounter (changed) = ", divisorCounter);
         }
       }
       // 'num' has only 2 divisors (1 & itself) = it IS prime
@@ -89,16 +89,20 @@ function checkPrime(num) {
   }
 }
 
-// assert.deepStrictEqual(checkPrime(null), false, "'null' is not a valid input");
-// assert.deepStrictEqual(
-//   checkPrime(undefined),
-//   false,
-//   "'undefined' is not a valid input"
-// );
-// assert.deepStrictEqual(checkPrime(0), false, "0 is not a prime number");
-// assert.deepStrictEqual(checkPrime(-1), false, "-1 is not a prime number");
-// assert.deepStrictEqual(checkPrime(1), false, "1 is not a prime number");
+assert.deepStrictEqual(checkPrime(null), false, "'null' is not a valid input");
+assert.deepStrictEqual(
+  checkPrime(undefined),
+  false,
+  "'undefined' is not a valid input"
+);
+assert.deepStrictEqual(checkPrime(0), false, "0 is NOT a prime number");
+assert.deepStrictEqual(checkPrime(-1), false, "-1 is NOT a prime number");
+assert.deepStrictEqual(checkPrime(1), false, "1 is NOT a prime number");
 assert.deepStrictEqual(checkPrime(3), true, "3 is a prime number");
+assert.deepStrictEqual(checkPrime(5), true, "5 is a prime number");
+assert.deepStrictEqual(checkPrime(7), true, "7 is a prime number");
+assert.deepStrictEqual(checkPrime(11), true, "11 is a prime number");
+assert.deepStrictEqual(checkPrime(12), true, "13 is a prime number");
 
 console.log("***** ALL TESTS FOR 'checkPrime()' HAVE PASSED");
 
