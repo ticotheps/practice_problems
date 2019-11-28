@@ -84,21 +84,22 @@ function findSumSquareDifference(rangeStartNum, rangeEndNum) {
   let sumOfNums = 0;
   let squareOfSum = 0;
 
-  for (let i = rangeStartNum; i <= rangeEndNum; i++) {
-    let iSquared = i ** 2;
-    // console.log("\ni = ", i);
-    // console.log("iSquared = ", iSquared);
-    sumOfSquares += iSquared;
-    sumOfNums += i;
-    squareOfSum = sumOfNums ** 2;
+  if (rangeStartNum > 0 && rangeEndNum > 0) {
+    for (let i = rangeStartNum; i <= rangeEndNum; i++) {
+      let iSquared = i ** 2;
+      sumOfSquares += iSquared;
+      sumOfNums += i;
+      squareOfSum = sumOfNums ** 2;
+    }
+    const sumSquareDifference = squareOfSum - sumOfSquares;
+    return sumSquareDifference;
+  } else {
+    console.log(
+      `The inputs provided were not valid. Please provide a positive integer values for each parameter.`
+    );
   }
-  // console.log("\nsumOfSquares = ", sumOfSquares);
-
-  const sumSquareDifference = squareOfSum - sumOfSquares;
-  return sumSquareDifference;
 }
 
-// console.log(findSumSquareDifference(1, 10));
 assert.deepStrictEqual(
   findSumSquareDifference(1, 10),
   2640,
