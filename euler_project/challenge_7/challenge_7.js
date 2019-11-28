@@ -106,6 +106,4 @@ assert.deepStrictEqual(checkPrime(12), true, "13 is a prime number");
 
 console.log("***** ALL TESTS FOR 'checkPrime()' HAVE PASSED");
 
-// console.log(checkPrime(1));
-
 /*-------------REFLECTING/ITERATING------------*/
