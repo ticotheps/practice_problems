@@ -50,7 +50,7 @@
   (2) Create a variable using the 'let' keyword, 'sumOfSquares', to store
       a TOTAL SUM of the squared values of each number between 
       'rangeStartNum' and 'rangeEndNum' (inclusive).
-  (2) Create another variable using the 'const' keyword, 'squareOfSums', to
+  (2) Create another variable using the 'const' keyword, 'squareOfSum', to
       store the SQUARED VALUE of the total sum of all the numbers between 
       'rangeStartNum' and 'rangeEndNum' (inclusive).
   (3) Use a 'for' loop to iterate through each natural number between 
@@ -65,16 +65,29 @@
       (a) add the value of the current natural number to the existing
           'sumOfNums' value.
       (b) continue until each number in the range has been accounted for.
-  (6) Find the squared value of 'sumOfNums' and set 'squareOfSums' equal 
+  (6) Find the squared value of 'sumOfNums' and set 'squareOfSum' equal 
       to that value.
   (7) Create a new variable using the 'const' keyword, 
       'sumSquareDifference', and set the value of that variable equal to
-      'squareOfSums' minus 'sumOfSquares'.
+      'squareOfSum' minus 'sumOfSquares'.
   (8) Return 'sumSquareDifference'.
 
 */
 
 /*------------IMPLEMENTING THE PLAN------------*/
+const assert = require("assert");
 
+("use strict");
+
+function findSumSquareDifference(rangeStartNum, rangeEndNum) {
+  let sumOfSquares = 0;
+  const squareOfSum = 0;
+
+  for (let i = rangeStartNum; i <= rangeEndNum; i++) {
+    console.log("i = ", i);
+  }
+}
+
+findSumSquareDifference(1, 10);
 /*------------REFLECTING/ITERATING-------------
  */
