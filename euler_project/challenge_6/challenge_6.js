@@ -81,13 +81,37 @@ const assert = require("assert");
 
 function findSumSquareDifference(rangeStartNum, rangeEndNum) {
   let sumOfSquares = 0;
-  const squareOfSum = 0;
+  let sumOfNums = 0;
+  let squareOfSum = 0;
 
   for (let i = rangeStartNum; i <= rangeEndNum; i++) {
-    console.log("i = ", i);
+    let iSquared = i ** 2;
+    // console.log("\ni = ", i);
+    // console.log("iSquared = ", iSquared);
+    sumOfSquares += iSquared;
   }
+  // console.log("\nsumOfSquares = ", sumOfSquares);
+
+  for (let j = rangeStartNum; j <= rangeEndNum; j++) {
+    // console.log("\nj = ", j);
+    sumOfNums += j;
+    // console.log("sumOfNums = ", sumOfNums);
+    squareOfSum = sumOfNums ** 2;
+    // console.log("\nsquareOfSum = ", squareOfSum);
+  }
+  const sumSquareDifference = squareOfSum - sumOfSquares;
+  return sumSquareDifference;
 }
 
-findSumSquareDifference(1, 10);
+// console.log(findSumSquareDifference(1, 10));
+assert.deepStrictEqual(
+  findSumSquareDifference(1, 10),
+  2640,
+  "The sumSquareDifference for all natural numbers between 1 and 10 (inclusive) is 2640"
+);
+
+console.log(`*****ALL TESTS FOR sumSquareDifference() HAVE PASSED!*****`);
+
+console.log(findSumSquareDifference(1, 100));
 /*------------REFLECTING/ITERATING-------------
  */
