@@ -7,7 +7,7 @@
 - Expected Input(s):
   - Number of Expected Inputs: 1
   - Type of Expected Input: number
-  - Name of Expected Input: 'primeIndex'
+  - Name of Expected Input: 'primeNumPlaceInSeq'
 
 - Expected Output(s):
   - Number of Expected Output: 1
@@ -15,7 +15,7 @@
   - Name of Expected Output: 'primeNumAtIndex'
 
 - Any Constraints?
-  - 'primeIndex' cannot be negative & cannot be a floating point number.
+  - 'primeNumPlaceInSeq' cannot be negative & cannot be a floating point number.
   - The input cannot be 'null' or 'undefined'. We can always expect to 
     receive an input.
 
@@ -32,18 +32,18 @@
       returning a Boolean value. If the input is prime, it will return
       'true'. If it is not a prime number, it will return 'false'.
   (2) Create a function, 'findPrimeNumAtIndex()', that will take in one
-      parameter, 'primeIndex', and will return one output, 
+      parameter, 'primeNumPlaceInSeq', and will return one output, 
       'primeNumAtIndex'.
       (3) Create a new variable using the 'const' keyword, 
           'primeNumAtIndex', that will store the value of the prime 
-          number at the given 'primeIndex'.
+          number at the given 'primeNumPlaceInSeq'.
       (4)) Create another variable using the 'let' keyword, 
           'primeNumsCounter', to store a running count of all the prime 
           numbers encountered thus far.
       (5) Create a 'while' loop that will continue to run as long as
-          'primeNumsCounter' is NOT equal to 'primeIndex'.
+          'primeNumsCounter' is NOT equal to 'primeNumPlaceInSeq'.
           (6) Use a 'for' loop to iterate through a range of numbers 
-              beginning with 1 and ending with 'primeIndex'(inclusive).
+              beginning with 1 and ending with 'primeNumPlaceInSeq'(inclusive).
               (a) Determine if the number being evaluated is a prime 
                   number by using the 'checkPrime()' helper function.
                   (i)   If it is prime, increment the value of
@@ -116,31 +116,153 @@ assert.deepStrictEqual(checkPrime(11), true, "11 is a prime number");
 assert.deepStrictEqual(checkPrime(12), false, "12 is NOT a prime number");
 assert.deepStrictEqual(checkPrime(13), true, "13 is a prime number");
 
-console.log("***** ALL TESTS FOR 'checkPrime()' HAVE PASSED");
+console.log("***** ALL TESTS FOR 'checkPrime()' HAVE PASSED *****");
 
-// function findPrimeNumAtIndex(primeIndex) {
-//   let primeNumAtIndex = 0;
-//   let primeNumsCounter = 0;
+function findPrimeNumAtIndex(primeNumPlaceInSeq) {
+  let primeNumAtIndex = 0;
+  let primeNumsCounter = 0;
 
-//   while (primeNumsCounter <= primeIndex) {
-//     console.log("primeNumsCounter = ", primeNumsCounter);
+  if (
+    primeNumPlaceInSeq === null ||
+    primeNumPlaceInSeq === undefined ||
+    primeNumPlaceInSeq < 1
+  ) {
+    return "Sorry, invalid input. Please provide a positive integer.";
+  } else {
+    let i = 1;
+    while (primeNumsCounter <= primeNumPlaceInSeq) {
+      // console.log("\nprimeNumsCounter (start) = ", primeNumsCounter);
 
-//     for (let i = 1; i <= primeIndex; i++) {
-//       console.log("i = ", i);
+      if (primeNumsCounter === primeNumPlaceInSeq) {
+        return primeNumAtIndex;
+      }
 
-//       if (checkPrime(i) === true) {
-//         console.log(`${i} is a prime number!`);
-//         primeNumsCounter++;
-//         primeNumAtIndex = i;
-//       } else {
-//         console.log(`${i} is NOT a prime number!`);
-//       }
-//     }
-//   }
+      if (checkPrime(i) === true) {
+        // console.log(`${i} is a prime number!`);
+        primeNumsCounter++;
+        // console.log("primeNumsCounter (changed) = ", primeNumsCounter);
+        primeNumAtIndex = i;
+        // console.log("primeNumAtIndex= ", primeNumAtIndex);
+      } else {
+        // console.log(`${i} is NOT a prime number!`);
+      }
+      i++;
+    }
+  }
+}
 
-//   return primeNumAtIndex;
-// }
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(null),
+  "Sorry, invalid input. Please provide a positive integer.",
+  "The only acceptable inputs are positive integers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(undefined),
+  "Sorry, invalid input. Please provide a positive integer.",
+  "The only acceptable inputs are positive integers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(-1),
+  "Sorry, invalid input. Please provide a positive integer.",
+  "The only acceptable inputs are positive integers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(0),
+  "Sorry, invalid input. Please provide a positive integer.",
+  "The only acceptable inputs are positive integers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(1),
+  2,
+  "2 is the 1st prime number in the list of prime numbers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(2),
+  3,
+  "3 is the 2nd prime number, assuming that 2 is the first prime number in a list of sequential order prime numbers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(3),
+  5,
+  "3 is the 2nd prime number, assuming that 2 is the first prime number in a list of sequential order prime numbers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(4),
+  7,
+  "7 is the 4th prime number, assuming that 2 is the first prime number in a list of sequential order prime numbers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(5),
+  11,
+  "11 is the 5th prime number, assuming that 2 is the first prime number in a list of sequential order prime numbers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(6),
+  13,
+  "13 is the 6th prime number, assuming that 2 is the first prime number in a list of sequential order prime numbers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(10),
+  29,
+  "29 is the 10th prime number, assuming that 2 is the first prime number in a list of sequential order prime numbers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(25),
+  97,
+  "97 is the 25th prime number, assuming that 2 is the first prime number in a list of sequential order prime numbers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(50),
+  229,
+  "229 is the 50th prime number, assuming that 2 is the first prime number in a list of sequential order prime numbers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(100),
+  541,
+  "541 is the 100th prime number, assuming that 2 is the first prime number in a list of sequential order prime numbers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(1000),
+  7919,
+  "7919 is the 1000th prime number, assuming that 2 is the first prime number in a list of sequential order prime numbers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(2000),
+  17389,
+  "17389 is the 2000th prime number, assuming that 2 is the first prime number in a list of sequential order prime numbers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(4000),
+  37813,
+  "37813 is the 4000th prime number, assuming that 2 is the first prime number in a list of sequential order prime numbers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(6000),
+  59359,
+  "59359 is the 6000th prime number, assuming that 2 is the first prime number in a list of sequential order prime numbers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(8000),
+  81799,
+  "81799 is the 8000th prime number, assuming that 2 is the first prime number in a list of sequential order prime numbers."
+);
+assert.deepStrictEqual(
+  findPrimeNumAtIndex(10001),
+  104743,
+  "104743 is the 10001st prime number, assuming that 2 is the first prime number in a list of sequential order prime numbers."
+);
 
-// console.log(findPrimeNumAtIndex(6));
+console.log("*** ALL TESTS FOR 'findPrimeNumAtIndex()' HAVE PASSED ***");
+
+// console.log(findPrimeNumAtIndex(10));
+// console.log(findPrimeNumAtIndex(25));
+// console.log(findPrimeNumAtIndex(50));
+// console.log(findPrimeNumAtIndex(100));
+// console.log(findPrimeNumAtIndex(1000));
+// console.log(findPrimeNumAtIndex(2000));
+// console.log(findPrimeNumAtIndex(4000));
+// console.log(findPrimeNumAtIndex(6000));
+// console.log(findPrimeNumAtIndex(8000));
+// console.log(findPrimeNumAtIndex(10001));
 
 /*-------------REFLECTING/ITERATING------------*/
