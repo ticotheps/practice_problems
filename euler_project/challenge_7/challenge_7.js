@@ -102,7 +102,7 @@ assert.deepStrictEqual(checkPrime(3), true, "3 is a prime number");
 assert.deepStrictEqual(checkPrime(5), true, "5 is a prime number");
 assert.deepStrictEqual(checkPrime(7), true, "7 is a prime number");
 assert.deepStrictEqual(checkPrime(11), true, "11 is a prime number");
-assert.deepStrictEqual(checkPrime(12), true, "13 is a prime number");
+assert.deepStrictEqual(checkPrime(13), true, "13 is a prime number");
 
 console.log("***** ALL TESTS FOR 'checkPrime()' HAVE PASSED");
 
