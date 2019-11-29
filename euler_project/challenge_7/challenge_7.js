@@ -118,6 +118,7 @@ assert.deepStrictEqual(checkPrime(13), true, "13 is a prime number");
 
 console.log("***** ALL TESTS FOR 'checkPrime()' HAVE PASSED *****");
 
+console.time("findPrimeNumAtIndex");
 function findPrimeNumAtIndex(primeNumPlaceInSeq) {
   let primeNumAtIndex = 0;
   let primeNumsCounter = 0;
@@ -254,15 +255,17 @@ assert.deepStrictEqual(
 
 console.log("*** ALL TESTS FOR 'findPrimeNumAtIndex()' HAVE PASSED ***");
 
-// console.log(findPrimeNumAtIndex(10));
-// console.log(findPrimeNumAtIndex(25));
-// console.log(findPrimeNumAtIndex(50));
-// console.log(findPrimeNumAtIndex(100));
-// console.log(findPrimeNumAtIndex(1000));
-// console.log(findPrimeNumAtIndex(2000));
-// console.log(findPrimeNumAtIndex(4000));
-// console.log(findPrimeNumAtIndex(6000));
-// console.log(findPrimeNumAtIndex(8000));
-// console.log(findPrimeNumAtIndex(10001));
+console.timeEnd("findPrimeNumAtIndex");
 
-/*-------------REFLECTING/ITERATING------------*/
+/*-------------REFLECTING/ITERATING------------
+- BRUTE FORCE SOLUTION ANALYSIS
+  - Were you able to find the 10001st prime number?
+    - Yes; 104743
+  - How long did it take?
+    - 52.883 seconds
+  - What is the time/space complexity of your BRUTE FORCE SOLUTION?
+    - Time Complexity: O(n^2 + n) => O(n^2) => quadratic
+    - Space Complexity: O(1) => constant
+  - Can you improve the time/space compleity of this solution?
+    - No.
+*/
