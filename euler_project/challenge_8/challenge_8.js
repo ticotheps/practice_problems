@@ -133,5 +133,6 @@ console.log(findGreatestAdjacentDigitsProduct("123456", -2)); // should be undef
 console.log(findGreatestAdjacentDigitsProduct("123456", 2)); // should be 30
 console.log(findGreatestAdjacentDigitsProduct("123456789", 3)); // should be 504
 console.log(findGreatestAdjacentDigitsProduct(hugeNum, 4)); // should be 5832
+console.log(findGreatestAdjacentDigitsProduct(hugeNum, 13)); // should be 5832
 
 /*------------ REFLECTING/ITERATING -------------*/
