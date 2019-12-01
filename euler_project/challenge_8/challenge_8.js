@@ -7,21 +7,21 @@
   - Number of Expected Inputs: 
     - 2
   - Name/Type of Expected Inputs:
-    - 'longNumSample' => number
+    - 'longNumSeries' => number
     - 'numOfAdjacentDigits' => number
 
 - Expected Outputs:
   - Number of Expected Outputs:
     - 1
   - Name/Type of Expected Outputs:
-    - 'adjacentDigitsProduct' => number
+    - 'greatestAdjacentDigitsProduct' => number
 
 - Any Constraints?
-  - Can 'longNumSample' be a floating point number?
+  - Can 'longNumSeries' be a floating point number?
     - For this problem, assume that it must be an integer.
-  - Can 'longNumSample' be a negative number?
+  - Can 'longNumSeries' be a negative number?
     - For this problem, assume that it must be positive.
-  - Can 'adjacentDigitsProduct' be negative?
+  - Can 'greatestAdjacentDigitsProduct' be negative?
     - For this problem, assume that it must be positive.
 
 - Example:
@@ -53,7 +53,38 @@
 
 */
 
-/*--------------- DEVISING A PLAN ---------------*/
+/*--------------- DEVISING A PLAN ---------------
+- BRUTE FORCE SOLUTION:
+  (1) Create a function, 'findGreatestAdjacentDigitsProduct()', that will take in
+      two parameters, 'longNumSeries' & 'numOfAdjacentDigits', and will
+      return one output, 'greatestAdjacentDigitsProduct'.
+  (2) Create a variable, 'greatestAdjacentDigitsProduct', using the 'const' 
+      keyword, which will hold the value of the to-be-returned output.
+  (3) Create another variable, 'adjacentDigitsArray', using the 'const'
+      keyword, which will hold the to-be-evaluated adjacent digits.
+  (4) Convert the 'longNumSeries' number into an array and set it equal
+      to a new variable using the 'const' keyword, 'longNumSeriesArray'.
+  (5) Using a 'for' loop, iterate through 'longNumSeriesArray' in chunks
+      of digits, by specifying the size of the chunk as the 
+      'numOfAdjacentDigits' input.
+      (6) Create a new variable, 'digitChunksArray', with the 'let'
+          keyword, that will store the the first 'n' numbers values 
+          (equal to the second parameter) from 'longNumSeriesArray'.
+      (7) Using another 'for' loop, iterate through all the number
+          values in 'digitChunksArray' to find the product of those
+          numbers.
+          (a) Create a variable, 'chunksArrayProduct', using the 'let'
+              keyword, to store the current value of the calculated
+              product for that iteration.
+              (i)   If the value of 'chunksArrayProduct' is GREATER than
+                    the value of 'greatestAdjacentDigitsProduct', set 
+                    'greatestAdjacentDigitsProduct' equal to 
+                    'chunksArrayProduct'.
+              (ii)  If the value of 'chunksArrayProduct' is NOT GREATER
+                    than the value of 'greatestAdjacentDigitsProduct',
+                    don't do anything.
+  (8) Return 'greatestAdjacentDigitsProduct'.
+*/
 
 /*------------ IMPLEMENTING THE PLAN ------------*/
 
