@@ -86,36 +86,35 @@ function findGreatestAdjacentDigitsProduct(longNumString, numOfAdjacentDigits) {
     let greatestAdjacentDigitsProduct = 0;
 
     for (let i = 0; i <= longNumString.length - numOfAdjacentDigits; i++) {
-      console.log("\ni = ", i);
+      // console.log("\ni = ", i);
       let chunkedNums = [];
       let chunkedNumsProduct = 1;
-      console.log("chunkedNumsProduct(starting) = ", chunkedNumsProduct);
+      // console.log("chunkedNumsProduct(starting) = ", chunkedNumsProduct);
 
       for (let j = 0; j < numOfAdjacentDigits; j++) {
-        console.log("\nj = ", j);
+        // console.log("\nj = ", j);
 
         chunkedNums.push(longNumString[i + j]);
-        console.log("chunkedNums = ", chunkedNums);
+        // console.log("chunkedNums = ", chunkedNums);
 
         chunkedNumsProduct *= longNumString[i + j];
-        console.log("***NEW*** chunkedNumsProduct = ", chunkedNumsProduct);
+        // console.log("***NEW*** chunkedNumsProduct = ", chunkedNumsProduct);
       }
 
       if (chunkedNumsProduct > greatestAdjacentDigitsProduct) {
-        console.log(
-          "We found a greater product! Update 'greatestAdjacentDigitsProduct'"
-        );
+        // console.log(
+        //   "We found a greater product! Update 'greatestAdjacentDigitsProduct'"
+        // );
         greatestAdjacentDigitsProduct = chunkedNumsProduct;
-        console.log(
-          "greatestAdjacentDigitsProduct = ",
-          greatestAdjacentDigitsProduct
-        );
-      } else {
-        console.log("No update is required.");
+        // console.log(
+        //   "greatestAdjacentDigitsProduct = ",
+        //   greatestAdjacentDigitsProduct
+        // );
+        // } else {
+        //   console.log("No update is required.");
       }
       chunkedNumsProduct = 1;
     }
-
     return greatestAdjacentDigitsProduct;
   }
 }
