@@ -186,17 +186,13 @@ assert.deepStrictEqual(
 
 console.log("***** ALL TESTS HAVE PASSED *****");
 
-// console.log(findGreatestAdjacentDigitsProduct(undefined, undefined)); // should be undefined
-// console.log(findGreatestAdjacentDigitsProduct(undefined, 2)); // should be undefined
-// console.log(findGreatestAdjacentDigitsProduct("123456", undefined)); // should be undefined
-// console.log(findGreatestAdjacentDigitsProduct(null, null)); // should be undefined
-// console.log(findGreatestAdjacentDigitsProduct(null, 2)); // should be undefined
-// console.log(findGreatestAdjacentDigitsProduct("123456", null)); // should be undefined
-// console.log(findGreatestAdjacentDigitsProduct("-123456", 2)); // should be undefined
-// console.log(findGreatestAdjacentDigitsProduct("123456", -2)); // should be undefined
-// console.log(findGreatestAdjacentDigitsProduct("123456", 2)); // should be 30
-// console.log(findGreatestAdjacentDigitsProduct("123456789", 3)); // should be 504
-// console.log(findGreatestAdjacentDigitsProduct(hugeNum, 4)); // should be 5832
-// console.log(findGreatestAdjacentDigitsProduct(hugeNum, 13)); // should be 23514624000
-
-/*------------ REFLECTING/ITERATING -------------*/
+/*------------ REFLECTING/ITERATING -------------
+- BRUTE FORCE SOLUTION ANALYSIS:
+  - Were you able to arrive at the correct answer with this solution?
+    - Yes. 23514624000.
+  - What was the time/space complexity for this solution?
+    - Time Complexity: O(n^2) = quadratic
+    - Space Complexity: O(1) = constant
+  - Could the time/space complexity for this solution be improved?
+    - 
+*/
