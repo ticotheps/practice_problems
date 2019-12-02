@@ -194,5 +194,11 @@ console.log("***** ALL TESTS HAVE PASSED *****");
     - Time Complexity: O(n^2) = quadratic
     - Space Complexity: O(1) = constant
   - Could the time/space complexity for this solution be improved?
-    - 
+    - Yes. You could avoid the use of the nested 'for' loop by
+      dynamically modifying the substring (of size 'numOfAdjacentDigits')
+      by removing the first item of the string and adding an item to the
+      end of the string as you iterated through 'longNumString'.
+  -What would the new time/space complexity of this solution be?
+    - Time Complexity: O(n) = linear
+    - Space Complexity: O(n) = linear
 */
