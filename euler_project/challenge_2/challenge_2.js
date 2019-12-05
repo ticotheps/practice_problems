@@ -116,4 +116,21 @@ console.log(
 - How much faster & space-efficient will your new solution be?
 
 - How will you do it?
+
+answer = (limit) => {
+  let sum =0;
+  let previousNum = 1;
+  let currentNum = 1; 
+  let nextNum = 0;
+  while (currentNum < limit) {
+    if (currentNum % 2 == 0 ) {
+      sum += currentNum;
+    } 
+    nextNum = currentNum+previousNum;
+    previousNum = currentNum;
+    currentNum = nextNum;
+  }
+  return sum;
+}
+console.log("sum= ", answer(4000000))
 */
