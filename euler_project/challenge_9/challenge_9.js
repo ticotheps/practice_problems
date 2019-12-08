@@ -1,6 +1,7 @@
 /*----------UNDERSTANDING THE PROBLEM----------
 - Objective 
-  - Find the "Pythagorean Triplet" for which a + b + c = 1000.
+  - Create an algorithm that will find the "Pythagorean Triplet" for 
+    which a + b + c = 1000.
 
 - Definitions
   - "Pythagorean Triplet": a set of 3 "natural numbers" that have the
@@ -11,39 +12,46 @@
           (a) For the lowest 2 numbers in the set, the squares of each of
           those numbers will add up to the square of the laregest number
           in the set.
-  - "New Term": <some definition here>
 
 - Expected Input(s)
   - Number of Expected Parameters
-    - <number of expected parameters here> 
+    - 1 parameter
   - Names of Expected Parameters
-    - <name of parameter A here>
-    - <name of parameter B here>
+    - "sumOfPythagTriplet"
   - Data Types of Expected Parameters
-    - <data type of parameter A here>
-    - <data type of parameter B here>
+    - Number
 
 - Expected Output(s)
   - Number of Expected Outputs
-    - <number of expected outputs here> 
+    - 1 output
   - Names of Expected Output
-    - <name of output here>
+    - "productOfPythagTriplet"
   - Data Type of Expected Output
-    - <data type of output here>
+    - Number
 
 - Constraints
   - What will make the algorithm fail?
     - Negative numbers?
+      - Yes
     - Number data types?
+      - No
     - Floating point numbers?
-    - Unspecified characters in the inputs?
+      - Yes
+    - Non-alphanumeric characters in the inputs?
+      - Yes
 
 - Example #1
   - Example #1 Input(s)
-    - <Example #1 input A here>
-    - <Example #1 input B here>
+    - 12
+      - a^2 + b^2 = c^2
+      - 9 + 16 = 625
+      - 3^2 + 4^2 = 5^2
+      - 3 + 4 + 5 = 12 
   - Example #1 Output(s)
-    - <Example #1 output here>
+    - 60 (3 * 4 * 5 = 60)
+      - a = 3
+      - b = 4
+      - c = 5
 */
 
 /*---------------DEVISING A PLAN---------------

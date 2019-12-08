@@ -27,9 +27,13 @@
 - Constraints
   - What will make the algorithm fail?
     - Negative numbers?
+      -
     - Number data types?
+      -
     - Floating point numbers?
-    - Unspecified characters in the inputs?
+      -
+    - Non-alphanumeric characters in the inputs?
+      -
 
 - Example #1
   - Example #1 Input(s)
