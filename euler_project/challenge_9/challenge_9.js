@@ -90,39 +90,93 @@ const assert = require("assert");
 ("use strict");
 
 function findProductOfPythagTriplet(sumOfPythagTriplet) {
-  let productOfPythagTriplet;
-  let numA;
-  let numB;
+  if (
+    sumOfPythagTriplet === null ||
+    sumOfPythagTriplet === undefined ||
+    sumOfPythagTriplet < 1 ||
+    typeof sumOfPythagTriplet !== "number"
+  ) {
+    // console.log(`Sorry, ${sumOfPythagTriplet} is an invalid input.`);
+    // console.log("Please provide a valid input (a positive integer).\n");
+    return false;
+  } else {
+    let productOfPythagTriplet;
+    let numA;
+    let numB;
 
-  for (let numA = 1; numA < sumOfPythagTriplet; numA++) {
-    // console.log("\n*OUTER LOOP*");
+    for (let numA = 1; numA < sumOfPythagTriplet; numA++) {
+      // console.log("\n*OUTER LOOP*");
 
-    for (let numB = numA + 1; numA + numB < sumOfPythagTriplet; numB++) {
-      // console.log("inner loop");
-      let squareOfNumA = numA ** 2;
-      // console.log("squareOfNumA = ", squareOfNumA);
-      let squareOfNumB = numB ** 2;
-      // console.log("squareOfNumB = ", squareOfNumB, "\n");
+      for (let numB = numA + 1; numA + numB < sumOfPythagTriplet; numB++) {
+        // console.log("inner loop");
+        let squareOfNumA = numA ** 2;
+        // console.log("squareOfNumA = ", squareOfNumA);
+        let squareOfNumB = numB ** 2;
+        // console.log("squareOfNumB = ", squareOfNumB, "\n");
 
-      let numC = Math.sqrt(squareOfNumA + squareOfNumB);
-      // console.log("numC = ", numC, "\n");
+        let numC = Math.sqrt(squareOfNumA + squareOfNumB);
+        // console.log("numC = ", numC, "\n");
 
-      if (numA !== numB && numA + numB + numC === sumOfPythagTriplet) {
-        // console.log(
-        //   `We found a triplet! numA = ${numA}, numB = ${numB}, numC = ${numC}`
-        // );
-        productOfPythagTriplet = numA * numB * numC;
-        return productOfPythagTriplet;
+        if (numA !== numB && numA + numB + numC === sumOfPythagTriplet) {
+          // console.log(
+          //   `We found a triplet! numA = ${numA}, numB = ${numB}, numC = ${numC}`
+          // );
+          productOfPythagTriplet = numA * numB * numC;
+          return productOfPythagTriplet;
+        }
       }
     }
   }
   return "A Pythagorean Triplet for the provided input does NOT exist!";
 }
 
+const hugeNum = BigInt(
+  98245098204580297420948509238450289450298345092832303849300
+);
+const floatNum = 0.1283949124934;
+// TEST CASES
+const sumOfTriplet12 = findProductOfPythagTriplet(12); // should return 60
+const sumOfTripletNoInput = findProductOfPythagTriplet(); // should return false
+const sumOfTripletNegativeNum = findProductOfPythagTriplet(-12); // should return false
+const sumOfTripletStringType = findProductOfPythagTriplet("12"); // should return false
+const sumOfTripletBooleanType = findProductOfPythagTriplet("12"); // should return false
+const sumOfTripletBigIntType = findProductOfPythagTriplet(hugeNum); // should return false
+const sumOfTripletFloatNum = findProductOfPythagTriplet(floatNum); // should return false
+
 assert.deepStrictEqual(
-  findProductOfPythagTriplet(12),
+  sumOfTriplet12,
   60,
-  "When the sum of the three numbers in a Pythagorean Triplet is 12, the product of those three numbers is 60."
+  "When the sum of the numbers in a Pythagorean Triplet is 12, the product of those numbers is 60."
+);
+assert.deepStrictEqual(
+  sumOfTripletNoInput,
+  false,
+  "When the input is either 'null' or 'undefined', the 'false' Boolean is returned."
+);
+assert.deepStrictEqual(
+  sumOfTripletNegativeNum,
+  false,
+  "When the input is a negative number, the 'false' Boolean is returned."
+);
+assert.deepStrictEqual(
+  sumOfTripletStringType,
+  false,
+  "When the input has a data type of 'String', the 'false' Boolean is returned."
+);
+assert.deepStrictEqual(
+  sumOfTripletBooleanType,
+  false,
+  "When the input has a data type of 'Boolean', the 'false' Boolean is returned."
+);
+assert.deepStrictEqual(
+  sumOfTripletBigIntType,
+  false,
+  "When the input has a data type of 'big int', the 'false' Boolean is returned."
+);
+assert.deepStrictEqual(
+  sumOfTripletFloatNum,
+  false,
+  "When the input is a floating point number, the 'false' Boolean is returned."
 );
 
 console.log(
