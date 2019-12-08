@@ -136,6 +136,7 @@ const hugeNum = BigInt(
 const floatNum = 0.1283949124934;
 // TEST CASES
 const sumOfTriplet12 = findProductOfPythagTriplet(12); // should return 60
+const sumOfTriplet1000 = findProductOfPythagTriplet(1000); // should return 31875000
 const sumOfTripletNoInput = findProductOfPythagTriplet(); // should return false
 const sumOfTripletNegativeNum = findProductOfPythagTriplet(-12); // should return false
 const sumOfTripletStringType = findProductOfPythagTriplet("12"); // should return false
@@ -147,6 +148,11 @@ assert.deepStrictEqual(
   sumOfTriplet12,
   60,
   "When the sum of the numbers in a Pythagorean Triplet is 12, the product of those numbers is 60."
+);
+assert.deepStrictEqual(
+  sumOfTriplet1000,
+  31875000,
+  "When the sum of the numbers in a Pythagorean Triplet is 1000, the product of those numbers is 31875000."
 );
 assert.deepStrictEqual(
   sumOfTripletNoInput,
