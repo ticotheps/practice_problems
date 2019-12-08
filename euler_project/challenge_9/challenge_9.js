@@ -14,20 +14,14 @@
           in the set.
 
 - Expected Input(s)
-  - Number of Expected Parameters
-    - 1 parameter
-  - Names of Expected Parameters
-    - "sumOfPythagTriplet"
-  - Data Types of Expected Parameters
-    - Number
+  - Number of Expected Parameters: 1
+  - Names of Expected Parameters: "sumOfPythagTriplet"
+  - Data Types of Expected Parameters: Number
 
 - Expected Output(s)
-  - Number of Expected Outputs
-    - 1 output
-  - Names of Expected Output
-    - "productOfPythagTriplet"
-  - Data Type of Expected Output
-    - Number
+  - Number of Expected Outputs: 1
+  - Names of Expected Output: "productOfPythagTriplet"
+  - Data Type of Expected Output: Number
 
 - Constraints
   - What will make the algorithm fail?
