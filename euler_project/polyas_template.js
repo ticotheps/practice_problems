@@ -56,8 +56,12 @@
 /*--------REFLECTING/ITERATING THE PLAN--------
 - BRUTE FORCE SOLUTION ANALYSIS
   - Were you able to arrive at the correct answer with your solution?
+    - Yes/No
   - Analyze the Time & Space Complexity of your solution.
+    - Time Complexity: 
+    - Space Complexity: 
   - Could either, Time or Space Complexity, be improved in your solution?
+    - Yes/No
   - If so, how would you go about improving it?
   - What is the new Time & Space Complexity of your improved solution?
 */
