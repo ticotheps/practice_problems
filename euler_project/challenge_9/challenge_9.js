@@ -96,8 +96,6 @@ function findProductOfPythagTriplet(sumOfPythagTriplet) {
     sumOfPythagTriplet < 1 ||
     typeof sumOfPythagTriplet !== "number"
   ) {
-    // console.log(`Sorry, ${sumOfPythagTriplet} is an invalid input.`);
-    // console.log("Please provide a valid input (a positive integer).\n");
     return false;
   } else {
     let productOfPythagTriplet;
@@ -105,22 +103,14 @@ function findProductOfPythagTriplet(sumOfPythagTriplet) {
     let numB;
 
     for (let numA = 1; numA < sumOfPythagTriplet; numA++) {
-      // console.log("\n*OUTER LOOP*");
-
       for (let numB = numA + 1; numA + numB < sumOfPythagTriplet; numB++) {
-        // console.log("inner loop");
         let squareOfNumA = numA ** 2;
-        // console.log("squareOfNumA = ", squareOfNumA);
+
         let squareOfNumB = numB ** 2;
-        // console.log("squareOfNumB = ", squareOfNumB, "\n");
 
         let numC = Math.sqrt(squareOfNumA + squareOfNumB);
-        // console.log("numC = ", numC, "\n");
 
         if (numA !== numB && numA + numB + numC === sumOfPythagTriplet) {
-          // console.log(
-          //   `We found a triplet! numA = ${numA}, numB = ${numB}, numC = ${numC}`
-          // );
           productOfPythagTriplet = numA * numB * numC;
           return productOfPythagTriplet;
         }
@@ -194,8 +184,8 @@ console.log(
   - Were you able to arrive at the correct answer with your solution?
     - Yes. findProductOfPythagTriplet(1000) = 31875000.
   - Analyze the Time & Space Complexity of your solution.
-    - Time Complexity: 
-    - Space Complexity: 
+    - Time Complexity: O(n^2) = quadratic time
+    - Space Complexity: O(1) = constant
   - Could either, Time or Space Complexity, be improved in your solution?
   - If so, how would you go about improving it?
   - What is the new Time & Space Complexity of your improved solution?
