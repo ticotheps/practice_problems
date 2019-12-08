@@ -53,4 +53,11 @@
 
 /*------------IMPLEMENTING THE PLAN------------*/
 
-/*--------REFLECTING/ITERATING THE PLAN--------*/
+/*--------REFLECTING/ITERATING THE PLAN--------
+- BRUTE FORCE SOLUTION ANALYSIS
+  - Were you able to arrive at the correct answer with your solution?
+  - Analyze the Time & Space Complexity of your solution.
+  - Could either, Time or Space Complexity, be improved in your solution?
+  - If so, how would you go about improving it?
+  - What is the new Time & Space Complexity of your improved solution?
+*/
