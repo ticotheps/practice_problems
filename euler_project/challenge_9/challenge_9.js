@@ -4,13 +4,14 @@
 
 - Definitions:
   - Pythagorean Triplet: a set of 3 "natural numbers" that have the
-    following characteristics:
-      (a) a < b < c
-        - three uniquely distinct positive integers
-      (b) a^2 + b^2 = c^2
-        - For the lowest 2 numbers in the set, the squares of each of
+    following 2 characteristics:
+      (1) a < b < c
+        (a) three uniquely distinct positive integers
+      (2) a^2 + b^2 = c^2
+        (a) For the lowest 2 numbers in the set, the squares of each of
           those numbers will add up to the square of the laregest number
           in the set.
+      
 
 */
 
