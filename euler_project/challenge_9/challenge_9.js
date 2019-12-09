@@ -98,9 +98,9 @@ function findProductOfPythagTriplet(sumOfPythagTriplet) {
   ) {
     return false;
   } else {
-    let productOfPythagTriplet;
-    let numA;
-    let numB;
+    let productOfPythagTriplet = 0;
+    let numA = 0;
+    let numB = 0;
 
     for (let numA = 1; numA < sumOfPythagTriplet; numA++) {
       for (let numB = numA + 1; numA + numB < sumOfPythagTriplet; numB++) {
@@ -124,7 +124,8 @@ const hugeNum = BigInt(
   98245098204580297420948509238450289450298345092832303849300
 );
 const floatNum = 0.1283949124934;
-// TEST CASES
+
+// TEST CASES for BRUTE FORCE SOLUTION
 const sumOfTriplet12 = findProductOfPythagTriplet(12); // should return 60
 const sumOfTriplet1000 = findProductOfPythagTriplet(1000); // should return 31875000
 const sumOfTripletNoInput = findProductOfPythagTriplet(); // should return false
@@ -134,6 +135,7 @@ const sumOfTripletBooleanType = findProductOfPythagTriplet("12"); // should retu
 const sumOfTripletBigIntType = findProductOfPythagTriplet(hugeNum); // should return false
 const sumOfTripletFloatNum = findProductOfPythagTriplet(floatNum); // should return false
 
+// TESTS for BRUTE FORCE SOLUTION
 assert.deepStrictEqual(
   sumOfTriplet12,
   60,
@@ -187,6 +189,136 @@ console.log(
     - Time Complexity: O(n^2) = quadratic time
     - Space Complexity: O(1) = constant
   - Could either, Time or Space Complexity, be improved in your solution?
+    - Yes. Time Complexity could be improved from O(n^2) to O(n).
   - If so, how would you go about improving it?
+    - Instead of using two nested 'for' loops, I would create a Stack()
+      data structure to temporarily store "numA" values and use one 'for'
+      loop and one 'while' loop.
+    - Create a new variable called "numAStack" that is set equal to a
+      pair of empty square brackets (JavaScript does not have native 
+      Stack() data structures so we have to build our own).
+    - Create a "numB" variable & set it equal to the value of 2 (because
+      according to the instructions, "numB" will always be greater than
+      "numA").
+    - Using the 'for' loop, iterate through all the numbers between 1 
+      and the value of "sumOfPythagTriplet" (inclusive) in descending
+      order and:
+      - Add each iterated number to the "numAstack" stack using the 
+        '.push()' method.
+    - Using the 'while' loop, continue looping through the "numAStack"
+      stack as long as it has a length greater than 0.
+      - Use the '.pop()' method to remove the last item from the stack
+        and store this value as a new variable called "currentNumA" that 
+        we will be evaluating during each iteration of the 'while' loop.
+      - Create a new variable called "numC" and set it equal to the
+        square root value of the sum of "numA"-squared plus 
+        "numB"-squared.
+      - If "numA" does NOT equal "numB" AND if the sum of "numA", "numB",
+        and "numC" DOES equal the "sumOfPythagTriplet", then return 
+        "numC".
+      - Else, do nothing.
   - What is the new Time & Space Complexity of your improved solution?
+    - Time Complexity: O(n) = linear time
+    - Space Complexity: O(n) = linear space
 */
+
+function improvedPythagTripletSolution(sumOfPythagTriplet) {
+  if (
+    sumOfPythagTriplet === null ||
+    sumOfPythagTriplet === undefined ||
+    sumOfPythagTriplet < 1 ||
+    typeof sumOfPythagTriplet !== "number"
+  ) {
+    return false;
+  } else {
+    let numAstack = [];
+    let productOfPythagTriplet = 0;
+    let numA;
+    let numB = 0;
+
+    for (let numA = sumOfPythagTriplet; numA > 0; numA--) {
+      // console.log("numA = ", numA);
+      numAstack.push(numA);
+    }
+
+    // console.log(numAstack);
+
+    while (numAstack.length !== 0) {
+      let currentNumA = numAstack.pop();
+      console.log("currentNumA = ", currentNumA);
+
+      let currentNumB = numAstack[numB];
+      console.log("currentNumB = ", currentNumB);
+      let squareOfCurrentNumA = currentNumA ** 2;
+      let squareOfNumB = numB ** 2;
+
+      let numC = Math.sqrt(squareOfCurrentNumA + squareOfNumB);
+
+      if (
+        currentNumA !== numB &&
+        currentNumA + numB + numC === sumOfPythagTriplet
+      ) {
+        console.log("squareOfCurrentNumA = ", squareOfCurrentNumA);
+        console.log("squareOfNumB = ", squareOfNumB);
+        console.log("numC = ", numC);
+        productOfPythagTriplet = currentNumA * numB * numC;
+        return productOfPythagTriplet;
+      }
+      numB++;
+      console.log("numB = ", numB, "\n");
+    }
+  }
+  return "A Pythagorean Triplet for the provided input does NOT exist!";
+}
+
+// TEST CASES for IMPROVED SOLUTION
+const improvedSumOfTriplet12 = improvedPythagTripletSolution(12); // should return 60
+const improvedSumOfTriplet1000 = improvedPythagTripletSolution(1000); // should return 31875000
+const improvedSumOfTripletNoInput = improvedPythagTripletSolution(); // should return false
+const improvedSumOfTripletNegativeNum = improvedPythagTripletSolution(-12); // should return false
+const improvedSumOfTripletStringType = improvedPythagTripletSolution("12"); // should return false
+const improvedSumOfTripletBooleanType = improvedPythagTripletSolution("12"); // should return false
+const improvedSumOfTripletBigIntType = improvedPythagTripletSolution(hugeNum); // should return false
+const improvedSumOfTripletFloatNum = improvedPythagTripletSolution(floatNum); // should return false
+
+// TESTS for IMPROVED SOLUTION
+improvedPythagTripletSolution(12);
+assert.deepStrictEqual(
+  improvedSumOfTriplet1000,
+  31875000,
+  "When the sum of the numbers in a Pythagorean Triplet is 1000, the product of those numbers is 31875000."
+);
+assert.deepStrictEqual(
+  improvedSumOfTripletNoInput,
+  false,
+  "When the input is either 'null' or 'undefined', the 'false' Boolean is returned."
+);
+assert.deepStrictEqual(
+  improvedSumOfTripletNegativeNum,
+  false,
+  "When the input is a negative number, the 'false' Boolean is returned."
+);
+assert.deepStrictEqual(
+  improvedSumOfTripletStringType,
+  false,
+  "When the input has a data type of 'String', the 'false' Boolean is returned."
+);
+assert.deepStrictEqual(
+  improvedSumOfTripletBooleanType,
+  false,
+  "When the input has a data type of 'Boolean', the 'false' Boolean is returned."
+);
+assert.deepStrictEqual(
+  improvedSumOfTripletBigIntType,
+  false,
+  "When the input has a data type of 'big int', the 'false' Boolean is returned."
+);
+assert.deepStrictEqual(
+  improvedSumOfTripletFloatNum,
+  false,
+  "When the input is a floating point number, the 'false' Boolean is returned."
+);
+
+console.log(
+  "\n*---- ALL TESTS FOR 'improvedPythagTripletSolution()' ARE PASSING ----*\n"
+);
