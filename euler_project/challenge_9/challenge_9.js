@@ -233,7 +233,7 @@ function improvedPythagTripletSolution(sumOfPythagTriplet) {
   } else {
     let numAstack = [];
     let productOfPythagTriplet = 0;
-    let numA;
+    // let numA;
     let numB = 0;
 
     for (let numA = sumOfPythagTriplet; numA > 0; numA--) {
@@ -242,8 +242,7 @@ function improvedPythagTripletSolution(sumOfPythagTriplet) {
     }
 
     // console.log(numAstack);
-
-    while (numAstack.length !== 0) {
+    while (numAstack.length > 0) {
       let currentNumA = numAstack.pop();
       console.log("currentNumA = ", currentNumA);
 
