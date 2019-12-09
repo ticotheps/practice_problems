@@ -33,13 +33,53 @@
 
 /*---------------DEVISING A PLAN---------------
 - BRUTE FORCE SOLUTION (Pseudocoded Steps)
-  (1) <Step 1 here>
-  (2) <Step 2 here>
-  (3) <Step 3 here>
-  ...
+  (1) Write a helper function, "checkPrime()", that will determine 
+      whether or not a number is prime.
+  (2) Create a "sumOfPrimes" variable that will be returned as the 
+      output.
+  (3) Create a function called, 'findSumOfPrimes()', that takes in 
+      one parameter, "limitForSumOfPrimes", and returns one output,
+      "sumOfPrimes".
+  (4) Using a 'for' loop, iterate through each number between 2 and the
+      "limitForSumOfPrimes" input (inclusive).
+      (a) Call the helper function, "checkPrime()", to determine if the 
+          number is prime. 
+          (i)   If the number is prime, add the value to the current value
+                of "sumOfPrimes".
+          (ii)  If the number is NOT prime, don't do anything.
+  (5) Return "sumOfPrimes".
 */
 
 /*------------IMPLEMENTING THE PLAN------------*/
+const assert = require("assert");
+
+("use strict");
+
+// Returns 'True' or 'False' to determine if a number is prime
+function checkPrime(num) {
+  console.log("num = ", num);
+
+  if (num <= 1) {
+    return false;
+  } else {
+    for (let i = num; i > 0; i--) {
+      let factorCounter = 0;
+
+      if (num % i == 0) {
+        factorCounter += 1;
+        console.log("Found another factor!");
+        console.log("factorCounter = ", factorCounter);
+      } else {
+        console.log(`${i} is not a factor of ${num}!`);
+      }
+    }
+    return true;
+  }
+  return false;
+}
+
+console.log(checkPrime(3)); // should print True
+console.log(checkPrime(4)); // should print False
 
 /*--------REFLECTING/ITERATING THE PLAN--------
 - BRUTE FORCE SOLUTION ANALYSIS
