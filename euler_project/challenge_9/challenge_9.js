@@ -99,8 +99,6 @@ function findProductOfPythagTriplet(sumOfPythagTriplet) {
     return false;
   } else {
     let productOfPythagTriplet = 0;
-    let numA = 0;
-    let numB = 0;
 
     for (let numA = 1; numA < sumOfPythagTriplet; numA++) {
       for (let numB = numA + 1; numA + numB < sumOfPythagTriplet; numB++) {
@@ -208,7 +206,7 @@ console.log(
     - Using the 'while' loop, continue looping through the "numAStack"
       stack as long as it has a length greater than 0.
       - Use the '.pop()' method to remove the last item from the stack
-        and store this value as a new variable called "currentNumA" that 
+        and store this value as a new variable called "poppedNumA" that 
         we will be evaluating during each iteration of the 'while' loop.
       - Create a new variable called "numC" and set it equal to the
         square root value of the sum of "numA"-squared plus 
@@ -221,103 +219,3 @@ console.log(
     - Time Complexity: O(n) = linear time
     - Space Complexity: O(n) = linear space
 */
-
-function improvedPythagTripletSolution(sumOfPythagTriplet) {
-  if (
-    sumOfPythagTriplet === null ||
-    sumOfPythagTriplet === undefined ||
-    sumOfPythagTriplet < 1 ||
-    typeof sumOfPythagTriplet !== "number"
-  ) {
-    return false;
-  } else {
-    let numAstack = [];
-    let productOfPythagTriplet = 0;
-    // let numA;
-    let numB = 0;
-
-    for (let numA = sumOfPythagTriplet; numA > 0; numA--) {
-      // console.log("numA = ", numA);
-      numAstack.push(numA);
-    }
-
-    // console.log(numAstack);
-    while (numAstack.length > 0) {
-      let currentNumA = numAstack.pop();
-      console.log("currentNumA = ", currentNumA);
-
-      let currentNumB = numAstack[numB];
-      console.log("currentNumB = ", currentNumB);
-      let squareOfCurrentNumA = currentNumA ** 2;
-      let squareOfNumB = numB ** 2;
-
-      let numC = Math.sqrt(squareOfCurrentNumA + squareOfNumB);
-
-      if (
-        currentNumA !== numB &&
-        currentNumA + numB + numC === sumOfPythagTriplet
-      ) {
-        console.log("squareOfCurrentNumA = ", squareOfCurrentNumA);
-        console.log("squareOfNumB = ", squareOfNumB);
-        console.log("numC = ", numC);
-        productOfPythagTriplet = currentNumA * numB * numC;
-        return productOfPythagTriplet;
-      }
-      numB++;
-      console.log("numB = ", numB, "\n");
-    }
-  }
-  return "A Pythagorean Triplet for the provided input does NOT exist!";
-}
-
-// TEST CASES for IMPROVED SOLUTION
-const improvedSumOfTriplet12 = improvedPythagTripletSolution(12); // should return 60
-const improvedSumOfTriplet1000 = improvedPythagTripletSolution(1000); // should return 31875000
-const improvedSumOfTripletNoInput = improvedPythagTripletSolution(); // should return false
-const improvedSumOfTripletNegativeNum = improvedPythagTripletSolution(-12); // should return false
-const improvedSumOfTripletStringType = improvedPythagTripletSolution("12"); // should return false
-const improvedSumOfTripletBooleanType = improvedPythagTripletSolution("12"); // should return false
-const improvedSumOfTripletBigIntType = improvedPythagTripletSolution(hugeNum); // should return false
-const improvedSumOfTripletFloatNum = improvedPythagTripletSolution(floatNum); // should return false
-
-// TESTS for IMPROVED SOLUTION
-improvedPythagTripletSolution(12);
-assert.deepStrictEqual(
-  improvedSumOfTriplet1000,
-  31875000,
-  "When the sum of the numbers in a Pythagorean Triplet is 1000, the product of those numbers is 31875000."
-);
-assert.deepStrictEqual(
-  improvedSumOfTripletNoInput,
-  false,
-  "When the input is either 'null' or 'undefined', the 'false' Boolean is returned."
-);
-assert.deepStrictEqual(
-  improvedSumOfTripletNegativeNum,
-  false,
-  "When the input is a negative number, the 'false' Boolean is returned."
-);
-assert.deepStrictEqual(
-  improvedSumOfTripletStringType,
-  false,
-  "When the input has a data type of 'String', the 'false' Boolean is returned."
-);
-assert.deepStrictEqual(
-  improvedSumOfTripletBooleanType,
-  false,
-  "When the input has a data type of 'Boolean', the 'false' Boolean is returned."
-);
-assert.deepStrictEqual(
-  improvedSumOfTripletBigIntType,
-  false,
-  "When the input has a data type of 'big int', the 'false' Boolean is returned."
-);
-assert.deepStrictEqual(
-  improvedSumOfTripletFloatNum,
-  false,
-  "When the input is a floating point number, the 'false' Boolean is returned."
-);
-
-console.log(
-  "\n*---- ALL TESTS FOR 'improvedPythagTripletSolution()' ARE PASSING ----*\n"
-);
