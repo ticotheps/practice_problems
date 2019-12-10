@@ -53,7 +53,6 @@
 
 /* ------------IMPLEMENTING THE PLAN------------*/
 const assert = require('assert');
-const { performance, PerformanceObserver } = require('perf_hooks');
 
 ('use strict');
 
@@ -127,6 +126,8 @@ console.log('\n*-----ALL TESTS FOR "checkPrime()" ARE PASSING-----*\n');
 
 console.time('Timer');
 
+let cache = {};
+
 // Finds the sum total of all prime numbers below the input
 function findSumOfPrimes(limitNum) {
 	let sumOfPrimes = 0;
@@ -153,6 +154,16 @@ function findSumOfPrimes(limitNum) {
 			} else {
 				// console.log(`${i} is NOT a prime number!`);
 			}
+		}
+		// console.log('sumOfPrimes = ', sumOfPrimes);
+
+		if (!limitNum in cache) {
+			// console.log('cache = ', cache);
+			cache[limitNum] = [sumOfPrimes];
+			// console.log('cache = ', cache);
+		} else {
+			// console.log(`${limitNum} already exists in the cache`);
+			cache[limitNum] = [sumOfPrimes];
 		}
 	}
 	return sumOfPrimes;
