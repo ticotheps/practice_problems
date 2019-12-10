@@ -85,41 +85,41 @@
 */
 
 /*------------IMPLEMENTING THE PLAN------------*/
-const assert = require("assert");
+const assert = require('assert');
 
-("use strict");
+('use strict');
 
 function findProductOfPythagTriplet(sumOfPythagTriplet) {
-  if (
-    sumOfPythagTriplet === null ||
-    sumOfPythagTriplet === undefined ||
-    sumOfPythagTriplet < 1 ||
-    typeof sumOfPythagTriplet !== "number"
-  ) {
-    return false;
-  } else {
-    let productOfPythagTriplet = 0;
+	if (
+		sumOfPythagTriplet === null ||
+		sumOfPythagTriplet === undefined ||
+		sumOfPythagTriplet < 1 ||
+		typeof sumOfPythagTriplet !== 'number'
+	) {
+		return false;
+	} else {
+		let productOfPythagTriplet = 0;
 
-    for (let numA = 1; numA < sumOfPythagTriplet; numA++) {
-      for (let numB = numA + 1; numA + numB < sumOfPythagTriplet; numB++) {
-        let squareOfNumA = numA ** 2;
+		for (let numA = 1; numA < sumOfPythagTriplet; numA++) {
+			for (let numB = numA + 1; numA + numB < sumOfPythagTriplet; numB++) {
+				let squareOfNumA = numA ** 2;
 
-        let squareOfNumB = numB ** 2;
+				let squareOfNumB = numB ** 2;
 
-        let numC = Math.sqrt(squareOfNumA + squareOfNumB);
+				let numC = Math.sqrt(squareOfNumA + squareOfNumB);
 
-        if (numA !== numB && numA + numB + numC === sumOfPythagTriplet) {
-          productOfPythagTriplet = numA * numB * numC;
-          return productOfPythagTriplet;
-        }
-      }
-    }
-  }
-  return "A Pythagorean Triplet for the provided input does NOT exist!";
+				if (numA !== numB && numA + numB + numC === sumOfPythagTriplet) {
+					productOfPythagTriplet = numA * numB * numC;
+					return productOfPythagTriplet;
+				}
+			}
+		}
+	}
+	return 'A Pythagorean Triplet for the provided input does NOT exist!';
 }
 
 const hugeNum = BigInt(
-  98245098204580297420948509238450289450298345092832303849300
+	98245098204580297420948509238450289450298345092832303849300
 );
 const floatNum = 0.1283949124934;
 
@@ -128,55 +128,55 @@ const sumOfTriplet12 = findProductOfPythagTriplet(12); // should return 60
 const sumOfTriplet1000 = findProductOfPythagTriplet(1000); // should return 31875000
 const sumOfTripletNoInput = findProductOfPythagTriplet(); // should return false
 const sumOfTripletNegativeNum = findProductOfPythagTriplet(-12); // should return false
-const sumOfTripletStringType = findProductOfPythagTriplet("12"); // should return false
-const sumOfTripletBooleanType = findProductOfPythagTriplet("12"); // should return false
+const sumOfTripletStringType = findProductOfPythagTriplet('12'); // should return false
+const sumOfTripletBooleanType = findProductOfPythagTriplet('12'); // should return false
 const sumOfTripletBigIntType = findProductOfPythagTriplet(hugeNum); // should return false
 const sumOfTripletFloatNum = findProductOfPythagTriplet(floatNum); // should return false
 
 // TESTS for BRUTE FORCE SOLUTION
 assert.deepStrictEqual(
-  sumOfTriplet12,
-  60,
-  "When the sum of the numbers in a Pythagorean Triplet is 12, the product of those numbers is 60."
+	sumOfTriplet12,
+	60,
+	'When the sum of the numbers in a Pythagorean Triplet is 12, the product of those numbers is 60.'
 );
 assert.deepStrictEqual(
-  sumOfTriplet1000,
-  31875000,
-  "When the sum of the numbers in a Pythagorean Triplet is 1000, the product of those numbers is 31875000."
+	sumOfTriplet1000,
+	31875000,
+	'When the sum of the numbers in a Pythagorean Triplet is 1000, the product of those numbers is 31875000.'
 );
 assert.deepStrictEqual(
-  sumOfTripletNoInput,
-  false,
-  "When the input is either 'null' or 'undefined', the 'false' Boolean is returned."
+	sumOfTripletNoInput,
+	false,
+	"When the input is either 'null' or 'undefined', the 'false' Boolean is returned."
 );
 assert.deepStrictEqual(
-  sumOfTripletNegativeNum,
-  false,
-  "When the input is a negative number, the 'false' Boolean is returned."
+	sumOfTripletNegativeNum,
+	false,
+	"When the input is a negative number, the 'false' Boolean is returned."
 );
 assert.deepStrictEqual(
-  sumOfTripletStringType,
-  false,
-  "When the input has a data type of 'String', the 'false' Boolean is returned."
+	sumOfTripletStringType,
+	false,
+	"When the input has a data type of 'String', the 'false' Boolean is returned."
 );
 assert.deepStrictEqual(
-  sumOfTripletBooleanType,
-  false,
-  "When the input has a data type of 'Boolean', the 'false' Boolean is returned."
+	sumOfTripletBooleanType,
+	false,
+	"When the input has a data type of 'Boolean', the 'false' Boolean is returned."
 );
 assert.deepStrictEqual(
-  sumOfTripletBigIntType,
-  false,
-  "When the input has a data type of 'big int', the 'false' Boolean is returned."
+	sumOfTripletBigIntType,
+	false,
+	"When the input has a data type of 'big int', the 'false' Boolean is returned."
 );
 assert.deepStrictEqual(
-  sumOfTripletFloatNum,
-  false,
-  "When the input is a floating point number, the 'false' Boolean is returned."
+	sumOfTripletFloatNum,
+	false,
+	"When the input is a floating point number, the 'false' Boolean is returned."
 );
 
 console.log(
-  "\n*---- ALL TESTS FOR 'findProductOfPythagTriplet()' ARE PASSING ----*\n"
+	"\n*---- ALL TESTS FOR 'findProductOfPythagTriplet()' ARE PASSING ----*\n"
 );
 
 /*--------REFLECTING/ITERATING THE PLAN--------
