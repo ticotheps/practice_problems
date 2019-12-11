@@ -20,14 +20,22 @@
  */
 
 function findNthFibNum(nIndex) {
-	const input = nIndex;
-	const firstFibNum = 0;
-	const secondFibNum = 1;
-	if (input === firstFibNum || input === secondFibNum) {
-		return input;
-	} else {
-		return findNthFibNum(input - 1) + findNthFibNum(input - 2);
-	}
+  console.log(`nIndex = ${nIndex}`);
+  const firstFibNum = 0;
+  const secondFibNum = 1;
+
+  const cache = {}; // memoization
+  console.log(`cache = ${cache}`);
+
+  if (nIndex === firstFibNum || nIndex === secondFibNum) {
+    return nIndex;
+  }
+  if (cache[nIndex] === false) {
+    cache[nIndex] = findNthFibNum(nIndex - 1) + findNthFibNum(nIndex - 2);
+  }
+  return cache;
 }
 
-console.log(findNthFibNum(3));
+console.log(findNthFibNum(0));
+console.log(findNthFibNum(1));
+console.log(findNthFibNum(10));
