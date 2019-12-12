@@ -156,28 +156,31 @@ function findSumOfPrimes(limitNum) {
 	if (limitNum > 0) {
 		for (let i = 1; i < limitNum; i++) {
 			if (checkPrime(i)) {
-				primesArr.push(i);
+				// primesArr.push(i);
+				largestPrimeBelowLimit = i;
 
-				// sumOfPrimes += i;
-				// console.log('sumOfPrimes = ', sumOfPrimes);
+				sumOfPrimes += i;
+				console.log('sumOfPrimes = ', sumOfPrimes);
 
 				// primesCache[i] = { i, sumOfPrimes };
 				// console.log(`primesCache[${i}] = `, primesCache[i]);
 			}
 		}
+		console.log('largestPrimeBelowLimit = ', largestPrimeBelowLimit);
+		if (!primesCache[largestPrimeBelowLimit]) {
+			primesCache[largestPrimeBelowLimit] = sumOfPrimes;
+			console.log('primesCache = ', primesCache);
+		} else {
+			console.log('It does exist');
+		}
 
-		largestPrimeBelowLimit = primesArr[primesArr.length - 1];
+		// largestPrimeBelowLimit = primesArr[primesArr.length - 1];
 
 		// console.log('primesArr = ', primesArr);
-		for (let j = 0; j < primesArr.length; j++) {
-			sumOfPrimes += primesArr[j];
-			console.log('sumOfPrimes = ', sumOfPrimes);
-
-			if (!primesCache[largestPrimeBelowLimit]) {
-				primesCache[largestPrimeBelowLimit] = sumOfPrimes;
-				console.log('primesCache = ', primesCache);
-			}
-		}
+		// for (let j = 0; j < primesArr.length; j++) {
+		// 	sumOfPrimes += primesArr[j];
+		// 	console.log('sumOfPrimes = ', sumOfPrimes);
+		// }
 
 		// largestPrimeBelowLimit = primesArr[primesArr.length - 1];
 		// console.log('largestPrimeBelowLimit = ', largestPrimeBelowLimit);
@@ -227,10 +230,10 @@ console.log('\n*-----ALL TESTS FOR "findSumOfPrimes()" ARE PASSING-----*\n');
 
 console.log(findSumOfPrimes(10)); // Should print 17
 console.log(findSumOfPrimes(200)); // Should print 4227
-// console.log(findSumOfPrimes(2000)); // Should print 277050
-// console.log(findSumOfPrimes(20000)); // Should print 21171191
-// console.log(findSumOfPrimes(200000)); // Should print 1709600813
-// console.log(findSumOfPrimes(2000000)); // Should print
+console.log(findSumOfPrimes(2000)); // Should print 277050
+console.log(findSumOfPrimes(20000)); // Should print 21171191
+console.log(findSumOfPrimes(200000)); // Should print 1709600813
+console.log(findSumOfPrimes(2000000)); // Should print
 
 console.timeEnd('Timer');
 
