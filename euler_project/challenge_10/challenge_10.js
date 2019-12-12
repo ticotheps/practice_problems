@@ -7,7 +7,7 @@
 
 - Expected Input(s)
   - Number of Expected Parameters: 1
-  - Names of Expected Parameters: "limitSummationOfPrimes"
+  - Names of Expected Parameters: "limitNum"
   - Data Types of Expected Parameters: Number
 
 - Expected Output(s)
@@ -16,7 +16,9 @@
   - Data Type of Expected Output: Number
 
 - Constraints
-  - What will make the algorithm fail?
+	- What will make the algorithm fail?
+		- Is 1 a prime number?
+			- No.
     - Negative numbers?
       - Yes.
     - Number data types?
@@ -32,17 +34,25 @@
 */
 
 /* ---------------DEVISING A PLAN---------------
+- OVERALL PLAN
+	(1) Iterate through the numbers '1' to 'limitNum' using a 'for' loop.
+	(2) Evaluate each number, determining whether or not the number is 'prime'. 
+			(a) If the number is prime, add it to a list of prime numbers.
+			(b) If it is NOT prime, do nothing.
+	(3) Find the total sum the items in the 'prime numbers' array.
+	(4) Return the total sum.
+
 - BRUTE FORCE SOLUTION (Pseudocoded Steps)
   (1) Write a helper function, "checkPrime()", that will determine
-      whether or not a number is prime.
+      whether or not a number passed to it is "prime".
   (2) Create a "sumOfPrimes" variable that will be returned as the
   output. This variable will also act as a container for the running total sum
-  of all the prime numbers below the input, "limitForSumOfPrimes".
+  of all the prime numbers below the input, "limitNum".
   (3) Create a function called, 'findSumOfPrimes()', that takes in
       one parameter, "limitNum", and returns one output,
       "sumOfPrimes".
   (4) Using a 'for' loop, iterate through each number between 2 and the
-      "limitForSumOfPrimes" input (inclusive).
+      "limitNum" input (inclusive).
       (a) Call the helper function, "checkPrime()", to determine if the
           number is prime.
           (i)   If the number is prime, add the value to the current value
@@ -69,29 +79,28 @@ function checkPrime(num) {
 	) {
 		// console.log(`Sorry, ${num} is not a valid input. Please provide a positive integer to this function.)`);
 		return false;
-	} else {
-		if (num === 1) {
-			// console.log('1 is not a prime number');
-			return false;
-		}
+	}
 
-		if (num > 1) {
-			let factorCounter = 0;
-			for (let i = num; i > 0; i--) {
-				if (num % i == 0) {
-					// console.log(`\n${i} IS a factor of ${num}!`);
-					factorCounter += 1;
-					// console.log('factorCounter = ', factorCounter, '\n');
-				} else {
-					// console.log(`\n${i} is NOT a factor of ${num}!`);
-					// console.log('factorCounter = ', factorCounter, '\n');
-				}
-			}
-			if (factorCounter > 2) {
-				return false;
+	if (num === 1) {
+		// console.log('1 is not a prime number');
+		return false;
+	}
+	if (num > 1) {
+		let factorCounter = 0;
+		for (let i = num; i > 0; i--) {
+			if (num % i == 0) {
+				// console.log(`\n${i} IS a factor of ${num}!`);
+				factorCounter += 1;
+				// console.log('factorCounter = ', factorCounter, '\n');
 			} else {
-				return true;
+				// console.log(`\n${i} is NOT a factor of ${num}!`);
+				// console.log('factorCounter = ', factorCounter, '\n');
 			}
+		}
+		if (factorCounter > 2) {
+			return false;
+		} else {
+			return true;
 		}
 	}
 }
@@ -126,11 +135,13 @@ console.log('\n*-----ALL TESTS FOR "checkPrime()" ARE PASSING-----*\n');
 
 console.time('Timer');
 
-let cache = {};
+let primesCache = {};
 
 // Finds the sum total of all prime numbers below the input
 function findSumOfPrimes(limitNum) {
+	let primesArr = [];
 	let sumOfPrimes = 0;
+	let largestPrimeBelowLimit = 0;
 
 	if (
 		limitNum === null ||
@@ -139,92 +150,100 @@ function findSumOfPrimes(limitNum) {
 		typeof limitNum !== 'number' ||
 		!Number.isInteger(limitNum)
 	) {
-		// console.log(
-		// 	`Sorry, ${limitNum} is not a valid input. Please provide a positive integer to this function.`
-		// );
 		return undefined;
-	} else {
-		for (let i = 0; i < limitNum; i++) {
-			// console.log('\ni = ', i);
+	}
 
-			if (checkPrime(i) === true) {
-				// console.log(`${i} is a prime number below ${limitNum}!`);
-				sumOfPrimes += i;
+	if (limitNum > 0) {
+		for (let i = 1; i < limitNum; i++) {
+			if (checkPrime(i)) {
+				primesArr.push(i);
+
+				// sumOfPrimes += i;
 				// console.log('sumOfPrimes = ', sumOfPrimes);
-			} else {
-				// console.log(`${i} is NOT a prime number!`);
+
+				// primesCache[i] = { i, sumOfPrimes };
+				// console.log(`primesCache[${i}] = `, primesCache[i]);
 			}
 		}
-		// console.log('sumOfPrimes = ', sumOfPrimes);
 
-		if (!limitNum in cache) {
-			// console.log('cache = ', cache);
-			cache[limitNum] = [sumOfPrimes];
-			// console.log('cache = ', cache);
-		} else {
-			// console.log(`${limitNum} already exists in the cache`);
-			cache[limitNum] = [sumOfPrimes];
+		largestPrimeBelowLimit = primesArr[primesArr.length - 1];
+
+		// console.log('primesArr = ', primesArr);
+		for (let j = 0; j < primesArr.length; j++) {
+			sumOfPrimes += primesArr[j];
+			console.log('sumOfPrimes = ', sumOfPrimes);
+
+			if (!primesCache[largestPrimeBelowLimit]) {
+				primesCache[largestPrimeBelowLimit] = sumOfPrimes;
+				console.log('primesCache = ', primesCache);
+			}
 		}
+
+		// largestPrimeBelowLimit = primesArr[primesArr.length - 1];
+		// console.log('largestPrimeBelowLimit = ', largestPrimeBelowLimit);
 	}
+	// console.log('primesArr = ', primesArr);
+	// console.log('primesCache = ', primesCache);
 	return sumOfPrimes;
 }
 
-assert.deepStrictEqual(
-	findSumOfPrimes(10),
-	17,
-	'17 is the sum of all prime numbers below 10'
-);
-assert.deepStrictEqual(
-	findSumOfPrimes(-1),
-	undefined,
-	'-1 is not a valid input'
-);
-assert.deepStrictEqual(
-	findSumOfPrimes(-1.421334),
-	undefined,
-	'-1.421334 is not a valid input'
-);
-assert.deepStrictEqual(
-	findSumOfPrimes(null),
-	undefined,
-	'"null" is not a valid input'
-);
-assert.deepStrictEqual(
-	findSumOfPrimes(undefined),
-	undefined,
-	'"undefined" is not a valid input'
-);
-assert.deepStrictEqual(
-	findSumOfPrimes(),
-	undefined,
-	'An input was not provided'
-);
-assert.deepStrictEqual(
-	findSumOfPrimes('-1'),
-	undefined,
-	'"-1" is not a valid input'
-);
+// assert.deepStrictEqual(
+// 	findSumOfPrimes(10),
+// 	17,
+// 	'17 is the sum of all prime numbers below 10'
+// );
+// assert.deepStrictEqual(
+// 	findSumOfPrimes(-1),
+// 	undefined,
+// 	'-1 is not a valid input'
+// );
+// assert.deepStrictEqual(
+// 	findSumOfPrimes(-1.421334),
+// 	undefined,
+// 	'-1.421334 is not a valid input'
+// );
+// assert.deepStrictEqual(
+// 	findSumOfPrimes(null),
+// 	undefined,
+// 	'"null" is not a valid input'
+// );
+// assert.deepStrictEqual(
+// 	findSumOfPrimes(undefined),
+// 	undefined,
+// 	'"undefined" is not a valid input'
+// );
+// assert.deepStrictEqual(
+// 	findSumOfPrimes(),
+// 	undefined,
+// 	'An input was not provided'
+// );
+// assert.deepStrictEqual(
+// 	findSumOfPrimes('-1'),
+// 	undefined,
+// 	'"-1" is not a valid input'
+// );
 
 console.log('\n*-----ALL TESTS FOR "findSumOfPrimes()" ARE PASSING-----*\n');
 
 console.log(findSumOfPrimes(10)); // Should print 17
 console.log(findSumOfPrimes(200)); // Should print 4227
-console.log(findSumOfPrimes(2000)); // Should print 277050
-console.log(findSumOfPrimes(20000)); // Should print 21171191
-console.log(findSumOfPrimes(200000)); // Should print 1709600813
-console.log(findSumOfPrimes(2000000)); // Should print 1709600813
+// console.log(findSumOfPrimes(2000)); // Should print 277050
+// console.log(findSumOfPrimes(20000)); // Should print 21171191
+// console.log(findSumOfPrimes(200000)); // Should print 1709600813
+// console.log(findSumOfPrimes(2000000)); // Should print
 
 console.timeEnd('Timer');
 
 /* --------REFLECTING/ITERATING THE PLAN--------
 - BRUTE FORCE SOLUTION ANALYSIS
   - Were you able to arrive at the correct answer with your solution?
-    - Yes/No
+    - Yes, but it took so long to find it.
   - Analyze the Time & Space Complexity of your solution.
     - Time Complexity:
     - Space Complexity:
   - Could either, Time or Space Complexity, be improved in your solution?
-    - Yes/No
-  - If so, how would you go about improving it?
+    - Yes
+	- If so, how would you go about improving it?
+		-
   - What is the new Time & Space Complexity of your improved solution?
 */
