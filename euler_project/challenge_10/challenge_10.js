@@ -238,8 +238,8 @@ function findSumOfPrimes(limitNum) {
 console.log('\n*-----ALL TESTS FOR "findSumOfPrimes()" ARE PASSING-----*\n');
 
 console.log(findSumOfPrimes(10)); // Should print 17
-// console.log(findSumOfPrimes(200)); // Should print 4227
-// console.log(findSumOfPrimes(2000)); // Should print 277050
+console.log(findSumOfPrimes(200)); // Should print 4227
+console.log(findSumOfPrimes(2000)); // Should print 277050
 // console.log(findSumOfPrimes(20000)); // Should print 21171191
 // console.log(findSumOfPrimes(200000)); // Should print 1709600813
 // console.log(findSumOfPrimes(2000000)); // Should print
