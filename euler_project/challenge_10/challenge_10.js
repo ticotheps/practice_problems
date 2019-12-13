@@ -169,7 +169,7 @@ function findSumOfPrimes(limitNum) {
 				
 				if (!primesCache[i]) {
 					console.log(`${i} is not currently in our 'primesCache'`);
-					primesCache[i] = [largestPrimeBelowLimit, sumOfPrimes]; // Creates a new entry with [largestPrimeBelowLimit, sumOfPrimes]
+					primesCache[i] = [sumOfPrimes]; // Creates a new entry with [sumOfPrimes] which denotes the sum of all the previous prime numbers (from 2 to that value; inclusive) 
 					console.log(`primesCache[${i}] = `, primesCache[i]);
 				}
 				console.log('primesCache = ', primesCache, '\n');
