@@ -138,7 +138,7 @@ const primesCache = {};
 
 // Finds the sum total of all prime numbers below the input
 function findSumOfPrimes(limitNum) {
-  const primesArr = [];
+  // const primesArr = [];
   let sumOfPrimes = 0;
   let largestPrimeBelowLimit = 0;
 
@@ -153,6 +153,11 @@ function findSumOfPrimes(limitNum) {
   }
 
   if (limitNum > 0) {
+    if (primesCache[limitNum]) {
+      console.log(`The limitNum, ${limitNum}, is already in the cache!`)
+      return primesCache[limitNum];
+    }
+
     for (let i = 1; i < limitNum; i++) {
       if (checkPrime(i)) {
 				console.log('** PRIME NUMBER FOUND! **');
@@ -238,9 +243,9 @@ function findSumOfPrimes(limitNum) {
 console.log('\n*-----ALL TESTS FOR "findSumOfPrimes()" ARE PASSING-----*\n');
 
 console.log(findSumOfPrimes(10)); // Should print 17
-console.log(findSumOfPrimes(200)); // Should print 4227
-console.log(findSumOfPrimes(2000)); // Should print 277050
-// console.log(findSumOfPrimes(20000)); // Should print 21171191
+// console.log(findSumOfPrimes(200)); // Should print 4227
+// console.log(findSumOfPrimes(2000)); // Should print 277050
+// console.log(findSumOfPrimes(20000); // Should print 21171191
 // console.log(findSumOfPrimes(200000)); // Should print 1709600813
 // console.log(findSumOfPrimes(2000000)); // Should print
 
