@@ -300,56 +300,56 @@ function optimizedFindSumOfPrimes(limitNum) {
     // Finds the FIRST prime number BELOW "limit"
     for (let i = limit-1; i > 0; i--) {
       if (!checkPrime(i)) {
-        console.log(`No prime number at i = ${i}\n`);
+        console.log(`i = ${i}; NOT PRIME`);
       } else {
+        console.log(`PRIME at i = ${i}`);
         highestPrimeBelowLimit = i;
-        console.log("EXIT THE LOOP!\nhighestPrimeBelowLimit = ", highestPrimeBelowLimit, "\n");
+        console.log(`EXIT THE LOOP!\nThe highest prime number below ${limit} is ${highestPrimeBelowLimit}!\n`);
         break;
       }
     }
 
     console.log(`CURRENT 'highestPrimeCache' = `, highestPrimeCache);
-
     // If the 'highestPrimeBelowLimit' currently exists as a key in the
     // 'highestPrimeCache' object, use it!
     let keyCount = 1;
     let largestKey = 0;
     console.log(`largestKey (INITIAL) = ${largestKey}`);
     for (key in highestPrimeCache) {
+      if (parseInt(key) > largestKey) {
+        largestKey = parseInt(key);
+        console.log(`largestKey = ${largestKey}`);
+      }
       console.log(`\nkey #${keyCount} = ${key}`);
-      console.log(`largestKey = ${largestKey}`);
+      console.log(`limit = ${limit}`);
       console.log("highestPrimeBelowLimit = ", highestPrimeBelowLimit);
       keyCount++;
 
-      if (key > largestKey) {
-        largestKey = key;
-      }
+      console.log(`sumOfPrimes = ${sumOfPrimes}`);
     
-      if (parseInt(key) === highestPrimeBelowLimit) {
-        console.log(`The highest prime number below ${limit} (${highestPrimeBelowLimit}) matches the "${key}" key`) 
+      if (highestPrimeBelowLimit > largestKey) {
+        console.log(`LET'S GET A CACHE BOOST from the largestKey (${largestKey})`); 
         // If the "highestPrimeBelowLimit" exists in the cache as a key, use the
         // associated value as the new starting point for the 'sumOfPrimes' variable. 
-        sumOfPrimes = highestPrimeCache[highestPrimeBelowLimit];
+        sumOfPrimes = highestPrimeCache[largestKey];
         console.log("sumOfPrimes = ", sumOfPrimes);
   
         // If the "highestPrimeBelowLimit" exists in the cache, use this as you're
         // new starting value in the 'primeStartValue' variable.
         primeStartValue = highestPrimeBelowLimit + 1;
-        console.log("primeStartValue = ", primeStartValue);
+        console.log("primeStartValue (highestPrimeBelowLimit) = ", primeStartValue);
       }
     }
 
-    console.log(`sumOfPrimes = ${sumOfPrimes}`);
-    for (let j = primeStartValue; j < limit; j++) {
+    for (let j = largestKey + 1; j < limit; j++) {
+      console.log(`j = ${j}`);
       // Iterates through the numbers from "primeStartValue" to "limit" and adds
       // whatever values are found to be prime values to the "sumOfPrimes" variable.
       if (checkPrime(j)) {
-        console.log(`j = ${j} => PRIME NUMBER ALERT!`);
+        console.log(`PRIME NUMBER ALERT!`);
         sumOfPrimes += j;
         console.log(`sumOfPrimes += ${j}`);
         console.log(`sumOfPrimes = ${sumOfPrimes}\n`);
-      } else {
-        console.log(`j = ${j} != prime`);
       }
     }
 
@@ -359,15 +359,13 @@ function optimizedFindSumOfPrimes(limitNum) {
   }
 }
 
-console.log(optimizedFindSumOfPrimes(10)); // Should print 17 in 3.157ms
-console.log(optimizedFindSumOfPrimes(20)); // Should print 77 in 6.65ms
-console.log(optimizedFindSumOfPrimes(22)); // Should print 77 in 6.65ms
-console.log(optimizedFindSumOfPrimes(26)); // Should print 77 in 6.65ms
-console.log(optimizedFindSumOfPrimes(30)); // Should print 77 in 6.65ms
-// console.log(optimizedFindSumOfPrimes(200)); // Should print 4227
-// console.log(optimizedFindSumOfPrimes(2000)); // Should print 277050
-// console.log(optimizedFindSumOfPrimes(20000)); // Should print 21171191
-// console.log(optimizedFindSumOfPrimes(200000)); // Should print 1709600813
+console.log(optimizedFindSumOfPrimes(10)); // Should print 17
+console.log(optimizedFindSumOfPrimes(20)); // Should print 77
+console.log(optimizedFindSumOfPrimes(200)); // Should print 4227
+console.log(optimizedFindSumOfPrimes(2000)); // Should print 277050
+console.log(optimizedFindSumOfPrimes(20000)); // Should print 21171191
+console.log(optimizedFindSumOfPrimes(200000)); // Should print 1709600813
+console.log(optimizedFindSumOfPrimes(2000000)); // Should print 142913828922
 
 
 console.log('\n*** ALL TESTS FOR "optimizedFindSumOfPrimes()" PASS ***\n');
