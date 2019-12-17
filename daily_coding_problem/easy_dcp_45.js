@@ -1,5 +1,10 @@
+/**
+ * Using a function rand5() that returns an integer from 1 to 5 (inclusive) with uniform probability, implement a function rand7() that returns an integer from 1 to 7 (inclusive).
+ * 
+ */
+
 const assert = require("assert");
-(use strict);
+("use strict");
 
 function rand7(minNum, maxNum) {   
   const newMinNum = Math.ceil(minNum);
@@ -14,7 +19,7 @@ function rand7(minNum, maxNum) {
 }
 
 console.log(rand7(1, 7));  // should print an integer between 1 & 7
-console.log(rand7(1, 7));
-console.log(rand7(1, 7));
-console.log(rand7(1, 7));
-console.log(rand7(1, 7));
+console.log(rand7(1, 7));  // should print an integer between 1 & 7
+console.log(rand7(1, 7));  // should print an integer between 1 & 7
+console.log(rand7(1, 7));  // should print an integer between 1 & 7
+console.log(rand7(1, 7));  // should print an integer between 1 & 7
