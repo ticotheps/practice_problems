@@ -236,8 +236,8 @@ console.timeEnd('Timer');
   - Were you able to arrive at the correct answer with your solution?
     - Yes, but it took so long to find it.
   - Analyze the Time & Space Complexity of your solution.
-    - Time Complexity:
-    - Space Complexity:
+    - Time Complexity: O(n^2)
+    - Space Complexity: O(n)
   - Could either, Time or Space Complexity, be improved in your solution?
     - Yes
 	- If so, how would you go about improving it?
@@ -245,9 +245,10 @@ console.timeEnd('Timer');
     - Instead, use a cache object (to store the value of previously calculated
       "highestPrimeBelowN" values) and a single 'for' loop.
   - What is the new Time & Space Complexity of your improved solution?
-    - Time Complexity: O(n) => linear
+    - Time Complexity: O(n^2) => linear
     - Space Complexity: O(n) => linear
 */
+
 console.time('Timer2');
 
 let highestPrimeCache = {};
