@@ -68,8 +68,6 @@ const assert = require('assert');
 
 // Returns 'True' or 'False' to determine if a number is prime
 function checkPrime(num) {
-  // console.log('\nnum(input) = ', num);
-
   // Checks for invalid inputs
   if (
     num === null
@@ -93,12 +91,9 @@ function checkPrime(num) {
     let factorCounter = 0;
     for (let i = num; i > 0; i--) {
       if (num % i == 0) {
-        // console.log(`\n${i} IS a factor of ${num}!`);
         factorCounter += 1;
-        // console.log('factorCounter = ', factorCounter, '\n');
       } else {
         // console.log(`\n${i} is NOT a factor of ${num}!`);
-        // console.log('factorCounter = ', factorCounter, '\n');
       }
     }
     if (factorCounter > 2) {
@@ -136,128 +131,105 @@ assert.deepStrictEqual(checkPrime(300), false, '300 is a prime number');
 
 console.log('\n*-----ALL TESTS FOR "checkPrime()" ARE PASSING-----*\n');
 
-// console.time('Timer');
+console.time('Timer');
 
-// const primesCache = {};
+const primesCache = {};
 
-// // Finds the sum total of all prime numbers below the input
-// function findSumOfPrimes(limitNum) {
-//   const primesArr = [];
-//   let sumOfPrimes = 0;
-//   let largestPrimeBelowLimit = 0;
+// Finds the sum total of all prime numbers below the input
+function findSumOfPrimes(limitNum) {
+  const primesArr = [];
+  let sumOfPrimes = 0;
+  let largestPrimeBelowLimit = 0;
 
-//   // Checks for invalid inputs
-//   if (
-//     limitNum === null
-// 		|| limitNum === undefined
-// 		|| limitNum <= 0
-// 		|| typeof limitNum !== 'number'
-// 		|| !Number.isInteger(limitNum)
-//   ) {
-//     return undefined;
-//   }
+  // Checks for invalid inputs
+  if (
+    limitNum === null
+		|| limitNum === undefined
+		|| limitNum <= 0
+		|| typeof limitNum !== 'number'
+		|| !Number.isInteger(limitNum)
+  ) {
+    return undefined;
+  }
 
-//   // Checks for valid inputs = positive integers
-//   if (limitNum > 0) {
-//     // Checks for existing key in cache
-//     if (primesCache[limitNum]) {
-//       console.log(`The limitNum, ${limitNum}, is already in the cache!`);
-//       return primesCache[limitNum];
-//     }
+  // Checks for valid inputs = positive integers
+  if (limitNum > 0) {
+    // Checks for existing key in cache
+    if (primesCache[limitNum]) {
+      // console.log(`The limitNum, ${limitNum}, is already in the cache!`);
+      return primesCache[limitNum];
+    }
 
-//     for (let i = 1; i < limitNum; i++) {
-//       if (checkPrime(i)) {
-//         // console.log('** PRIME NUMBER FOUND! **');
-//         // console.log('i = ', i);
-//         primesArr.push(i);
+    for (let i = 1; i < limitNum; i++) {
+      if (checkPrime(i)) {
+        primesArr.push(i);
 
-//         sumOfPrimes += i;
-//         // console.log('sumOfPrimes = ', sumOfPrimes);
+        sumOfPrimes += i;
 
-//         if (i > largestPrimeBelowLimit) {
-//           largestPrimeBelowLimit = i;
-//           // console.log(`largestPrimeBelowLimit = ${largestPrimeBelowLimit}, which is < ${limitNum}`);
-//         }
+        if (i > largestPrimeBelowLimit) {
+          largestPrimeBelowLimit = i;
+        }
 
-//         if (!primesCache[i]) {
-//           console.log(`${i} is not currently in our 'primesCache'`);
-//           primesCache[i] = [sumOfPrimes]; // Creates a new entry with [sumOfPrimes] which denotes the sum of all the previous prime numbers (from 2 to that value; inclusive)
-//           console.log(`primesCache[${i}] = `, primesCache[i]);
-//         }
-//         console.log('primesCache = ', primesCache, '\n');
-//       }
-//     }
-//     // console.log('largestPrimeBelowLimit = ', largestPrimeBelowLimit);
-//     // if (!primesCache[largestPrimeBelowLimit]) {
-//     //   primesCache[largestPrimeBelowLimit] = sumOfPrimes;
-//     //   console.log('primesCache = ', primesCache);
-//     // } else {
-//     //   console.log('It does exist');
-//     // }
+        if (!primesCache[i]) {
+          // console.log(`${i} is not currently in our 'primesCache'`);
+          primesCache[i] = [sumOfPrimes];
+          // console.log(`primesCache[${i}] = `, primesCache[i]);
+        }
+        // console.log('primesCache = ', primesCache, '\n');
+      }
+    }
+  }
+  // console.log('primesArr = ', primesArr);
+  return sumOfPrimes;
+}
 
-//     // largestPrimeBelowLimit = primesArr[primesArr.length - 1];
+assert.deepStrictEqual(
+	findSumOfPrimes(10),
+	17,
+	'17 is the sum of all prime numbers below 10'
+);
+assert.deepStrictEqual(
+	findSumOfPrimes(-1),
+	undefined,
+	'-1 is not a valid input'
+);
+assert.deepStrictEqual(
+	findSumOfPrimes(-1.421334),
+	undefined,
+	'-1.421334 is not a valid input'
+);
+assert.deepStrictEqual(
+	findSumOfPrimes(null),
+	undefined,
+	'"null" is not a valid input'
+);
+assert.deepStrictEqual(
+	findSumOfPrimes(undefined),
+	undefined,
+	'"undefined" is not a valid input'
+);
+assert.deepStrictEqual(
+	findSumOfPrimes(),
+	undefined,
+	'An input was not provided'
+);
+assert.deepStrictEqual(
+	findSumOfPrimes('-1'),
+	undefined,
+	'"-1" is not a valid input'
+);
 
-//     // console.log('primesArr = ', primesArr);
-//     // for (let j = 0; j < primesArr.length; j++) {
-//     // 	sumOfPrimes += primesArr[j];
-//     // 	console.log('sumOfPrimes = ', sumOfPrimes);
-//     // }
+console.log('\n*-----ALL TESTS FOR "findSumOfPrimes()" ARE PASSING-----*\n');
 
-//     // largestPrimeBelowLimit = primesArr[primesArr.length - 1];
-//     // console.log('largestPrimeBelowLimit = ', largestPrimeBelowLimit);
-//   }
-//   console.log('primesArr = ', primesArr);
-//   // console.log('primesCache = ', primesCache);
-//   return sumOfPrimes;
-// }
-
-// assert.deepStrictEqual(
-// 	findSumOfPrimes(10),
-// 	17,
-// 	'17 is the sum of all prime numbers below 10'
-// );
-// assert.deepStrictEqual(
-// 	findSumOfPrimes(-1),
-// 	undefined,
-// 	'-1 is not a valid input'
-// );
-// assert.deepStrictEqual(
-// 	findSumOfPrimes(-1.421334),
-// 	undefined,
-// 	'-1.421334 is not a valid input'
-// );
-// assert.deepStrictEqual(
-// 	findSumOfPrimes(null),
-// 	undefined,
-// 	'"null" is not a valid input'
-// );
-// assert.deepStrictEqual(
-// 	findSumOfPrimes(undefined),
-// 	undefined,
-// 	'"undefined" is not a valid input'
-// );
-// assert.deepStrictEqual(
-// 	findSumOfPrimes(),
-// 	undefined,
-// 	'An input was not provided'
-// );
-// assert.deepStrictEqual(
-// 	findSumOfPrimes('-1'),
-// 	undefined,
-// 	'"-1" is not a valid input'
-// );
-
-// console.log('\n*-----ALL TESTS FOR "findSumOfPrimes()" ARE PASSING-----*\n');
-
-// console.log(findSumOfPrimes(10)); // Should print 17
-// console.log(findSumOfPrimes(20)); // Should print 77
-// console.log(findSumOfPrimes(200)); // Should print 4227
+console.log(findSumOfPrimes(10)); // Should print 17
+console.log(findSumOfPrimes(20)); // Should print 77
+console.log(findSumOfPrimes(200)); // Should print 4227
 // console.log(findSumOfPrimes(2000)); // Should print 277050
 // console.log(findSumOfPrimes(20000); // Should print 21171191
 // console.log(findSumOfPrimes(200000)); // Should print 1709600813
 // console.log(findSumOfPrimes(2000000)); // Should print
 
-// console.timeEnd('Timer');
+console.timeEnd('Timer');
 
 /* --------REFLECTING/ITERATING THE PLAN--------
 - BRUTE FORCE SOLUTION ANALYSIS
@@ -276,13 +248,13 @@ console.log('\n*-----ALL TESTS FOR "checkPrime()" ARE PASSING-----*\n');
     - Time Complexity: O(n) => linear
     - Space Complexity: O(n) => linear
 */
-console.time('Timer');
+console.time('Timer2');
 
 let highestPrimeCache = {};
 
 function optimizedFindSumOfPrimes(limitNum) {
   const limit = limitNum;
-  console.log("\n********** limit = ", limit, "**********");
+  // console.log("\n********** limit = ", limit, "**********");
   let sumOfPrimes = 0;
   let highestPrimeBelowLimit = 0;
   let primeStartValue = 1;
@@ -300,61 +272,58 @@ function optimizedFindSumOfPrimes(limitNum) {
     // Finds the FIRST prime number BELOW "limit"
     for (let i = limit-1; i > 0; i--) {
       if (!checkPrime(i)) {
-        console.log(`i = ${i}; NOT PRIME`);
+        // console.log(`i = ${i}; NOT PRIME`);
       } else {
-        console.log(`PRIME at i = ${i}`);
+        // console.log(`PRIME at i = ${i}`);
         highestPrimeBelowLimit = i;
-        console.log(`EXIT THE LOOP!\nThe highest prime number below ${limit} is ${highestPrimeBelowLimit}!\n`);
+        // console.log(`EXIT THE LOOP!\nThe highest prime number below ${limit} is ${highestPrimeBelowLimit}!\n`);
         break;
       }
     }
 
-    console.log(`CURRENT 'highestPrimeCache' = `, highestPrimeCache);
-    // If the 'highestPrimeBelowLimit' currently exists as a key in the
-    // 'highestPrimeCache' object, use it!
     let keyCount = 1;
     let largestKey = 0;
-    console.log(`largestKey (INITIAL) = ${largestKey}`);
+    // console.log(`largestKey (INITIAL) = ${largestKey}`);
     for (key in highestPrimeCache) {
       if (parseInt(key) > largestKey) {
         largestKey = parseInt(key);
-        console.log(`largestKey = ${largestKey}`);
+        // console.log(`largestKey = ${largestKey}`);
       }
-      console.log(`\nkey #${keyCount} = ${key}`);
-      console.log(`limit = ${limit}`);
-      console.log("highestPrimeBelowLimit = ", highestPrimeBelowLimit);
+      // console.log(`\nkey #${keyCount} = ${key}`);
+      // console.log(`limit = ${limit}`);
+      // console.log("highestPrimeBelowLimit = ", highestPrimeBelowLimit);
       keyCount++;
 
-      console.log(`sumOfPrimes = ${sumOfPrimes}`);
+      // console.log(`sumOfPrimes = ${sumOfPrimes}`);
     
       if (highestPrimeBelowLimit > largestKey) {
-        console.log(`LET'S GET A CACHE BOOST from the largestKey (${largestKey})`); 
+        // console.log(`LET'S GET A CACHE BOOST from the largestKey (${largestKey})`); 
         // If the "highestPrimeBelowLimit" exists in the cache as a key, use the
         // associated value as the new starting point for the 'sumOfPrimes' variable. 
         sumOfPrimes = highestPrimeCache[largestKey];
-        console.log("sumOfPrimes = ", sumOfPrimes);
+        // console.log("sumOfPrimes = ", sumOfPrimes);
   
         // If the "highestPrimeBelowLimit" exists in the cache, use this as you're
         // new starting value in the 'primeStartValue' variable.
         primeStartValue = highestPrimeBelowLimit + 1;
-        console.log("primeStartValue (highestPrimeBelowLimit) = ", primeStartValue);
+        // console.log("primeStartValue (highestPrimeBelowLimit) = ", primeStartValue);
       }
     }
 
     for (let j = largestKey + 1; j < limit; j++) {
-      console.log(`j = ${j}`);
+      // console.log(`j = ${j}`);
       // Iterates through the numbers from "primeStartValue" to "limit" and adds
       // whatever values are found to be prime values to the "sumOfPrimes" variable.
       if (checkPrime(j)) {
-        console.log(`PRIME NUMBER ALERT!`);
+        // console.log(`PRIME NUMBER ALERT!`);
         sumOfPrimes += j;
-        console.log(`sumOfPrimes += ${j}`);
-        console.log(`sumOfPrimes = ${sumOfPrimes}\n`);
+        // console.log(`sumOfPrimes += ${j}`);
+        // console.log(`sumOfPrimes = ${sumOfPrimes}\n`);
       }
     }
 
     highestPrimeCache[highestPrimeBelowLimit] = sumOfPrimes;
-    console.log(`NEW 'highestPrimeCache' = `, highestPrimeCache);
+    // console.log(`NEW 'highestPrimeCache' = `, highestPrimeCache);
     return sumOfPrimes;
   }
 }
@@ -362,11 +331,10 @@ function optimizedFindSumOfPrimes(limitNum) {
 console.log(optimizedFindSumOfPrimes(10)); // Should print 17
 console.log(optimizedFindSumOfPrimes(20)); // Should print 77
 console.log(optimizedFindSumOfPrimes(200)); // Should print 4227
-console.log(optimizedFindSumOfPrimes(2000)); // Should print 277050
-console.log(optimizedFindSumOfPrimes(20000)); // Should print 21171191
-console.log(optimizedFindSumOfPrimes(200000)); // Should print 1709600813
-console.log(optimizedFindSumOfPrimes(2000000)); // Should print 142913828922
-
+// console.log(optimizedFindSumOfPrimes(2000)); // Should print 277050
+// console.log(optimizedFindSumOfPrimes(20000)); // Should print 21171191
+// console.log(optimizedFindSumOfPrimes(200000)); // Should print 1709600813
+// console.log(optimizedFindSumOfPrimes(2000000)); // Should print 142913828922
+console.timeEnd('Timer2');
 
 console.log('\n*** ALL TESTS FOR "optimizedFindSumOfPrimes()" PASS ***\n');
-console.timeEnd('Timer');
