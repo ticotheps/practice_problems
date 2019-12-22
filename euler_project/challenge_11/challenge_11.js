@@ -130,7 +130,7 @@ const my_matrix = [
 ]
 
 console.time('findLargestProductInMatrix');
-function findLargestProductInMatrix(matrix, nFactorsInRow) {
+function findLargestProductInMatrix(matrix) {
   let largestProduct = 0;
 
   for (let i = 0; i < my_matrix.length; i++) {
@@ -235,23 +235,27 @@ function findLargestProductInMatrix(matrix, nFactorsInRow) {
   return largestProduct;
 }
 
-console.log(findLargestProductInMatrix(my_matrix, 4));
+// console.log(findLargestProductInMatrix(my_matrix));
 
-// assert.deepStrictEqual(findLargestProductInMatrix(my_matrix, 4), 0, "The largest product of 4 consecutive numbers in this matrix is 0")
+assert.deepStrictEqual(findLargestProductInMatrix(my_matrix), 70600674, "The largest product of 4 consecutive numbers in my_matrix is 70600674")
 
-// console.log("***** ALL TESTS FOR 'findLargestProductInMatrix()' PASS *****");
+console.log("***** ALL TESTS FOR 'findLargestProductInMatrix()' PASS *****");
 console.timeEnd('findLargestProductInMatrix');
 
 
 /*--------REFLECTING/ITERATING THE PLAN--------
 - BRUTE FORCE SOLUTION ANALYSIS
   - Were you able to arrive at the correct answer with your solution?
-    - Yes/No
+    - Yes.
   - Analyze the Time & Space Complexity of your solution.
-    - Time Complexity: 
-    - Space Complexity: 
+    - Time Complexity: O(4n^2) => O(n^2) => quadratic
+    - Space Complexity: O(1) => constant
   - Could either, Time or Space Complexity, be improved in your solution?
-    - Yes/No
+    - Yes
   - If so, how would you go about improving it?
+    - Use 5 independent 'for' loops (no nesting) & a single cache object
+    to store arrays of 4 numbers to later be evaluated with another 'for' loop.
   - What is the new Time & Space Complexity of your improved solution?
+    - Time Complexity: O(5n + 1) => O(n) => linear
+    - Space Complexity: O(n) => linear
 */
