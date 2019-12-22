@@ -40,9 +40,9 @@
 */
 
 /*---------------DEVISING A PLAN---------------
-- BRUTE FORCE SOLUTION (Pseudocoded Steps)
-  (1) Create a 'const' variable, "my_matrix", that will hold the array of
-  sub-arrays (of numbers) to be passed into the function as a matrix.
+- BRUTE FORCE SOLUTION (Pseudocoded Steps) (1) Create a 'const' variable,
+  "my_matrix", that will hold the array of sub-arrays (of numbers) to be passed
+  into the function as a matrix.
 
   (2) Create a function, "findLargestProductInMatrix()", that will take in 2
   parameters, "matrix" & "nFactorsInRow", and will return one output,
@@ -56,17 +56,17 @@
   (4) Create a helper function, "productOfNfactors()", that will take in one
   input, "numsArray", and calculate the product of all those numbers in that
   array.
-  
-  (5) Inside the "findLargestProductInMatrix()" function, create a 'const'
-  variable, "nConsecutiveNumsArray", that will contain an array of 'n' numbers
-  that are adjacent to one another in the matrix. 
 
-  (6) Inside the "findLargestProductInMatrix()" function, create a 'for' loop
+  (5) Inside the "findLargestProductInMatrix()" function, create a 'for' loop
   that will iterate through the 'outer' array of the matrix that is passed into
   the "findLargestProductInMatrix()" function.
 
-  (7) Nested inside the above 'for' loop, create another 'for' loop that will
+  (6) Nested inside the above 'for' loop, create another 'for' loop that will
   iterate through each 'inner' array of each 'outer' array in the matrix.
+
+  (7) Inside the nested 'for' loop, create a 'const' variable,
+  "nConsecutiveNumsArray", that will contain an array of 'n' numbers that are
+  adjacent to one another in the matrix. 
 */
 
 /*------------IMPLEMENTING THE PLAN------------*/
@@ -111,14 +111,30 @@ const my_matrix = [
 console.time('findLargestProductInMatrix');
 function findLargestProductInMatrix(matrix, nFactorsInRow) {
   let largestProduct = 0;
-  const nConsecutiveNumsArray = [];
 	// console.log('matrix = ', matrix);
   // console.log('nFactorsInRow = ', nFactorsInRow);
   for (let i = 0; i < my_matrix.length; i++) {
     // console.log(`\nSub-Array #${i + 1}:`);
-    for (let j = 0; j < my_matrix[i].length; j++) {
+    for (let j = 0; j <= my_matrix[i].length - 4; j++) {
+      const nConsecutiveNumsArray = [];
       // console.log(`Item #${j + 1} in Sub-Array #${i + 1} = ${my_matrix[i][j]}`);
-      
+      let firstNum = my_matrix[i][j];
+      let secondNum = my_matrix[i][j + 1];
+      let thirdNum = my_matrix[i][j + 2];
+      let fourthNum = my_matrix[i][j + 3];
+
+      nConsecutiveNumsArray.push(firstNum, secondNum, thirdNum, fourthNum);
+      // console.log("nConsecutiveNumsArray = ", nConsecutiveNumsArray);
+
+      let currentProduct = productOfNfactors(nConsecutiveNumsArray);
+      if (currentProduct > largestProduct) {
+        largestProduct = currentProduct;
+      };
+
+      // console.log('\nfirstNum = ', firstNum);
+      // console.log('secondNum = ', secondNum);
+      // console.log('thirdNum = ', thirdNum);
+      // console.log('fourthNum = ', fourthNum);
     }
   }
 
@@ -126,9 +142,11 @@ function findLargestProductInMatrix(matrix, nFactorsInRow) {
   return largestProduct;
 }
 
-assert.deepStrictEqual(findLargestProductInMatrix(my_matrix, 4), 0, "The largest product of 4 consecutive numbers in this matrix is 0")
+console.log(findLargestProductInMatrix(my_matrix, 4));
 
-console.log("***** ALL TESTS FOR 'findLargestProductInMatrix()' PASS *****");
+// assert.deepStrictEqual(findLargestProductInMatrix(my_matrix, 4), 0, "The largest product of 4 consecutive numbers in this matrix is 0")
+
+// console.log("***** ALL TESTS FOR 'findLargestProductInMatrix()' PASS *****");
 console.timeEnd('findLargestProductInMatrix');
 
 
