@@ -162,6 +162,31 @@ function findLargestProductInMatrix(matrix, nFactorsInRow) {
     }
   }
 
+  for (let q = 0; q <= my_matrix.length - 4; q++) {
+    // console.log(`\nSub-Array #${q + 1}:`);
+    for (let r = 0; r <= my_matrix[q].length - 4; r++) {
+      const diagonalDownRightNumsArray = [];
+      // console.log(`Item #${r + 1} in Sub-Array #${q + 1} = ${my_matrix[q][r]}`);
+      let diagonalDownRightFirstNum = my_matrix[q][r];
+      let diagonalDownRightSecondNum = my_matrix[q + 1][r + 1];
+      let diagonalDownRightThirdNum = my_matrix[q + 2][r + 2];
+      let diagonalDownRightFourthNum = my_matrix[q + 3][r + 3];
+
+      diagonalDownRightNumsArray.push(diagonalDownRightFirstNum, diagonalDownRightSecondNum, diagonalDownRightThirdNum, diagonalDownRightFourthNum);
+      // console.log("diagonalDownRightNumsArray = ", diagonalDownRightNumsArray);
+
+      let diagonalDownRightProduct = productOfNfactors(diagonalDownRightNumsArray);
+      if (diagonalDownRightProduct > largestProduct) {
+        largestProduct = diagonalDownRightProduct;
+      };
+
+      // console.log('\ndiagonalDownRightFirstNum = ', diagonalDownRightFirstNum);
+      // console.log('diagonalDownRightSecondNum = ', diagonalDownRightSecondNum);
+      // console.log('diagonalDownRightThirdNum = ', diagonalDownRightThirdNum);
+      // console.log('diagonalDownRightFourthNum = ', diagonalDownRightFourthNum);
+    }
+  }
+
   return largestProduct;
 }
 
