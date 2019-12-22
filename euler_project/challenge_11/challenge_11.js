@@ -65,7 +65,7 @@
   iterate through each 'inner' array of each 'outer' array in the matrix.
 
   (7) Inside the nested 'for' loop, create a 'const' variable,
-  "nConsecutiveNumsArray", that will contain an array of 'n' numbers that are
+  "horizontalNumsArray", that will contain an array of 'n' numbers that are
   adjacent to one another in the matrix. 
 */
 
@@ -111,34 +111,57 @@ const my_matrix = [
 console.time('findLargestProductInMatrix');
 function findLargestProductInMatrix(matrix, nFactorsInRow) {
   let largestProduct = 0;
-	// console.log('matrix = ', matrix);
-  // console.log('nFactorsInRow = ', nFactorsInRow);
+
   for (let i = 0; i < my_matrix.length; i++) {
     // console.log(`\nSub-Array #${i + 1}:`);
     for (let j = 0; j <= my_matrix[i].length - 4; j++) {
-      const nConsecutiveNumsArray = [];
+      const horizontalNumsArray = [];
       // console.log(`Item #${j + 1} in Sub-Array #${i + 1} = ${my_matrix[i][j]}`);
-      let firstNum = my_matrix[i][j];
-      let secondNum = my_matrix[i][j + 1];
-      let thirdNum = my_matrix[i][j + 2];
-      let fourthNum = my_matrix[i][j + 3];
+      let horizontalFirstNum = my_matrix[i][j];
+      let horizontalSecondNum = my_matrix[i][j + 1];
+      let horizontalThirdNum = my_matrix[i][j + 2];
+      let horizontalFourthNum = my_matrix[i][j + 3];
 
-      nConsecutiveNumsArray.push(firstNum, secondNum, thirdNum, fourthNum);
-      // console.log("nConsecutiveNumsArray = ", nConsecutiveNumsArray);
+      horizontalNumsArray.push(horizontalFirstNum, horizontalSecondNum, horizontalThirdNum, horizontalFourthNum);
+      // console.log("horizontalNumsArray = ", horizontalNumsArray);
 
-      let currentProduct = productOfNfactors(nConsecutiveNumsArray);
-      if (currentProduct > largestProduct) {
-        largestProduct = currentProduct;
+      let horizontalProduct = productOfNfactors(horizontalNumsArray);
+      if (horizontalProduct > largestProduct) {
+        largestProduct = horizontalProduct;
       };
 
-      // console.log('\nfirstNum = ', firstNum);
-      // console.log('secondNum = ', secondNum);
-      // console.log('thirdNum = ', thirdNum);
-      // console.log('fourthNum = ', fourthNum);
+      // console.log('\nfirstNum = ', horizontalFirstNum);
+      // console.log('horizontalSecondNum = ', horizontalSecondNum);
+      // console.log('horizontalThirdNum = ', horizontalThirdNum);
+      // console.log('horizontalFourthNum = ', horizontalFourthNum);
     }
   }
 
-  
+  for (let m = 0; m <= my_matrix.length - 4; m++) {
+    // console.log(`\nSub-Array #${m + 1}:`);
+    for (let n = 0; n < my_matrix[m].length; n++) {
+      const verticalNumsArray = [];
+      // console.log(`Item #${n + 1} in Sub-Array #${m + 1} = ${my_matrix[m][n]}`);
+      let verticalFirstNum = my_matrix[m][n];
+      let verticalSecondNum = my_matrix[m + 1][n];
+      let verticalThirdNum = my_matrix[m + 2][n];
+      let verticalFourthNum = my_matrix[m + 3][n];
+
+      verticalNumsArray.push(verticalFirstNum, verticalSecondNum, verticalThirdNum, verticalFourthNum);
+      // console.log("verticalNumsArray = ", verticalNumsArray);
+
+      let verticalProduct = productOfNfactors(verticalNumsArray);
+      if (verticalProduct > largestProduct) {
+        largestProduct = verticalProduct;
+      };
+
+      // console.log('\nverticalFirstNum = ', verticalFirstNum);
+      // console.log('verticalSecondNum = ', verticalSecondNum);
+      // console.log('verticalThirdNum = ', verticalThirdNum);
+      // console.log('verticalFourthNum = ', verticalFourthNum);
+    }
+  }
+
   return largestProduct;
 }
 
