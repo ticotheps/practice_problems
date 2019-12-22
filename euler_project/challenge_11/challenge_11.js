@@ -1,7 +1,7 @@
 /*----------UNDERSTANDING THE PROBLEM----------
 - Objective 
   - Create an algorithm that will return the LARGEST product of four adjacent
-    numbers in the provided matrix.
+    numbers in any provided matrix.
 
 - Definitions
   - "adjacent" = The 4 numbers can be next to each other in any of the following directions:
@@ -9,14 +9,14 @@
     - down
     - left
     - right
-    - diagonally
-    - i.e. - 26, 63, 78, 14 (which are all in a diagonal row)
+    - diagonally-up (left to right)
+    - diagonally-down (left to right)
+    - i.e. - 26, 63, 78, 14 (which are all in a diagonally-downwars row)
       
 - Expected Input(s)
-  - Number of Expected Parameters: 2
+  - Number of Expected Parameters: 1
   - Names/Data Types of Expected Parameters
     (1) "matrix" => Array of sub-arrays made up of 2-digit numbers
-    (2) "numOfFactorsInRow" => Number
 
 - Expected Output(s)
   - Number of Expected Output(s): 1
@@ -32,41 +32,62 @@
     - Can the items in the sub-arrays of the matrix be strings?
       - No.
     - Do the numbers in the sub-arrays of the matrix need to be 2-digit numbers?
-      - Yes.
+      - No..
 
 - Example #1
-  - Example #1 Input(s): (my_matrix, 4)
+  - Example #1 Input(s): (my_matrix)
   - Example #1 Output(s): 1,788,696 (= 26x63x78x14)
 */
 
 /*---------------DEVISING A PLAN---------------
-- BRUTE FORCE SOLUTION (Pseudocoded Steps) (1) Create a 'const' variable,
-  "my_matrix", that will hold the array of sub-arrays (of numbers) to be passed
-  into the function as a matrix.
+- BRUTE FORCE SOLUTION (Pseudocoded Steps) 
+  (1) Create a 'const' variable, "my_matrix", that will hold the array of 
+  sub-arrays (of numbers) to be passedninto the function as a matrix.
 
-  (2) Create a function, "findLargestProductInMatrix()", that will take in 2
-  parameters, "matrix" & "nFactorsInRow", and will return one output,
-  "largestProduct".
+  (2) Create a function, "findLargestProductInMatrix()", that will take in 1
+  parameter, "matrix", and will return one output, "largestProduct".
 
   (3) Inside the "findLargestProductInMatrix()" function, create a 'let'
-  variable, "largestProduct", that will contain the largest product of 'n'
+  variable, "largestProduct", that will contain the largest product of 4
   consecutive numbers within the matrix, in any given direction (i.e. - left,
-  right, up, down, diagonally).
+  right, up, down, diagonally (up-right, down-right).
 
-  (4) Create a helper function, "productOfNfactors()", that will take in one
+  (4) Create a helper function, "productOf4Nums()", that will take in one
   input, "numsArray", and calculate the product of all those numbers in that
   array.
 
-  (5) Inside the "findLargestProductInMatrix()" function, create a 'for' loop
-  that will iterate through the 'outer' array of the matrix that is passed into
-  the "findLargestProductInMatrix()" function.
+  (5) Inside the "findLargestProductInMatrix()" function, create 4 sets of
+  nested 'for' loops that will iterate through the 'outer' & 'inner' array of 
+  the matrix that is passed into the "findLargestProductInMatrix()" function.
 
-  (6) Nested inside the above 'for' loop, create another 'for' loop that will
-  iterate through each 'inner' array of each 'outer' array in the matrix.
+  (6) The nested 'for' loops, will check for the largest product in the
+  following directions: horizontal (left + right), vertical (up + down),
+  diagonally-up (left to right), and diagonally-down (left to right).
 
-  (7) Inside the nested 'for' loop, create a 'const' variable,
-  "horizontalNumsArray", that will contain an array of 'n' numbers that are
-  adjacent to one another in the matrix. 
+  (7) Inside each nested 'for' loop, create 4 'const' variables,
+  "horizontalNumsArray", "verticalNumsArray", "diagonalDownRightNumsArray", and
+  "diagonalUpRightNumsArray",that will contain an array of 4 numbers from each
+  iteration of the inner 'for' loop.
+
+  (8) Also, inside each of the nested 'for' loops, create 4 'let' variables with
+  each of these prefixes, "horizontal__________", "vertical__________",
+  "diagonalDownRight__________", & "diagonalUpRight__________":
+  "__________FirstNum", "__________SecondNum", "__________ThirdNum", and 
+  "__________FourthNum", that will contain numbers according to the pattern
+  specific to that nested 'for' loop. 
+
+  (9) For each iteration of the inner 'for' loop of each set of nested 'for'
+  loops, push the values of those 4 'let' variables into the corresponding
+  "__________NumsArray" variable.
+
+  (10) Call the helper function, "productOf4Nums()", while passing in the
+  "__________NumsArray" variable and set it equal to a new corresponding 
+  "__________Product" variable that will be compared to the 
+  "largestProduct" value. 
+    (a) If the value of the product is GREATER than the value of 
+    "largestProduct", set "largestProduct" equal to that product.
+
+  (11) Return "largestProduct".
 */
 
 /*------------IMPLEMENTING THE PLAN------------*/
@@ -75,7 +96,7 @@ const assert = require('assert');
 
 ('use strict');
 
-function productOfNfactors(numsArray) {
+function productOf4Nums(numsArray) {
   const product = (numsArray.reduce(function(total, num) {
     return total *= num;
   }, 1));
@@ -83,7 +104,7 @@ function productOfNfactors(numsArray) {
   return product;
 };
 
-// console.log(productOfNfactors([1, 2, 3, 4]));
+// console.log(productOf4Nums([1, 2, 3, 4]));
 
 const my_matrix = [
   [08, 02, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77, 91, 08],
@@ -125,7 +146,7 @@ function findLargestProductInMatrix(matrix, nFactorsInRow) {
       horizontalNumsArray.push(horizontalFirstNum, horizontalSecondNum, horizontalThirdNum, horizontalFourthNum);
       // console.log("horizontalNumsArray = ", horizontalNumsArray);
 
-      let horizontalProduct = productOfNfactors(horizontalNumsArray);
+      let horizontalProduct = productOf4Nums(horizontalNumsArray);
       if (horizontalProduct > largestProduct) {
         largestProduct = horizontalProduct;
       };
@@ -150,7 +171,7 @@ function findLargestProductInMatrix(matrix, nFactorsInRow) {
       verticalNumsArray.push(verticalFirstNum, verticalSecondNum, verticalThirdNum, verticalFourthNum);
       // console.log("verticalNumsArray = ", verticalNumsArray);
 
-      let verticalProduct = productOfNfactors(verticalNumsArray);
+      let verticalProduct = productOf4Nums(verticalNumsArray);
       if (verticalProduct > largestProduct) {
         largestProduct = verticalProduct;
       };
@@ -175,7 +196,7 @@ function findLargestProductInMatrix(matrix, nFactorsInRow) {
       diagonalDownRightNumsArray.push(diagonalDownRightFirstNum, diagonalDownRightSecondNum, diagonalDownRightThirdNum, diagonalDownRightFourthNum);
       // console.log("diagonalDownRightNumsArray = ", diagonalDownRightNumsArray);
 
-      let diagonalDownRightProduct = productOfNfactors(diagonalDownRightNumsArray);
+      let diagonalDownRightProduct = productOf4Nums(diagonalDownRightNumsArray);
       if (diagonalDownRightProduct > largestProduct) {
         largestProduct = diagonalDownRightProduct;
       };
@@ -200,7 +221,7 @@ function findLargestProductInMatrix(matrix, nFactorsInRow) {
       diagonalUpRightNumsArray.push(diagonalUpRightFirstNum, diagonalUpRightSecondNum, diagonalUpRightThirdNum, diagonalUpRightFourthNum);
       // console.log("diagonalUpRightNumsArray = ", diagonalUpRightNumsArray);
 
-      let diagonalUpRightProduct = productOfNfactors(diagonalUpRightNumsArray);
+      let diagonalUpRightProduct = productOf4Nums(diagonalUpRightNumsArray);
       if (diagonalUpRightProduct > largestProduct) {
         largestProduct = diagonalUpRightProduct;
       };
