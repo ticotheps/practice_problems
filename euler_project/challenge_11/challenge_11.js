@@ -83,6 +83,14 @@ console.time('findLargestProductInMatrix');
 function findLargestProductInMatrix(matrix, numOfFactorsInRow) {
 	// console.log('matrix = ', matrix);
   // console.log('numOfFactorsInRow = ', numOfFactorsInRow);
+  for (let i = 0; i < my_matrix.length; i++) {
+    console.log(`\nSub-Array #${i + 1}:`);
+
+    for (let j = 0; j < my_matrix[i].length; j++) {
+      console.log(`Item #${j + 1} in Sub-Array #${i + 1} = ${my_matrix[i][j]}`);
+    }
+  }
+
   
   return numOfFactorsInRow;
 }
@@ -91,8 +99,6 @@ assert.deepStrictEqual(findLargestProductInMatrix(my_matrix, 4), 4, "The number 
 
 console.log("***** ALL TESTS FOR 'findLargestProductInMatrix()' PASS *****");
 console.timeEnd('findLargestProductInMatrix');
-
-
 
 
 /*--------REFLECTING/ITERATING THE PLAN--------
