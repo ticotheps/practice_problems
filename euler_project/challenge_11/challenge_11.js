@@ -187,6 +187,30 @@ function findLargestProductInMatrix(matrix, nFactorsInRow) {
     }
   }
 
+  for (let s = 0; s <= my_matrix.length - 4; s++) {
+    // console.log(`\nSub-Array #${s + 1}:`);
+    for (let t = 0; t <= my_matrix[t].length - 4; t++) {
+      const diagonalUpRightNumsArray = [];
+      // console.log(`Item #${t + 1} in Sub-Array #${s + 1} = ${my_matrix[s][t]}`);
+      let diagonalUpRightFirstNum = my_matrix[s][t + 3];
+      let diagonalUpRightSecondNum = my_matrix[s + 1][t + 2];
+      let diagonalUpRightThirdNum = my_matrix[s + 2][t + 1];
+      let diagonalUpRightFourthNum = my_matrix[s + 3][t];
+
+      diagonalUpRightNumsArray.push(diagonalUpRightFirstNum, diagonalUpRightSecondNum, diagonalUpRightThirdNum, diagonalUpRightFourthNum);
+      // console.log("diagonalUpRightNumsArray = ", diagonalUpRightNumsArray);
+
+      let diagonalUpRightProduct = productOfNfactors(diagonalUpRightNumsArray);
+      if (diagonalUpRightProduct > largestProduct) {
+        largestProduct = diagonalUpRightProduct;
+      };
+
+      // console.log('\ndiagonalUpRightFirstNum = ', diagonalUpRightFirstNum);
+      // console.log('diagonalUpRightSecondNum = ', diagonalUpRightSecondNum);
+      // console.log('diagonalUpRightThirdNum = ', diagonalUpRightThirdNum);
+      // console.log('diagonalUpRightFourthNum = ', diagonalUpRightFourthNum);
+    }
+  }
   return largestProduct;
 }
 
