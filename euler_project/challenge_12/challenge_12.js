@@ -96,6 +96,36 @@ assert.deepStrictEqual(findTotalDivisors(-1), "Please enter a valid value for 't
 assert.deepStrictEqual(findTotalDivisors(1.342), "Please enter a valid value for 'triNum'", "1.342 is not a valid 'triNum' because it is a floating point number");
 console.log("**---** ALL TESTS FOR 'findTotalDivisors()' PASSED **---**")
 
+function findFirstTriNumWithNthDivisors(divisorsNumExclusive) {
+  console.log("divisorsNumExclusive = ", divisorsNumExclusive);
+
+  const reallyBigNum = Number.MAX_SAFE_INTEGER;
+  let foundTriNum = false;
+  let currentTriNum = 0;
+
+  while (foundTriNum !== true) {
+    for (let n = 1; n < reallyBigNum; n++) {
+      currentTriNum = findNthTriNum(n);
+      console.log("currentTriNum = ", currentTriNum);
+
+      totalDivisors = findTotalDivisors(currentTriNum);
+      console.log("totalDivisors = ", totalDivisors);
+
+      if (totalDivisors > divisorsNumExclusive) {
+        foundTriNum = true;
+        break;
+      }
+    }
+    break;
+  }
+  return currentTriNum
+}
+
+console.log(findFirstTriNumWithNthDivisors(4));
+console.log(findFirstTriNumWithNthDivisors(10));
+console.log(findFirstTriNumWithNthDivisors(50));
+console.log(findFirstTriNumWithNthDivisors(100));
+// console.log(findFirstTriNumWithNthDivisors(500));
 
 /*--------REFLECTING/ITERATING THE PLAN--------
 - BRUTE FORCE SOLUTION ANALYSIS
