@@ -65,20 +65,37 @@ function findNthTriNum(n) {
       triNum += i;
       // console.log(triNum);
     }
-
     return triNum;
   }
-  return "Please enter a valid value for n";
+  return "Please enter a valid value for 'n'";
 }
-
-
-
 
 assert.deepStrictEqual(findNthTriNum(4), 10, "The 4th triangle number is 10");
 assert.deepStrictEqual(findNthTriNum(5), 15, "The 5th triangle number is 15");
-assert.deepStrictEqual(findNthTriNum(-1), "Please enter a valid value for n", "-1 is not a valid n because it is negative");
-
+assert.deepStrictEqual(findNthTriNum(-1), "Please enter a valid value for 'n'", "-1 is not a valid 'n' because it is negative");
+assert.deepStrictEqual(findNthTriNum(1.342), "Please enter a valid value for 'n'", "1.342 is not a valid 'n' because it is a floating point number");
 console.log("*---* ALL TESTS FOR 'findNthTriNum()' PASSED *---*")
+
+function findTotalDivisors(triNum) {
+  if (triNum > 1 && Number.isInteger(triNum)) {
+    let triNumDivisors = 0;
+
+    for (let j = triNum; j > 0; j--) {
+      if (triNum % j === 0) {
+        triNumDivisors++;
+      }
+    }
+    
+    return triNumDivisors;
+  }
+  return "Please enter a valid value for 'triNum'";
+}
+
+assert.deepStrictEqual(findTotalDivisors(10), 4, "The triangle number 10 has 4 total divisors");
+assert.deepStrictEqual(findTotalDivisors(-1), "Please enter a valid value for 'triNum'", "-1 is not a valid 'triNum' because it is negative");
+assert.deepStrictEqual(findTotalDivisors(1.342), "Please enter a valid value for 'triNum'", "1.342 is not a valid 'triNum' because it is a floating point number");
+console.log("**---** ALL TESTS FOR 'findTotalDivisors()' PASSED **---**")
+
 
 /*--------REFLECTING/ITERATING THE PLAN--------
 - BRUTE FORCE SOLUTION ANALYSIS
