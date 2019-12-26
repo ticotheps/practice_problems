@@ -90,4 +90,10 @@ assert.deepStrictEqual(findTriNumWithNDivsors(firstHundredTriNums, 20), 630, "Th
 assert.deepStrictEqual(findTriNumWithNDivsors(firstHundredTriNums, 50), "\nThere were no triangle numbers in this array that had MORE THAN 50 divisors", "This array has no triangle numbers with more than 50 divisors");
 
 console.log("---** ALL TESTS FOR 'findTriNumWithNDivsors()' PASSED **---\n");
+
+console.log(findTriNumWithNDivsors(firstTenThousandTriNums, 50));  // should print 25200 in ~13.541ms
+console.log(findTriNumWithNDivsors(firstTenThousandTriNums, 100));  // should print 73920 in ~51.178ms
+console.log(findTriNumWithNDivsors(firstTenThousandTriNums, 200));  // should print 2031120 in ~5.275s
+console.log(findTriNumWithNDivsors(firstTenThousandTriNums, 300));  // should print 2162160 in ~11.003s
+
 console.timeEnd("findTriNumWithNDivsors()");
