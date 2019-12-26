@@ -52,6 +52,9 @@ console.log("**--- ALL TESTS FOR 'findAllTriNums()' PASSED ---**");
 
 
 const firstHundredTriNums = findAllTriNums(100);
+const firstThousandTriNums = findAllTriNums(1000);
+const firstTenThousandTriNums = findAllTriNums(10000);
+const firstHundredThousandTriNums = findAllTriNums(100000);
 
 function findTriNumWithNDivsors(triNumsArr, greaterThan) {
   let triNum = 0;
@@ -70,16 +73,19 @@ function findTriNumWithNDivsors(triNumsArr, greaterThan) {
     // console.log(`The factors for ${triNumsArr[i]} = ${triNumFactors}`);
 
     if (triNumFactors.length > greaterThan) {
-      console.log(`${triNumsArr[i]} is the FIRST tri num with ${triNumFactors.length} divisors (${triNumFactors.length} > ${greaterThan})`);
+      // console.log(`\n${triNumsArr[i]} is the FIRST tri num with GREATER THAN ${greaterThan} divisors! (${triNumFactors.length} total)`);
+      // console.log(`The factors for ${triNumsArr[i]} = ${triNumFactors}`);
       return triNum;
     }
     
   }
-  return triNum;
+  return `\nThere were no triangle numbers in this array that had MORE THAN ${greaterThan} divisors`;
 }
 
-// console.log(findTriNumWithNDivsors(firstFourTriNums, 2));
-
-assert.deepStrictEqual(findTriNumWithNDivsors(firstFourTriNums, 2), 6, "The first triangle number with more than 2 divisors is 6");
+assert.deepStrictEqual(findTriNumWithNDivsors(firstTenTriNums, 4), 28, "The first triangle number with more than 4 divisors is 28");
+assert.deepStrictEqual(findTriNumWithNDivsors(firstTenTriNums, 5), 28, "The first triangle number with more than 5 divisors is 28");
+assert.deepStrictEqual(findTriNumWithNDivsors(firstTenTriNums, 6), 36, "The first triangle number with more than 6 divisors is 36");
+assert.deepStrictEqual(findTriNumWithNDivsors(firstHundredTriNums, 20), 630, "The first triangle number with more than 6 divisors is 36");
+assert.deepStrictEqual(findTriNumWithNDivsors(firstHundredTriNums, 50), "\nThere were no triangle numbers in this array that had MORE THAN 50 divisors", "This array has no triangle numbers with more than 50 divisors");
 
 console.log("---** ALL TESTS FOR 'findTriNumWithNDivsors()' PASSED **---");
