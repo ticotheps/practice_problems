@@ -26,7 +26,17 @@ const triNumsCache = {};
 
 function findAllTriNumsAndFactors(maxNumOfTriNums) {
   if (Number.isInteger(maxNumOfTriNums) && maxNumOfTriNums > 0) {
+    let largestCacheKey = 0;
     let currentTriNum = 0;
+
+    for (key in triNumsCache) {
+      if (key > largestCacheKey) {
+        console.log("key = ", key);
+        largestCacheKey = key;
+        console.log("largestCacheKey = ", largestCacheKey);
+      }
+    }
+    
   
     for (let i = 1; i <= maxNumOfTriNums; i++) {
       currentTriNum += i; 
@@ -69,11 +79,6 @@ function findAllTriNumsAndFactors(maxNumOfTriNums) {
 // console.log(findAllTriNumsAndFactors(100));
 // console.log(findAllTriNumsAndFactors(1000));
 
-// assert.deepStrictEqual(findAllTriNumsAndFactors(5), first5, "The first 5 triangle numbers are: 1, 3, 6, 10, & 15.");
-// assert.deepStrictEqual(findAllTriNumsAndFactors(10), first10, "The first 5 triangle numbers are: 1, 3, 6, 10, 15, 21, 28, 36, 45, 55.");
-// assert.deepStrictEqual(findAllTriNumsAndFactors(10), firstTenTriNums, "The first four triangle numbers are: 1, 3, 6, 10, 15, 21, 28, 36, 45, & 55.");
-// assert.deepStrictEqual(findAllTriNumsAndFactors(-4), false, "The input type must be a positive integer");
-// assert.deepStrictEqual(findAllTriNumsAndFactors(1.5), false, "The input type must be a positive integer");
 
 console.log("\n**--- ALL TESTS FOR 'findAllTriNumsAndFactors()' PASSED ---**\n");
 
@@ -82,7 +87,6 @@ console.time("findTriNumWithNDivsors()");
 function findTriNumWithNDivsors(triNumsCache, threshold) {
   let triNum = 0;
   let totalDivisors = 0;
-  let largestCacheKey = 0;
 
   // console.log(triNumsCache);
 
@@ -105,20 +109,18 @@ function findTriNumWithNDivsors(triNumsCache, threshold) {
 // console.log(findTriNumWithNDivsors(first10, 4));  // should print 28 (6 divisors)
 // console.log(findTriNumWithNDivsors(first10, 10));  // should print 'There were no triangle numbers in this cache that had MORE THAN 10 divisors'
 
-// assert.deepStrictEqual(findTriNumWithNDivsors(first10, 4), 28, "The first triangle number with more than 4 divisors is 28, which has 6 divisors");
-// assert.deepStrictEqual(findTriNumWithNDivsors(first10, 10), "\nThere were no triangle numbers in this cache that had MORE THAN 10 divisors", "There were no triangle numbers in this cache that had MORE THAN 10 divisors");
-// assert.deepStrictEqual(findTriNumWithNDivsors(first100, 500), "\nThere were no triangle numbers in this cache that had MORE THAN 500 divisors", "There were no triangle numbers in this cache that had MORE THAN 500 divisors");
-// assert.deepStrictEqual(findTriNumWithNDivsors(first1000, 500), "\nThere were no triangle numbers in this cache that had MORE THAN 500 divisors", "There were no triangle numbers in this cache that had MORE THAN 500 divisors");
-// assert.deepStrictEqual(findTriNumWithNDivsors(firstHundredTriNums, 50), "\nThere were no triangle numbers in this array that had MORE THAN 50 divisors", "This array has no triangle numbers with more than 50 divisors");
-
 console.log("---** ALL TESTS FOR 'findTriNumWithNDivsors()' PASSED **---\n");
 
-console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(1000), 10));
-console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(1000), 20));
-console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(1000), 40));
-console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(1000), 80));
-console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(2000), 160));
-console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(5000), 500));
+console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(100), 5));  // 120
+console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(100), 10));  // 120
+// console.log(triNumsCache);
+// console.log(triNumsCache);
+
+// console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(1000), 20));  // 630
+// console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(1000), 40));  // 5460
+// console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(1000), 80));  // 25200
+// console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(2000), 160)); // 749700
+// console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(5000), 500));
 
 // console.log(findTriNumWithNDivsors(firstTenThousandTriNums, 100), "\n");  // should print 73920 in ~51.178ms
 // console.log(findTriNumWithNDivsors(firstTenThousandTriNums, 200));  // should print 2031120 in ~5.275s
