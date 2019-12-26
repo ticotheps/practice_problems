@@ -46,7 +46,7 @@ assert.deepStrictEqual(findAllTriNums(10), firstTenTriNums, "The first four tria
 assert.deepStrictEqual(findAllTriNums(-4), false, "The input type must be a positive integer");
 assert.deepStrictEqual(findAllTriNums(1.5), false, "The input type must be a positive integer");
 
-console.log("**--- ALL TESTS FOR 'findAllTriNums()' PASSED ---**");
+console.log("\n**--- ALL TESTS FOR 'findAllTriNums()' PASSED ---**");
 
 
 
@@ -56,6 +56,7 @@ const firstThousandTriNums = findAllTriNums(1000);
 const firstTenThousandTriNums = findAllTriNums(10000);
 const firstHundredThousandTriNums = findAllTriNums(100000);
 
+console.time("findTriNumWithNDivsors()");
 function findTriNumWithNDivsors(triNumsArr, greaterThan) {
   let triNum = 0;
 
@@ -88,4 +89,5 @@ assert.deepStrictEqual(findTriNumWithNDivsors(firstTenTriNums, 6), 36, "The firs
 assert.deepStrictEqual(findTriNumWithNDivsors(firstHundredTriNums, 20), 630, "The first triangle number with more than 6 divisors is 36");
 assert.deepStrictEqual(findTriNumWithNDivsors(firstHundredTriNums, 50), "\nThere were no triangle numbers in this array that had MORE THAN 50 divisors", "This array has no triangle numbers with more than 50 divisors");
 
-console.log("---** ALL TESTS FOR 'findTriNumWithNDivsors()' PASSED **---");
+console.log("---** ALL TESTS FOR 'findTriNumWithNDivsors()' PASSED **---\n");
+console.timeEnd("findTriNumWithNDivsors()");
