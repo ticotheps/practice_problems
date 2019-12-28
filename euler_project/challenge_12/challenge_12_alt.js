@@ -117,7 +117,7 @@ function findTriNumWithNDivsors(divisorsCache, threshold) {
       return triNum;
     }
   }
-  console.log(`\nNone of triNums in this cache had >${threshold} divisors.`);
+  console.log(`\nNone of the triNums in the cache had >${threshold} divisors.`);
   console.log("Try a larger cache of triNums.");
   return false;
 }
@@ -132,9 +132,28 @@ function bruteForceSolution(maxNumOfTriNums, threshold) {
   return solution;
 }
 
-console.log(bruteForceSolution(100, 10)); // 276
-console.log(bruteForceSolution(100, 15)); // 120
-console.log(bruteForceSolution(100, 20)); // 630  
-console.log(bruteForceSolution(100, 25)); // 3570
-console.log(bruteForceSolution(100, 50)); // false
+console.log(bruteForceSolution(100, 10)); // 276 => 12 divisors
+console.log(bruteForceSolution(100, 25)); // 3570 => 32 divisors
+// console.log(bruteForceSolution(100, 50)); // false; runtime = 18.141ms
+
+console.log(bruteForceSolution(1000, 50)); // 64980 => 54 divisors
+console.log(bruteForceSolution(1000, 100)); // 97029 => 108 divisors
+// console.log(bruteForceSolution(1000, 200)); // false; runtime = 1.719s
+
+// console.log(bruteForceSolution(2000, 200)); // false; runtime = 5.526s
+
+console.log(bruteForceSolution(3000, 200)); // 2031120 => 240 divisors
+console.log(bruteForceSolution(3000, 300)); // 2162160 => 320 divisors
+// console.log(bruteForceSolution(3000, 400)); // false; runtime = 45.547s
+
+// console.log(bruteForceSolution(3500, 400)); // false; runtime = 54.536s
+
+// console.log(bruteForceSolution(4000, 400)); // false; runtime = 1:06.332 (m:ss.mmm)
+
+// console.log(bruteForceSolution(5000, 400)); // false; runtime = 1:42.189 (m:ss.mmm)
+
+// console.log(bruteForceSolution(6000, 500)); // false; runtime = 2:28.853 (m:ss.mmm)
+
+console.log(bruteForceSolution(10000, 500)); //
+
 console.timeEnd("findTriNumWithNDivsors()");
