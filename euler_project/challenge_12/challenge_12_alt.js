@@ -28,6 +28,8 @@ const assert = require("assert");
 
 ("use strict");
 
+console.time("findTriNumWithNDivsors()");
+
 // Creates an array of all triangle numbers up to the designated input
 function findAllTriNums(maxNumOfTriNums) {
   // Checks to make sure input is a natural number
@@ -50,17 +52,25 @@ function findAllTriNums(maxNumOfTriNums) {
   return triNumsArray;
 }
 
-const first10TriNums = findAllTriNums(10);
-console.log(first10TriNums);
+// const triNums10Array = findAllTriNums(10);
+// console.log(triNums10Array);
+const triNums100Array = findAllTriNums(100);
+// console.log(triNums100Array);
+// const triNums1000Array = findAllTriNums(1000);
+// console.log(triNums1000Array);
+// const triNums10000Array = findAllTriNums(10000);
+// console.log(triNums10000Array);
 
 
+const divisorsCache = {};
+
+// Creates an object of all possible numbers of divisors that the triangle
+// numbers from the input array could have.
 function findAllDivisors(triNumsArray) {
   if (!(typeof triNumsArray === "object")) {
     console.error("Please enter a valid input");
     return false;
   }
-
-  const divisorsCache = {};
 
   for (let j = 0; j < triNumsArray.length; j++) {
     let triNumFromArray = triNumsArray[j];
@@ -83,47 +93,33 @@ function findAllDivisors(triNumsArray) {
   return divisorsCache;
 }
 
-const allDivisorsFirst10 = findAllDivisors(first10TriNums);
-console.log(allDivisorsFirst10);
+// const allDivisors10Cache = findAllDivisors(triNums10Array);
+// console.log(allDivisors10Cache);
+const allDivisors100Cache = findAllDivisors(triNums100Array);
+console.log(allDivisors100Cache);
+// const allDivisors1000Cache = findAllDivisors(triNums1000Array);
+// console.log(allDivisors1000Cache);
+// const allDivisors10000Cache = findAllDivisors(triNums10000Array);
+// console.log(allDivisors10000Cache);
 
 
-// console.time("findTriNumWithNDivsors()");
-// function findTriNumWithNDivsors(divisorsCache, threshold) {
-//   let triNum = 0;
-//   let totalDivisors = 0;
+// Finds the FIRST triangle number that has MORE divisors than the input
+// 'threshold' provided.
+function findTriNumWithNDivsors(divisorsCache, threshold) {
+  let triNum = 0;
 
-//   // console.log(divisorsCache);
+  for (key in divisorsCache) {
+    if (key > threshold) {
+      console.log(`\nTriangle number "${Number(divisorsCache[key][0])}" has ${key} divisors, which is greater than our 'threshold' input of ${threshold}`);
 
-//   for (key in divisorsCache) {
-//     if (key > threshold) {
-//       console.log(`\nTriangle number "${Number(divisorsCache[key][0])}" has ${key} divisors, which is greater than our 'threshold' input of ${threshold}`);
-
-//       triNum = Number(divisorsCache[key][0]);
+      triNum = Number(divisorsCache[key][0]);
     
-//       return triNum;
-//     }
-//   }
-//   return `\nThere were no triangle numbers in this cache that had MORE THAN ${threshold} divisors`;
-// }
+      return triNum;
+    }
+  }
+  return `\nThere were no triangle numbers in this cache that had MORE THAN ${threshold} divisors`;
+}
 
-// console.log(findTriNumWithNDivsors(first10TriNums, 4));  // should print 28 (6 divisors)
-// console.log(findTriNumWithNDivsors(first10, 10));  // should print 'There were no triangle numbers in this cache that had MORE THAN 10 divisors'
-
-// console.log("---** ALL TESTS FOR 'findTriNumWithNDivsors()' PASSED **---\n");
-
-// console.log(findTriNumWithNDivsors(findAllTriNums(20), 5));  // 28
-// console.log(findTriNumWithNDivsors(findAllTriNums(20), 6));  // 36
-// console.log(divisorsCache);
-// console.log(divisorsCache);
-
-// console.log(findTriNumWithNDivsors(findAllTriNums(1000), 20));  // 630
-// console.log(findTriNumWithNDivsors(findAllTriNums(1000), 40));  // 5460
-// console.log(findTriNumWithNDivsors(findAllTriNums(1000), 80));  // 25200
-// console.log(findTriNumWithNDivsors(findAllTriNums(2000), 160)); // 749700
-// console.log(findTriNumWithNDivsors(findAllTriNums(5000), 500));
-
-// console.log(findTriNumWithNDivsors(firstTenThousandTriNums, 100), "\n");  // should print 73920 in ~51.178ms
-// console.log(findTriNumWithNDivsors(firstTenThousandTriNums, 200));  // should print 2031120 in ~5.275s
-// console.log(findTriNumWithNDivsors(firstTenThousandTriNums, 300));  // should print 2162160 in ~11.003s
-
-// console.timeEnd("findTriNumWithNDivsors()");
+const over5DivisorsTriNum = findTriNumWithNDivsors(allDivisors100Cache, 5);
+console.log(over5DivisorsTriNum);  // 28
+console.timeEnd("findTriNumWithNDivsors()");
