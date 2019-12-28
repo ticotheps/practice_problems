@@ -6,30 +6,36 @@
  *      by adding a natural number to its previous adjacent natural number
  *      (beginning with 1 as the first natural and first triangle number).
  *
- * PLAN: (1)  Create a helper function, 'findAllTriNumsAndFactors()', that 
- *            takes in one input, 'maxNumOfTriNums', which denotes the total 
- *            number of triangle numbers to be returned in an object, 
- *            'triNumsCache'. 
+ * PLAN: 
  * 
- *       (2)  Create another function, 'findTriNumWithNDivsors()', that takes 
- *            in 2 inputs, 'triNumsCache' & 'threshold'. This function will 
- *            loop through the 'triNumsCache' to find the first triangle number 
- *            that has a total number of divisors GREATER THAN the 
- *            'threshold' input.
+ * (1)  Create a 'divisorsCache' object that will hold a key-value pair where
+ *      the 'key' is the total number of divisors and the 'value' is an array
+ *      containing all the triangle numbers with that number of divisors.
+ * 
+ * (1)  Create a helper function, 'findAllTriNumsAndFactors()', that takes
+ *      in one input, 'maxNumOfTriNums', and returns one output, 
+ *      'divisorsCache'.
+ *
+ * (2)  Create another function, 'findTriNumWithNDivsors()', that takes in 2
+ *      inputs, 'divisorsCache' & 'threshold', and returns a single output,
+ *      'triNum'. This function will first loop through the keys of the
+ *      'divisorsCache' object to see if there is a match for the 'threshold'
+ *      number, which is the minimum number of divisors (exclusive) that the 
+ *      output, 'triNum', must contain to be returned.
  */
 
 const assert = require("assert");
 
 ("use strict");
 
-const triNumsCache = {};
+const divisorsCache = {};
 
 function findAllTriNumsAndFactors(maxNumOfTriNums) {
   if (Number.isInteger(maxNumOfTriNums) && maxNumOfTriNums > 0) {
     let largestCacheKey = 0;
     let currentTriNum = 0;
 
-    for (key in triNumsCache) {
+    for (key in divisorsCache) {
       console.log("key = ", key);
       if (key > largestCacheKey) {
         largestCacheKey = key;
@@ -40,20 +46,20 @@ function findAllTriNumsAndFactors(maxNumOfTriNums) {
     for (let i = 1; i <= maxNumOfTriNums; i++) {
       currentTriNum += i; 
       console.log(`currentTriNum = ${currentTriNum}`);
-      if (!(currentTriNum in Object.keys(triNumsCache))) {
+      if (!(currentTriNum in Object.keys(divisorsCache))) {
         console.log(`${currentTriNum} DOES NOT exist as a key yet!\n`);
-        triNumsCache[currentTriNum] = false;
+        divisorsCache[currentTriNum] = false;
       } else {
         console.log(`${currentTriNum} already exists as a key in the cache\n`);
       }
     }
 
-    for (key in triNumsCache) {
-      // console.log(triNumsCache);
+    for (key in divisorsCache) {
+      // console.log(divisorsCache);
       // console.log("key = ", key);
       let numOfKeysDivisors = 0;
 
-      if (triNumsCache[key] !== false) {
+      if (divisorsCache[key] !== false) {
         console.log(`The ${key}-key already already has a value associated with it`);
       } else {
         for (let j = 1; j <= key; j++) {
@@ -62,10 +68,10 @@ function findAllTriNumsAndFactors(maxNumOfTriNums) {
           }
         }
         // console.log(`numOfKeysDivisors @ ${key} = ${numOfKeysDivisors}`);
-        triNumsCache[key] = numOfKeysDivisors;
+        divisorsCache[key] = numOfKeysDivisors;
       }
     }
-    return triNumsCache;
+    return divisorsCache;
   }
 
   console.error("Please enter a valid input");
@@ -73,7 +79,7 @@ function findAllTriNumsAndFactors(maxNumOfTriNums) {
 }
 
 // console.log(findAllTriNumsAndFactors(5));
-// console.log(triNumsCache);
+// console.log(divisorsCache);
 // console.log(findAllTriNumsAndFactors(10));
 // console.log(findAllTriNumsAndFactors(100));
 // console.log(findAllTriNumsAndFactors(1000));
@@ -83,21 +89,21 @@ console.log("\n**--- ALL TESTS FOR 'findAllTriNumsAndFactors()' PASSED ---**\n")
 
 
 console.time("findTriNumWithNDivsors()");
-function findTriNumWithNDivsors(triNumsCache, threshold) {
+function findTriNumWithNDivsors(divisorsCache, threshold) {
   let triNum = 0;
   let totalDivisors = 0;
 
-  // console.log(triNumsCache);
+  // console.log(divisorsCache);
 
-  for (key in triNumsCache) {
-    if (triNumsCache[key] > threshold) {
+  for (key in divisorsCache) {
+    if (divisorsCache[key] > threshold) {
       // console.log("\nA key with a value greater than our input already exists in the cache");
-      // console.log("triNumsCache key = ", key);
-      // console.log("numOfDivisors @ key = ", triNumsCache[key]);
+      // console.log("divisorsCache key = ", key);
+      // console.log("numOfDivisors @ key = ", divisorsCache[key]);
 
-      // console.log("\nBEFORE triNum = ", triNum);
+      console.log("\nBEFORE triNum = ", triNum);
       triNum = Number(key);
-      // console.log("AFTER triNum = ", triNum);
+      console.log("AFTER triNum = ", triNum);
 
       return triNum;
     }
@@ -111,9 +117,9 @@ function findTriNumWithNDivsors(triNumsCache, threshold) {
 console.log("---** ALL TESTS FOR 'findTriNumWithNDivsors()' PASSED **---\n");
 
 console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(20), 5));  // 28
-// console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(100), 10));  // 120
-// console.log(triNumsCache);
-// console.log(triNumsCache);
+console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(20), 6));  // 36
+// console.log(divisorsCache);
+// console.log(divisorsCache);
 
 // console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(1000), 20));  // 630
 // console.log(findTriNumWithNDivsors(findAllTriNumsAndFactors(1000), 40));  // 5460
