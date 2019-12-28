@@ -54,7 +54,7 @@ function findAllTriNums(maxNumOfTriNums) {
 
 // const triNums10Array = findAllTriNums(10);
 // console.log(triNums10Array);
-const triNums100Array = findAllTriNums(100);
+// const triNums100Array = findAllTriNums(100);
 // console.log(triNums100Array);
 // const triNums1000Array = findAllTriNums(1000);
 // console.log(triNums1000Array);
@@ -95,8 +95,8 @@ function findAllDivisors(triNumsArray) {
 
 // const allDivisors10Cache = findAllDivisors(triNums10Array);
 // console.log(allDivisors10Cache);
-const allDivisors100Cache = findAllDivisors(triNums100Array);
-console.log(allDivisors100Cache);
+// const allDivisors100Cache = findAllDivisors(triNums100Array);
+// console.log(allDivisors100Cache);
 // const allDivisors1000Cache = findAllDivisors(triNums1000Array);
 // console.log(allDivisors1000Cache);
 // const allDivisors10000Cache = findAllDivisors(triNums10000Array);
@@ -110,16 +110,31 @@ function findTriNumWithNDivsors(divisorsCache, threshold) {
 
   for (key in divisorsCache) {
     if (key > threshold) {
-      console.log(`\nTriangle number "${Number(divisorsCache[key][0])}" has ${key} divisors, which is greater than our 'threshold' input of ${threshold}`);
+      console.log(`\nAt ${key} divisors, "${Number(divisorsCache[key][0])}" is the 1st triNum to have >${threshold} divisors.`);
 
       triNum = Number(divisorsCache[key][0]);
     
       return triNum;
     }
   }
-  return `\nThere were no triangle numbers in this cache that had MORE THAN ${threshold} divisors`;
+  console.log(`\nNone of triNums in this cache had >${threshold} divisors.`);
+  console.log("Try a larger cache of triNums.");
+  return false;
 }
 
-const over5DivisorsTriNum = findTriNumWithNDivsors(allDivisors100Cache, 5);
-console.log(over5DivisorsTriNum);  // 28
+// const over5DivisorsTriNum = findTriNumWithNDivsors(allDivisors100Cache, 5);
+// console.log(over5DivisorsTriNum);  // 28
+
+function bruteForceSolution(maxNumOfTriNums, threshold) {
+  const triNumsArr = findAllTriNums(maxNumOfTriNums);
+  const divisorsCache = findAllDivisors(triNumsArr);
+  const solution = findTriNumWithNDivsors(divisorsCache, threshold);
+  return solution;
+}
+
+console.log(bruteForceSolution(100, 10)); // 276
+console.log(bruteForceSolution(100, 15)); // 120
+console.log(bruteForceSolution(100, 20)); // 630  
+console.log(bruteForceSolution(100, 25)); // 3570
+console.log(bruteForceSolution(100, 50)); // false
 console.timeEnd("findTriNumWithNDivsors()");
