@@ -6,7 +6,7 @@
 - Expected Input(s)
   - Number of Expected Parameters: 2
   - Names/Types of Expected Parameters
-    - "bigNumsArr" (array; made up of numbers that are stored inside of
+    - "largeNumsArr" (array; made up of numbers that are stored inside of
       strings)
     - "firstNdigitsOfSum" (number; represents number of left-most digits to
       return from the sum)"
@@ -44,7 +44,7 @@
 /*---------------DEVISING A PLAN---------------
 - BRUTE FORCE SOLUTION (Pseudocoded Steps) 
 
-  (1) Create a variable, "bigNumsArr", to hold a list of 100 strings that
+  (1) Create a variable, "largeNumsArr", to hold a list of 100 strings that
       contain 50 numeric characters per string. 
 
   (2) Create a helper function, "sumOfTwoNumStrings()", which will take in two
@@ -54,29 +54,29 @@
       called 'numSum'. Then, 'numSum' will be converted into a string before 
       being returned.
 
-  (3) Create a function, "nDigitsOfBigSum()", which will take in two inputs,
-      "bigNumsArr" & "firstNdigitsOfSum", and return a single output,
+  (3) Create a function, "findNDigitsOfBigSum()", which will take in two inputs,
+      "largeNumsArr" & "firstNdigitsOfSum", and return a single output,
       "partialSum".
 
       (a) Create a variable, "currentSum", that will hold the running total
           sum of the number values that have been added together, but in the
           form of a string. It will be initiated with a value of "0".
 
-      (b) Create another variable, "reversedNumToAdd", that will contain the
+      (b) Create another variable, "revNumStrToAdd", that will contain the
           reversed number value of the most currently iterated item from 
-          the "bigNumsArr". This variable will contain a string data type.
+          the "largeNumsArr". This variable will contain a string data type.
 
-      (c) Use a 'while' loop to continue popping off items from "bigNumsArr"
+      (c) Use a 'while' loop to continue popping off items from "largeNumsArr"
           so long as it is not empty.
 
           (d) Pop off the last item of the array, reverse the string, and then
-              set it equal to the "reversedNumToAdd" variable.
+              set it equal to the "revNumStrToAdd" variable.
 
           (e) Create a new variable, "reversedCurrentSum", that will reverse
               the value of the "currentSum" variable and store it as a string.
 
           (f) Call the "sumOfTwoNumStrings()" helper function, passing in 
-              "reversedNumToAdd" & "reversedCurrentSum".
+              "revNumStrToAdd" & "reversedCurrentSum".
       
       (g) Return the first 'n' digits of the large sum.
   ...
@@ -298,6 +298,28 @@ assert.deepStrictEqual(exampleA, '27588', '12345 + 15243 = 27588');
 assert.deepStrictEqual(exampleB, '84689', '67891 + 16798 = 84689');
 assert.deepStrictEqual(exampleC, '35245', '678 + 34567 = 35245');
 console.log("\n*--- ALL TESTS FOR 'sumOfTwoNumStrings()' PASSED ---*\n");
+
+function findNDigitsOfBigSum(largeNumsArr, firstNdigitsOfSum = 10) {
+	// console.log(largeNumsArr);
+	let currentSum = '0';
+
+	for (let i = 0; i < largeNumsArr.length; i++) {
+		let numToAddToSum = sumOfTwoNumStrings(currentSum, largeNumsArr[i]);
+		currentSumNum = parseInt(currentSum) + parseInt(numToAddToSum);
+		currentSum = currentSumNum.toString();
+		console.log('currentSum = ', currentSum);
+	}
+
+	const partialSum = Number(
+		currentSum.slice(0, firstNdigitsOfSum) * 10 ** (firstNdigitsOfSum - 1)
+	);
+	// const partialSumArr = partialSum.toString().split('');
+
+	// return partialSumArr.slice(0, firstNdigitsOfSum).join('');
+	return partialSum;
+}
+
+console.log(findNDigitsOfBigSum(hugeNumsArr, 10));
 
 /*--------REFLECTING/ITERATING THE PLAN--------
 - BRUTE FORCE SOLUTION ANALYSIS
