@@ -51,7 +51,7 @@
       inputs, "strA" & "strB", which are string values that contain only
       numerical characters. The function will convert them into number data 
       types before adding them together and storing them in a new variable
-      called 'numSum'. Then, 'numSum' will converted into a string before 
+      called 'numSum'. Then, 'numSum' will be converted into a string before 
       being returned.
 
   (3) Create a function, "nDigitsOfBigSum()", which will take in two inputs,
@@ -75,15 +75,22 @@
           (e) Create a new variable, "reversedCurrentSum", that will reverse
               the value of the "currentSum" variable and store it as a string.
 
-          (f) Use nested 'for' loops to iterate through both strings, 
-              "reversedCurrentSum" & "reversedNumToAdd", converting the
-              iterated values to number data types before adding them together.
-              After they are added together, the sum is converted back to a
-              string datatype.
+          (f) Call the "sumOfTwoNums()" helper function, passing in 
+              "reversedNumToAdd" & "reversedCurrentSum".
+      
+      (g) Return the first 'n' digits of the large sum
   ...
 */
 
 /*------------IMPLEMENTING THE PLAN------------*/
+
+const assert = require('assert');
+
+('use strict');
+
+function sumOfTwoNums(strA, strB) {
+	const numA = parseInt();
+}
 
 /*--------REFLECTING/ITERATING THE PLAN--------
 - BRUTE FORCE SOLUTION ANALYSIS
