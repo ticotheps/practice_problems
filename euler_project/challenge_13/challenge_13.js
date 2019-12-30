@@ -1,13 +1,13 @@
 /*----------UNDERSTANDING THE PROBLEM----------
 - Objective 
-  - Find the first 10 digits of a very, very large sum of one-hundred 50-digit
-    numbers.
+  - Sum up one-hundred 50-digit numbers and return the FIRST 10 digits of that
+    sum.
 
 - Expected Input(s)
-  - Number of Expected Parameters
-    - <number of expected parameters here> 
-  - Names of Expected Parameters
-    - <name of parameter A here>
+  - Number of Expected Parameters: 2
+  - Names/Types of Expected Parameters
+    - "bigNumsArray" (array; this array is made up of numbers stored inside
+      of strings)
     - <name of parameter B here>
   - Data Types of Expected Parameters
     - <data type of parameter A here>

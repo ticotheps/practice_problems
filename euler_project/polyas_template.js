@@ -7,22 +7,15 @@
   - "New Term": <some definition here>
 
 - Expected Input(s)
-  - Number of Expected Parameters
-    - <number of expected parameters here> 
-  - Names of Expected Parameters
-    - <name of parameter A here>
-    - <name of parameter B here>
-  - Data Types of Expected Parameters
-    - <data type of parameter A here>
-    - <data type of parameter B here>
+  - Number of Expected Parameters: <number of expected parameters here> 
+  - Names/Data Types of Expected Parameters
+    - <name of parameter A here> (<data type of parameter A here>)
+    - <name of parameter B here> (<data type of parameter B here>)
 
 - Expected Output(s)
-  - Number of Expected Outputs
-    - <number of expected outputs here> 
-  - Names of Expected Output
-    - <name of output here>
-  - Data Type of Expected Output
-    - <data type of output here>
+  - Number of Expected Outputs: <number of expected outputs here> 
+  - Names/Data Types of Expected Output
+    - <name of output here> (<data type of output here>)
 
 - Constraints
   - What will make the algorithm fail?
