@@ -6,7 +6,7 @@
 - Expected Input(s)
   - Number of Expected Parameters: 2
   - Names/Types of Expected Parameters
-    - "bigNumsArray" (array; made up of numbers that are stored inside of
+    - "bigNumsArr" (array; made up of numbers that are stored inside of
       strings)
     - "firstNdigitsOfSum" (number; represents number of left-most digits to
       return from the sum)"
@@ -42,10 +42,44 @@
 */
 
 /*---------------DEVISING A PLAN---------------
-- BRUTE FORCE SOLUTION (Pseudocoded Steps)
-  (1) <Step 1 here>
-  (2) <Step 2 here>
-  (3) <Step 3 here>
+- BRUTE FORCE SOLUTION (Pseudocoded Steps) 
+
+  (1) Create a variable, "bigNumsArr", to hold a list of 100 strings that
+      contain 50 numeric characters per string. 
+
+  (2) Create a helper function, "sumOfTwoNums()", which will take in two
+      inputs, "strA" & "strB", which are string values that contain only
+      numerical characters. The function will convert them into number data 
+      types before adding them together and storing them in a new variable
+      called 'numSum'. Then, 'numSum' will converted into a string before 
+      being returned.
+
+  (3) Create a function, "nDigitsOfBigSum()", which will take in two inputs,
+      "bigNumsArr" & "firstNdigitsOfSum", and return a single output,
+      "partialSum".
+
+      (a) Create a variable, "currentSum", that will hold the running total
+          sum of the number values that have been added together, but in the
+          form of a string. It will be initiated with a value of "0".
+
+      (b) Create another variable, "reversedNumToAdd", that will contain the
+          reversed number value of the most currently iterated item from 
+          the "bigNumsArr". This variable will contain a string data type.
+
+      (c) Use a 'while' loop to continue popping off items from "bigNumsArr"
+          so long as it is not empty.
+
+          (d) Pop off the last item of the array, reverse the string, and then
+              set it equal to the "reversedNumToAdd" variable.
+
+          (e) Create a new variable, "reversedCurrentSum", that will reverse
+              the value of the "currentSum" variable and store it as a string.
+
+          (f) Use nested 'for' loops to iterate through both strings, 
+              "reversedCurrentSum" & "reversedNumToAdd", converting the
+              iterated values to number data types before adding them together.
+              After they are added together, the sum is converted back to a
+              string datatype.
   ...
 */
 
