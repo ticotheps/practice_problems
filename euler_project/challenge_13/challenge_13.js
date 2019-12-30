@@ -47,7 +47,7 @@
   (1) Create a variable, "bigNumsArr", to hold a list of 100 strings that
       contain 50 numeric characters per string. 
 
-  (2) Create a helper function, "sumOfTwoNums()", which will take in two
+  (2) Create a helper function, "sumOfTwoNumStrings()", which will take in two
       inputs, "strA" & "strB", which are string values that contain only
       numerical characters. The function will convert them into number data 
       types before adding them together and storing them in a new variable
@@ -75,10 +75,10 @@
           (e) Create a new variable, "reversedCurrentSum", that will reverse
               the value of the "currentSum" variable and store it as a string.
 
-          (f) Call the "sumOfTwoNums()" helper function, passing in 
+          (f) Call the "sumOfTwoNumStrings()" helper function, passing in 
               "reversedNumToAdd" & "reversedCurrentSum".
       
-      (g) Return the first 'n' digits of the large sum
+      (g) Return the first 'n' digits of the large sum.
   ...
 */
 
@@ -88,9 +88,72 @@ const assert = require('assert');
 
 ('use strict');
 
-function sumOfTwoNums(strA, strB) {
-	const numA = parseInt();
+function sumOfTwoNumStrings(strA, strB) {
+	const revStrA = strA
+		.split('')
+		.reverse()
+		.join('');
+	// console.log('\nstrA = ', strA);
+	console.log('revStrA = ', revStrA);
+
+	const revStrB = strB
+		.split('')
+		.reverse()
+		.join('');
+	// console.log('\nstrA = ', strB);
+	console.log('revStrA = ', revStrB);
+
+	let revStrSum = '';
+	let valueToCarry = 0;
+  let diffInLen = 0;
+
+	for (let i = 0; i < revStrA.length; i++) {
+		console.log('\ni = ', i);
+		console.log(`revStrA[i] = ${revStrA[i]}`);
+		console.log(`revStrB[i] = ${revStrB[i]}\n`);
+
+    const currNumStrA = parseInt(revStrA[i]);
+    const currNumStrB = parseInt(revStrB[i]);
+    let sumOfTwoDigits = currNumStrA + currNumStrB;
+    if (sumOfTwoDigits )
+  };
+  
+  // if (diffInLen !== 0) {
+  //   if (revStrA.length > revStrB.length) {
+  //     diffInLen = revStrA.length - revStrB.length;
+
+  //     for (let x = 0; x < revStrA.length; x++) {
+  //       console.log("(BEFORE) revStrSum = ", revStrSum);
+  //       revStrSum.push(revStrA[revStrB.length + x]);
+  //       console.log("(AFTER) revStrSum = ", revStrSum);
+  //     }
+  //   };
+
+  //   if (revStrA.length < revStrB.length) {
+  //     diffInLen = revStrB.length - revStrA.length;
+
+  //     for (let y = 0; y < revStrB.length; y++) {
+  //       console.log("(BEFORE) revStrSum = ", revStrSum);
+  //       revStrSum.push(revStrB[revStrA.length + y]);
+  //       console.log("(AFTER) revStrSum = ", revStrSum);
+  //     }
+  //   };
+  // }
+
+  console.log('\ndiffInLen = ', diffInLen);
+	valueToCarry += diffInLen;
+
+	return revStrSum;
 }
+
+const strExample1 = '12345';
+const strExample2 = '15243';
+
+const example1 = sumOfTwoNumStrings(strExample1, strExample2);
+console.log(example1);
+
+// assert.deepStrictEqual(example1, '0');
+// console.log("\n*--- ALL TESTS FOR 'sumOfTwoNumStrings()' PASSED ---*");
 
 /*--------REFLECTING/ITERATING THE PLAN--------
 - BRUTE FORCE SOLUTION ANALYSIS
