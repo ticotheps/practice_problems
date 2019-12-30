@@ -176,23 +176,25 @@ function sumOfTwoNumStrings(strA, strB) {
 const strExample1 = '12345';
 const strExample2 = '15243';
 const exampleA = sumOfTwoNumStrings(strExample1, strExample2);
-console.log('\n12345 + 15243 = ', 12345 + 15243);
-console.log(exampleA);
+// console.log('\n12345 + 15243 = ', 12345 + 15243);
+// console.log(exampleA);
 
 const strExample3 = '67891';
 const strExample4 = '16798';
 const exampleB = sumOfTwoNumStrings(strExample3, strExample4);
-console.log('\n67891 + 16798 = ', 67891 + 16798);
-console.log(exampleB);
+// console.log('\n67891 + 16798 = ', 67891 + 16798);
+// console.log(exampleB);
 
 const strExample5 = '678';
 const strExample6 = '34567';
 const exampleC = sumOfTwoNumStrings(strExample5, strExample6);
-console.log('\n678 + 34567 = ', 678 + 34567);
-console.log(exampleC);
+// console.log('\n678 + 34567 = ', 678 + 34567);
+// console.log(exampleC);
 
-// assert.deepStrictEqual(example1, '0');
-// console.log("\n*--- ALL TESTS FOR 'sumOfTwoNumStrings()' PASSED ---*");
+assert.deepStrictEqual(exampleA, '27588', '12345 + 15243 = 27588');
+assert.deepStrictEqual(exampleB, '84689', '67891 + 16798 = 84689');
+assert.deepStrictEqual(exampleC, '35245', '678 + 34567 = 35245');
+console.log("\n*--- ALL TESTS FOR 'sumOfTwoNumStrings()' PASSED ---*\n");
 
 /*--------REFLECTING/ITERATING THE PLAN--------
 - BRUTE FORCE SOLUTION ANALYSIS
