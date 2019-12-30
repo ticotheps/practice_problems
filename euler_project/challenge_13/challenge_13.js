@@ -93,64 +93,98 @@ function sumOfTwoNumStrings(strA, strB) {
 		.split('')
 		.reverse()
 		.join('');
-	// console.log('\nstrA = ', strA);
+	console.log('\nstrA = ', strA);
 	console.log('revStrA = ', revStrA);
 
 	const revStrB = strB
 		.split('')
 		.reverse()
 		.join('');
-	// console.log('\nstrA = ', strB);
-	console.log('revStrA = ', revStrB);
+	console.log('\nstrB = ', strB);
+	console.log('revStrB = ', revStrB);
 
-	let revStrSum = '';
+	let revArrOfSum = [];
 	let valueToCarry = 0;
-  let diffInLen = 0;
+	// let diffInLen = 0;
 
 	for (let i = 0; i < revStrA.length; i++) {
 		console.log('\ni = ', i);
-		console.log(`revStrA[i] = ${revStrA[i]}`);
-		console.log(`revStrB[i] = ${revStrB[i]}\n`);
+		// console.log(`revStrA[i] = ${revStrA[i]}`);
+		// console.log(`revStrB[i] = ${revStrB[i]}\n`);
 
-    const currNumStrA = parseInt(revStrA[i]);
-    const currNumStrB = parseInt(revStrB[i]);
-    let sumOfTwoDigits = currNumStrA + currNumStrB;
-    if (sumOfTwoDigits )
-  };
-  
-  // if (diffInLen !== 0) {
-  //   if (revStrA.length > revStrB.length) {
-  //     diffInLen = revStrA.length - revStrB.length;
+		const currNumStrA = parseInt(revStrA[i]);
+		console.log('currNumStrA = ', currNumStrA);
 
-  //     for (let x = 0; x < revStrA.length; x++) {
-  //       console.log("(BEFORE) revStrSum = ", revStrSum);
-  //       revStrSum.push(revStrA[revStrB.length + x]);
-  //       console.log("(AFTER) revStrSum = ", revStrSum);
-  //     }
-  //   };
+		const currNumStrB = parseInt(revStrB[i]);
+		console.log('currNumStrB = ', currNumStrB);
+		console.log('valueToCarry = ', valueToCarry);
 
-  //   if (revStrA.length < revStrB.length) {
-  //     diffInLen = revStrB.length - revStrA.length;
+		const numSumOfTwoDigitsAndCarry = currNumStrA + currNumStrB + valueToCarry;
+		console.log('\nnumSumOfTwoDigitsAndCarry = ', numSumOfTwoDigitsAndCarry);
 
-  //     for (let y = 0; y < revStrB.length; y++) {
-  //       console.log("(BEFORE) revStrSum = ", revStrSum);
-  //       revStrSum.push(revStrB[revStrA.length + y]);
-  //       console.log("(AFTER) revStrSum = ", revStrSum);
-  //     }
-  //   };
-  // }
+		const strSumOfTwoDigits = numSumOfTwoDigitsAndCarry.toString();
 
-  console.log('\ndiffInLen = ', diffInLen);
-	valueToCarry += diffInLen;
+		let sumOfDigitsArr;
+		let lastDigitOfSum;
 
-	return revStrSum;
+		if (numSumOfTwoDigitsAndCarry >= 10) {
+			sumOfDigitsArr = strSumOfTwoDigits.split('');
+			console.log('sumOfDigitsArr = ', sumOfDigitsArr);
+
+			valueToCarry = parseInt(sumOfDigitsArr.slice(0, -1).join(''));
+			console.log('(NEW) valueToCarry = ', valueToCarry);
+
+			lastDigitOfSum = sumOfDigitsArr[sumOfDigitsArr.length - 1];
+		}
+
+		if (numSumOfTwoDigitsAndCarry < 10) {
+			lastDigitOfSum = strSumOfTwoDigits;
+		}
+
+		console.log('\n(BEFORE) revArrOfSum = ', revArrOfSum);
+		revArrOfSum.push(lastDigitOfSum);
+		console.log('(ADD) lastDigitOfSum = ', lastDigitOfSum);
+		console.log('(AFTER) revArrOfSum = ', revArrOfSum, '\n');
+	}
+
+	// if (diffInLen !== 0) {
+	//   if (revStrA.length > revStrB.length) {
+	//     diffInLen = revStrA.length - revStrB.length;
+
+	//     for (let x = 0; x < revStrA.length; x++) {
+	//       console.log("(BEFORE) revArrOfSum = ", revArrOfSum);
+	//       revArrOfSum.push(revStrA[revStrB.length + x]);
+	//       console.log("(AFTER) revArrOfSum = ", revArrOfSum);
+	//     }
+	//   };
+
+	//   if (revStrA.length < revStrB.length) {
+	//     diffInLen = revStrB.length - revStrA.length;
+
+	//     for (let y = 0; y < revStrB.length; y++) {
+	//       console.log("(BEFORE) revArrOfSum = ", revArrOfSum);
+	//       revArrOfSum.push(revStrB[revStrA.length + y]);
+	//       console.log("(AFTER) revArrOfSum = ", revArrOfSum);
+	//     }
+	//   };
+	// }
+
+	// console.log('\ndiffInLen = ', diffInLen);
+	// valueToCarry += diffInLen;
+
+	return revArrOfSum.reverse().join('');
 }
 
 const strExample1 = '12345';
 const strExample2 = '15243';
 
-const example1 = sumOfTwoNumStrings(strExample1, strExample2);
-console.log(example1);
+const strExample3 = '67891';
+const strExample4 = '16798';
+
+// const exampleA = sumOfTwoNumStrings(strExample1, strExample2);
+const exampleB = sumOfTwoNumStrings(strExample3, strExample4);
+// console.log(exampleA);
+console.log(exampleB);
 
 // assert.deepStrictEqual(example1, '0');
 // console.log("\n*--- ALL TESTS FOR 'sumOfTwoNumStrings()' PASSED ---*");
