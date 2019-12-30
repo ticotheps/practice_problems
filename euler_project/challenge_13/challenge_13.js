@@ -105,22 +105,45 @@ function sumOfTwoNumStrings(strA, strB) {
 
 	let revArrOfSum = [];
 	let valueToCarry = 0;
-	// let diffInLen = 0;
+	let diffInLen = strA.length - strB.length;
+	console.log('\ndiffInLen = ', diffInLen);
+	let longerString;
 
-	for (let i = 0; i < revStrA.length; i++) {
+	if (diffInLen >= 0) {
+		longerString = revStrA;
+		console.log(`\nlongerString = revStrA = ${revStrA}`);
+	} else {
+		longerString = revStrB;
+		console.log(`\nlongerString = revStrB = ${revStrB}`);
+	}
+
+	for (let i = 0; i < longerString.length; i++) {
+		let currNumStrA;
+		let currNumStrB;
+
 		console.log('\ni = ', i);
 		// console.log(`revStrA[i] = ${revStrA[i]}`);
 		// console.log(`revStrB[i] = ${revStrB[i]}\n`);
 
-		const currNumStrA = parseInt(revStrA[i]);
-		console.log('currNumStrA = ', currNumStrA);
+		if (!revStrA[i]) {
+			currNumStrA = 0;
+		} else {
+			currNumStrA = parseInt(revStrA[i]);
+		}
 
-		const currNumStrB = parseInt(revStrB[i]);
+		if (!revStrB[i]) {
+			currNumStrB = 0;
+		} else {
+			currNumStrB = parseInt(revStrB[i]);
+		}
+
+		console.log('currNumStrA = ', currNumStrA);
 		console.log('currNumStrB = ', currNumStrB);
 		console.log('valueToCarry = ', valueToCarry);
 
 		const numSumOfTwoDigitsAndCarry = currNumStrA + currNumStrB + valueToCarry;
 		console.log('\nnumSumOfTwoDigitsAndCarry = ', numSumOfTwoDigitsAndCarry);
+		valueToCarry = 0;
 
 		const strSumOfTwoDigits = numSumOfTwoDigitsAndCarry.toString();
 
@@ -148,43 +171,46 @@ function sumOfTwoNumStrings(strA, strB) {
 	}
 
 	// if (diffInLen !== 0) {
-	//   if (revStrA.length > revStrB.length) {
-	//     diffInLen = revStrA.length - revStrB.length;
+	// 	if (revStrA.length > revStrB.length) {
+	// 		diffInLen = revStrA.length - revStrB.length;
 
-	//     for (let x = 0; x < revStrA.length; x++) {
-	//       console.log("(BEFORE) revArrOfSum = ", revArrOfSum);
-	//       revArrOfSum.push(revStrA[revStrB.length + x]);
-	//       console.log("(AFTER) revArrOfSum = ", revArrOfSum);
-	//     }
-	//   };
+	// 		for (let x = 0; x < revStrA.length; x++) {
+	// 			console.log('(BEFORE) revArrOfSum = ', revArrOfSum);
+	// 			revArrOfSum.push(revStrA[revStrB.length + x]);
+	// 			console.log('(AFTER) revArrOfSum = ', revArrOfSum);
+	// 		}
+	// 	}
 
-	//   if (revStrA.length < revStrB.length) {
-	//     diffInLen = revStrB.length - revStrA.length;
+	// 	if (revStrA.length < revStrB.length) {
+	// 		diffInLen = revStrB.length - revStrA.length;
 
-	//     for (let y = 0; y < revStrB.length; y++) {
-	//       console.log("(BEFORE) revArrOfSum = ", revArrOfSum);
-	//       revArrOfSum.push(revStrB[revStrA.length + y]);
-	//       console.log("(AFTER) revArrOfSum = ", revArrOfSum);
-	//     }
-	//   };
+	// 		for (let y = 0; y < revStrB.length; y++) {
+	// 			console.log('(BEFORE) revArrOfSum = ', revArrOfSum);
+	// 			revArrOfSum.push(revStrB[revStrA.length + y]);
+	// 			console.log('(AFTER) revArrOfSum = ', revArrOfSum);
+	// 		}
+	// 	}
 	// }
 
-	// console.log('\ndiffInLen = ', diffInLen);
 	// valueToCarry += diffInLen;
 
 	return revArrOfSum.reverse().join('');
 }
 
-const strExample1 = '12345';
-const strExample2 = '15243';
-
-const strExample3 = '67891';
-const strExample4 = '16798';
-
+// const strExample1 = '12345';
+// const strExample2 = '15243';
 // const exampleA = sumOfTwoNumStrings(strExample1, strExample2);
-const exampleB = sumOfTwoNumStrings(strExample3, strExample4);
 // console.log(exampleA);
-console.log(exampleB);
+
+// const strExample3 = '67891';
+// const strExample4 = '16798';
+// const exampleB = sumOfTwoNumStrings(strExample3, strExample4);
+// console.log(exampleB);
+
+const strExample5 = '678';
+const strExample6 = '34567';
+const exampleC = sumOfTwoNumStrings(strExample5, strExample6);
+console.log(exampleC);
 
 // assert.deepStrictEqual(example1, '0');
 // console.log("\n*--- ALL TESTS FOR 'sumOfTwoNumStrings()' PASSED ---*");
