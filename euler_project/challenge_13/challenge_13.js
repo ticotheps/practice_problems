@@ -6,38 +6,39 @@
 - Expected Input(s)
   - Number of Expected Parameters: 2
   - Names/Types of Expected Parameters
-    - "bigNumsArray" (array; this array is made up of numbers stored inside
-      of strings)
-    - <name of parameter B here>
-  - Data Types of Expected Parameters
-    - <data type of parameter A here>
-    - <data type of parameter B here>
+    - "bigNumsArray" (array; made up of numbers that are stored inside of
+      strings)
+    - "firstNdigitsOfSum" (number; represents number of left-most digits to
+      return from the sum)"
 
 - Expected Output(s)
-  - Number of Expected Outputs
-    - <number of expected outputs here> 
+  - Number of Expected Outputs: 1
   - Names of Expected Output
-    - <name of output here>
-  - Data Type of Expected Output
-    - <data type of output here>
+    - "partialSum" (number; represents the first 'firstNdigitsOfSum' digits from
+      the sum)
 
 - Constraints
   - What will make the algorithm fail?
     - Negative numbers?
-      -
+      - Yes.
     - Number data types?
-      -
+      - Yes.
+      - The numbers included in the given array are too large for JavaScript to
+        handle, so they must be stored in strings.
     - Floating point numbers?
-      -
+      - Yes.
     - Non-alphanumeric characters in the inputs?
-      -
+      - Yes.
+      - The strings included in the array must only contain numbers.
 
 - Example #1
-  - Example #1 Input(s)
-    - <Example #1 input A here>
-    - <Example #1 input B here>
-  - Example #1 Output(s)
-    - <Example #1 output here>
+  - const someArrayOfBigNumStrings = [
+    "123456789",
+    "987654321",
+    "192837465",
+    "918273645"]
+  - Example #1 Inputs: someArrayOfBigNumStrings, 5
+  - Example #1 Output: 22222 (2222222220)
 */
 
 /*---------------DEVISING A PLAN---------------
