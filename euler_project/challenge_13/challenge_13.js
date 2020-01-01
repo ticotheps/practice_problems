@@ -306,8 +306,8 @@ function findNDigitsOfBigSum(largeNumsArr, firstNdigitsOfSum = 10) {
 	for (let i = 0; i < largeNumsArr.length; i++) {
 		let numToAddToSum = sumOfTwoNumStrings(currentSum, largeNumsArr[i]);
 		currentSumNum = parseInt(currentSum) + parseInt(numToAddToSum);
-		currentSum = currentSumNum.toString();
-		console.log('currentSum = ', currentSum);
+		currentSum = BigInt(currentSumNum).toString();
+		console.log(`largeNumsArr[${i + 1}] = ${currentSum}`);
 	}
 
 	const partialSum = Number(
