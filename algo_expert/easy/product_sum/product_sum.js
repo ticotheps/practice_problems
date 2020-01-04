@@ -1,10 +1,15 @@
 /*----------UNDERSTANDING THE PROBLEM----------
 - Objective 
-  - We will be writing an algorithm that attempts to perform this desired
-    action to solve the presented problem.
+  - Find the 'product sum' of the given "special" array.
 
 - Definitions
-  - "New Term": <some definition here>
+  - Characteristics of a "special array":
+    - Non-empty
+    - Can only contain either:
+      - integers
+      - other "special arrays"
+
+  - "Product Sum":
 
 - Expected Input(s)
   - Number of Expected Parameters: <number of expected parameters here> 
