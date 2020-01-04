@@ -18,7 +18,7 @@
     - <name of output here> (<data type of output here>)
 
 - Constraints
-  - What will make the algorithm fail?
+  - Will the following make the algorithm fail?
     - Negative numbers?
       -
     - Number data types?
