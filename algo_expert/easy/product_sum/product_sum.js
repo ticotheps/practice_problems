@@ -117,50 +117,48 @@ const assert = require('assert');
 // console.log(findItemProductSum([1, -1])); // 0
 // console.log(findItemProductSum([1, 9, 4, 2])); // 16
 
-function findTotalProductSum(specArr) {
-	let productSum;
-	let lenOfArray = specArr.length;
+function productSum(array) {
+	let productSumValue;
+	let lenOfArray = array.length;
 	let levelsOfDepth = 1;
 	const arrayToReduce = [];
 	console.log('arrayToReduce = ', arrayToReduce, '\n');
 
 	let i = 0;
 	while (lenOfArray > 0) {
-		console.log(`specArr[${i}] = `, specArr[i]);
+		console.log(`array[${i}] = `, array[i]);
 
-		if (typeof specArr[i] === 'number' && Number.isInteger(specArr[i])) {
+		if (typeof array[i] === 'number' && Number.isInteger(array[i])) {
 			console.log('levelsOfDepth = ', levelsOfDepth);
-			arrayToReduce.push(specArr[i]);
+			arrayToReduce.push(array[i]);
 			console.log('arrayToReduce = ', arrayToReduce, '\n');
 			lenOfArray -= 1;
 			i++;
-		} else if (typeof specArr[i] === 'object' && lenOfArray !== 0) {
+		} else if (typeof array[i] === 'object' && lenOfArray !== 0) {
 			levelsOfDepth += 1;
 			console.log('DEPTH INCREASED => levelsOfDepth = ', levelsOfDepth);
-			let innerSpecArr = findTotalProductSum(specArr[i]) * levelsOfDepth;
-			console.log('innerSpecArr = ', innerSpecArr);
-			arrayToReduce.push(innerSpecArr);
+			let innerarray = productSum(array[i]) * levelsOfDepth;
+			console.log('innerarray = ', innerarray);
+			arrayToReduce.push(innerarray);
 			console.log('arrayToReduce = ', arrayToReduce, '\n');
 			lenOfArray -= 1;
 			i++;
 		} else {
-			console.log(
-				`\nInput, "${item}", is NOT an 'object' or 'number' data type`
-			);
+			console.log(`\nInput is NOT an 'object' or 'number' data type`);
 			return `Input is NOT a 'number' or 'object' data type; please try different data type`;
 		}
 	}
 
-	productSum = arrayToReduce.reduce(function(acc, item) {
+	productSumValue = arrayToReduce.reduce(function(acc, item) {
 		return (acc += item);
 	}, 0);
-	return productSum;
+	return productSumValue;
 }
 
-console.log(findTotalProductSum([1, 9, 4, 2])); // 16
-// console.log(findTotalProductSum([-1, 9, 4, 2])); // 14
-// console.log(findTotalProductSum([-1, [2, 4], 4, 2])); // 17
-console.log(findTotalProductSum([1, [9, 2], 4, [2, 3]])); // 42
+console.log(productSum([1, 9, 4, 2])); // 16
+// console.log(productSum([-1, 9, 4, 2])); // 14
+// console.log(productSum([-1, [2, 4], 4, 2])); // 17
+console.log(productSum([1, [9, 2], 4, [2, 3]])); // 42
 
 // assert.deepStrictEqual(
 // 	findItemProductSum(1),
