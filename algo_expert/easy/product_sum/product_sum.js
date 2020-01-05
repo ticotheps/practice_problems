@@ -58,8 +58,8 @@
       item from the special array and return its product sum.
   (2) Create a variable ("multiplier") that will hold the value of the number
       to be multiplied to the sum at each depth.
-  (3) Create another variable ("totalSum") that will hold the running total of 
-      all the product sums added together.
+  (3) Create another variable ("totalProductSum") that will hold the running 
+      total of all the product sums added together.
   (4) Find the length of the given special array.
   (5) Iterate through the given special array.
   (6) Based on the number of items in the array, which can be either an integer
@@ -77,14 +77,39 @@ const assert = require('assert');
 // special array
 function findItemProductSum(item) {
 	// console.log(`item = ${item}`);
+	let totalProductSum = 0;
 
-	return item;
+	// checks for proper input (number, integer)
+	if (typeof item === 'number' && Number.isInteger(item)) {
+		console.log("Input is a 'number' data type");
+	} else if (typeof item === 'object') {
+		console.log("Input is an 'object' data type (array)");
+	} else {
+		return `Input is NOT a 'number' or 'object' data type; please try different data type`;
+	}
+
+	return totalProductSum;
 }
 
 assert.deepStrictEqual(
-	findItemProductSum([1, 2]),
-	[1, 2],
+	findItemProductSum(1),
+	0,
 	"When 'item' is passed to this function, 'item' is also returned"
+);
+assert.deepStrictEqual(
+	findItemProductSum(-1),
+	0,
+	"When 'item' is passed to this function, 'item' is also returned"
+);
+assert.deepStrictEqual(
+	findItemProductSum([1, 2]),
+	0,
+	"When 'item' is passed to this function, 'item' is also returned"
+);
+assert.deepStrictEqual(
+	findItemProductSum(true),
+	"Input is NOT a 'number' or 'object' data type; please try different data type",
+	"True is NOT a 'number' or 'object' data type; it is a Boolean value"
 );
 
 console.log("***---ALL TESTS FOR 'findItemProductSum' PASSED---***");
