@@ -58,12 +58,36 @@
       item from the special array and return its product sum.
   (2) Create a variable ("multiplier") that will hold the value of the number
       to be multiplied to the sum at each depth.
-  (3) Find the length of the given special array.
-  (4) Iterate through the given special array.
-  ...
+  (3) Create another variable ("totalSum") that will hold the running total of 
+      all the product sums added together.
+  (4) Find the length of the given special array.
+  (5) Iterate through the given special array.
+  (6) Based on the number of items in the array, which can be either an integer
+      or another special array, call the helper function on each item.
+  (7) Return the "totalSum" variable.
 */
 
 /*------------IMPLEMENTING THE PLAN------------*/
+
+const assert = require('assert');
+
+('use strict');
+
+// helper function - produces product sum of each individual item in the given
+// special array
+function findItemProductSum(item) {
+	console.log(`item = ${item}`);
+
+	return item;
+}
+
+assert.deepStrictEqual(
+	findItemProductSum([1, 2]),
+	[item],
+	"When 'item' is passed to this function, 'item' is also returned"
+);
+
+console.log("***---ALL TESTS FOR 'findItemProductSum' PASSED---***");
 
 /*--------REFLECTING/ITERATING THE PLAN--------
 - BRUTE FORCE SOLUTION ANALYSIS
