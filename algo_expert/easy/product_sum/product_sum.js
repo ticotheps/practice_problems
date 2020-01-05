@@ -58,7 +58,7 @@
       item from the special array and return its product sum.
   (2) Create a variable ("multiplier") that will hold the value of the number
       to be multiplied to the sum at each depth.
-  (3) Create another variable ("totalProductSum") that will hold the running 
+  (3) Create another variable ("totalItemProductSum") that will hold the running 
       total of all the product sums added together.
   (4) Find the length of the given special array.
   (5) Iterate through the given special array.
@@ -75,52 +75,115 @@ const assert = require('assert');
 
 // helper function - produces product sum of each individual item in the given
 // special array
-function findItemProductSum(item) {
-	// console.log(`item = ${item}`);
-	let totalProductSum = 0;
+// function findItemProductSum(item) {
+// 	// console.log(`item = ${item}`);
+// 	let itemProductSum = 0;
+// 	let itemLen = item.length;
+// 	let levelsOfDepth = 1;
 
-	// checks for proper input (number, integer)
-	if (typeof item === 'number' && Number.isInteger(item)) {
-		console.log("\nInput is a 'number' data type");
+// 	// checks for proper input (number, integer)
+// 	if (typeof item === 'number' && Number.isInteger(item)) {
+// 		itemProductSum += item;
+// 		// console.log(`itemProductSum (mutated) = ${itemProductSum}\n`);
+// 	} else if (typeof item === 'object' && itemLen !== 0) {
+// 		// console.log("Input is an 'object' data type (array)");
+// 		console.log(`levelsOfDepth = ${levelsOfDepth}`);
+// 		levelsOfDepth += 1;
+// 		console.log(`levelsOfDepth (mutated) = ${levelsOfDepth}`);
 
-		totalProductSum += item;
-		console.log(`totalProductSum (mutated) = ${totalProductSum}`);
-	} else if (typeof item === 'object') {
-		console.log("\nInput is an 'object' data type (array)");
+// 		for (let i = 0; i < itemLen; i++) {
+// 			console.log(`---i[${i}] = ${item[i]}`);
 
-		for (let i = 0; i < item.length; i++) {
-			console.log(`i[${i}] = ${item[i]}`);
+// 			let itemProductSum = findItemProductSum(item[i]);
+// 			console.log(`itemProductSum = ${itemProductSum}`);
+
+// 			itemProductSum += itemProductSum;
+// 			console.log(`itemProductSum (mutated) = ${itemProductSum}\n`);
+// 		}
+
+// 		console.log(
+// 			`itemProductSum * levelsOfDepth = ${itemProductSum * levelsOfDepth}`
+// 		);
+// 		itemProductSum *= levelsOfDepth;
+// 	} else {
+// 		console.log(`\nInput, "${item}", is NOT an 'object' or 'number' data type`);
+// 		return `Input is NOT a 'number' or 'object' data type; please try different data type`;
+// 	}
+
+// 	return itemProductSum;
+// }
+
+// console.log(findItemProductSum(1)); // 1
+// console.log(findItemProductSum([1, -1])); // 0
+// console.log(findItemProductSum([1, 9, 4, 2])); // 16
+
+function findTotalProductSum(specArr) {
+	let productSum;
+	let lenOfArray = specArr.length;
+	let levelsOfDepth = 1;
+	const arrayToReduce = [];
+	console.log('arrayToReduce = ', arrayToReduce, '\n');
+
+	let i = 0;
+	while (lenOfArray > 0) {
+		console.log(`specArr[${i}] = `, specArr[i]);
+
+		if (typeof specArr[i] === 'number' && Number.isInteger(specArr[i])) {
+			console.log('levelsOfDepth = ', levelsOfDepth);
+			arrayToReduce.push(specArr[i]);
+			console.log('arrayToReduce = ', arrayToReduce, '\n');
+			lenOfArray -= 1;
+			i++;
+		} else if (typeof specArr[i] === 'object' && lenOfArray !== 0) {
+			levelsOfDepth += 1;
+			console.log('DEPTH INCREASED => levelsOfDepth = ', levelsOfDepth);
+			let innerSpecArr = findTotalProductSum(specArr[i]) * levelsOfDepth;
+			console.log('innerSpecArr = ', innerSpecArr);
+			arrayToReduce.push(innerSpecArr);
+			console.log('arrayToReduce = ', arrayToReduce, '\n');
+			lenOfArray -= 1;
+			i++;
+		} else {
+			console.log(
+				`\nInput, "${item}", is NOT an 'object' or 'number' data type`
+			);
+			return `Input is NOT a 'number' or 'object' data type; please try different data type`;
 		}
-	} else {
-		console.log(`\nInput, "${item}", is NOT an 'object' or 'number' data type`);
-		return `Input is NOT a 'number' or 'object' data type; please try different data type`;
 	}
 
-	return totalProductSum;
+	productSum = arrayToReduce.reduce(function(acc, item) {
+		return (acc += item);
+	}, 0);
+	return productSum;
 }
 
-assert.deepStrictEqual(
-	findItemProductSum(1),
-	1,
-	"When 'item' is passed to this function, 'item' is also returned"
-);
-assert.deepStrictEqual(
-	findItemProductSum(-1),
-	-1,
-	"When 'item' is passed to this function, 'item' is also returned"
-);
-assert.deepStrictEqual(
-	findItemProductSum([4, 3, 2, 1]),
-	0,
-	"When 'item' is passed to this function, 'item' is also returned"
-);
-assert.deepStrictEqual(
-	findItemProductSum(true),
-	"Input is NOT a 'number' or 'object' data type; please try different data type",
-	"True is NOT a 'number' or 'object' data type; it is a Boolean value"
-);
+console.log(findTotalProductSum([1, 9, 4, 2])); // 16
+// console.log(findTotalProductSum([-1, 9, 4, 2])); // 14
+// console.log(findTotalProductSum([-1, [2, 4], 4, 2])); // 17
+console.log(findTotalProductSum([1, [9, 2], 4, [2, 3]])); // 42
 
-console.log("***---ALL TESTS FOR 'findItemProductSum' PASSED---***");
+// assert.deepStrictEqual(
+// 	findItemProductSum(1),
+// 	1,
+// 	"When 'item' is passed to this function, 'item' is also returned"
+// );
+// assert.deepStrictEqual(
+// 	findItemProductSum(-1),
+// 	-1,
+// 	"When 'item' is passed to this function, 'item' is also returned"
+// );
+// assert.deepStrictEqual(
+// 	findItemProductSum([4, 3, 2, 1]),
+// 	0,
+// 	"When 'item' is passed to this function, 'item' is also returned"
+// );
+// assert.deepStrictEqual(
+// 	findItemProductSum(true),
+// 	"Input is NOT a 'number' or 'object' data type; please try different data type",
+// 	"True is NOT a 'number' or 'object' data type; it is a Boolean value"
+// );
+
+// console.log("***---ALL TESTS FOR 'findItemProductSum' PASSED---***");
 
 /*--------REFLECTING/ITERATING THE PLAN--------
 - BRUTE FORCE SOLUTION ANALYSIS
