@@ -76,14 +76,14 @@ const assert = require('assert');
 // helper function - produces product sum of each individual item in the given
 // special array
 function findItemProductSum(item) {
-	console.log(`item = ${item}`);
+	// console.log(`item = ${item}`);
 
 	return item;
 }
 
 assert.deepStrictEqual(
 	findItemProductSum([1, 2]),
-	[item],
+	[1, 2],
 	"When 'item' is passed to this function, 'item' is also returned"
 );
 
