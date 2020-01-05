@@ -81,10 +81,18 @@ function findItemProductSum(item) {
 
 	// checks for proper input (number, integer)
 	if (typeof item === 'number' && Number.isInteger(item)) {
-		console.log("Input is a 'number' data type");
+		console.log("\nInput is a 'number' data type");
+
+		totalProductSum += item;
+		console.log(`totalProductSum (mutated) = ${totalProductSum}`);
 	} else if (typeof item === 'object') {
-		console.log("Input is an 'object' data type (array)");
+		console.log("\nInput is an 'object' data type (array)");
+
+		for (let i = 0; i < item.length; i++) {
+			console.log(`i[${i}] = ${item[i]}`);
+		}
 	} else {
+		console.log(`\nInput, "${item}", is NOT an 'object' or 'number' data type`);
 		return `Input is NOT a 'number' or 'object' data type; please try different data type`;
 	}
 
@@ -93,16 +101,16 @@ function findItemProductSum(item) {
 
 assert.deepStrictEqual(
 	findItemProductSum(1),
-	0,
+	1,
 	"When 'item' is passed to this function, 'item' is also returned"
 );
 assert.deepStrictEqual(
 	findItemProductSum(-1),
-	0,
+	-1,
 	"When 'item' is passed to this function, 'item' is also returned"
 );
 assert.deepStrictEqual(
-	findItemProductSum([1, 2]),
+	findItemProductSum([4, 3, 2, 1]),
 	0,
 	"When 'item' is passed to this function, 'item' is also returned"
 );
