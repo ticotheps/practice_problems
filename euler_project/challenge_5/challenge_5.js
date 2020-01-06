@@ -178,6 +178,7 @@ assert.deepStrictEqual(
 );
 
 console.log(`***** ALL TESTS HAVE PASSED *****`);
+console.log(findSmallestCommonMultiple(1, 20)); // 232,792,560
 
 /* ------------REFLECTING/ITERATING-------------
 - BRUTE FORCE SOLUTION
