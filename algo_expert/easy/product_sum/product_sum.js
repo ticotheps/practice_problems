@@ -159,6 +159,7 @@ console.log(productSum([1, 9, 4, 2])); // 16
 // console.log(productSum([-1, 9, 4, 2])); // 14
 // console.log(productSum([-1, [2, 4], 4, 2])); // 17
 console.log(productSum([1, [9, 2], 4, [2, 3]])); // 42
+console.log(productSum([[1, 2], 3, [4, 5]]));
 
 // assert.deepStrictEqual(
 // 	findItemProductSum(1),
