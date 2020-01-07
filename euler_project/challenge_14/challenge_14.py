@@ -38,14 +38,14 @@
   # (1) Create a function, 'findLongestChainStartNum()', that takes in one
       # parameter, 'limitNum', & returns one output, 'longestChainStartNum'.
       
-  # (2) Initialize a variable, 'longestChainStartNum', with a value of 0 to
-      # hold the current startNum with the longest chain while the loop
-      # iterates through all number below the given input, 'limitNum'.
+  # (2) Initialize a variable, 'currLongestChain', with a value of 0 to temporarily
+      # hold the current highest n number of of integers in a chain while the
+      # loop iterates through all numbers below the given input, 'limitNum'.
       
   # (3) Use a 'for' loop to iterate through all of the numbers between 1 and
       # 'limitNum', in descending fashion.
       
-    # (4) Initialize a new variable, 'chainNumsArray', with an empty array that 
+    # (4) Initialize a new variable, 'chainNums', with an empty array that 
         # will temporarily hold the values of chain numbers for each starting
         # number in our range.
       
@@ -54,7 +54,7 @@
         
     # (6) Beginning with 'limitNum - 1', use a 'while' loop to generate the 
         # chain for each number BELOW the given 'limitNum' integer (exclusive),
-        # in descending order, using the given rules of Collatz sequence, 
+        # in ascending order, using the given rules of Collatz sequence, 
         # until'currentChainNum' is greater than 1.
         
       # (7) Find the length of the chain for that number.
@@ -73,29 +73,63 @@
 # EXECUTING THE PLAN
 
 def findLongestChainStartNum(limitNum):
-  longestChainStartNum = 0
-  nextChainNum = 
+  chainNumsArray = []
+  currLongestChain = []
+  # print("\nlongestChain = ", currLongestChain)
+  startNumWithLongestChain = 0
+  # print("startNumWithLongestChain = ", startNumWithLongestChain)
+  nextChainNum = 0
   
-  for i in range(limitNum - 1, 0, -1):
-    chainNumsArray = []
-    print("i = ", i)
-    currentChainNum = limitNum - 1
-    print("currentChainNum = ", currentChainNum)
+  for i in range(1, limitNum):
+    chainNumsForI = []
+    # print("\nstartNum = ", i)
+    currentChainNum = i
+    # print("currentChainNum = ", currentChainNum)
     
-    if (currentChainNum == 1):
-      return longestChainStartNum
+    while currentChainNum >= 1:
+      if (currentChainNum == 1):
+        chainNumsForI.append(currentChainNum)
+        # print("chainNumsForI = ", chainNumsForI)
+        break
     
-    while currentChainNum > 1:
       # if 'currentChainNum' is an even number...
       if (currentChainNum % 2 == 0):
-        nextChainNum = currentChainNum / 2
+        chainNumsForI.append(currentChainNum)
+        # print("chainNumsForI = ", chainNumsForI)
+        nextChainNum = currentChainNum // 2
+        # print("nextChainNum = ", nextChainNum)
+        currentChainNum = nextChainNum
+        # print("(even - AFTER) currentChainNum = ", currentChainNum)
         
       else:
-        next
+        chainNumsForI.append(currentChainNum)
+        # print("chainNumsForI = ", chainNumsForI)
+        nextChainNum = (currentChainNum * 3) + 1
+        # print("nextChainNum = ", nextChainNum)
+        currentChainNum = nextChainNum
+        # print("(odd - AFTER) currentChainNum = ", currentChainNum)
         
-  return longestChainStartNum
+    chainNumsArray.append(chainNumsForI)
+    
+  for j in chainNumsArray:
+    if (len(j) > len(currLongestChain)):
+      currLongestChain = j
+      # print("(AFTER) currLongestChain = ", currLongestChain)
+      startNumWithLongestChain = j[0]
+      # print("(AFTER) startNumWithLongestChain = ", startNumWithLongestChain)
+      
+  print("\ncurrLongestChain = ", currLongestChain)
+  lenCurrLongest = len(currLongestChain)
+  print("lenCurrLongest = ", lenCurrLongest)
+  return startNumWithLongestChain
 
-print(findLongestChainStartNum(5))
+# Should print 3
+print(f"The startNum with the longest chain (under 5) is {findLongestChainStartNum(5)}\n")
+
+# Should print 9
+print(f"The startNum with the longest chain (under 10) is {findLongestChainStartNum(10)}\n")
+
+
   
 
 # REFLECTING ON/ITERATING THE PLAN
