@@ -1,4 +1,4 @@
-# Understanding the Problem
+# UNDERSTANDING THE PROBLEM
   # - Objective:  Return the first ten digits of the LARGE sum that is produced
   #             when adding together the given one-hundred 50-digit numbers.
   
@@ -23,7 +23,7 @@
     #   - No. They must be integers.
     
 
-# Devising a Plan
+# DEVISING A PLAN
   # BRUTE FORCE SOLUTION
     # (1) Create a function, "findFirst10DigitsOfSum()", that takes in one parameter,
     #     an array of very large numbers, and returns one output, a 10-digit
@@ -39,6 +39,9 @@
     # (4) Convert the FIRST 10 digits of the "sum" variable into a string
     #     and set it equal to a new variable, "first10DigitsOfSumStr".
     # (5) Return first10DigitsOfSumStr.
+    
+    
+# EXECUTING THE PLAN
     
 exampleArr = [37107287533902102798797998220837590246510135740250,
 46376937677490009712648124896970078050417018260538,
@@ -156,5 +159,17 @@ def findFirst10DigitsOfSum(bigNumsArr):
 
 print(findFirst10DigitsOfSum(exampleArr))
     
-# Executing the Plan
-# Reflect on/Iterate the Plan
+
+# REFLECT ON/ITERATE THE PLAN
+  # - Big O Analysis of BRUTE FORCE SOLUTION
+    # - Runtime Complexity: O(n) => linear
+    # - Space Complexity: O(1) + O(1) + O(1) = O(3) => O(1) => constant
+  
+  # - Could we improve the Runtime or the Space complexity of the BRUTE FORCE
+  #   SOLUTION?
+  #   - No. This runtime is already optimized. Since we are given an array as
+  #     our input, we'll always be required to iterate through the array to
+  #     in order to have access to those values for adding them together. Also,
+  #     the space complexity is optimized because creating a new array to hold
+  #     the "sum" variable will always be required of us.
+  
