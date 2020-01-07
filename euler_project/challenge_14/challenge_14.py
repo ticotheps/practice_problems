@@ -166,3 +166,12 @@ print(f"The startNum with the longest chain (under 500000) is {findLongestChainS
 print(f"The startNum with the longest chain (under 1000000) is {findLongestChainStartNum(1000000)}\n")
 
 # REFLECTING ON/ITERATING THE PLAN
+  # - Big O Analysis of BRUTE FORCE SOLUTION
+    # - Runtime Complexity: O(n^1) + O(n) => O(n^2) => quadratic
+    # - Space Complexity: O(1) => constant
+  
+  # - Could we improve the Runtime or the Space complexity of the BRUTE FORCE
+  #   SOLUTION?
+    # - Yes. This runtime could be improved with a memoization. We would use a
+    #   'cache' dictionary and a single 'for' loop instead of the nested loops
+    #   that we're currently using.
