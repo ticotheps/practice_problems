@@ -11,6 +11,9 @@
 # vs
 .vscode/
 
+# virtual env files
+.venv
+
 # testing
 /coverage
 
