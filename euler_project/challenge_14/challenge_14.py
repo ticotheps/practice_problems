@@ -129,7 +129,40 @@ print(f"The startNum with the longest chain (under 5) is {findLongestChainStartN
 # Should print 9
 print(f"The startNum with the longest chain (under 10) is {findLongestChainStartNum(10)}\n")
 
+# Should print 18
+print(f"The startNum with the longest chain (under 20) is {findLongestChainStartNum(20)}\n")
 
+# Should print 27
+print(f"The startNum with the longest chain (under 50) is {findLongestChainStartNum(50)}\n")
   
+# Should print 97
+print(f"The startNum with the longest chain (under 100) is {findLongestChainStartNum(100)}\n")
+
+# Should print 171
+print(f"The startNum with the longest chain (under 200) is {findLongestChainStartNum(200)}\n")
+
+# Should print 327
+print(f"The startNum with the longest chain (under 500) is {findLongestChainStartNum(500)}\n")
+
+# Should print 871
+print(f"The startNum with the longest chain (under 1000) is {findLongestChainStartNum(1000)}\n")
+
+# Should print 3711
+print(f"The startNum with the longest chain (under 5000) is {findLongestChainStartNum(5000)}\n")
+
+# Should print 6171
+print(f"The startNum with the longest chain (under 10000) is {findLongestChainStartNum(10000)}\n")
+
+# Should print 17647
+print(f"The startNum with the longest chain (under 20000) is {findLongestChainStartNum(20000)}\n")
+
+# Should print 156159
+print(f"The startNum with the longest chain (under 200000) is {findLongestChainStartNum(200000)}\n")
+
+# Should print 410011
+print(f"The startNum with the longest chain (under 500000) is {findLongestChainStartNum(500000)}\n")
+
+# Should print 837799
+print(f"The startNum with the longest chain (under 1000000) is {findLongestChainStartNum(1000000)}\n")
 
 # REFLECTING ON/ITERATING THE PLAN
