@@ -32,8 +32,27 @@
   #   - 1
   # - Example Output: 8 (3 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1)
   
-
+  
 # DEVISING A PLAN
+# - BRUTE FORCE SOLUTION
+  # (1) Create a function, 'findLongestChainStartNum()', that takes in one
+      # parameter, 'limitNum', & returns one output, 'longestChainStartNum'.
+  # (2) Initialize a variable, 'longestChainStartNum', with a value of 0 to
+      # hold the current startNum with the longest chain while the loop
+      # iterates through all number below the given input, 'limitNum'.
+  # (3) Initialize a new variable, 'currentChainNum', with the value of the 
+      # iterator.
+  # (4) Beginning with 'limitNum - 1', using a 'while' loop to generate the 
+      # chain for each number BELOW the given 'limitNum' integer (exclusive),
+      # using the given rules of Collatz sequence, until 'currentChainNum' is
+      # equal to 1.
+    # (5) Find the length of the chain for that number.
+    # (6) If the number is odd, perform '3n + 1' to generate the next number in
+        # the sequence.
+    # (7) If the number is even, perform 'n/2' to generate the next number in
+        # the sequence.
+    # (8) If the number is 1, stop.
+  # (9) Return 'longestChainStartNum'.
 
 
 # EXECUTING THE PLAN
