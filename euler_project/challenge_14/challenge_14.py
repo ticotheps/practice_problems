@@ -175,3 +175,30 @@ print(f"The startNum with the longest chain (under 1000000) is {findLongestChain
     # - Yes. This runtime could be improved with a memoization. We would use a
     #   'cache' dictionary and a single 'for' loop instead of the nested loops
     #   that we're currently using.
+    
+    
+# def optimizedSolution(limitNum):
+#   chainNumsCache = {}
+#   print(chainNumsCache)
+  
+#   if (limitNum in chainNumsCache.keys()):
+#     print("limitNum already exists in our cache")
+#   else:
+#     print("limitNum does NOT exist in our cache")
+    
+#     for i in range(1, limitNum):
+#       # print("i = ", i)
+#       currNum = i
+#       if (currNum % 2 == 0):
+#         print(currNum, "is an EVEN NUMBER")
+#         nextNum = currNum // 2
+#         print(nextNum, "is the next number\n")
+#       else:
+#         print(currNum, "is an ODD NUMBER")
+#         nextNum = (currNum * 3) + 1
+#         print(nextNum, "is the next number\n")
+      
+#   return limitNum
+  
+# Should print 27
+# print(f"The startNum with the longest chain (under 50) is {optimizedSolution(50)}\n")
