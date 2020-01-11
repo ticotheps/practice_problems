@@ -1,5 +1,5 @@
 /**
- * ALTERNATE SOLUTION TO THE "PRODUCT SUM" PROBLEM
+ * (ALTERNATE SOLUTION TO THE "PRODUCT SUM" PROBLEM)
  *
  * UNDERSTANDING THE PROBLEM
  *  - Iterate through the given 'special' array and add up each of the positive integers to
@@ -24,18 +24,57 @@
  *
  */
 
-// Helper function that calculates the sum of all items in an array
-function findSum(array) {
-	let productSum = 0;
-	console.log('INITIAL productSum = ', productSum);
-	console.log('array = ', array);
+/**
+ * DEVISING A PLAN
+ *
+ * BRUTE FORCE SOLUTION
+ *  (1) Use recursion to find the product sum.
+ *  (2)
+ *
+ */
 
+let outermostArray = [];
+let currArrayDepth;
+function findSum(array) {
+	currArrayDepth = 1;
 	for (let i = 0; i < array.length; i++) {
-		productSum += array[i];
-		console.log('NEW productSum = ', productSum);
+		console.log('INITIAL outermostArray = ', outermostArray);
+		console.log('INITIAL currArrayDepth = ', currArrayDepth);
+		if (Number.isInteger(array[i])) {
+			const itemProductSum = currArrayDepth * array[i];
+			console.log(
+				`array[${i}] = `,
+				array[i],
+				'(NUMBER Data Type => add to outermostArray)'
+			);
+			console.log(
+				`itemProductSum @ array[${i}] = ${array[i]} * ${currArrayDepth}(currArrayDepth)`,
+				itemProductSum,
+				'(add to outermostArray)'
+			);
+			outermostArray.push(itemProductSum);
+			console.log('NEW outermostArray = ', outermostArray, '\n');
+		} else {
+			console.log(
+				`array[${i}] = `,
+				array[i],
+				'(OBJECT Data Type => recursive call)'
+			);
+			currArrayDepth += 1;
+			console.log('NEW currArrayDepth = ', currArrayDepth);
+			console.log('-----CAUTION! ENTERING AN INNER ARRAY----');
+			findSum(array[i]);
+			// innerArray.push(innerItemProductSum);
+			// console.log('innerArray = ', innerArray);
+		}
 	}
+
+	const productSum = outermostArray.reduce((acc, num) => {
+		return (acc += num);
+	}, 0);
 
 	return productSum;
 }
 
-console.log(findSum([1, 3, 5]));
+// console.log(findSum([1, 3, 5]));
+console.log(findSum([1, [3], 5]));
