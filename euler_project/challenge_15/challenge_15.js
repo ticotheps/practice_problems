@@ -1,10 +1,12 @@
 /*----------UNDERSTANDING THE PROBLEM----------
 - Objective 
-  - We will be writing an algorithm that attempts to perform this desired
-    action to solve the presented problem.
+  - Write an algorithm that returns the total number of possible routes that can be
+    taken from the top-left corner of a 20x20 grid to the bottom-right corner of
+    that same grid while ONLY moving in the following directions: down, right.
 
 - Definitions
-  - "New Term": <some definition here>
+  - "grid": this is a specific 'shape' of data that is made up of an outer array
+    of many smaller, inner arrays.
 
 - Expected Input(s)
   - Number of Expected Parameters: <number of expected parameters here> 
