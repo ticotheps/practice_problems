@@ -4,12 +4,12 @@
 
 - Definitions
   - Characteristics of a "special array":
-    - The array will always be non-empty
+    - The array will always be non-empty.
     - It can only contain either integers or OTHER special arrays.
 
   - "Product Sum": the value that results when all the items in the array are
-    added together and then multiplied by the level of their depth. 
-    - For example, an array containing only integers will have its sum
+    added together and then multiplied by the levels of their respective depths. 
+    - For example, an outer array containing only integers will have its sum
       multiplied by 1 because it doesn't contain any nested OTHER special arrays
       within it.
     - However, if an array contains integers AND other nested special arrays,
@@ -17,9 +17,10 @@
       multiplier used with the integers of the outermost special array.
 
 - Expected Input(s)
-  - Number of Expected Parameters: 1
+  - Number of Expected Parameters: 2
   - Names/Data Types of Expected Parameters
-    - "specialArr" (an array; must only contain Number or Array data types)
+    - "specialAray" (an array; must only contain Number or Array data types)
+    - "multiplier" (an integer with a default value of 1)
 
 - Expected Output(s)
   - Number of Expected Outputs: 1
@@ -54,16 +55,20 @@
 
 /*---------------DEVISING A PLAN---------------
 - BRUTE FORCE SOLUTION (Pseudocoded Steps) 
-  (1) Create a helper function ("findItemProductSum()") that will take in an
-      item from the special array and return its product sum.
+  (1) Create a recursive function ("findProductSum()") that will take in a
+      special array (that may or may not contain others special arrays and/or
+      integers) and return its product sum.
   (2) Create a variable ("multiplier") that will hold the value of the number
       to be multiplied to the sum at each depth.
-  (3) Create another variable ("totalItemProductSum") that will hold the running 
-      total of all the product sums added together.
-  (4) Find the length of the given special array.
-  (5) Iterate through the given special array.
-  (6) Based on the number of items in the array, which can be either an integer
-      or another special array, call the helper function on each item.
+  (3) Create another variable ("sum") that will hold the running 
+      total of all the product sums (at a given level) added together.
+  (4) Iterate through the given special array and any special arrays that are
+      nested inside of it.
+  (5) If the element is an integer, add it to the "sum" variable.
+  (6) If the element is a nested special array, recursively call the
+      'findProductSum()' function for that element by passing in the nested
+      special array, as well as the 'multiplier' that will be increased by 1
+      from the previous depth.
   (7) Return the "totalSum" variable.
 */
 
