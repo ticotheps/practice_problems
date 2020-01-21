@@ -31,10 +31,10 @@
  *  (1) Create a variable called 'productSum' to store the value of the running
  *  total of all the product sums from the given special array.
  *
- *  (2) Create a function called 'findProductSum()' that takes in 2 parameters,
- *  'specArr' (a special array) and 'multiplier', which has a default value of 1
+ *  (2) Create a function called 'productSum()' that takes in 2 parameters,
+ *  'array' (a special array) and 'multiplier', which has a default value of 1
  *  because every element in the special array will have a depth of AT LEAST 1.
- *  The output of 'findProductSum()' will be a variable called 'productSum',
+ *  The output of 'productSum()' will be a variable called 'productSum',
  *  which will just be a number representing the sum total of all the product
  *  sums in the original special given array.
  *
@@ -46,7 +46,7 @@
  *  to the value of 'productSum'.
  *
  *  (5) If the element is an "Object" data type, recursively call the
- *  'findProductSum()' function on the element.
+ *  'productSum()' function on the element.
  *
  * 	(6) Return 'productSum'.
  *
@@ -56,57 +56,57 @@ const assert = require('assert');
 
 ('use strict');
 
-function findProductSum(specArr, multiplier = 1) {
+function productSum(array, multiplier = 1) {
 	// console.log(`INITIAL multiplier = ${multiplier}`);
-	let productSum = 0;
-	// console.log(`INITIAL productSum = ${productSum}\n`);
+	let sum = 0;
+	// console.log(`INITIAL sum = ${sum}\n`);
 
-	for (let i = 0; i < specArr.length; i++) {
-		// console.log(`data type of element = ${typeof specArr[i]}`);
+	for (let i = 0; i < array.length; i++) {
+		// console.log(`data type of element = ${typeof array[i]}`);
 
-		if (typeof specArr[i] === 'number') {
-			// console.log(`Adds ${specArr[i]} to the 'productSum'`);
-			productSum += specArr[i];
-			// console.log(`NEW productSum = ${productSum}\n`);
+		if (typeof array[i] === 'number') {
+			// console.log(`Adds ${array[i]} to the 'sum'`);
+			sum += array[i];
+			// console.log(`NEW sum = ${sum}\n`);
 		}
 
-		if (typeof specArr[i] === 'object') {
+		if (typeof array[i] === 'object') {
 			// console.log(`Multiplier = ${multiplier}`);
 			// console.log(`Adds 1 to the 'newMultiplier' variable`);
 			let newMultiplier = multiplier + 1;
-			// console.log(`Recursively calls 'findProductSum()' on [${specArr[i]}]`);
-			productSum += findProductSum(specArr[i], newMultiplier);
-			// console.log(`RECURSIVE byproduct of productSum = ${productSum}\n`);
+			// console.log(`Recursively calls 'sum()' on [${array[i]}]`);
+			sum += productSum(array[i], newMultiplier);
+			// console.log(`RECURSIVE byproduct of sum = ${sum}\n`);
 		}
 	}
 	// console.log(`BEFORE FINAL Multiplier = ${multiplier}`);
-	return productSum * multiplier;
+	return sum * multiplier;
 }
 
-// console.log(findProductSum([5, 2, 4])); // should print 11
-// console.log(findProductSum([-5, 2, 4])); // should print 1
-// console.log(findProductSum([-5, 2, [4]])); // should print 5
-// console.log(findProductSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]])); // should print 12
+// console.log(productSum([5, 2, 4])); // should print 11
+// console.log(productSum([-5, 2, 4])); // should print 1
+// console.log(productSum([-5, 2, [4]])); // should print 5
+// console.log(productSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]])); // should print 12
 
 assert.deepStrictEqual(
-	findProductSum([5, 2, 4]),
+	productSum([5, 2, 4]),
 	11,
 	'The product sum for [5, 2, 4] is 11'
 );
 assert.deepStrictEqual(
-	findProductSum([-5, 2, 4]),
+	productSum([-5, 2, 4]),
 	1,
 	'The product sum for [-5, 2, 4] is 1'
 );
 assert.deepStrictEqual(
-	findProductSum([-5, 2, [4]]),
+	productSum([-5, 2, [4]]),
 	5,
 	'The product sum for [-5, 2, [4]] is 5'
 );
 assert.deepStrictEqual(
-	findProductSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]),
+	productSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]),
 	12,
 	'The product sum for [5, 2, [7, -1], 3, [6, [-13, 8], 4]] is 12'
 );
 
-console.log("-----ALL TESTS ARE PASSING FOR 'findProductSum()'-----");
+console.log("-----ALL TESTS ARE PASSING FOR 'productSum()'-----");
