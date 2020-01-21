@@ -83,7 +83,15 @@ function findProductSum(specArr, multiplier = 1) {
 	return productSum * multiplier;
 }
 
-console.log(findProductSum([5, 2, 4])); // should print 11
-console.log(findProductSum([-5, 2, 4])); // should print 1
-console.log(findProductSum([-5, 2, [4]])); // should print 5
-console.log(findProductSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]])); // should print 12
+// console.log(findProductSum([5, 2, 4])); // should print 11
+// console.log(findProductSum([-5, 2, 4])); // should print 1
+// console.log(findProductSum([-5, 2, [4]])); // should print 5
+// console.log(findProductSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]])); // should print 12
+
+assert.deepStrictEqual(
+	findProductSum([5, 2, 4]),
+	11,
+	'The product sum for [5, 2, 4] is 11'
+);
+
+console.log("-----ALL TESTS ARE PASSING FOR 'findProductSum()'-----");
