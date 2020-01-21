@@ -51,3 +51,17 @@
  * 	(6) Return 'productSum'.
  *
  */
+
+const assert = require('assert');
+
+('use strict');
+
+function findProductSum(specArr, multiplier = 1) {
+	let productSum = 0;
+	console.log(`multiplier = ${multiplier}`);
+
+	console.log(`productSum = ${productSum}`);
+	return productSum;
+}
+
+findProductSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]);
