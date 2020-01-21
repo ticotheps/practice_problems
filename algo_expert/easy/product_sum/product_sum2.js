@@ -57,11 +57,33 @@ const assert = require('assert');
 ('use strict');
 
 function findProductSum(specArr, multiplier = 1) {
+	console.log(`INITIAL multiplier = ${multiplier}`);
 	let productSum = 0;
-	console.log(`multiplier = ${multiplier}`);
+	console.log(`INITIAL productSum = ${productSum}\n`);
 
-	console.log(`productSum = ${productSum}`);
-	return productSum;
+	for (let i = 0; i < specArr.length; i++) {
+		console.log(`data type of element = ${typeof specArr[i]}`);
+
+		if (typeof specArr[i] === 'number') {
+			console.log(`Adds ${specArr[i]} to the 'productSum'`);
+			productSum += specArr[i];
+			console.log(`NEW productSum = ${productSum}\n`);
+		}
+
+		if (typeof specArr[i] === 'object') {
+			console.log(`Multiplier = ${multiplier}`);
+			console.log(`Adds 1 to the 'newMultiplier' variable`);
+			let newMultiplier = multiplier + 1;
+			// console.log(`Recursively calls 'findProductSum()' on [${specArr[i]}]`);
+			productSum += findProductSum(specArr[i], newMultiplier);
+			// console.log(`RECURSIVE byproduct of productSum = ${productSum}\n`);
+		}
+	}
+	console.log(`BEFORE FINAL Multiplier = ${multiplier}`);
+	return productSum * multiplier;
 }
 
-findProductSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]);
+console.log(findProductSum([5, 2, 4])); // should print 11
+console.log(findProductSum([-5, 2, 4])); // should print 1
+console.log(findProductSum([-5, 2, [4]])); // should print 5
+console.log(findProductSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]])); // should print 12
