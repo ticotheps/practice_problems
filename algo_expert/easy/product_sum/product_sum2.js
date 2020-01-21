@@ -27,54 +27,27 @@
 /**
  * DEVISING A PLAN
  *
- * BRUTE FORCE SOLUTION
- *  (1) Use recursion to find the product sum.
- *  (2)
+ * BRUTE FORCE SOLUTION (Recursive Solution)
+ *  (1) Create a variable called 'productSum' to store the value of the running
+ *  total of all the product sums from the given special array.
+ *
+ *  (2) Create a function called 'findProductSum()' that takes in 2 parameters,
+ *  'specArr' (a special array) and 'multiplier', which has a default value of 1
+ *  because every element in the special array will have a depth of AT LEAST 1.
+ *  The output of 'findProductSum()' will be a variable called 'productSum',
+ *  which will just be a number representing the sum total of all the product
+ *  sums in the original special given array.
+ *
+ *  (3) Iterate through the given special array to determine if the element
+ *  being iterated on is either a "Number" data type or an "Object" data type
+ *  (arrays are of type "Object" in JavaScript).
+ *
+ *  (4) If the element is a "Number" data type, add the value of that element
+ *  to the value of 'productSum'.
+ *
+ *  (5) If the element is an "Object" data type, recursively call the
+ *  'findProductSum()' function on the element.
+ *
+ * 	(6) Return 'productSum'.
  *
  */
-
-let outermostArray = [];
-let currArrayDepth;
-function findSum(array) {
-	currArrayDepth = 1;
-	for (let i = 0; i < array.length; i++) {
-		console.log('INITIAL outermostArray = ', outermostArray);
-		console.log('INITIAL currArrayDepth = ', currArrayDepth);
-		if (Number.isInteger(array[i])) {
-			const itemProductSum = currArrayDepth * array[i];
-			console.log(
-				`array[${i}] = `,
-				array[i],
-				'(NUMBER Data Type => add to outermostArray)'
-			);
-			console.log(
-				`itemProductSum @ array[${i}] = ${array[i]} * ${currArrayDepth}(currArrayDepth)`,
-				itemProductSum,
-				'(add to outermostArray)'
-			);
-			outermostArray.push(itemProductSum);
-			console.log('NEW outermostArray = ', outermostArray, '\n');
-		} else {
-			console.log(
-				`array[${i}] = `,
-				array[i],
-				'(OBJECT Data Type => recursive call)'
-			);
-			currArrayDepth += 1;
-			console.log('NEW currArrayDepth = ', currArrayDepth);
-			console.log('-----CAUTION! ENTERING AN INNER ARRAY----');
-			findSum(array[i]);
-			// innerArray.push(innerItemProductSum);
-			// console.log('innerArray = ', innerArray);
-		}
-	}
-
-	const productSum = outermostArray.reduce((acc, num) => {
-		return (acc += num);
-	}, 0);
-
-	return productSum;
-}
-
-// console.log(findSum([1, 3, 5]));
-console.log(findSum([1, [3], 5]));
