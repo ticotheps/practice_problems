@@ -88,6 +88,7 @@ function productSum(array, multiplier = 1) {
 // console.log(productSum([-5, 2, [4]])); // should print 5
 // console.log(productSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]])); // should print 12
 
+// My Tests
 assert.deepStrictEqual(
 	productSum([5, 2, 4]),
 	11,
@@ -107,6 +108,57 @@ assert.deepStrictEqual(
 	productSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]),
 	12,
 	'The product sum for [5, 2, [7, -1], 3, [6, [-13, 8], 4]] is 12'
+);
+
+// AlgoExpert Test Case #1
+assert.deepStrictEqual(
+	productSum([1, 2, 3, 4, 5]),
+	15,
+	'The product sum for [1, 2, 3, 4, 5] is 15'
+);
+// AlgoExpert Test Case #2
+assert.deepStrictEqual(
+	productSum([1, 2, [3], 4, 5]),
+	18,
+	'The product sum for [1, 2, [3], 4, 5] is 18'
+);
+// AlgoExpert Test Case #3
+assert.deepStrictEqual(
+	productSum([[1, 2], 3, [4, 5]]),
+	27,
+	'The product sum for [[1, 2], 3, [4, 5]] is 27'
+);
+// AlgoExpert Test Case #4
+assert.deepStrictEqual(
+	productSum([[[[[5]]]]]),
+	600,
+	'The product sum for [[[[[5]]]]] is 600'
+);
+// AlgoExpert Test Case #5
+assert.deepStrictEqual(
+	productSum([
+		9,
+		[2, -3, 4],
+		1,
+		[1, 1, [1, 1, 1]],
+		[[[[3, 4, 1]]], 8],
+		[1, 2, 3, 4, 5, [6, 7], -7],
+		[1, [2, 3, [4, 5]], [6, 0, [7, 0, -8]], -7],
+		[1, -3, 2, [1, -3, 2, [1, -3, 2], [1, -3, 2, [1, -3, 2]], [1, -3, 2]]],
+		-3,
+	]),
+	1351,
+	`The product sum for [
+		9,
+		[2, -3, 4],
+		1,
+		[1, 1, [1, 1, 1]],
+		[[[[3, 4, 1]]], 8],
+		[1, 2, 3, 4, 5, [6, 7], -7],
+		[1, [2, 3, [4, 5]], [6, 0, [7, 0, -8]], -7],
+		[1, -3, 2, [1, -3, 2, [1, -3, 2], [1, -3, 2, [1, -3, 2]], [1, -3, 2]]],
+		-3,
+	] is 1351`
 );
 
 console.log("-----ALL TESTS ARE PASSING FOR 'productSum()'-----");
