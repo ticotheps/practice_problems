@@ -45,7 +45,7 @@ const assert = require('assert');
 
 function read7(str) {
 	console.log(`str = ${str}`);
-	let sevenChars;
+	let sevenChars = str;
 
 	return sevenChars;
 }
