@@ -45,7 +45,22 @@ const assert = require('assert');
 
 function read7(str) {
 	console.log(`str = ${str}`);
-	let sevenChars = str;
+	let lenStr = str.length;
+	let first7Str = '';
+	let numOfCharsLeft = lenStr;
+
+	if (typeof str !== 'string') {
+		return 'Please provide a valid input.';
+	}
+
+	if (numOfCharsLeft <= 7) {
+		return str;
+	} else {
+		for (let i = 0; i < numOfCharsLeft; i++) {
+			console.log(`first7Str = ${first7Str}`);
+			const first7Str = str.slice(0, numOfCharsLeft);
+		}
+	}
 
 	return sevenChars;
 }
