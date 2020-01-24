@@ -12,26 +12,30 @@
 #               [7, 8, 9]]
 
 # - Expected Input(s)
-#   - Number of Expected Parameters: <number of expected parameters here> 
+#   - Number of Expected Parameters: 2 
 #   - Names/Data Types of Expected Parameters
-#     - <name of parameter A here> (<data type of parameter A here>)
-#     - <name of parameter B here> (<data type of parameter B here>)
+#     - "height" (integer data type)
+#     - "width" (integer data type)
 
 # - Expected Output(s)
-#   - Number of Expected Outputs: <number of expected outputs here> 
+#   - Number of Expected Outputs: 1 
 #   - Names/Data Types of Expected Output
-#     - <name of output here> (<data type of output here>)
+#     - "possPaths" (integer data type)
 
 # - Constraints
 #   - Will the following make the algorithm fail?
 #     - Negative numbers?
-#       -
-#     - Number data types?
-#       -
+#       - Yes
+#       - Inputs must be positive integers
+#     - Integer data types?
+#       - No.
+#       - Inputs must be integer data types.
 #     - Floating point numbers?
-#       -
+#       - Yes.
+#       - Inputs cannot be floating point numbers.
 #     - Non-alphanumeric characters in the inputs?
-#       -
+#       - Sometimes.
+#       - Inputs must be positive integers.
 
 # - Example #1
 #   - Example #1 Input(s)
