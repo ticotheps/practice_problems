@@ -47,7 +47,8 @@
 
 # ---------------DEVISING A PLAN---------------
 # - BRUTE FORCE SOLUTION (Pseudocoded Steps)
-#   (1) <Step 1 here>
+#   (1) Define a function 'findNumOfPossPaths()' that takes in 2 parameters,
+#   'height' and 'width', which then returns one output, '
 #   (2) <Step 2 here>
 #   (3) <Step 3 here>
 #   ...
