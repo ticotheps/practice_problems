@@ -39,10 +39,10 @@
 
 # - Example #1
 #   - Example #1 Input(s)
-#     - <Example #1 input A here>
-#     - <Example #1 input B here>
+#     - 'height' = 2
+#     - 'width' = 2
 #   - Example #1 Output(s)
-#     - <Example #1 output here>
+#     - 'numOfPossPaths' = 6
 
 
 # ---------------DEVISING A PLAN---------------
