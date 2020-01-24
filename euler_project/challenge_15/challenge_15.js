@@ -7,6 +7,9 @@
 - Definitions
   - "grid": this is a specific 'shape' of data that is made up of an outer array
     of many smaller, inner arrays.
+    - i.e. - [[1, 2, 3],
+              [4, 5, 6],
+              [7, 8, 9]]
 
 - Expected Input(s)
   - Number of Expected Parameters: <number of expected parameters here> 
