@@ -62,7 +62,7 @@ function read7(str) {
 		}
 	}
 
-	return sevenChars;
+	return first7Str;
 }
 
 console.log(read7('Tico Thepsourinthone'));
