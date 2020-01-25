@@ -73,9 +73,11 @@ function read7(str) {
 
 // console.log(read7('Tico Thepsourinthone'));
 assert.deepStrictEqual(read7('Tico Thepsourinthone'), 'Tico Th', "The first 7 characters of 'Tico Thepsourinthone' are 'Tico Th'.")
+// console.log(read7(8));
+assert.deepStrictEqual(read7(8), 'Please provide a valid input.', "8 is not a valid input (of type 'String')")
 
 console.log("----------ALL TESTS ARE PASSING FOR 'read7()'----------");
-// console.log(read7(8));
+
 
 /**
  * -----------REFLECT------------
