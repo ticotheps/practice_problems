@@ -44,35 +44,38 @@ const assert = require('assert');
 ('use strict');
 
 function read7(str) {
-	console.log(`str = ${str}`);
+	// console.log(`str = ${str}`);
 
 	let lenStr = str.length;
-	console.log("lenStr = ", lenStr);
+	// console.log("lenStr = ", lenStr);
 
-	let first7Str = '';
-	console.log("first7Str = ", first7Str);
+	let first7Str;
+	// console.log("first7Str = ", first7Str);
 
 	let numOfCharsLeft = lenStr;
-	console.log("numOfCharsLeft = ", numOfCharsLeft);
+	// console.log("numOfCharsLeft = ", numOfCharsLeft);
 
 	if (typeof str !== 'string') {
 		return 'Please provide a valid input.';
 	}
 
-	// if (numOfCharsLeft <= 7) {
-	// 	return str;
-	// } else {
-	// 	for (let i = 0; i < numOfCharsLeft; i++) {
-	// 		console.log(`first7Str = ${first7Str}`);
-	// 		const first7Str = str.slice(0, numOfCharsLeft);
-	// 	}
-	// }
-
-	return first7Str;
+	if (lenStr <= 7) {
+		return str;
+	} else {
+		// for (let i = 0; i < numOfCharsLeft; i++) {
+		// 	console.log(`first7Str = ${first7Str}`);
+		// 	first7Str = str.slice(0, 7);
+		// }
+		first7Str = str.slice(0, 7);
+		return first7Str;
+	}
 }
 
-console.log(read7('Tico Thepsourinthone'));
-console.log(read7(8));
+// console.log(read7('Tico Thepsourinthone'));
+assert.deepStrictEqual(read7('Tico Thepsourinthone'), 'Tico Th', "The first 7 characters of 'Tico Thepsourinthone' are 'Tico Th'.")
+
+console.log("----------ALL TESTS ARE PASSING FOR 'read7()'----------");
+// console.log(read7(8));
 
 /**
  * -----------REFLECT------------
