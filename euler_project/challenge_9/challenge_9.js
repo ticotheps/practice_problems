@@ -175,6 +175,8 @@ assert.deepStrictEqual(
 	"When the input is a floating point number, the 'false' Boolean is returned."
 );
 
+console.log(sumOfTriplet1000);
+
 console.log(
 	"\n*---- ALL TESTS FOR 'findProductOfPythagTriplet()' ARE PASSING ----*\n"
 );
