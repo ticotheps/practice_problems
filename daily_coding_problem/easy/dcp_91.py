@@ -20,8 +20,9 @@
 #			- Lambda <arguments> : <expression>
 #		- Process
 #			- The expression is executed and the result is returned.
-#     - Example #1 - A lambda function that adds 10 to the number passed in as an
-#       argument, and print the result:
+
+#     - Example #1 - A lambda function that adds 10 to the number passed
+#  			in as an argument, and print the result:
 
 x = lambda a : a + 10
 print(x(5))
@@ -31,3 +32,9 @@ print(x(5))
 
 y = lambda a, b : a * b
 print(y(5, 6))
+
+#     - Example #3 - A lambda function that sums arguments 'a', 'b', & 'c'
+# 			and prints the result:
+
+z = lambda a, b, c : a + b + c
+print(z(5, 6, 7))
