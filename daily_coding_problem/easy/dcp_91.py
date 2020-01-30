@@ -20,7 +20,6 @@ for i in range(10):
   
 new_functions = list(map(lambda x: x, functions))
 print(new_functions)
-
 # for f in functions:
 #   print(f())
 
@@ -29,6 +28,7 @@ print(new_functions)
 # UNDERSTAND:
 #		- What is a 'lambda' function? 
 # 		- https://www.w3schools.com/python/python_lambda.asp
+#			- https://www.geeksforgeeks.org/python-lambda-anonymous-functions-filter-map-reduce/
 #			- A lambda function is a small anonymous function.
 #			- A lambda function can take ANY number of arguments, but can only
 #				have one expression.
