@@ -2,6 +2,8 @@
 
 # What does the below code snippet print out?
 # How can we fix he anonymous functions to behave as we'd expect?
+
+
 # CODE SNIPPET:
 # functions = []
 
@@ -10,6 +12,19 @@
   
 # for f in functions:
 #   print(f())
+
+functions = []
+
+for i in range(10):
+	functions.append(i)
+  
+new_functions = list(map(lambda x: x, functions))
+print(new_functions)
+
+# for f in functions:
+#   print(f())
+
+
 
 # UNDERSTAND:
 #		- What is a 'lambda' function? 
