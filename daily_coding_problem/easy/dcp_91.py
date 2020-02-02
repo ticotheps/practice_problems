@@ -45,20 +45,20 @@ for f in functions:
 #   	- Example #1 - A lambda function that adds 10 to the number passed
 #  			in as an argument, and print the result:
 
-x = lambda a : a + 10
-print(f"x = {x(5)}")
+# x = lambda a : a + 10
+# print(f"x = {x(5)}")
 
 #     - Example #2 - A lambda function that multiplies argument 'a' with
 #       argument 'b' and prints the result:
 
-y = lambda a, b : a * b
-print(f"y = {y(5, 6)}")
+# y = lambda a, b : a * b
+# print(f"y = {y(5, 6)}")
 
 #     - Example #3 - A lambda function that sums arguments 'a', 'b', & 'c'
 # 			and prints the result:
 
-z = lambda a, b, c : a + b + c
-print(f"z = {z(5, 6, 7)}")
+# z = lambda a, b, c : a + b + c
+# print(f"z = {z(5, 6, 7)}")
 
 #   	- Example #4 - The power of lambda is better shown when you use them
 # 			as an anonymous function inside another function:
@@ -67,17 +67,17 @@ print(f"z = {z(5, 6, 7)}")
 #				(b)	Use that function definition to make a function that always doubles
 #						the number you pass in as 'n':
 
-def  myFunc(n):
-  return lambda a : a * n
+# def  myFunc(n):
+#   return lambda a : a * n
 
-myDoubler = myFunc(2)
-print(f"myDoubler(11) = {myDoubler(11)}")
+# myDoubler = myFunc(2)
+# print(f"myDoubler(11) = {myDoubler(11)}")
 
 #				(c)	Or use that SAME function definition to make a function that always
 #						TRIPLES the number you pass in as 'n':
 
-myTripler = myFunc(3)
-print(f"myTripler(11) = {myTripler(11)}")
+# myTripler = myFunc(3)
+# print(f"myTripler(11) = {myTripler(11)}")
 
 #		- CONCLUSION
 # 		- Think of Lambda functions as "small, anonymous functions that
