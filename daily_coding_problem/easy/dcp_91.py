@@ -16,12 +16,10 @@
 functions = []
 
 for i in range(10):
-	functions.append(i)
+	functions.append(lambda i = i : i)
   
-new_functions = list(map(lambda x: x, functions))
-print(new_functions)
-# for f in functions:
-#   print(f())
+for f in functions:
+  print(f())
 
 
 
