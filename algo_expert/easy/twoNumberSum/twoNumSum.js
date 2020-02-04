@@ -9,7 +9,7 @@ function twoNumSum(array, targetSum) {
 		if (potentialMatch in numsCache) {
 			return [potentialMatch, array[i]];
 		} else {
-			numsCache[potentialMatch] = true;
+			numsCache[array[i]] = true;
 		}
 	}
 	return [];
