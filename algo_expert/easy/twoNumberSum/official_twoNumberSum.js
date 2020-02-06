@@ -1,4 +1,4 @@
-// BRUTE FORCE SOLUTION
+// BRUTE FORCE SOLUTION - Nested "for" Loops
 // Time Complexity = O(n^2)
 // Space Complexity = O(1)
 // function twoNumberSum(array, targetSum) {
