@@ -16,19 +16,28 @@
 // 	return [];
 // }
 
-// SLIGHTLY OPTIMIZED SOLUTION - Sorting & Pointers
+// SLIGHTLY OPTIMIZED SOLUTION - Sort & L+R Pointers
 // Time Complexity = O(n log n)
 // Space Complexity = O(n)
 function twoNumberSum(array, targetSum) {
-	const cache = {};
+	const sortedArray = array.sort((a, b) => a - b);
+	console.log('sortedArray=', sortedArray);
+	console.log('targetSum=', targetSum);
 
-	for (let i = 0; i < array.length; i++) {
-		let potentialMatch = targetSum - array[i];
+	let left = 0;
+	let right = array.length - 1;
 
-		if (potentialMatch in cache) {
-			return [potentialMatch, array[i]];
-		} else {
-			cache[array[i]] = true;
+	while (left < right) {
+		let currentSum = array[right] + array[left];
+		console.log('currentSum=', currentSum);
+		if (currentSum == targetSum) {
+			return [array[right], array[left]];
+		} else if (currentSum < targetSum) {
+			left += 1;
+			console.log('right = ', right);
+		} else if (currentSum > targetSum) {
+			right -= 1;
+			console.log('left = ', left);
 		}
 	}
 	return [];
