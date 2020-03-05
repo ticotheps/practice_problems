@@ -47,15 +47,24 @@ NOTES:
 
 # Implementation:
 def count_vowels(txt):
-    num_of_vowels = {
+    vowels_dict = {
         "a": True,
         "e": True,
         "i": True,
         "o": True,
         "u": True
     }
+    num_of_vowels = 0
     
-    print(num_of_vowels)
+    for i in range(0, len(txt)):
+        char = txt[i]
+        lower_char = char.lower()
+        
+        if lower_char in vowels_dict:
+            num_of_vowels += 1
+            
     return(num_of_vowels)
 
-count_vowels()
+print(count_vowels('Celebration'))  # Should return 5
+print(count_vowels('Palm'))  # Should return 1
+print(count_vowels("Prediction"))  # Should return 4
