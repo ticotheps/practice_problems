@@ -35,12 +35,27 @@ NOTES:
 
 #   (4) Use a 'for' loop to iterate through the given input 'txt'.
 
-#   (5) Use a conditional statement to determine if the value of 'txt' at the
-#       current index, i, exists in the 'vowels_dict' dictionary. If it exists,
-#       add 1 to the 'num_of_vowels' dictionary. If it does not exist, skip to
-#       the next iteration.
+#   (5) Create a 'lower_char' variable that converts the character at the 
+#       current index to a lower-cased version of itself.
 
-#   (6) Return the value for the 'num_of_vowels' variable.
+#   (6) Use a conditional statement to determine if the value of 'lower_char' 
+#       at the current index, i, exists in the 'vowels_dict' dictionary. If it
+#       exists, add 1 to the 'num_of_vowels' dictionary. If it does not exist, 
+#       skip to the next iteration.
 
+#   (7) Return the value for the 'num_of_vowels' variable.
 
+# Implementation:
+def count_vowels(txt):
+    num_of_vowels = {
+        "a": True,
+        "e": True,
+        "i": True,
+        "o": True,
+        "u": True
+    }
     
+    print(num_of_vowels)
+    return(num_of_vowels)
+
+count_vowels()
