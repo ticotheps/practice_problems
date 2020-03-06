@@ -12,7 +12,7 @@
 .vscode/
 
 # virtual env files
-.venv
+.venv/
 
 # testing
 /coverage
