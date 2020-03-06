@@ -67,4 +67,4 @@ def count_vowels(txt):
 
 print(count_vowels('Celebration'))  # Should return 5
 print(count_vowels('Palm'))  # Should return 1
-print(count_vowels("Prediction"))  # Should return 4
+print(count_vowels('Prediction'))  # Should return 4
