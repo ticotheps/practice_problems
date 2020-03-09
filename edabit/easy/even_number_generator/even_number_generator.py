@@ -8,7 +8,7 @@ Examples:
 - find_even_numbers(2) -> [2]
 """
 
-def find_even_numbers(n):
+def find_even_nums(n):
     pass
 
 print(find_even_numbers(8))  # Should return [2, 4, 6, 8]
