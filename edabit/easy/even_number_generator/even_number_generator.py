@@ -9,8 +9,5 @@ Examples:
 """
 
 def find_even_nums(n):
-    pass
-
-print(find_even_nums(8))  # Should return [2, 4, 6, 8]
-print(find_even_nums(4))  # Should return [2, 4]
-print(find_even_nums(2))  # Should return [2]
+    even_nums_arr = [even_num for even_num in range(1,n + 1) if even_num % 2 == 0]
+    return even_nums_arr
