@@ -21,13 +21,13 @@ def getNthFib(n):
         # 4th FibNum = 3rd Index of 'fibList'
         startFibIndex = 2
         for i in range(startFibIndex, n):
-            prev2ndNum = fibList[i - 2]
-            prev1stNum = fibList[i - 1]
-            nextFibNum = prev2ndNum + prev1stNum
+            twoNumsPrev = fibList[i - 2]
+            oneNumPrev = fibList[i - 1]
+            nextFibNum = twoNumsPrev + oneNumPrev
             fibList.append(nextFibNum)
             
         # Return the last index of the 'fibList' (nth Fibonacci number)
-        nthFibNum = fibList[-1]
+        nthFibNum = fibList[n - 1]
         return nthFibNum
 
 print(getNthFib(2))  # should print 1
