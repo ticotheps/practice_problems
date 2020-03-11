@@ -55,12 +55,5 @@ def get_list_of_multiples (num, length):
     
     for i in range(1, length + 1):
         multiple_of_num = num * i
-        print(f"multiple_of_num = {multiple_of_num}")
         multiples_list.append(multiple_of_num)
-        print(f"multiples_list = {multiples_list}")
-    
     return multiples_list
-
-print(get_list_of_multiples(7, 5))
-print(get_list_of_multiples(12, 10))
-print(get_list_of_multiples(17, 6))
