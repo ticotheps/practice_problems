@@ -59,7 +59,23 @@ DEVISING A PLAN:
 """
 
 def fizz_buzz(num):
-    pass
+    multipleOf3 = False
+    multipleOf5 = False
+    
+    if num % 3 == 0:
+        multipleOf3 = True
+        
+    if num % 5 == 0:
+        multipleOf5 = True
+        
+    if multipleOf3 == True and multipleOf5 == True:
+        return "FizzBuzz"
+    elif multipleOf3 == True and multipleOf5 == False:
+        return "Fizz"
+    elif multipleOf3 == False and multipleOf5 == True:
+        return "Buzz"
+    else:
+        return f"{num}"
 
 print(fizz_buzz(3))  # Should print "Fizz"
 print(fizz_buzz(5))  # Should print "Buzz"
