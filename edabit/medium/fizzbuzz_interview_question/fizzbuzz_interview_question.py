@@ -36,6 +36,27 @@ UNDERSTANDING THE PROBLEM:
         - Inputs MUST be whole integers.
         - Inputs CAN be negative numbers.
 """
+"""
+DEVISING A PLAN:
+    (1) Create a function that takes in 1 input (an integer, "num") and returns
+    1 output (a string; either: "Fizz" || "Buzz" || "FizzBuzz" || "<num>").
+    
+    (2) Initialize a variable, "multipleOf3", with a value of false, to indicate whether or not the input is a multiple of 3.
+    
+    (3) Initialize a variable, "multipleOf5", with a value of false, to indicate whether or not the input is a multiple of 5.
+    
+    (4) Use an "if" statement and the modulo operator to determine if the input,
+    "num", is a multiple of 3. If it is a multiple of 3, set the value of "multipleOf3" to the value of True. If it is not a multiple of 3, do nothing.
+    
+    (5) Use an "if" statement and the modulo operator to determine if the input,
+    "num", is a multiple of 5. If it is a multiple of 5, set the value of "multipleOf5" to the value of True. If it is not a multiple of 5, do nothing.
+    
+    (6) Use another series of "if" statements, combined with the boolean values of the "multipleOf3" and "multipleOf5" variables, to determine what to return as the output:
+        (a) a multiple of 3? -> return "Fizz"
+        (b) a multiple of 5? -> return "Buzz"
+        (c) a multiple of both, 3 & 5 -> return "FizzBuzz"
+        (d) not a multiple of either 3 or 5. -> return the string version of "num"
+"""
 
 def fizz_buzz(num):
     pass
