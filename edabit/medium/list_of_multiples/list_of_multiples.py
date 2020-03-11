@@ -35,10 +35,31 @@ UNDERSTANDING THE PROBLEM:
 """
 """
 DEVISING A PLAN:
-
+    (1) Create a function that takes in 2 inputs ("num", "length")
+    and returns 1 output, "multiples_list".
+    
+    (2) Initialize a new "multiples_list" variable with an empty array to store the list of multiples that we would like to return.
+    
+    (3) Use a 'for' loop to iterate through a range of numbers where the start value is 1 and the end value is "length" + 1 (to account for the 'range()' method starting at 1 instead of at 0).
+    
+    (4) Inside the 'for' loop, multiply 'multiple_of_num' by "num" and set that new value equal to 'multiple_of_num'.
+    
+    (5) Inside the 'for' loop, declare a new "multiple_of_num" variable and set it equal to the value of "num" multiplied by "i" (the iterator).
+    
+    (6) While still inside the 'for' loop, append the new value of 'multiple_of_num' to the 'multiples_list'.
+    
+    (7) After the 'for' loop finishes executing, return the value of 'multiples_of_num'.
 """
 def get_list_of_multiples (num, length):
-    return num
+    multiples_list = []
+    
+    for i in range(1, length + 1):
+        multiple_of_num = num * i
+        print(f"multiple_of_num = {multiple_of_num}")
+        multiples_list.append(multiple_of_num)
+        print(f"multiples_list = {multiples_list}")
+    
+    return multiples_list
 
 print(get_list_of_multiples(7, 5))
 print(get_list_of_multiples(12, 10))
