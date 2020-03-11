@@ -50,6 +50,8 @@ DEVISING A PLAN:
     
     (7) After the 'for' loop finishes executing, return the value of 'multiples_of_num'.
 """
+# EXECUTE:
+
 def get_list_of_multiples (num, length):
     multiples_list = []
     
@@ -57,3 +59,16 @@ def get_list_of_multiples (num, length):
         multiple_of_num = num * i
         multiples_list.append(multiple_of_num)
     return multiples_list
+
+"""
+REFLECTION/REVIEW:
+    - Asymptotic Analysis:
+        - Runtime Complexity: O(n) -> linear runtime
+        - Space Complexity: O(2) -> O(1) -> constant space
+    
+    - Can we optimize the runtime complexity for this?
+        - Yes. You could always use memoization with a 'cache' object to
+        store previously calculated lists of multiples, where in the key/value
+        pair, the 'key' was the "num" variable and the associated multiples list
+        was the value.
+"""
