@@ -75,12 +75,12 @@ def fizz_buzz(num):
     elif multipleOf3 == False and multipleOf5 == True:
         return "Buzz"
     else:
-        return f"{num}"
+        return str(num)
 
-# print(fizz_buzz(3))  # Should print "Fizz"
-# print(fizz_buzz(5))  # Should print "Buzz"
-# print(fizz_buzz(15))  # Should print "FizzBuzz"
-# print(fizz_buzz(4))  # Should print "4"
+print(fizz_buzz(3))  # Should print "Fizz"
+print(fizz_buzz(5))  # Should print "Buzz"
+print(fizz_buzz(15))  # Should print "FizzBuzz"
+print(fizz_buzz(4))  # Should print "4"
 
 """
 REFLECT:
