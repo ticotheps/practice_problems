@@ -77,7 +77,13 @@ def fizz_buzz(num):
     else:
         return f"{num}"
 
-print(fizz_buzz(3))  # Should print "Fizz"
-print(fizz_buzz(5))  # Should print "Buzz"
-print(fizz_buzz(15))  # Should print "FizzBuzz"
-print(fizz_buzz(4))  # Should print "4"
+# print(fizz_buzz(3))  # Should print "Fizz"
+# print(fizz_buzz(5))  # Should print "Buzz"
+# print(fizz_buzz(15))  # Should print "FizzBuzz"
+# print(fizz_buzz(4))  # Should print "4"
+
+"""
+REFLECT:
+    - Runtime Complexity: O(1)
+    - Space Complexity: O(1)
+"""
