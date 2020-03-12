@@ -31,7 +31,7 @@
       one input, 'numDigits', & returns one output, 'largestPalindrome'.
   (3) Create a variable, 'largestPalindrome', with a 'let' keyword that
       will store the current largest palindromic number as in integer.
-  (4) Create 2 new variables, 'minRange' and 'maxRange', that define will
+  (4) Create 2 new variables, 'minRange' and 'maxRange', that will
       define the boundaries for the nested 'for' loops.
     (4) Use 2 nested 'for' loops to iterate through every possible 
         product made from 2 integers that contain 'numDigits' number of 
