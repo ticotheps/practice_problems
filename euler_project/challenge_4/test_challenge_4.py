@@ -12,7 +12,7 @@ class Test(unittest.TestCase):
     def test_find_largest_palindrome_product(self):
         self.assertEqual(find_largest_palindrome_product(1), 9)
         self.assertEqual(find_largest_palindrome_product(2), 9009)
-        self.assertEqual(find_largest_palindrome_product(3), 90909)
+        self.assertEqual(find_largest_palindrome_product(3), 906609)
     
 if __name__ == '__main__':
     unittest.main()

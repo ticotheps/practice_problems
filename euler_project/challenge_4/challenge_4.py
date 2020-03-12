@@ -41,23 +41,34 @@ def find_largest_palindrome_product(n_digit_numbers):
     largest_palindrome_product = 0
     # Declare a var that will store the single largest value in a digit to 9
     single_largest_digit_value = 9
+    # Declare a var that will store the single smallest value in a digit to 0
+    single_smallest_digit_value = 1
     # Multiply the input by the single largest value in a digit to get the
     # maximum of your 'for' loop's range.
     startNumInt = int(str(single_largest_digit_value) * n_digit_numbers)
-    print(f"startNumInt = {startNumInt}")
+    # print(f"startNumInt = {startNumInt}")
+    # Subtract 1 from the input to determine how many zeros get added to the end
+    # of the the single smallest value in a digit to get the minimum of your 'for' 
+    # loop's range.
+    endNumInt = int(str(single_smallest_digit_value) + str((str(0) * (n_digit_numbers - 1))))
+    # print(f"endNumInt = {endNumInt}")
     
     # Iterate through all n-digit numbers
-    for i in range(startNumInt, 0, -1):
+    for i in range(startNumInt, endNumInt, -1):
         # Iterate through another list of n-digit numbers
-        for j in range(startNumInt, 0, -1):
+        for j in range(startNumInt, endNumInt, -1):
             product = i * j
-            print(f"product = {product}")
+            # print(f"product = {product}")
             if check_palindrome(product) == True:
                 if product > largest_palindrome_product:
                     largest_palindrome_product = product
-                    print("We found the largest palindrome product!")
-                    return largest_palindrome_product
-    return "Sorry, there were no palindrome products found."
+                    # print("We found the largest palindrome product!")
+    if largest_palindrome_product == 0:
+        return "Sorry, there were no palindrome products found."
+    else:
+        return largest_palindrome_product
+    
+
 print(find_largest_palindrome_product(1))
 print(find_largest_palindrome_product(2))
 print(find_largest_palindrome_product(3))
