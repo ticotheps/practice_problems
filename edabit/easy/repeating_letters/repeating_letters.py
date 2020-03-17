@@ -16,15 +16,22 @@ Repeating Letters
 """
 
 def double_char(txt):
-    # Check for a valid input of string data.
-    print(f"type(txt) = {type(txt)}")
+    # Checks for a valid input of string data.
     if type(txt) == str:
+        # Create a var 'newDoubleCharsList' that is set equal to an empty list.
+        newDoubleCharsList = []
+        print(f"newDoubleCharsList = {newDoubleCharsList}")
+        
+        # Create a var 'txtCharsList' that converts input into a list of chars.
+        txtCharsList = list(txt)
+        print(f"txtCharsList = {txtCharsList}")
+        
         return "We have a valid input"
     else:
         return "Please enter a valid input of 'str'' data type"
-    # Create a var 'newDoubleCharsList' that is set equal to an empty list.
+
     
-    # Create a var 'txtCharsList' that converts the input into a list of chars.
+
     
     # Use a 'for' loop to iterate through each char in 'textCharsList'...
         # Create a var 'newDoubleChar' that is set equal to the iterated char x2.
