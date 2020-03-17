@@ -16,3 +16,20 @@ Repeating Letters
 """
 
 def double_char(txt):
+    # Check for a valid input of string data.
+    
+    # Create a var 'newDoubleCharsList' that is set equal to an empty list.
+    
+    # Create a var 'txtCharsList' that converts the input into a list of chars.
+    
+    # Use a 'for' loop to iterate through each char in 'textCharsList'...
+        # Create a var 'newDoubleChar' that is set equal to the iterated char x2.
+        # Append 'newDoubleChar' to the value of 'newDoubleCharsList'
+        
+    # Create a var 'newDoubleCharsStr' that is set equal to the string that
+    # results when all of the items in the 'newDoubleCharsList' are joined
+    # together.
+    
+    # Return the value of 'newDoubleCharsStr'
+    
+    
