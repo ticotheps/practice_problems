@@ -20,29 +20,34 @@ def double_char(txt):
     if type(txt) == str:
         # Create a var 'newDoubleCharsList' that is set equal to an empty list.
         newDoubleCharsList = []
-        print(f"newDoubleCharsList = {newDoubleCharsList}")
+        # print(f"newDoubleCharsList = {newDoubleCharsList}")
         
         # Create a var 'txtCharsList' that converts input into a list of chars.
         txtCharsList = list(txt)
-        print(f"txtCharsList = {txtCharsList}")
+        # print(f"txtCharsList = {txtCharsList}")
         
-        return "We have a valid input"
+        # Use a 'for' loop to iterate through each char in 'textCharsList'...
+        for char in txtCharsList:
+            # Create a var 'doubleChar' that's set equal to 'char' x2.
+            doubleChar = char * 2
+            # print(f"doubleChar = {doubleChar}")
+            
+            # Append 'newDoubleChar' to the value of 'newDoubleCharsList'
+            # print(f"newDoubleCharsList = {newDoubleCharsList}")
+            newDoubleCharsList.append(doubleChar)
+            # print(f"newDoubleCharsList = {newDoubleCharsList}")
+        
+        # Create a var 'newDoubleCharsStr' that is set equal to the string that
+        # results when all of the items in the 'newDoubleCharsList' are joined
+        # together.
+        newDoubleCharsStr = ''.join(newDoubleCharsList)
+        # print(f"newDoubleCharsStr = {newDoubleCharsStr}")
+        # Return the value of 'newDoubleCharsStr'
+        return newDoubleCharsStr
     else:
         return "Please enter a valid input of 'str'' data type"
 
-    
-
-    
-    # Use a 'for' loop to iterate through each char in 'textCharsList'...
-        # Create a var 'newDoubleChar' that is set equal to the iterated char x2.
-        # Append 'newDoubleChar' to the value of 'newDoubleCharsList'
-        
-    # Create a var 'newDoubleCharsStr' that is set equal to the string that
-    # results when all of the items in the 'newDoubleCharsList' are joined
-    # together.
-    
-    # Return the value of 'newDoubleCharsStr'
-    
 print(double_char("String"))  # should print "SSttrriinngg"
-    
+print(double_char("Hello World!"))  # should print "HHeelllloo  WWoorrlldd!!"
+print(double_char("1234!_ ")) # should print "11223344!!__  "
     
