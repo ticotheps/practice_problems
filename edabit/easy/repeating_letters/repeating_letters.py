@@ -17,7 +17,11 @@ Repeating Letters
 
 def double_char(txt):
     # Check for a valid input of string data.
-    
+    print(f"type(txt) = {type(txt)}")
+    if type(txt) == str:
+        return "We have a valid input"
+    else:
+        return "Please enter a valid input of 'str'' data type"
     # Create a var 'newDoubleCharsList' that is set equal to an empty list.
     
     # Create a var 'txtCharsList' that converts the input into a list of chars.
@@ -31,5 +35,7 @@ def double_char(txt):
     # together.
     
     # Return the value of 'newDoubleCharsStr'
+    
+print(double_char("String"))  # should print "SSttrriinngg"
     
     
