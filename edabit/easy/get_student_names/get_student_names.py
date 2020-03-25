@@ -30,6 +30,7 @@ my_dict = {
 }
 
 def get_student_names(students):
-    pass
+    # print(f"students = {students}")
+    return students
 
-print(get_student_names())
+print(get_student_names(my_dict))
