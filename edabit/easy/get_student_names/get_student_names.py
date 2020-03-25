@@ -29,8 +29,17 @@ my_dict = {
     "Student 3" : "Lucy"
 }
 
-def get_student_names(students):
-    # print(f"students = {students}")
-    return students
+# Takes in a dict of students' names and returns an alphabetized list of names
+def get_student_names(students_dict):
+    # new list to return with alphabetized students
+    names_a_to_z_list = []
+    
+    # displays a list of students' names from 'students_dict'
+    students_list = list(students_dict.values())
+    
+    # sorts the list of students' names
+    sorted_students_list = students_list.sort()
+    
+    return(students_list)
 
 print(get_student_names(my_dict))
