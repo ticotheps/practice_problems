@@ -8,7 +8,7 @@ class Test(unittest.TestCase):
         "Student 1" : "Steve",
         "Student 2" : "Becky",
         "Student 3" : "John"
-    }), ["Steve", "Mike", "John"])
+    }), ["Becky", "John", "Steve"])
         
         
 if __name__ == '__main__':

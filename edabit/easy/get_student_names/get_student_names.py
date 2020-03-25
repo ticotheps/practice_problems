@@ -20,7 +20,7 @@ student names in alphabetical order.
         "Student 1" : "Steve",
         "Student 2" : "Becky",
         "Student 3" : "John"
-    }) -> ["Steve", "Mike", "John"]
+    }) -> ["Becky", "John", "Steve"]
 """
 
 my_dict = {
