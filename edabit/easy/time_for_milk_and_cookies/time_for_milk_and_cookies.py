@@ -62,17 +62,19 @@ def time_for_milk_and_cookies(date_dict):
     # print(f"date_items_list = {date_items_list}")
     
     # checks to see if 
-    if '24' in date_items_list:
+    if '12' in date_items_list and '24' in date_items_list:
         return True
     else:
         return False
     
     return date_dict
 
-# my_date1 = datetime.date(2020, 3, 26) # False
-# my_date2 = datetime.date(2020, 3, 24) # True
-# my_date3 = datetime.date(2020, 3, 25) # False
+my_date1 = datetime.date(2020, 3, 26) # False
+my_date2 = datetime.date(1980, 12, 24) # True
+my_date3 = datetime.date(2020, 3, 25) # False
+my_date4 = datetime.date(2020, 12, 24) # True
 
-# print(time_for_milk_and_cookies(my_date1))
-# print(time_for_milk_and_cookies(my_date2))
-# print(time_for_milk_and_cookies(my_date3))
+print(time_for_milk_and_cookies(my_date1))
+print(time_for_milk_and_cookies(my_date2))
+print(time_for_milk_and_cookies(my_date3))
+print(time_for_milk_and_cookies(my_date4))
