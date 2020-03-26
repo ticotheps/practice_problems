@@ -61,7 +61,7 @@ def time_for_milk_and_cookies(date_dict):
     date_items_list = date_str.split('-')
     # print(f"date_items_list = {date_items_list}")
     
-    # checks to see if 
+    # checks to see if the date is has month '12' and day '24' in it
     if '12' in date_items_list and '24' in date_items_list:
         return True
     else:
