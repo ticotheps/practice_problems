@@ -69,10 +69,10 @@ def time_for_milk_and_cookies(date_dict):
     
     return date_dict
 
-my_date1 = datetime.date(2020, 3, 26) # False
-my_date2 = datetime.date(2020, 3, 24) # True
-my_date3 = datetime.date(2020, 3, 25) # False
+# my_date1 = datetime.date(2020, 3, 26) # False
+# my_date2 = datetime.date(2020, 3, 24) # True
+# my_date3 = datetime.date(2020, 3, 25) # False
 
-print(time_for_milk_and_cookies(my_date1))
-print(time_for_milk_and_cookies(my_date2))
-print(time_for_milk_and_cookies(my_date3))
+# print(time_for_milk_and_cookies(my_date1))
+# print(time_for_milk_and_cookies(my_date2))
+# print(time_for_milk_and_cookies(my_date3))
