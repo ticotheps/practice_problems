@@ -1,12 +1,12 @@
 import unittest
-from card_counting import card_couting
+from card_counting import count
 
 class Test(unittest.TestCase):
     
-    def test_card_counting(self):
-        self.asserEqual(card_counting(), "expected outcome")
-        self.asserEqual(card_counting(), "expected outcome")
-        self.asserEqual(card_counting(), "expected outcome")
+    def test_count(self):
+        self.asserEqual(count(), "expected outcome")
+        self.asserEqual(count(), "expected outcome")
+        self.asserEqual(count(), "expected outcome")
 
 if __name__ == '__main__':
     unittest.main()
