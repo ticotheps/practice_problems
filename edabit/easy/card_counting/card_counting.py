@@ -39,3 +39,10 @@ Understand:
         - Example 2: count(["A", "A", "K", "Q", "Q", "J"]) -> -6
         - Example 3: count(["A", 5, 5, 2, 6, 2, 3, 8, 9, 7]) -> 5
 """
+
+def count(cards_list):
+    return cards_list
+
+print(count([5, 9, 10, 3, "J", "A", 4, 8, 5]))
+print(count(["A", "A", "K", "Q", "Q", "J"]))
+print(count(["A", 5, 5, 2, 6, 2, 3, 8, 9, 7]))
