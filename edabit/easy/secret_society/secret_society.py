@@ -20,11 +20,14 @@ Expected Inputs & Outputs:
         - Data Type: string
         - Name: "society_name"
         
-
+Examples:
+    (1) get_society_name(["Adam", "Sarah", "Malcolm"]) ➞ "AMS"
+    (2) get_society_name(["Harry", "Newt", "Luna", "Cho"]) ➞ "CHLN"
+    (3) get_society_name(["Phoebe", "Chandler", "Rachel", "Ross", "Monica", "Joey"]) ➞ "CJMPRR"
         
 """
 
-def create_society_name(friends_list):
+def get_society_name(friends_list):
     pass
 
 print(society_name())

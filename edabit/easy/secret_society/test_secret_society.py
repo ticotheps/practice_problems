@@ -1,9 +1,9 @@
 import unittest
-from secret_society import society_name
+from secret_society import get_society_name
 
 class Test(unittest.TestCase):
     
-    def test_society_name(self):
+    def test_get_society_name(self):
         self.assertEqual()
         self.assertEqual()
         self.assertEqual()
