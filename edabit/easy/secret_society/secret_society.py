@@ -5,6 +5,8 @@ A group of friends have decided to start a secret society. The name of the
 secret society will be the fist letter of each of their names, sorted in
 alphabetical order.
 
+UNDERSTAND PHASE:
+
 Objective:
     - Create a function that takes in a list of friends' names and returns the
     name of their secret society.
