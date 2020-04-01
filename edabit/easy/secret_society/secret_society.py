@@ -8,8 +8,9 @@ alphabetical order.
 UNDERSTAND PHASE:
 
 Objective:
-    - Create a function that takes in a list of friends' names and returns the
-    name of their secret society.
+    - Create a function that takes in a list of friends' names, takes the first
+    letter of each name, sorts them in alphabetical order, and returns the
+    sorted first letters as the name of their secret society.
 
 Expected Inputs & Outputs:
     - Inputs: 
