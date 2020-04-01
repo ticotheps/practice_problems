@@ -32,4 +32,6 @@ Examples:
 def get_society_name(friends_list):
     pass
 
-print(society_name())
+print(get_society_name(["Adam", "Sarah", "Malcolm"]))
+print(get_society_name(["Harry", "Newt", "Luna", "Cho"]))
+print(get_society_name(["Phoebe", "Chandler", "Rachel", "Ross", "Monica", "Joey"]))
