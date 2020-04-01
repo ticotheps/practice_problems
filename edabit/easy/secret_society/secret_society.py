@@ -58,20 +58,15 @@ def get_society_name(friends_list):
     for name in friends_list:
         # Gets access to first character of name
         first_char = name[0]
-        # print(f"first_char = {first_char}")
         
         # Adds that 'first_char' to the 'friends_first_chars_list'
         friends_first_chars_list.append(first_char)
         
-        
-    # print(f"BEFORE sort: {friends_first_chars_list}")
     # Uses the '.sort()' method to sort all of the items in the 
-    # 'friends_first_chars_list' in alphabetical order
+    # 'friends_first_chars_list' in alphabetical order and sets it equal to a
+    # new variable, 'sorted_first_chars_list'
     friends_first_chars_list.sort()
-    # print(f"AFTER sort: {friends_first_chars_list}")
-    
     sorted_first_chars_list = friends_first_chars_list
-    # print(f"sorted_first_chars_list = {sorted_first_chars_list}")
     
     # Uses the '.join()' method to join each of the items in the
     # 'sorted_first_chars_list' and sets that new string equal to
