@@ -60,8 +60,8 @@ def binarySearch(sortedList, target):
     maxIndex = lenOfList - 1
     # print(f"maxIndex = {maxIndex}")
     
-    while minIndex < maxIndex:
-        middleIndex = ((minIndex + maxIndex) // 2) + 1
+    while minIndex <= maxIndex:
+        middleIndex = (minIndex + maxIndex + 1) // 2
         # print(f"middleIndex = {middleIndex}\n")
         
         if target == sortedList[middleIndex]:
