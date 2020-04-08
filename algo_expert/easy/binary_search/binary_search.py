@@ -49,33 +49,45 @@ PLAN PHASE:
 
 def binarySearch(sortedList, target):
     matchingItemIndex = -1
-    print(f"matchingItemIndex = {matchingItemIndex}")
+    # print(f"matchingItemIndex = {matchingItemIndex}")
     
     lenOfList = len(sortedList)
-    print(f"lenOfList = {lenOfList}")
+    # print(f"lenOfList = {lenOfList}")
     
     minIndex = 0
-    print(f"minIndex = {minIndex}")
+    # print(f"minIndex = {minIndex}")
     
     maxIndex = lenOfList - 1
-    print(f"maxIndex = {maxIndex}")
-    
-    middleIndex = (minIndex + maxIndex) // 2
-    print(f"middleIndex = {middleIndex}")
+    # print(f"maxIndex = {maxIndex}")
     
     while minIndex < maxIndex:
-    
+        middleIndex = ((minIndex + maxIndex) // 2) + 1
+        # print(f"middleIndex = {middleIndex}\n")
+        
         if target == sortedList[middleIndex]:
             matchingItemIndex = middleIndex
+            # print(f"WE FOUND A MATCH!")
+            return matchingItemIndex
             
         elif target > sortedList[middleIndex]:
-            minIndex = middleIndex
+            minIndex = middleIndex + 1
+            # print(f"NEW minIndex = {minIndex}")
+            
         else:
+            maxIndex = middleIndex - 1
+            # print(f"NEW maxIndex = {maxIndex}")
     
+    # print(f"No match was found")
     return matchingItemIndex
 
-my_sortedList = [1, 3, 5, 7, 9, 11]
-print(binarySearch(my_sortedList, 3))  # should return 1
+my_sortedList_1 = [1, 3, 5, 7, 9, 11]
+print(binarySearch(my_sortedList_1, 3))  # should return 1
+
+my_sortedList_2 = [1, 3, 5, 7, 9, 11]
+print(binarySearch(my_sortedList_2, 4))  # should return -1
+
+my_sortedList_3 = [1, 3, 5, 7, 9, 11]
+print(binarySearch(my_sortedList_3, 7))  # should return 3
 
 
 """
