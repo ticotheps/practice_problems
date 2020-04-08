@@ -92,5 +92,6 @@ print(binarySearch(my_sortedList_3, 7))  # should return 3
 
 """
 REFLECT/REFACTOR PHASE:
-
+    - Runtime Complexity: O(log n)
+    - Space Complexity: O(1)
 """
