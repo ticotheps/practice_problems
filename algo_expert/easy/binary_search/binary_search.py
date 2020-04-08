@@ -33,19 +33,49 @@ PLAN PHASE:
     
     (6) Create a new variable, "middleIndex", and set it equal an integer that is the average of the "minIndex" and the "maxIndex" indices (rounded to the neareast whole number).
     
-    (7) Use an "if/else" block to compare the "target" input value to the value of "sortedList" at the "middleIndex".
+    (7) Use a "while" loop to continue iterating through the following block of code as long as "minIndex" is less than "maxIndex".
     
-        (8) If the value of "target" is equal to the value of the "sortedList" item at the "middleIndex", then set the value of "matchingItemIndex" equal to the value of "middleIndex".
-    
-        (9) Else if the value of "target" is greater than the value of the "sortedList" item at "middleIndex", set "minIndex" equal to the value of "middleIndex" and find a new "middleIndex" value using the new "minIndex" value and the previous "maxIndex" value.
+        (8) Use an "if/else" block to compare the "target" input value to the value of "sortedList" at the "middleIndex".
         
-        (10) Else if the value of "target" is less than the value of the "sortedList" item at "middleIndex", set "maxIndex" equal to the value of "middleIndex" and find a new "middleIndex" value using the new "maxIndex" value and the previous "minIndex" value. 
+            (9) If the value of "target" is equal to the value of the "sortedList" item at the "middleIndex", then set the value of "matchingItemIndex" equal to the value of "middleIndex".
         
-    (11) Return the value of the "matchingItemIndex".
+            (10) Else if the value of "target" is greater than the value of the "sortedList" item at "middleIndex", set "minIndex" equal to the value of "middleIndex" and find a new "middleIndex" value using the new "minIndex" value and the previous "maxIndex" value.
+            
+            (11) Else if the value of "target" is less than the value of the "sortedList" item at "middleIndex", set "maxIndex" equal to the value of "middleIndex" and find a new "middleIndex" value using the new "maxIndex" value and the previous "minIndex" value. 
+        
+    (12) Return the value of the "matchingItemIndex".
 """
-
 # EXECUTE PHASE:
 
+def binarySearch(sortedList, target):
+    matchingItemIndex = -1
+    print(f"matchingItemIndex = {matchingItemIndex}")
+    
+    lenOfList = len(sortedList)
+    print(f"lenOfList = {lenOfList}")
+    
+    minIndex = 0
+    print(f"minIndex = {minIndex}")
+    
+    maxIndex = lenOfList - 1
+    print(f"maxIndex = {maxIndex}")
+    
+    middleIndex = (minIndex + maxIndex) // 2
+    print(f"middleIndex = {middleIndex}")
+    
+    while minIndex < maxIndex:
+    
+        if target == sortedList[middleIndex]:
+            matchingItemIndex = middleIndex
+            
+        elif target > sortedList[middleIndex]:
+            minIndex = middleIndex
+        else:
+    
+    return matchingItemIndex
+
+my_sortedList = [1, 3, 5, 7, 9, 11]
+print(binarySearch(my_sortedList, 3))  # should return 1
 
 
 """
