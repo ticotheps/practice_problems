@@ -45,10 +45,17 @@ class Node:
         self.children = []
         self.name = name
         
+    def __repr__(self):
+        return f"\nname = {self.name}\nchildren = {self.children}\n";
+        
     def addChild(self, name):
         self.children.append(Node(name))
         return self
     
     def depthFirstSearch(self, array):
         pass
+    
+my_node = Node(3)
+
+print(f"\nmy_node: {my_node}")
     
