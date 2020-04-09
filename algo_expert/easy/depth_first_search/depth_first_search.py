@@ -53,10 +53,11 @@ class Node:
         return self
     
     def depthFirstSearch(self, array):
-        if not self.name:
+        cur_node = self
+        if not cur_node:
             return "No nodes in this graph"
         else:
-            return self
+            return cur_node
             
     
 my_node = Node(3)
