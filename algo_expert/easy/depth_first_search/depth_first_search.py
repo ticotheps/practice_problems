@@ -46,16 +46,23 @@ class Node:
         self.name = name
         
     def __repr__(self):
-        return f"\nname = {self.name}\nchildren = {self.children}\n";
+        return f"{self.name}: {self.children}";
         
     def addChild(self, name):
         self.children.append(Node(name))
         return self
     
     def depthFirstSearch(self, array):
-        pass
+        if not self.name:
+            return "No nodes in this graph"
+        else:
+            return self
+            
     
 my_node = Node(3)
+my_node.addChild(4)
+my_node.addChild(5)
 
-print(f"\nmy_node: {my_node}")
+# print(f"\nmy_node: {my_node}")
+print(my_node.depthFirstSearch([]))
     
