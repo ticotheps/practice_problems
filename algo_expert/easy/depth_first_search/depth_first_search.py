@@ -22,4 +22,33 @@ UNDERSTAND PHASE
       
     - "Depth First Traversal": a method used to visit each node within a tree
       using a 'go deep' before you 'go broad' strategy.
+      
+- Expected Inputs & Outputs:
+    - Inputs:
+        - Number: 1
+        - Data Type: array (Python list)
+        - Name: 'empty_arr'
+        
+    - Outputs:
+        - Number: 1
+        - Data Type: array (Python list)
+        - Name: 'result_arr'
 """
+"""
+PLAN PHASE
+
+"""
+# EXECUTE PHASE
+
+class Node:
+    def __init__(self, name):
+        self.children = []
+        self.name = name
+        
+    def addChild(self, name):
+        self.children.append(Node(name))
+        return self
+    
+    def depthFirstSearch(self, array):
+        pass
+    
