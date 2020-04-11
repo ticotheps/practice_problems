@@ -63,6 +63,7 @@ class Node:
 my_node = Node(3)
 my_node.addChild(4)
 my_node.addChild(5)
+my_node.addChild(14s)
 
 # print(f"\nmy_node: {my_node}")
 print(my_node.depthFirstSearch([]))
