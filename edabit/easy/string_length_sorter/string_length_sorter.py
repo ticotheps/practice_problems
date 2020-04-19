@@ -119,4 +119,14 @@ sort_by_length(["Turing", "Einstein", "Jung"])
 
 """
 REFLECT/REFACTOR PHASE:
+
+Asymptotic Analysis:
+    - Time Complexity: 
+        - O(n log n)
+        - Due to the built-in Python method, 'sorted()', having the most significant
+          run time of each line in the algorithm.
+          
+    - Space Complexity: 
+        - O(n)
+        - Due to the Python dictionary that was created for fast lookup & retrieval.
 """
