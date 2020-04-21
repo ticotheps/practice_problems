@@ -2,7 +2,7 @@
 Sum Of All Evens In A Matrix
 
 Objective
-    - Create a function that returns the sum of all even numbers from a 2D
+    - Create a function that returns the even_sum of all even numbers from a 2D
     matrix.
     
 Examples
@@ -49,7 +49,7 @@ Expected Inputs & Outputs
     Outputs
         - Expected Number: 1
         - Data Type(s): an integer
-        - Name(s): 'sum'
+        - Name(s): 'even_sum'
         
 Constraints
     - Can the input matrix contain negative values?
@@ -60,13 +60,76 @@ Constraints
       elements within them?
         - No. 
     - What happens if the input matrix contains a sub-list that has no elements?
-        - Return 0 if the number of total sub-lists is NOT equal to the number of
-        elements within each sub-list.
+        - Return 0 if the input matrix contains sub-lists with unequal lengths.
+"""
+"""
+PLAN PHASE
+    (1) Create a function that takes in a single parameter, 'num_matrix', and
+        returns a single output, 'even_sum'.
+        
+    (2) Create a variable, 'first_sublist_len', that represent the number of
+        elements within the first element of the 2D matrix.
+    
+    (3) Create a variable, 'even_sum', that represents the running total of 
+        all even numbers within the 'num_matrix' input. Initialize this 
+        'even_sum' variable with a value of 0.
+    
+    (4) Use a 'for' loop to iterate through each list within the 'num_matrix' input.
+
+        (a) Create a variable, 'sublist_len', that represents the length of each
+            iterated on SUBLIST from the 'num_matrix' input list. 
+    
+        (b) If the iterated on element's 'sublist_len' is NOT equal to the
+            'first_sublist_len', returnt the current value of 'even_sum'.
+            
+        (c) If the iterated on element's 'sublist_len' IS equal to the
+            'first_sublist_len', continue to the next code block.
+            
+            (5) Use a nested 'for' loop to iterate through each number in the currently iterated on sub-list.
+                
+                (a) If the number is EVEN, add its value to the 'even_sum' value.
+                
+                (b) If the number is ODD, do nothing.
+                
+    (6) Return the value of 'even_sum'.
 """
 # EXECUTE PHASE
 
+def sum_of_evens(num_matrix):
+    first_sublist_len = len(num_matrix[0])
+    print(f"\nfirst_sublist_len = {first_sublist_len}")
+    
+    even_sum = 0
+    print(f"INITIAL even_sum = {even_sum}\n")
+    
+    for sublist in num_matrix:
+        if len(sublist) != first_sublist_len:
+            return even_sum
+        else:
+            for num in sublist:
+                if num != 0 and num % 2 == 0:
+                    print("\nEVEN NUMBER FOUND!")
+                    print(f"num = {num}")
+                    even_sum += num
+                    print(f"CHANGED even_sum = {even_sum}\n")
+                
+    return even_sum
 
+print(sum_of_evens([
+        [1, 0, 2],
+        [5, 5, 7],
+        [9, 4, 3]
+    ]))
 """
 REFLECT/REFACTOR PHASE
 
+Asymptotic Analysis
+
+    - THE BRUTE FORCE SOLUTION
+        - Run Time Complexity: O(n^2) = "quadratic"
+        - Space Complexity: O(1) = "constant"
+        
+    - THE MEMOIZATION SOLUTION
+        - Run Time Complexity: O(n) = "linear"
+        - Space Complexity: O(n) = "linear"
 """
