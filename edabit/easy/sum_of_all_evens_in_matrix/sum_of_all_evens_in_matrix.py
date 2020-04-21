@@ -114,12 +114,6 @@ def sum_of_evens(num_matrix):
                     print(f"CHANGED even_sum = {even_sum}\n")
                 
     return even_sum
-
-print(sum_of_evens([
-        [1, 0, 2],
-        [5, 5, 7],
-        [9, 4, 3]
-    ]))
 """
 REFLECT/REFACTOR PHASE
 
