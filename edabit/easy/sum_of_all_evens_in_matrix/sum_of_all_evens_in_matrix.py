@@ -32,3 +32,41 @@ Notes
     - Sub-matrices will always be of equal length.
     - Return 0 if the 2D matrix only consists of empty submatrices.
 """
+"""
+UNDERSTAND PHASE
+
+Defining Terms
+    - "2D Matrix": A Python list that contains sub-lists, where the number of
+    individual elements within each sub-list is equal to the total number of
+    lists.
+    
+Expected Inputs & Outputs
+    Inputs
+        - Expected Number: 1
+        - Data Type(s): a Python list (of sub-lists)
+        - Name(s): 'num_matrix'
+        
+    Outputs
+        - Expected Number: 1
+        - Data Type(s): an integer
+        - Name(s): 'sum'
+        
+Constraints
+    - Can the input matrix contain negative values?
+        - Yes.
+    - Can the input matrix contain floating point numbers?
+        - No.
+    - Can the input matrix contain sub-lists that have different numbers of
+      elements within them?
+        - No. 
+    - What happens if the input matrix contains a sub-list that has no elements?
+        - Return 0 if the number of total sub-lists is NOT equal to the number of
+        elements within each sub-list.
+"""
+# EXECUTE PHASE
+
+
+"""
+REFLECT/REFACTOR PHASE
+
+"""
