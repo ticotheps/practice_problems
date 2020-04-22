@@ -23,22 +23,57 @@ Notes:
 """
 ---UNDERSTAND PHASE---
 
+- Define Unknown Terms/Concepts:
+    - All terms are clear and known.
+    
+- Define Expected Inputs & Outputs:
+    - Expected Input(s):
+        - Number: 2
+        - Data Types (respectively):
+            (1) a Python list
+            (2) a Python list
+        - Possible Naming Conventions:
+            (1) 'list_1'
+            (2) 'list_2'
+            
+    - Expected Output(s):
+        - Number: 1
+        - Data Types (respectively):
+            (1) Boolean (`True` or `False`)
+        - Possible Naming Conventions:
+            (1) `check_for_valid_echo`
+            
+- Discuss Constraints:
+    - Will the two lists always be the same length?
+        - Yes.
+    - Can the lists be empty?
+        - No. Each list will have a minimum of 2 elements.
+    - Can the elements of the list NOT be numbers?
+        - Yes.
 
 """
 
+# ---PLAN PHASE + EXECUTE PHASE---
 """
----PLAN PHASE---
+Brute Force Approach:
+    - Use a nested 'for' loop approach to gain simultaneous access to the
+        elements within each list. 
+    - Then, begin checking for matching values, in each list, one-by-one, 
+        beginning the comparison with the zeroith-indexed element of 
+        'list_1' and the first-indexed element of 'list_2', incrementing 
+        the index of each list by 1 until the end of the list has been 
+        reached.
+"""    
 
-
-"""
-
-# ---EXECUTE PHASE---
-def simon_says(list1, list2):
+def simon_says(list_1, list_2):
+    # Create a variable that will signifies whether or not 'list_2' follows
+    #   'list_1' by ONE element.
+    check_for_valid_echo = False
     pass
 
 print(simon_says([1, 2], [5, 1]))  # Should print True
 print(simon_says([1, 2], [5, 5]))  # Should print False
-print(simon_says([1, 2, 3, 4, 5], [0, 1, 2, 3, 4])  # Should print True
+print(simon_says([1, 2, 3, 4, 5], [0, 1, 2, 3, 4]))  # Should print True
 print(simon_says([1, 2, 3, 4, 5], [5, 5, 1, 2, 3]))  # Should print False
 
 """
