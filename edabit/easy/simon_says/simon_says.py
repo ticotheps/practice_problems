@@ -69,7 +69,35 @@ def simon_says(list_1, list_2):
     # Create a variable that will signifies whether or not 'list_2' follows
     #   'list_1' by ONE element.
     check_for_valid_echo = False
-    pass
+    
+    # Create a variable that signifies when the end of 'list_1' has been reached
+    end_of_list_1 = False
+    
+    # Create a variable that signifies when the end of 'list_2' has been reached
+    end_of_list_2 = False
+    
+    # For the comparison, create a starting index for 'list_1'
+    start_index_list_1 = 0
+    
+    # For the comparison, create a starting index for 'list_2'
+    start_index_list_2 = 1
+    
+    # Use a 'while' loop to iterate through the 'list_1' until the end of the
+    #   list has been reached
+    while start_index_list_1 != len(list_1):
+        print(f"list_1[{start_index_list_1}]: {list_1[start_index_list_1]}")
+        
+        # Increment the 'start_index_list_1' by 1
+        start_index_list_1 += 1
+        
+        # Use another 'while' loop to iterate through the 'list_2' until the 
+        # end of the list has been reached
+        while start_index_list_2 != len(list_2):
+            print(f"---list_2[{start_index_list_2}]: {list_2[start_index_list_2]}")
+        
+            # Increment the 'start_index_list_1' by 1
+            start_index_list_2 += 1
+
 
 print(simon_says([1, 2], [5, 1]))  # Should print True
 print(simon_says([1, 2], [5, 5]))  # Should print False
