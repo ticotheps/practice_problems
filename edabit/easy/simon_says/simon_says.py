@@ -93,4 +93,8 @@ print(simon_says([1, 2, 3, 4, 5], [5, 5, 1, 2, 3]))  # Should print False
 
 """
 ---REFLECT & REFACTOR PHASE---
+
+Asymptotic Analysis:
+    - Time Complexity: O(n) => linear
+    - Space Complexity: O(1) => constant
 """
