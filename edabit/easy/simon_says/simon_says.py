@@ -70,39 +70,27 @@ def simon_says(list_1, list_2):
     #   'list_1' by ONE element.
     check_for_valid_echo = False
     
-    # Create a variable that signifies when the end of 'list_1' has been reached
-    end_of_list_1 = False
-    
-    # Create a variable that signifies when the end of 'list_2' has been reached
-    end_of_list_2 = False
-    
-    # For the comparison, create a starting index for 'list_1'
-    start_index_list_1 = 0
-    
-    # For the comparison, create a starting index for 'list_2'
-    start_index_list_2 = 1
-    
-    # Use a 'while' loop to iterate through the 'list_1' until the end of the
-    #   list has been reached
-    while start_index_list_1 != len(list_1):
-        print(f"list_1[{start_index_list_1}]: {list_1[start_index_list_1]}")
+    # Use a 'for' loop to iterate through 'list_1', starting at the zeroith-index
+    for i in range(0, len(list_1)-1):
         
-        # Increment the 'start_index_list_1' by 1
-        start_index_list_1 += 1
-        
-        # Use another 'while' loop to iterate through the 'list_2' until the 
-        # end of the list has been reached
-        while start_index_list_2 != len(list_2):
-            print(f"---list_2[{start_index_list_2}]: {list_2[start_index_list_2]}")
-        
-            # Increment the 'start_index_list_1' by 1
-            start_index_list_2 += 1
+        # Use another 'for' loop to iterate through 'list_2', starting at the
+        #   first-index
+        for j in range(1, len(list_2)):
+            num_1 = list_1[i]
+            print(f"num_1: {list_1[num_1]}")
+            
+            num_2 = list_2[j]
+            print(f"num_2: {list_2[num_2]}")
+            
+            if num_1 == num_2:
+                check_for_valid_echo = True
 
-
+    return check_for_valid_echo
+    
 print(simon_says([1, 2], [5, 1]))  # Should print True
-print(simon_says([1, 2], [5, 5]))  # Should print False
-print(simon_says([1, 2, 3, 4, 5], [0, 1, 2, 3, 4]))  # Should print True
-print(simon_says([1, 2, 3, 4, 5], [5, 5, 1, 2, 3]))  # Should print False
+# print(simon_says([1, 2], [5, 5]))  # Should print False
+# print(simon_says([1, 2, 3, 4, 5], [0, 1, 2, 3, 4]))  # Should print True
+# print(simon_says([1, 2, 3, 4, 5], [5, 5, 1, 2, 3]))  # Should print False
 
 """
 ---REFLECT & REFACTOR PHASE---
