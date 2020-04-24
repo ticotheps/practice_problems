@@ -68,29 +68,28 @@ Brute Force Approach:
 def simon_says(list_1, list_2):
     # Create a variable that will signifies whether or not 'list_2' follows
     #   'list_1' by ONE element.
-    check_for_valid_echo = False
+    check_for_valid_echo = True
     
     # Use a 'for' loop to iterate through 'list_1', starting at the zeroith-index
     for i in range(0, len(list_1)-1):
+        num_1 = list_1[i]
+        print(f"\nnum_1: {num_1}")
         
-        # Use another 'for' loop to iterate through 'list_2', starting at the
-        #   first-index
-        for j in range(1, len(list_2)):
-            num_1 = list_1[i]
-            print(f"num_1: {list_1[num_1]}")
+        num_2 = list_2[i+1]
+        print(f"num_2: {num_2}")
             
-            num_2 = list_2[j]
-            print(f"num_2: {list_2[num_2]}")
+        if num_1 != num_2:
+            check_for_valid_echo = False
+            print("NOT a valid echo for one another")
+            return check_for_valid_echo
             
-            if num_1 == num_2:
-                check_for_valid_echo = True
-
+    print("\nThese lists WERE a valid echo of one another")
     return check_for_valid_echo
     
 print(simon_says([1, 2], [5, 1]))  # Should print True
-# print(simon_says([1, 2], [5, 5]))  # Should print False
-# print(simon_says([1, 2, 3, 4, 5], [0, 1, 2, 3, 4]))  # Should print True
-# print(simon_says([1, 2, 3, 4, 5], [5, 5, 1, 2, 3]))  # Should print False
+print(simon_says([1, 2], [5, 5]))  # Should print False
+print(simon_says([1, 2, 3, 4, 5], [0, 1, 2, 3, 4]))  # Should print True
+print(simon_says([1, 2, 3, 4, 5], [5, 5, 1, 2, 3]))  # Should print False
 
 """
 ---REFLECT & REFACTOR PHASE---
