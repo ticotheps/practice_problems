@@ -63,6 +63,9 @@ Brute Force Approach:
         'list_1' and the first-indexed element of 'list_2', incrementing 
         the index of each list by 1 until the end of the list has been 
         reached.
+        
+Optimized Approach:
+    -
 """    
 
 def simon_says(list_1, list_2):
