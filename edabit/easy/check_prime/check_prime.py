@@ -110,5 +110,9 @@ print(check_prime(11)) # should print True
 """
 REFLECT/REFACTOR PHASE:
 
-
+Asymptotic Analysis:
+    - Time Complexity: 
+        - O(n) -> lineaer
+    - Space Complexity:
+        - O(1) -> constant
 """
