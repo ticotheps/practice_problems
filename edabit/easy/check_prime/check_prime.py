@@ -17,7 +17,31 @@ Notes:
 
 """
 UNDERSTAND PHASE:
-
+    
+Defining Terms:
+    - "prime":
+    - A number greater than 1 that has no other positive divisors other than 1
+        and itself.
+        - i.e. - 2, 3, 5, 7, 11, etc.
+        
+Expected Inputs & Outputs:
+    - Inputs:
+        - Number of Inputs: 1
+        - Input Type: integer
+        - Input Name: 'num'
+        
+    - Outputs:
+        - Number of Outputs: 1
+        - Input Type: Boolean
+        - Input Name: 'is_prime'  
+        
+Constraints:
+    - Can the input be negative?
+        - No.
+    - Can the input be a floating point number?
+        - No.
+    - Can the input be 1?
+        - No.
 """
 
 # PLAN & EXECUTE PHASES:
