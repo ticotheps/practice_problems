@@ -65,7 +65,7 @@ Brute Force Approach:
         reached.
         
 Optimized Approach:
-    -
+    - O(n) time complexity does not require optimization.
 """    
 
 def simon_says(list_1, list_2):
