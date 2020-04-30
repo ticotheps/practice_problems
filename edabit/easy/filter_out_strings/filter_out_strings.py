@@ -70,4 +70,9 @@ print(filter_out_strings([1, 2, "aasf", "1", "123", 123])) # should print [1, 2,
 """
 REFLECT/REFACTOR PHASE
 
+Asymptotic Analysis
+    - Time Complexity:
+        - O(n) -> "linear"
+    - Space Complexity:
+        - O(1) -> "constant"
 """
