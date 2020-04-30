@@ -46,30 +46,12 @@ Constraints:
 def filter_out_strings(input_list):
     if len(input_list) < 1:
         return "Invalid input. Please try a list with at least one element."
-    
-    # Initialize a var with an empty list to be returned as the output
     filtered_list = []
-    print(f"\nfiltered_list = {filtered_list}")
-    
-    # Iterate through the 'input_list'
     for element in input_list:
-        print(f"element = {element}")
-        
-        # Create a var that stores the type of each iterated element
         element_type = type(element)
-        print(f"element_type of {element} = {element_type}")
-        
-        # If 'element_type' is NOT of type 'str', append it to the 
-        #   'filtered_list'.
         if element_type != str:
             filtered_list.append(element)
-    
     return filtered_list
-
-print(filter_out_strings([])) # should print "Invalid input. Please try a list with at least one element."
-print(filter_out_strings([1, 2, "a", "b"])) # should print [1, 2]
-print(filter_out_strings([1, "a", "b", 0, 15])) # should print [1, 0, 15]
-print(filter_out_strings([1, 2, "aasf", "1", "123", 123])) # should print [1, 2, 123]
 
 """
 REFLECT/REFACTOR PHASE
