@@ -17,7 +17,28 @@ Notes:
 """
 UNDERSTAND PHASE
 
+Defining Terms:
+    - "non-negative integers": positive whole numbers
 
+Expected Inputs & Outputs:
+    - Inputs:
+        - Expected Number: 1
+        - Expected Data Type: list
+        - Expected Variable Name: 'input_list'
+        
+    - Outputs:
+        - Expected Number: 1
+        - Expected Data Type: list
+        - Expected Variable Name: 'filtered_list'
+
+Constraints:
+    - Can the 'input_list' variable be an empty list?
+        - Yes. If this is the case, return a string that says, "Please enter a
+            valid input and try again".
+    - Can the elements of the 'input_list' variable be floating point numbers?
+        - No.
+    - Can the elements of the 'input_list' variable be negative numbers?
+        - No.
 """
 
 # PLAN + EXECUTE PHASES
