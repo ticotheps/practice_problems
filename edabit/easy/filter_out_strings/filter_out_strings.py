@@ -44,6 +44,9 @@ Constraints:
 # PLAN PHASE + EXECUTE PHASE
 
 def filter_out_strings(input_list):
+    if len(input_list) < 1:
+        return "Invalid input. Please try a list with at least one element."
+    
     # Initialize a var with an empty list to be returned as the output
     filtered_list = []
     print(f"\nfiltered_list = {filtered_list}")
@@ -63,6 +66,7 @@ def filter_out_strings(input_list):
     
     return filtered_list
 
+print(filter_out_strings([])) # should print "Invalid input. Please try a list with at least one element."
 print(filter_out_strings([1, 2, "a", "b"])) # should print [1, 2]
 print(filter_out_strings([1, "a", "b", 0, 15])) # should print [1, 0, 15]
 print(filter_out_strings([1, 2, "aasf", "1", "123", 123])) # should print [1, 2, 123]
