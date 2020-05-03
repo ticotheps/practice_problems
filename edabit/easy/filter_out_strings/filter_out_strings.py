@@ -55,7 +55,6 @@ def filter_out_strings(input_list):
 
 """
 REFLECT/REFACTOR PHASE
-
 Asymptotic Analysis
     - Time Complexity:
         - O(n) -> "linear"
