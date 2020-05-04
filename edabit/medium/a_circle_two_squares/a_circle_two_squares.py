@@ -16,3 +16,31 @@ Examples:
 Notes:
     - Use only positive integer parameters.
 """
+
+"""
+UNDERSTAND PHASE
+
+Defining Terms:
+    - "circumcircle": a circle that passes through each of the smaller square's
+        four corners.
+    - "incircle": a circle that passes through each of the larger's squares's
+        four sides.
+        
+Expected Inputs/Outputs:
+    - Inputs:
+        - Number: 1
+        - Data Type: integer
+        - Variable Name: 'radius_of_circle'
+    - Outputs:
+        - Number: 1
+        - Data Type: integer
+        - Variable Name: 'area_of_inner_square'
+        
+Constraints:
+    - Can the input be negative?
+        - No.
+    - Can the input be a floating point number?
+        - No.
+    - Can the input be empty?
+        - No.
+"""
