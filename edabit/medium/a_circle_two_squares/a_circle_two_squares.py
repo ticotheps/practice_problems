@@ -9,9 +9,9 @@ Objective:
     the square area of the square inside the circle.add()
 
 Examples:
-    - square_areas_difference(5) -> 50
-    - square_areas_difference(6) -> 72
-    - square_areas_difference(7) -> 98
+    - find_area_of_inner_square(5) -> 50
+    - find_area_of_inner_square(6) -> 72
+    - find_area_of_inner_square(7) -> 98
     
 Notes:
     - Use only positive integer parameters.
@@ -49,7 +49,7 @@ Constraints:
 
 import math
 
-def square_areas_difference(radius_of_circle):
+def find_area_of_inner_square(radius_of_circle):
     
     # Declare a variable to store the length of one side of the outer square
     #   in relation to the given input.
@@ -70,6 +70,6 @@ def square_areas_difference(radius_of_circle):
      
     return area_of_inner_square
 
-print(square_areas_difference(5))  # 50
-print(square_areas_difference(6))  # 72
-print(square_areas_difference(7))  # 98
+print(find_area_of_inner_square(5))  # 50
+print(find_area_of_inner_square(6))  # 72
+print(find_area_of_inner_square(7))  # 98
