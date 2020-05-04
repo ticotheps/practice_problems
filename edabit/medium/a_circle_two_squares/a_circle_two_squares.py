@@ -50,30 +50,15 @@ Constraints:
 import math
 
 def find_area_of_inner_square(radius_of_circle):
-    
-    # Declare a variable to store the length of one side of the outer square
-    #   in relation to the given input.
     side_of_outer_square = radius_of_circle * 2
-    print(f"side_of_outer_square = {side_of_outer_square}")
     
-    # Declare a variable to store the area of the outer square
     area_of_outer_square = side_of_outer_square ** 2
-    print(f"area_of_outer_square = {area_of_outer_square}")
     
-    # Declare a variable to store the length of one side of the inner square
     side_of_inner_square = math.sqrt(side_of_outer_square ** 2 / 2)
-    print(f"side_of_inner_square = {side_of_inner_square}")
     
-    # Declare a variable to store the area of the inner square to be returned
-    #   and make sure that it is rounded to the nearest integer.
     area_of_inner_square = round(side_of_inner_square ** 2)
      
     return area_of_inner_square
-
-print(find_area_of_inner_square(5))  # 50
-print(find_area_of_inner_square(6))  # 72
-print(find_area_of_inner_square(7))  # 98
-
 """
 REFLECT/REFACTOR PHASE
 
