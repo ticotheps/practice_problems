@@ -73,3 +73,13 @@ def find_area_of_inner_square(radius_of_circle):
 print(find_area_of_inner_square(5))  # 50
 print(find_area_of_inner_square(6))  # 72
 print(find_area_of_inner_square(7))  # 98
+
+"""
+REFLECT/REFACTOR PHASE
+
+Asymptotic Analysis:
+    - Time Complexity:
+        - O(1) -> "constant"
+    - Space Complexity:
+        - O(1) -> "constant"
+"""
