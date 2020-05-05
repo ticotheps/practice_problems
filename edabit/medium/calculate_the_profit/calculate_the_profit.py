@@ -73,24 +73,6 @@ def calculate_the_profit(sales_info):
     
     return profit
 
-print(calculate_the_profit({
-        "cost_price": 32.67,
-        "sell_price": 45.00,
-        "inventory": 1200,
-    }))  # Should print 14796
-
-print(calculate_the_profit({
-        "cost_price": 225.89,
-        "sell_price": 550.00,
-        "inventory": 100,
-    }))  # Should print 32411
-
-print(calculate_the_profit({
-        "cost_price": 2.77,
-        "sell_price": 7.95,
-        "inventory": 8500,
-    }))  # Should print 44030
-
 """
 REFLECT/REFACTOR PHASE
 
