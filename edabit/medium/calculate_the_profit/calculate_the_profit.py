@@ -90,3 +90,13 @@ print(calculate_the_profit({
         "sell_price": 7.95,
         "inventory": 8500,
     }))  # Should print 44030
+
+"""
+REFLECT/REFACTOR PHASE
+
+Asymptotic Analysis:
+    - Time Complexity:
+        - O(1) -> "constant"
+    - Space Complexity:
+        - O(1) -> "constant"
+"""
