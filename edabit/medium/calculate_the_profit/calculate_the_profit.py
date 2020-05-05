@@ -57,3 +57,36 @@ Constraints:
     - Can the input be empty?
         - No.
 """
+
+# PLAN PHASE + EXECUTION PHASE
+
+def calculate_the_profit(sales_info):
+    # Create a var that will store the total cost of the inventory
+    total_cost = sales_info["cost_price"] * sales_info["inventory"]
+    
+    # Create a var that will store the total sales from the inventory
+    total_sales = sales_info["sell_price"] * sales_info["inventory"]
+    
+    # Calculate the total profit from the given total sales and the total cost
+    #   of inventory, rounded to the nearest dollar.
+    profit = round(total_sales - total_cost)
+    
+    return profit
+
+print(calculate_the_profit({
+        "cost_price": 32.67,
+        "sell_price": 45.00,
+        "inventory": 1200,
+    }))  # Should print 14796
+
+print(calculate_the_profit({
+        "cost_price": 225.89,
+        "sell_price": 550.00,
+        "inventory": 100,
+    }))  # Should print 32411
+
+print(calculate_the_profit({
+        "cost_price": 2.77,
+        "sell_price": 7.95,
+        "inventory": 8500,
+    }))  # Should print 44030
