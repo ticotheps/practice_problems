@@ -34,3 +34,9 @@ Examples:
 Notes:
     - Profit = Total Sales - Total Cost
 """
+
+"""
+UNDERSTAND PHASE
+
+
+"""
