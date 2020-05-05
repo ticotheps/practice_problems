@@ -6,11 +6,6 @@ made on the sales of product. You are given a dictionary containing the cost
 price per unit (in dollars), the sell price per unit (in dollars), and the
 starting inventory. Return the total profit made, rounded to the nearest dollar.
 Assume all inventory has been sold.
-
-Objective:
-    - Write an algorithm that will take in a single Python dictionary and
-        return a single integer, representing the number of dollars made in
-        profit.
         
 Examples:
     - calculate_the_profit({
@@ -38,5 +33,27 @@ Notes:
 """
 UNDERSTAND PHASE
 
-
+Objective:
+    - Write an algorithm that will take in a single Python dictionary and
+        return a single integer, which will represent the number of dollars 
+        made in profit after all the inventory has been sold.
+        
+Expected Inputs & Outputs:
+    - Inputs:
+        - Number: 1
+        - Data Type: Python dictionary
+        - Variable Name: 'sales_info'
+    - Outputs:
+        - Number: 1
+        - Data Type: integer
+        - Variable Name: 'total_profit'
+        
+Constraints:
+    - Can the input contain negative values?
+        - No, because anything but positive values in the input will denote a loss,
+            not a gain.
+    - Can the input contain floating point values?
+        - Yes, they currently do.
+    - Can the input be empty?
+        - No.
 """
