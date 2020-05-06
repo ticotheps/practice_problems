@@ -23,3 +23,30 @@ Hints:
     - Optimal Space & Time Complexity: O(n) time | O(1) space - where n is the
         length of the input array.
 """
+
+"""
+UNDERSTAND PHASE
+
+Objective:
+    - Write an algorithm that takes in a [Python] list of integers and returns a
+        list of the three largest numbers from the input array, in ascending order.
+        
+Expected Inputs & Outputs:
+    - Inputs:
+        - Number: 1
+        - Data Type: list
+        - Variable Name: 'input_array'
+        
+    - Outputs:
+        - Number: 1
+        - Data Type: list
+        - Variable Name: 'three_largest_array'
+        
+Constraints:
+    - Can the input include negative integers?
+        - Yes.
+    - Can the input include floating point numbers?
+        - No.
+    - Can the input be empty?
+        - No.
+"""
