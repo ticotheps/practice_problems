@@ -40,7 +40,7 @@ Expected Inputs & Outputs:
     - Outputs:
         - Number: 1
         - Data Type: list
-        - Variable Name: 'three_largest_array'
+        - Variable Name: 'largest_three_nums_array'
         
 Constraints:
     - Can the input include negative integers?
@@ -50,3 +50,35 @@ Constraints:
     - Can the input be empty?
         - No.
 """
+
+# PLAN PHASE & EXECUTE PHASE
+
+def find_three_largest_numbers(input_array):
+    # Declare a var that will store the current three largest values from the 
+    #   input list, in ascending order.
+    largest_three_nums_array = []
+    print(f"INITIAL largest_three_nums_array = {largest_three_nums_array}")
+    
+    # Use a 'for' loop to iterate through the 'input_array'.
+    for num1 in input_array:
+        print(f"num1 = {num1}")
+        
+        if len(largest_three_nums_array) >= 3:
+            # Return the value of the 'largest_three_nums_array'.
+            return largest_three_nums_array
+        elif len(largest_three_nums_array) < 3 and len(largest_three_nums_array) > 0:
+            for num2 in largest_three_nums_array:
+                print(f"---num2 = {num2}")
+        else:
+            # Append 'num1' value to 'largest_three_nums_array'.
+            largest_three_nums_array.append(num1)
+            print(f"UPDATED largest_three_nums_array = {largest_three_nums_array}")
+            
+            
+    
+    # Return the value of the 'largest_three_nums_array'.
+    return largest_three_nums_array
+
+print(find_three_largest_numbers([0, 5, 1, 4, 2, 3]))
+# print(find_three_largest_numbers([20, 39, 2, 412, 32, 232]))
+# print(find_three_largest_numbers([0, -5, 1, 14, 22, -3]))
