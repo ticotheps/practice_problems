@@ -1,5 +1,5 @@
 """
-FIND THREE LARGEST NUMBERS
+FIND THE THREE LARGEST NUMBERS
 
 Write a function that takes in an array of integers and, without sorting the
 input array, returns a sorted array of the three largest integers in the input
