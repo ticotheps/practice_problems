@@ -19,13 +19,64 @@ Examples:
     
 Notes:
     - This is meant to illustrate the dangers of using already-existing function
-        names.
+    names.
     - Extra points if you can de-drunk Python.
 """
 
 """
 PHASE I: UNDERSTAND THE PROBLEM
 
-Objective:
-    -
+Objectives:
+    - Create two new algorithms that will substitute for the built-in Python functions 'str()'
+    and 'int()'. 
+    - The 'int_to_str()' function will take in a single input, 'num_int',
+    and will return a single output, 'num_str'.
+    - The 'str_to_int()' function will take in a single input, 'num_str', and
+    will return a single output, 'num_int'.
+    
+Expected Inputs & Outputs:
+    - The 'int_to_str()' function:
+        - Expected Inputs:
+            - Number: 1
+            - Data Type: integer
+            - Var Name: 'num_int'
+
+        - Expected Outputs:
+            - Number: 1
+            - Data Type: string
+            - Var Name: 'num_str'
+
+    - The 'str_to_int()' function:
+        - Expected Inputs: 1
+            - Number: 1
+            - Data Type: string
+            - Var Name: 'num_str'
+
+        - Expected Outputs:
+            - Number: 1
+            - Data Type: integer
+            - Var Name: 'num_int'
+            
+Constraints:
+    - The 'int_to_str()' function:
+        - Can the input be: 
+            - negative?
+                - Yes.
+            - a floating point number?
+                - No.
+                - Must be a whole number.
+            - empty?
+                - No. 
+                - Input must exist.
+
+    - The 'str_to_int()' function:
+        - Can the input be: 
+            - negative?
+                - Yes.
+            - a floating point number?
+                - No.
+                - Must be a whole number.
+            - empty?
+                - No. 
+                - Input must exist.
 """
