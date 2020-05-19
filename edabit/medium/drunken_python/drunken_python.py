@@ -82,7 +82,7 @@ Constraints:
 """
 
 # PHASE II (DEVISE A PLAN)
-# PHASE III (IMPLEMENT THE PLAN)
+# PHASE III (EXECUTE THE PLAN)
 
 def int_to_str(num_int):
     # Initiate a var to be returned as the output (of 'str' data type).
@@ -122,4 +122,5 @@ print(str_to_int('0.4')) # -> 'Please enter a valid input'
 
 """
 PHASE IV (REFLECT ON & REFACTOR THE PLAN + THE IMPLEMENTATION)
+
 """
