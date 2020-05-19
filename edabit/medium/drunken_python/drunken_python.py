@@ -123,4 +123,11 @@ print(str_to_int('0.4')) # -> 'Please enter a valid input'
 """
 PHASE IV (REFLECT ON & REFACTOR THE PLAN + THE IMPLEMENTATION)
 
+FIRST PASS SOLUTION:
+
+    Asymptotic Analysis:
+        - Time Complexity:
+            - O(1) -> constant time
+        - Space Complexity:
+            - O(1) -> constant space
 """
