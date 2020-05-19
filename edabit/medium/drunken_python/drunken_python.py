@@ -85,40 +85,20 @@ Constraints:
 # PHASE III (EXECUTE THE PLAN)
 
 def int_to_str(num_int):
-    # Initiate a var to be returned as the output (of 'str' data type).
     num_str = f"{num_int}"
     
-    # Check for valid input
-    # If input is invalid, provide an explanation as to why it is invalid.
     if type(num_int) != int:
         return """Please enter a whole number for the 'num_int' input instead of a floating point number"""
-    
-    # If input is valid, return the converted input (of 'str' data type).
     else:
-        # print(f"type(num_str) = {type(num_str)}")
         return num_str
 
 def str_to_int(num_str):
-    # Check for valid input
-    # If input is valid, return the converted input (of 'int' data type).
     try:
         num_int = int(num_str)
-        # print(f"type(num_int) = {type(num_int)}")
         return num_int
-    
-    # If input is invalid, provide an explanation as to why it is invalid.
     except:
         num_float = float(num_str)
-        # print(f"type(num_float) = {type(num_float)}")
         return """Please enter a string with a whole number value for the 'num_str' input instead of a string with a floating point number value inside of it"""
-
-print(int_to_str(4)) # -> '4'
-print(int_to_str(-4)) # -> '-4'
-print(int_to_str(0.4)) # -> 'Please enter a valid input'
-
-print(str_to_int('4')) # -> 4
-print(str_to_int('-4')) # -> -4
-print(str_to_int('0.4')) # -> 'Please enter a valid input'
 
 """
 PHASE IV (REFLECT ON & REFACTOR THE PLAN + THE IMPLEMENTATION)
