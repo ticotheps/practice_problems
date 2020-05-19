@@ -84,21 +84,13 @@ Constraints:
 # PHASE II (DEVISE A PLAN)
 # PHASE III (EXECUTE THE PLAN)
 
-def int_to_str(num_int):
-    num_str = f"{num_int}"
-    
-    if type(num_int) != int:
-        return """Please enter a whole number for the 'num_int' input instead of a floating point number"""
-    else:
-        return num_str
+str, int = int, str
 
-def str_to_int(num_str):
-    try:
-        num_int = int(num_str)
-        return num_int
-    except:
-        num_float = float(num_str)
-        return """Please enter a string with a whole number value for the 'num_str' input instead of a string with a floating point number value inside of it"""
+def int_to_str(n):
+	return str(n)
+
+def str_to_int(s):
+	return int(s)
 
 """
 PHASE IV (REFLECT ON & REFACTOR THE PLAN + THE IMPLEMENTATION)
