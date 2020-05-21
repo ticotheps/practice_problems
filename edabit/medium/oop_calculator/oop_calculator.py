@@ -16,7 +16,7 @@ Examples:
 """
 
 class Calculator:
-    def __init__(self, name):
+    def __init__(self, name='calculator'):
         self.name = name
     
     def __str__(self):
