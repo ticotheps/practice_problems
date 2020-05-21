@@ -9,10 +9,10 @@ class Test(unittest.TestCase):
         self.assertEqual(calculator.add(10, -5), 5)
         self.assertEqual(calculator.add(-10, -5), -15)
 
-    # def test_subtract(self):
-    #     self.assertEqual(subtract(2,1), 1)
-    #     self.assertEqual(subtract(2,-1), 3)
-    #     self.assertEqual(subtract(-2,1), -3)
+    def test_subtract(self):
+        self.assertEqual(calculator.subtract(10, 5), 5)
+        self.assertEqual(calculator.subtract(10, -5), 15)
+        self.assertEqual(calculator.subtract(-10, -5), -5)
 
     # def test_multiply(self):
     #     self.assertEqual(multiply(2,3), 6)
