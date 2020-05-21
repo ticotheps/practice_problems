@@ -41,3 +41,9 @@ print(calc.add(10, 5))  # should be 3
 print(calc.subtract(10, 5))  # should be 5
 print(calc.multiply(10, 5))  # should be 50
 print(calc.divide(10, 5))  # should be 2
+
+"""
+ASYMPTOTIC ANALYSIS
+    - Time Complexity: O(1)
+    - Space Complexity: O(1)
+"""
