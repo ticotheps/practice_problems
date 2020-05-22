@@ -77,3 +77,13 @@ def get_shared_letters(str_1, str_2):
 print(get_shared_letters('apple', 'meaty'))  # should print 2
 print(get_shared_letters('fan', 'forsook'))  # should print 1
 print(get_shared_letters('spout', 'shout'))  # should print 4
+
+"""
+PHASE IV - REFLECT/REFACTOR
+
+Asymptotic Analysis:
+    - Time Complexity:
+        - O(n) -> 'linear'
+    - Space Complexity:
+        - O(n) -> 'linear'
+"""
