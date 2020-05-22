@@ -1,4 +1,5 @@
 import unittest
+from shared_letters import get_shared_letters
 
 class Test(unittest.TestCase):
     def test_get_shared_letters(self):
