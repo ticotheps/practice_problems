@@ -55,7 +55,7 @@ PHASE II - DEVISING A PLAN
             (4) Evaluate for any items in the 'input_list' that are identical matches
             with the 'input_element'.
             
-            (5) If an iterated-on element matches the 'input_element', add the associated enumerated value to the var declared in step 2.
+            (5) If an iterated-on element matches the 'input_element', append the associated enumerated value to the var declared in step 2.
         
         (6) Return the var declared in step 2.
 
@@ -63,3 +63,22 @@ PHASE III - EXECUTING THE PLAN (PLEASE SEE BELOW)
 
 PHASE IV - REFLECTING ON/REFACTORING THE PLAN
 """
+
+def get_indices(input_list, input_element):
+    indices_list = []
+    # print(f"INITIAL indices_list = {indices_list}")
+    
+    for index, item in enumerate(input_list):
+        # print(f"index = {index}")
+        # print(f"item = {item}")
+        
+        if item == input_element:
+            indices_list.append(index)
+            # print(f"UPDATED indices_list = {indices_list}")
+            
+    return indices_list
+
+print(get_indices(['a', 'a', 'b', 'a', 'b', 'a'], 'a'))     # [0, 1, 3, 5]
+print(get_indices([1, 5, 5, 2, 7], 7))                      # [4]
+print(get_indices([1, 5, 5, 2, 7], 5))                      # [1, 2]
+print(get_indices([1, 5, 5, 2, 7], 8))                      # []
