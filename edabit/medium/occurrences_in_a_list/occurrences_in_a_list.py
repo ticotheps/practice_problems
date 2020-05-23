@@ -62,6 +62,12 @@ PHASE II - DEVISING A PLAN
 PHASE III - EXECUTING THE PLAN (PLEASE SEE BELOW)
 
 PHASE IV - REFLECTING ON/REFACTORING THE PLAN
+    - Asymptotic Analysis:
+        - First-Pass Solution:
+            - Time Complexity:
+                - O(n) -> 'linear'
+            - Space Complexity:
+                - O(1) -> 'constant'
 """
 
 def get_indices(input_list, input_element):
