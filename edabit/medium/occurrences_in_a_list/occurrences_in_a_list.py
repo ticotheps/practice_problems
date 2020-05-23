@@ -72,19 +72,7 @@ PHASE IV - REFLECTING ON/REFACTORING THE PLAN
 
 def get_indices(input_list, input_element):
     indices_list = []
-    # print(f"INITIAL indices_list = {indices_list}")
-    
     for index, item in enumerate(input_list):
-        # print(f"index = {index}")
-        # print(f"item = {item}")
-        
         if item == input_element:
-            indices_list.append(index)
-            # print(f"UPDATED indices_list = {indices_list}")
-            
+            indices_list.append(index)    
     return indices_list
-
-print(get_indices(['a', 'a', 'b', 'a', 'b', 'a'], 'a'))     # [0, 1, 3, 5]
-print(get_indices([1, 5, 5, 2, 7], 7))                      # [4]
-print(get_indices([1, 5, 5, 2, 7], 5))                      # [1, 2]
-print(get_indices([1, 5, 5, 2, 7], 8))                      # []
