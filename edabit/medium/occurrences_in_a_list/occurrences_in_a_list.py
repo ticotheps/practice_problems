@@ -32,10 +32,34 @@ PHASE I - UNDERSTANDING THE PROBLEM
         - Number: 1
         - Data Types: list
         - Var Name: 'indices_list'
+        
+    - Constraints:
+        - Can the elements be negative numbers?
+            - Yes.
+        - Can the elements be empty strings?
+            - No.
+            - Must be alpha-numeric characters.
+        - Can the elements be floating point numbers?
+            - No.
+            - Must be whole integers
 
 PHASE II - DEVISING A PLAN
+    - First-Pass Solution:
+        (1) Define a function that takes in 2 params and returns 1 output.
+        
+        (2) Declare a var to represent the output. Initialize it with '[]'.
+        
+        (3) Use a 'for' loop to iterate over an enumerated version of the
+        'input_list'.
+        
+            (4) Evaluate for any items in the 'input_list' that are identical matches
+            with the 'input_element'.
+            
+            (5) If an iterated-on element matches the 'input_element', add the associated enumerated value to the var declared in step 2.
+        
+        (6) Return the var declared in step 2.
 
-PHASE III - EXECUTING THE PLAN
+PHASE III - EXECUTING THE PLAN (PLEASE SEE BELOW)
 
 PHASE IV - REFLECTING ON/REFACTORING THE PLAN
 """
