@@ -62,10 +62,9 @@ PHASE IV: REFLECT ON/REFACTOR THE PLAN
 
 def get_combinations(*args):
     num_of_combinations = 1
-    # print(f"INITIAL num_of_combinations = {num_of_combinations}")
-    
     for item in args:
+        if item == 0:
+            item = 1
         num_of_combinations *= item
-        # print(f"UPDATED num_of_combinations = {num_of_combinations}")
         
     return num_of_combinations
