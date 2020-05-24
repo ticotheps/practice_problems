@@ -49,6 +49,15 @@ PHASE II: DEVISING A PLAN
 PHASE III: EXECUTING THE PLAN (PLEASE SEE BELOW)
 
 PHASE IV: REFLECT ON/REFACTOR THE PLAN
+
+- Asymptotic Analysis:
+    - Time Complexity:
+        - O(n) -> 'linear'
+        - Due to 'for' loop iterating through each arg.
+    - Space Complexity:
+        - O(1) -> 'constant'
+        - No other memory outside of the given inputs is required to solve the
+          problem.
 """
 
 def get_combinations(*args):
