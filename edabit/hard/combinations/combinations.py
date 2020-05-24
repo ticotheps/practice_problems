@@ -65,6 +65,7 @@ def get_combinations(*args):
     for item in args:
         if item == 0:
             item = 1
+
         num_of_combinations *= item
         
     return num_of_combinations
