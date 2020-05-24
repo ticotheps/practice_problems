@@ -36,8 +36,27 @@ PHASE I: UNDERSTANDING THE PROBLEM
     - Can the inputs be empty strings?
         - No, the inputs MUST be positive integers.
         
-    
 PHASE II: DEVISING A PLAN
-PHASE III: EXECUTING THE PLAN
+
+- Brute Force Solution:
+    (1) Define a function that can take in any number of arguments (i.e. - *args).
+    (2) Declare a var that will be returned as our output.
+    (3) Iterate over all the arguments in *args using a 'for' loop.
+    (4) Multiply the value of 'num_of_combinations' by each argument to get the
+    total number of possible combinations (where order doesn't matter). 
+    (5) Return the value of the var declared in step 2.
+
+PHASE III: EXECUTING THE PLAN (PLEASE SEE BELOW)
+
 PHASE IV: REFLECT ON/REFACTOR THE PLAN
 """
+
+def get_combinations(*args):
+    num_of_combinations = 1
+    # print(f"INITIAL num_of_combinations = {num_of_combinations}")
+    
+    for item in args:
+        num_of_combinations *= item
+        # print(f"UPDATED num_of_combinations = {num_of_combinations}")
+        
+    return num_of_combinations
