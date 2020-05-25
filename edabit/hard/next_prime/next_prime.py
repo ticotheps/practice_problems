@@ -40,8 +40,29 @@ PHASE I: UNDERSTANDING THE PROBLEM
 
 PHASE II: DEVISING A PLAN
     - Brute Force Solution
-        - 
-PHASE III: EXECUTING THE PLAN
+        (1) Define a helper function that checks to see if a number is prime or not.
+        (2) Define a function that takes in 1 input (an integer) and returns 1
+            output (an integer representing the next prime number).
+        (3) Evaluate the input to make sure it is valid.
+            (a) If input <= 1, return a string telling user to input a different input.
+            (b) If input >= 2, continue on with finding the next prime number.
+        (4) Declare a var, 'next_prime_num', and initialize it with a value of 0.
+        (5) Call the helper function to evaluate whether or not the 'input_num' is
+            prime.
+            (a) If it is, set the 'next_prime_num' var equal to it and return it.
+            (b) If it isn't, do nothing.
+        (6) Use a 'while' loop that begins iterating upwards from the 'input_num' as
+            a starting point and continues iterating as long as 'next_prime_num' == 0.
+        (7) For each iterated on number, call the helper function to evaluate
+            whether or not the 'input_num' is prime.
+            (a) If it is, set the 'next_prime_num' var equal to it and return it.
+            (b) If it isn't, continue iterating through subsequent numbers and
+                evaluating for the next prime number.    
+        
+PHASE III: EXECUTING THE PLAN (PLEASE SEE BELOW)
 PHASE IV: REFLECTING ON/REFACTORING THE PLAN
 """
+
+def check_prime_helper_function(num):
+    
 
