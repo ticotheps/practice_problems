@@ -63,6 +63,33 @@ PHASE III: EXECUTING THE PLAN (PLEASE SEE BELOW)
 PHASE IV: REFLECTING ON/REFACTORING THE PLAN
 """
 
-def check_prime_helper_function(num):
+def check_prime(num):
+    is_prime = False
+    factors = [1, num]
+    num_of_factors = len(factors)
+    print(f"num_of_factors = {num_of_factors}\nINITIAL factors = {factors}")
     
+    if num <= 1:
+        return is_prime
+    else:
+        if num_of_factors > 2:
+            is_prime = False
+        else:
+            for i in range(num - 1, 1, -1):
+                print(f"i = {i}")
+                if num % i == 0:
+                    print(f"{i} is a factor of {num}")
+                    factors.append(i)
+                    print(f"UPDATED factors = {factors}")
+                    is_prime = True
+
+    return is_prime
+
+print(check_prime(2))  # should print True
+print(check_prime(3))  # should print True
+# print(check_prime(4))  # should print False
+# print(check_prime(5))  # should print True
+# print(check_prime(6))  # should print False
+# print(check_prime(7))  # should print True
+            
 
