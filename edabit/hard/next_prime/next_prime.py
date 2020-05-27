@@ -83,14 +83,58 @@ def check_prime(num):
     else:
         return is_prime
 
-print(check_prime(1))  # should print False
-print(check_prime(2))  # should print True
-print(check_prime(3))  # should print True
-print(check_prime(4))  # should print False
-print(check_prime(5))  # should print True
-print(check_prime(6))  # should print False
-print(check_prime(7))  # should print True
-print(check_prime(111))  # should print False
-print(check_prime(391))  # should print False
+# print(check_prime(1))  # should print False
+# print(check_prime(2))  # should print True
+# print(check_prime(3))  # should print True
+# print(check_prime(4))  # should print False
+# print(check_prime(5))  # should print True
+# print(check_prime(6))  # should print False
+# print(check_prime(7))  # should print True
+# print(check_prime(111))  # should print False
+# print(check_prime(391))  # should print False
+
+def get_next_prime(input_num):
+    # print(f"input_num = {input_num}")
+    
+    # Declare a var that represents the output
+    next_prime_num = 0
+    # print(f"next_prime_num = {next_prime_num}")
+    
+    # Check to make sure that input is valid
+    if input_num < 2:
+        return "Invalid input. Please enter an integer greater than 1."
+    
+    # Evaluate input_num for prime status
+    check_prime_input_num = check_prime(input_num)
+    # print(f"check_prime_input_num = {check_prime_input_num}")
+    
+    if check_prime_input_num == True:
+        next_prime_num = input_num
+        return next_prime_num
+    
+    j = input_num + 1
+    while next_prime_num == 0:
+        possible_next_prime = check_prime(j)
+        # print(f"possible_next_prime = {possible_next_prime}")
+        
+        if possible_next_prime == True:
+            next_prime_num = j
+            # print(f"possible_next_prime = {possible_next_prime}")
+            return next_prime_num
+        
+        j += 1
+        
+print(get_next_prime(1)) # should print "Invalid input. Please enter an integer greater than 1."
+print(get_next_prime(2)) # should print 2
+print(get_next_prime(3)) # should print 3
+print(get_next_prime(4)) # should print 5
+print(get_next_prime(5)) # should print 5
+print(get_next_prime(6)) # should print 7
+print(get_next_prime(7)) # should print 7
+print(get_next_prime(8)) # should print 11
+
+    
+    
+        
             
 
