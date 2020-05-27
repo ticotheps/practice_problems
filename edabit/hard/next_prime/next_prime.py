@@ -64,41 +64,23 @@ PHASE IV: REFLECTING ON/REFACTORING THE PLAN
 """
 
 def check_prime(num):
-    print(f"\n---------- num = {num} ----------")
-    # Declare a var that contains the prime status of the 'num' input
     is_prime = False
-    print(f"INITIAL is_prime = {is_prime}\n")
     
-    # Declare a var that contains all of the factors of 'num' input
     factors = []
-    print(f"INITIAL factors = {factors}")
     
     num_of_factors = 0
-    print(f"num_of_factors = {num_of_factors}\n")
     
-    if num < 2:
-        print("Please enter a valid input that is >= 2")
-        return is_prime
-    
-    # Use a 'while' loop to continue iterating from 1 to the 'num' input + 1
     i = 1
     while i <= num:
-        print(f"i = {i}")
         if num % i == 0:
-            print(f"{i} *IS* a factor of {num}")
             factors.append(i)
-            print(f"factors of {num} = {factors}\n")
             num_of_factors += 1
-        else:
-            print(f"{i} is NOT a factor of {num}")
         i += 1
 
     if num_of_factors == 2:
-        print(f"{num} IS a prime number")
         is_prime = True
         return is_prime
     else:
-        print(f"{num} is NOT a prime number")
         return is_prime
 
 print(check_prime(1))  # should print False
@@ -108,5 +90,7 @@ print(check_prime(4))  # should print False
 print(check_prime(5))  # should print True
 print(check_prime(6))  # should print False
 print(check_prime(7))  # should print True
+print(check_prime(111))  # should print False
+print(check_prime(391))  # should print False
             
 
