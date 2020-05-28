@@ -91,7 +91,7 @@ def check_prime(num):
     # print(f"INITIAL num_of_factors = {num_of_factors}")
     
     # Evaluate for a valid given input 'num'
-    if num < 2:
+    if num < 2 or type(num) == float:
         # print(f"Sorry. {num} is not a valid input. Try a positive integer instead.\n")
         return is_prime
     
