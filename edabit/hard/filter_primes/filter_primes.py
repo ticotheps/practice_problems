@@ -13,6 +13,36 @@ Examples:
 
 """
 PHASE I: UNDERSTANDING THE PROBLEM
+
+Objective: 
+    - Write an algorithm that takes in a single input (a Python list) and
+    filters out all of the non-prime numbers to return a new Python list as the
+    single output.
+    
+Expected Input(s):
+    - Number Of: 1
+    - Data Type: Python list
+    - Var Name: 'num_list'
+    
+Expected Output(s):
+    - Number Of: 1
+    - Data Type: Python List
+    - Var Name: 'filtered list'
+    
+Constraints:
+    - Provided Notes:
+        - New list must maintain the order of primes as they first appear in the
+        original list.
+    - Can the numbers in the input list be negative?
+        - No, because prime numbers must be positive.
+    - Can the numbers in the input list be floating point numbers?
+        - No, because prime numbers must be whole integers.
+    - Can 0 exist as a number in the input list?
+        - Yes, but 0 is NOT a prime number.
+    - Can 1 exist as a number in the input list?
+        - Yes, but 1 is NOT a prime number.
+    
+    
 PHASE II: DEVISING A PLAN
 PHASE III: EXECUTING THE PLAN
 PHASE IV: REFLECTING ON/REFACTORING THE SOLUTION
