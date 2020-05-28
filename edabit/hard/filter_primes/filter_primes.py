@@ -76,11 +76,11 @@ Brute Force Solution
 """
 # helper function that checks the prime status of a given number
 def check_prime(num):
-    print(f"\n----------num = {num}----------")
+    # print(f"\n----------num = {num}----------")
     
     # Keep track of 'prime_status' of 'num'. Initialize this var with False.
     is_prime = False
-    print(f"INITIAL is_prime = {is_prime}")
+    # print(f"INITIAL is_prime = {is_prime}")
     
     # Keep track of the factors of 'num'.
     factors = []
@@ -92,7 +92,7 @@ def check_prime(num):
     
     # Evaluate for a valid given input 'num'
     if num < 2:
-        print(f"Sorry. {num} is not a valid input. Try a positive integer instead.\n")
+        # print(f"Sorry. {num} is not a valid input. Try a positive integer instead.\n")
         return is_prime
     
     # Use a 'while' loop to iterate through a list of numbers that has a
@@ -107,7 +107,7 @@ def check_prime(num):
             
             # ...add it to the list of factors for 'num'
             factors.append(i)
-            print(f"**UPDATED** factors = {factors}")
+            # print(f"**UPDATED** factors = {factors}")
             
             # ...increase the count of factors for 'num'
             num_of_factors += 1
@@ -119,31 +119,46 @@ def check_prime(num):
         # Evaluate whether or not 'num' is now prime.
         if num_of_factors > 2:
             # print(f"**UPDATED** is_prime = {is_prime}")
-            print(f"{num} is NOT a prime number\n")
+            # print(f"{num} is NOT a prime number\n")
             return is_prime
         
     # If the 'while' loop completes execution and 'num_of_factors' is equal to
     #   2, 'num' is a prime number, so update 'is_prime' to True.
     if num_of_factors == 2:
         # print(f"**UPDATED** is_prime = {is_prime}")
-        print(f"{num} IS a prime number!\n")
+        # print(f"{num} IS a prime number!\n")
         is_prime = True
         
     # Return the value of 'is_prime'.
     return is_prime
 
-print(check_prime(1)) # -> False
-print(check_prime(2)) # -> True
-print(check_prime(3)) # -> True
-print(check_prime(4)) # -> False
-print(check_prime(5)) # -> True
-print(check_prime(6)) # -> False
-print(check_prime(7)) # -> True
-print(check_prime(8)) # -> False
-print(check_prime(9)) # -> False
-print(check_prime(10)) # -> False
-print(check_prime(11)) # -> True
+# print(check_prime(1)) # -> False
+# print(check_prime(2)) # -> True
+# print(check_prime(3)) # -> True
+# print(check_prime(4)) # -> False
+# print(check_prime(5)) # -> True
+# print(check_prime(6)) # -> False
+# print(check_prime(7)) # -> True
+# print(check_prime(8)) # -> False
+# print(check_prime(9)) # -> False
+# print(check_prime(10)) # -> False
+# print(check_prime(11)) # -> True
         
+# Define a main function that will filter out non-prime integers from the given
+#   input list and return a new, filtered-version of that given list with ONLY
+#   prime numbers as elements (with an unchanged order from the original list).
+def filter_primes(num_list):
+    # print(f"num_list = {num_list}")
+    
+    filtered_list = []
+    
+    for i in num_list:
+        # print(f"i = {i}")
         
-            
-            
+        possible_prime = check_prime(i)
+        
+        if possible_prime == True:
+            filtered_list.append(i)
+            # print(f"filtered_list = {filtered_list}")
+    
+    return filtered_list
