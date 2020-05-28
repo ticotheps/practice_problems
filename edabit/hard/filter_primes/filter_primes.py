@@ -61,7 +61,13 @@ Brute Force Solution
         
     (5) Return the value of 'filtered_list'.
 
-PHASE III: EXECUTING THE PLAN
+PHASE III: EXECUTING THE PLAN (Please see Brute Force Solution below)
+
 PHASE IV: REFLECTING ON/REFACTORING THE SOLUTION
+
+Brute Force Solution
+    - Asymptotic Analysis:
+        - Time Complexity: O(n^2) -> 'quadratic'
+        - Space Complexity: O(1) -> 'constant'
 """
 
