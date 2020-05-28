@@ -101,9 +101,7 @@ def check_prime(num):
 def filter_primes(num_list):    
     filtered_list = []
     
-    for i in num_list:
-        # print(f"i = {i}")
-        
+    for i in num_list:        
         possible_prime = check_prime(i)
         
         if possible_prime == True:
