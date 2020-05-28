@@ -44,6 +44,23 @@ Constraints:
     
     
 PHASE II: DEVISING A PLAN
+
+Brute Force Solution
+    (1) Define a helper function, 'check_prime()', that will determine the prime
+    status of a given number.
+    
+    (2) Define another function, 'filter_primes()', that will take in a single list of integers, remove any non-prime integers from that list, and return the filtered-version of the original list (with the original ordering of the integers intact).
+    
+    (3) Declare a var, 'filtered_list', that will be returned as the output. Initialize this var with a value of '[]'.
+    
+    (4) Use a 'for' loop to iterate through the given input list to determine whether or not each element is prime.
+    
+        (a) If the element is prime, append it to the 'filtered_list'.
+        
+        (b) If the element is NOT prime, do nothing.
+        
+    (5) Return the value of 'filtered_list'.
+
 PHASE III: EXECUTING THE PLAN
 PHASE IV: REFLECTING ON/REFACTORING THE SOLUTION
 """
