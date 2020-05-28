@@ -76,16 +76,74 @@ Brute Force Solution
 """
 # helper function that checks the prime status of a given number
 def check_prime(num):
-    print(f"num = {num}")
+    print(f"\n----------num = {num}----------")
     
-    # Keep track of the factors of 'num'
+    # Keep track of 'prime_status' of 'num'. Initialize this var with False.
+    is_prime = False
+    print(f"INITIAL is_prime = {is_prime}")
+    
+    # Keep track of the factors of 'num'.
     factors = []
-    
-    # Keep track of the number of factors that 'num' has
+    # print(f"INITIAL factors = {factors}")
+
+    # Keep track of the number of factors that 'num' has.
     num_of_factors = 0
+    # print(f"INITIAL num_of_factors = {num_of_factors}")
+    
+    # Evaluate for a valid given input 'num'
+    if num < 2:
+        print(f"Sorry. {num} is not a valid input. Try a positive integer instead.\n")
+        return is_prime
     
     # Use a 'while' loop to iterate through a list of numbers that has a
     #   start point of 1 and an end point of num+1 AS LONG AS 'num_of_factors' is
     #   less than or equal to 2.
     i = 1
-    while 
+    while i <= num + 1:
+        # Evaluate whether or not 'i' is a factor of 'num'.
+        # If 'i' IS a factor of 'num'...
+        if num % i == 0:
+            # print(f"{i} is a factor of {num}")
+            
+            # ...add it to the list of factors for 'num'
+            factors.append(i)
+            print(f"**UPDATED** factors = {factors}")
+            
+            # ...increase the count of factors for 'num'
+            num_of_factors += 1
+            # print(f"**UPDATED** num_of_factors = {num_of_factors}")
+        
+        # Increase the iterated number, 'i', by 1.
+        i += 1
+            
+        # Evaluate whether or not 'num' is now prime.
+        if num_of_factors > 2:
+            # print(f"**UPDATED** is_prime = {is_prime}")
+            print(f"{num} is NOT a prime number\n")
+            return is_prime
+        
+    # If the 'while' loop completes execution and 'num_of_factors' is equal to
+    #   2, 'num' is a prime number, so update 'is_prime' to True.
+    if num_of_factors == 2:
+        # print(f"**UPDATED** is_prime = {is_prime}")
+        print(f"{num} IS a prime number!\n")
+        is_prime = True
+        
+    # Return the value of 'is_prime'.
+    return is_prime
+
+print(check_prime(1)) # -> False
+print(check_prime(2)) # -> True
+print(check_prime(3)) # -> True
+print(check_prime(4)) # -> False
+print(check_prime(5)) # -> True
+print(check_prime(6)) # -> False
+print(check_prime(7)) # -> True
+print(check_prime(8)) # -> False
+print(check_prime(9)) # -> False
+print(check_prime(10)) # -> False
+print(check_prime(11)) # -> True
+        
+        
+            
+            
