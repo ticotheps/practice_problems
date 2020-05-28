@@ -19,6 +19,10 @@ Objective:
     filters out all of the non-prime numbers to return a new Python list as the
     single output.
     
+Defining Terms:
+    - 'PRIME': 
+        - a positive integer whose only factors are 1 and the integer itself.
+    
 Expected Input(s):
     - Number Of: 1
     - Data Type: Python list
@@ -70,4 +74,18 @@ Brute Force Solution
         - Time Complexity: O(n^2) -> 'quadratic'
         - Space Complexity: O(1) -> 'constant'
 """
-
+# helper function that checks the prime status of a given number
+def check_prime(num):
+    print(f"num = {num}")
+    
+    # Keep track of the factors of 'num'
+    factors = []
+    
+    # Keep track of the number of factors that 'num' has
+    num_of_factors = 0
+    
+    # Use a 'while' loop to iterate through a list of numbers that has a
+    #   start point of 1 and an end point of num+1 AS LONG AS 'num_of_factors' is
+    #   less than or equal to 2.
+    i = 1
+    while 
