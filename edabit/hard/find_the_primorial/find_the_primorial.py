@@ -29,7 +29,7 @@ Objective:
 Expected Input(s):
     - Number Of: 1
     - Data Type(s): integer
-    - Var Name(s): 'num'
+    - Var Name(s): 'num_of_primorial'
     
 Expected Output(s):
     - Number Of: 1
@@ -47,6 +47,26 @@ Constraints:
         - No.
     
 PHASE II - PLAN
-PHASE III - EXECUTE
+
+Brute Force Solution:
+    (1) Create a helper function that will take in a 'max_primes' argument
+    and will generate 'max_primes' number of prime numbers to be added into
+    a 'primes' list that will be returned as the output.
+
+    (2) Define a function that takes in a 'num_of_primorial' input (integer data type) and
+    returns a 'primorial' output (integer data type).
+    
+    (3) Declare a var, 'prime_list', that will be equal to calling the helper function from step 1 and pass in 'num_of_primorial' as the argument.
+    
+    (4) Declare a var, 'primorial', that will be returned as the output. Initialize it with a value of '1' (integer).
+    
+    (5) Use a 'for' loop to iterate through all the elements in 'prime_list'.
+    
+        (a) Multiply the 'primorial' value by each element of 'prime_list'.
+        
+    (6) Return the value of 'primorial'.
+    
+PHASE III - EXECUTE (PLEASE SEE BELOW)
+
 PHASE IV - REFLECT/REFACTOR
 """
