@@ -74,61 +74,75 @@ PHASE IV - REFLECT/REFACTOR
 """
 
 def check_prime(num): 
-    print(f"-------------- num = {num} ---------------")  
+    # print(f"-------------- num = {num} ---------------")  
     is_prime = True
-    print(f"\nis_prime = {is_prime}")
+    # print(f"\nis_prime = {is_prime}")
     
     if num < 2:
-        print(f"\n{num} is not a valid input")
+        # print(f"\n{num} is not a valid input")
         is_prime = False
         return is_prime
     
     num_of_factors = 2
-    print(f"num_of_factors = {num_of_factors}")
+    # print(f"num_of_factors = {num_of_factors}")
     
     factors = [1, num]
-    print(f"factors = {factors}")
+    # print(f"factors = {factors}")
     
     for j in range(2, num):
-        print(f"j = {j}")
+        # print(f"j = {j}")
         if num % j == 0:
-            print(f"{j} is a factor of {num}")
+            # print(f"{j} is a factor of {num}")
             num_of_factors += 1
-            print(f"{num} now has {num_of_factors} factors and is NOT considered prime")
+            # print(f"{num} now has {num_of_factors} factors and is NOT considered prime")
             is_prime = False
             return is_prime
     
-    print(f"{num} only has {num_of_factors} so it IS considered prime")
+    # print(f"{num} only has {num_of_factors} so it IS considered prime")
     return is_prime
 
-print(check_prime(1)) # -> False
-print(check_prime(2)) # -> True
-print(check_prime(3)) # -> True
-print(check_prime(4)) # -> False
-print(check_prime(5)) # -> True
+# print(check_prime(1)) # -> False
+# print(check_prime(2)) # -> True
+# print(check_prime(3)) # -> True
+# print(check_prime(4)) # -> False
+# print(check_prime(5)) # -> True
 
 
 
 def generate_primes_list(max_primes):
-    print(f"max_primes = {max_primes}")
+    # print(f"max_primes = {max_primes}")
     
     # Declare a var that will hold a list of generated prime numbers
     primes_list = []
-    print(f"primes_list = {primes_list}")
+    # print(f"INITIAL primes_list = {primes_list}")
     
     # Declare a var representing the current number of generated prime numbers
     num_of_primes = 0
-    print(f"num_of_primes = {num_of_primes}")
+    # print(f"INITIAL num_of_primes = {num_of_primes}")
     
     # Use a 'while' loop to continue generating prime numbers as long as
     # 'num_of_primes' is NOT equal to 'max_primes'.
     i = 2
     while num_of_primes != max_primes:
-        print(f"i = {i}")
+        # print(f"i = {i}")
         
         # call 'check_prime()' on 'i'
+        possible_prime = check_prime(i)
+        
+        # if 'i' is prime, add it to the 'primes_list'
+        if possible_prime == True:
+            num_of_primes += 1
+            # print(f"UPDATED num_of_primes = {num_of_primes}")
+            primes_list.append(i)
+            # print(f"UPDATED primes_list = {primes_list}")
+            
+        # increment i by 1
+        i += 1
+            
+    return primes_list
     
-    
-    
+# print(generate_primes_list(2))  # -> [2, 3]
 # print(generate_primes_list(3))  # -> [2, 3, 5]
+# print(generate_primes_list(4))  # -> [2, 3, 5, 7]
+# print(generate_primes_list(5))  # -> [2, 3, 5, 7, 11]
     
