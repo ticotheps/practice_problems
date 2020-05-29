@@ -146,3 +146,23 @@ def generate_primes_list(max_primes):
 # print(generate_primes_list(4))  # -> [2, 3, 5, 7]
 # print(generate_primes_list(5))  # -> [2, 3, 5, 7, 11]
     
+def get_primorial(num_of_primorial):
+    # print(f"num_of_primorial = {num_of_primorial}")
+    
+    primes_list = generate_primes_list(num_of_primorial)
+    # print(f"primes_list = {primes_list}")
+    
+    primorial = 1
+    # print(f"INITIAL primorial = {primorial}")
+    
+    for element in primes_list:
+        # print(f"element = {element}")
+        
+        primorial *= element
+        # print(f"UPDATED primorial = {primorial}")
+        
+    return primorial
+
+print(get_primorial(1))  # -> 2
+print(get_primorial(2))  # -> 6
+print(get_primorial(8))  # -> 9699690
