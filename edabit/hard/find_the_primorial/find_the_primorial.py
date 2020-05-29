@@ -71,6 +71,19 @@ Brute Force Solution:
 PHASE III - EXECUTE (PLEASE SEE BELOW)
 
 PHASE IV - REFLECT/REFACTOR
+
+Brute Force Solution:
+    - Asymptotic Analysis:
+        - Time Complexity: O(n^2) -> 'quadratic'
+        - Space Complexity: O(1) -> 'constant'
+        
+    - Could this solution be improved?
+        - Yes.
+    - How?
+        - Use a python dictionary to cache already-calculated primorials. Then, when given an input, first lookup the input in the cache to see if the input already exists. If not, retrieve the next closest key from the cache and use the value as a starting point to minimize the amount calculations required to find the primorial.
+    - What is the new asymptotic analysis?
+        - Time Complexity: O(n log n) -> 'linearithmic'
+        - Space Complexity: O(n) -> 'linear'
 """
 
 def check_prime(num): 
