@@ -52,9 +52,14 @@ Brute Force Solution (nested 'for' loops):
     (5) Inside of the inner 'for' loop, evaluate whether or not the iterated element, 'j'(of the inner 'for' loop), is a repeating character of the iterated element, 'i' (of the outer 'for' loop).
     
         (a) If it is a repeating character, set the value of 'repeating_char' equal to 'i'.
+        
+        (b) If it is NOT a repeating character, do nothing.
+        
+    (6) Return the value of 'repeating_char'.
     
 
-PHASE III: EXECUTE
+PHASE III: EXECUTE (Please see below)
 
 PHASE IV: REFLECT/REFACTOR
 """
+
