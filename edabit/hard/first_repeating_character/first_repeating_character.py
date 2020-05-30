@@ -38,6 +38,22 @@ Constraints:
 
 PHASE II: PLAN
 
+Brute Force Solution (nested 'for' loops):
+    (1) Define a function that takes in a single input string argument and
+    returns a single output string or integer depending on the existence of
+    repeating characters.
+    
+    (2) Declare a var, 'repeating_char', that will hold the first character that is found to repeat itself in the input string. Initialize this var with a value of '' (an empty string).
+    
+    (3) Use an outer 'for' loop to iterate through each character in the input string. This will provide access to each letter of the input string for comparison purposes.
+    
+    (4) Nest an inner 'for' loop inside of the outer 'for' loop to iterate through each of the same characters in the input string for a second time. This second iteration will enable each character to be compared to itself and to each of the other characters.
+    
+    (5) Inside of the inner 'for' loop, evaluate whether or not the iterated element, 'j'(of the inner 'for' loop), is a repeating character of the iterated element, 'i' (of the outer 'for' loop).
+    
+        (a) If it is a repeating character, set the value of 'repeating_char' equal to 'i'.
+    
+
 PHASE III: EXECUTE
 
 PHASE IV: REFLECT/REFACTOR
