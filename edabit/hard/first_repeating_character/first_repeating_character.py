@@ -2,7 +2,7 @@
 FIND FIRST CHARACTER THAT REPEATS
 
 Create a function that takes a string and returns the first character that
-repeats. If there is no repeat of a character, then return "-1".
+repeats. If there is no repeat of a character, then return '-1' (string).
 
 Examples:
     - first_repeat('legolas') -> 'l'
@@ -29,7 +29,7 @@ Expected Input(s):
     
 Expected Output(s):
     - Number Of: 1
-    - Data Type: string or integer
+    - Data Type: string
     - Var Name: 'repeating_char'
     
 Constraints:
@@ -43,7 +43,7 @@ Brute Force Solution (nested 'for' loops):
     returns a single output string or integer depending on the existence of
     repeating characters.
     
-    (2) Declare a var, 'repeating_char', that will hold the first character that is found to repeat itself in the input string. Initialize this var with a value of '' (an empty string).
+    (2) Declare a var, 'repeating_char', that will hold the first character that is found to repeat itself in the input string. Initialize this var with a value of None.
     
     (3) Use an outer 'for' loop to iterate through each character in the input string. This will provide access to each letter of the input string for comparison purposes.
     
@@ -55,7 +55,9 @@ Brute Force Solution (nested 'for' loops):
         
         (b) If it is NOT a repeating character, do nothing.
         
-    (6) Return the value of 'repeating_char'.
+    (6) If no repeating characters were found, set the value of 'repeating_char' to '-1'.
+        
+    (7) Return the value of 'repeating_char'.
     
 
 PHASE III: EXECUTE (Please see below)
@@ -82,7 +84,7 @@ def first_repeat(chars):
                 if chars[i] == chars[j]:
                     repeating_char = chars[j]
                     return repeating_char
-    repeating_char = -1
+    repeating_char = '-1'
     return repeating_char
 
 def first_repeat_optimized(chars):
@@ -95,5 +97,5 @@ def first_repeat_optimized(chars):
         else:
             repeating_char = chars[i]
             return repeating_char
-    repeating_char = -1
+    repeating_char = '-1'
     return repeating_char
