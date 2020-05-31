@@ -61,6 +61,11 @@ Brute Force Solution (nested 'for' loops):
 PHASE III: EXECUTE (Please see below)
 
 PHASE IV: REFLECT/REFACTOR
+
+Brute Force Solution:
+    - Asymptotic Analysis:
+        - Time Complexity: O(n^2) -> 'quadratic'
+        - Space Complexity: O(1) -> 'constant'
 """
 
 def first_repeat(chars):
