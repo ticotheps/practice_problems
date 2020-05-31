@@ -66,6 +66,10 @@ Brute Force Solution:
     - Asymptotic Analysis:
         - Time Complexity: O(n^2) -> 'quadratic'
         - Space Complexity: O(1) -> 'constant'
+        
+    - Could we improve the time or space complexity of this solution?
+        - Yes. We could cache characters in a python dictionary by ensuring that a key:value pair exists in the dictionary for each character. The lookup for dictionaries is O(1) time complexity.
+        - Please see the first_repeate_optimized() solution below.
 """
 
 def first_repeat(chars):
@@ -80,3 +84,31 @@ def first_repeat(chars):
                     return repeating_char
     repeating_char = -1
     return repeating_char
+
+def first_repeat_optimized(chars):
+    cache = {}
+    # print(f"\nINITIAL cache = {cache}")
+    
+    repeating_char = None
+    # print(f"repeating_char = {repeating_char}")
+    
+    for i in range(0, len(chars)):
+        # print(f"\n-----chars[i] = {chars[i]}-----")
+        
+        if chars[i] not in cache:
+            # print(f"'{chars[i]}' does not exist in the cache")
+            cache[chars[i]] = True
+            # print(f"UPDATED cache = {cache}")
+        else:
+            # print(f"'{chars[i]}' IS in the cache!\nWe have a repeating character!")
+            repeating_char = chars[i]
+            return repeating_char
+        
+    # print("Sorry, there were no repeating characters in the input string")
+    repeating_char = -1
+    return repeating_char
+
+print(first_repeat_optimized('legolas'))  # -> 'l'
+print(first_repeat_optimized('Gandalf'))  # -> 'a'
+print(first_repeat_optimized('Balrog'))   # -> -1
+print(first_repeat_optimized('Isildur'))  # -> -1
