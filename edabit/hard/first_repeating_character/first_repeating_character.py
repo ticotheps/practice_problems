@@ -63,3 +63,30 @@ PHASE III: EXECUTE (Please see below)
 PHASE IV: REFLECT/REFACTOR
 """
 
+def first_repeat(chars):
+    print(f"\nchars = {chars}")
+    
+    repeating_char = None
+    print(f"INITIAL repeating_char = {repeating_char}")
+    
+    for i in range(0, len(chars)):
+        print(f"\ni = {chars[i]}")
+        
+        for j in range(0, len(chars)):
+            if i != j:
+                print(f"--- j = {chars[j]} ---")
+                if chars[i] == chars[j]:
+                    print(f"'{chars[j]}' is a repeating character of '{chars[i]}'")
+                    repeating_char = chars[j]
+                    print(f"UPDATED repeating_char = {repeating_char}")
+                    return repeating_char
+
+    print(f"No repeating characters were identified in the input string")
+    repeating_char = -1
+    return repeating_char
+    
+    
+print(first_repeat('legolas'))  # -> 'l'
+print(first_repeat('Gandalf'))  # -> 'a'
+print(first_repeat('Balrog'))  # -> -1
+print(first_repeat('Isildur'))  # -> -1
