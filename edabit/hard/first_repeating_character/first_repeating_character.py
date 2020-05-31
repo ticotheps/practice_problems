@@ -83,8 +83,10 @@ def first_repeat(chars):
             if i != j:
                 if chars[i] == chars[j]:
                     repeating_char = chars[j]
+                    print(f"repeating_char = {repeating_char}")
                     return repeating_char
     repeating_char = '-1'
+    print(f"repeating_char = {repeating_char}")
     return repeating_char
 
 def first_repeat_optimized(chars):
@@ -96,6 +98,8 @@ def first_repeat_optimized(chars):
             cache[chars[i]] = True
         else:
             repeating_char = chars[i]
+            print(f"repeating_char = {repeating_char}")
             return repeating_char
     repeating_char = '-1'
+    print(f"repeating_char = {repeating_char}")
     return repeating_char
