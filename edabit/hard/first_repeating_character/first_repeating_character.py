@@ -72,6 +72,11 @@ Brute Force Solution:
     - Could we improve the time or space complexity of this solution?
         - Yes. We could cache characters in a python dictionary by ensuring that a key:value pair exists in the dictionary for each character. The lookup for dictionaries is O(1) time complexity.
         - Please see the first_repeate_optimized() solution below.
+        
+Optimized Solution:
+    - Asymptotic Analysis:
+        - Time Complexity: O(n) -> 'linear'
+        - Space Complexity: O(n) -> 'linear'
 """
 
 def first_repeat(chars):
@@ -83,10 +88,8 @@ def first_repeat(chars):
             if i != j:
                 if chars[i] == chars[j]:
                     repeating_char = chars[j]
-                    print(f"repeating_char = {repeating_char}")
                     return repeating_char
     repeating_char = '-1'
-    print(f"repeating_char = {repeating_char}")
     return repeating_char
 
 def first_repeat_optimized(chars):
@@ -98,8 +101,6 @@ def first_repeat_optimized(chars):
             cache[chars[i]] = True
         else:
             repeating_char = chars[i]
-            print(f"repeating_char = {repeating_char}")
             return repeating_char
     repeating_char = '-1'
-    print(f"repeating_char = {repeating_char}")
     return repeating_char
