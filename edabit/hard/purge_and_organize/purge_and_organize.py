@@ -117,103 +117,58 @@ PHASE III: EXECUTE (PLEASE SEE BELOW)
 PHASE IV: REFLECT/REFACTOR
 """
 
-cache = dict()
-# print(f"INITIAL cache = {cache}")
+
 
 def remove_duplicates(lst):
+    cache = dict()
+    # print(f"INITIAL cache = {cache}")
     # print(f"\n---------- {lst} ----------")
     new_lst = []
     # print(f"INITIAL new_lst = {new_lst}")
     
     for i in range(0, len(lst)):
         element_i = lst[i]
-        # print(f"element_i = {element_i}")
+        print(f"element_i = {element_i}")
         
         if element_i not in cache:
             cache[element_i] = True
-            # print(f"UPDATED cache = {cache}")  
+            print(f"UPDATED cache = {cache}")  
             
             new_lst.append(element_i)
-            # print(f"UPDATED new_lst = {new_lst}\n")
         # else:
-            # print("This element already exists in 'cache'. No need to add it.")
-            
+        #     print("This element already exists in 'cache'. No need to add it.")
+        print(f"UPDATED new_lst = {new_lst}\n")
     # print("-----ALL DUPLICATES HAVE BEEN REMOVED-----\n")
     return new_lst
             
-# print(remove_duplicates([1, 2, 4, 3]))  # -> [1, 2, 3, 4]
+# print(remove_duplicates([1, 2, 4, 3]))  # -> [1, 2, 4, 3]
+# print(remove_duplicates([1, 4, 4, 4, 4, 4, 3, 2, 1, 2]))  # -> [1, 4, 3, 2]
+# print(remove_duplicates([6, 7, 3, 2, 1]))  # -> [6, 7, 3, 2, 1]
             
 def unique_sort(lst):
+    print(f"UNIQUE_SORT lst = {lst}")
     new_lst = remove_duplicates(lst)
+    
     print(f"INITIAL new_lst = {new_lst}")
     
     sorted_new_lst = []
-    if len(new_lst) > 0:
-        first_element = new_lst.pop(0)
-        sorted_new_lst.append(first_element)
-        
-    print(f"UPDATED new_lst = {new_lst}")
-    
-    element_previous_index_checked = False
-    print(f"\nINITIAL element_previous_index_checked = {element_previous_index_checked}")
-            
-    element_following_index_checked = False
-    print(f"INITIAL element_following_index_checked = {element_following_index_checked}\n")
-    
-    # j = 0
-    # print(f"\nINITIAL j = {j}")
+    print(f"sorted_new_lst = {sorted_new_lst}")
     
     while len(new_lst) > 0:
         print(f"INITIAL sorted_new_lst = {sorted_new_lst}\n")
         
-        index_of_smallest = int(min(new_lst))
-        print(f"index_of_smallest = {index_of_smallest}")
-        
-        smallest = index(index_of_smallest)
+        smallest = int(min(new_lst))
         print(f"smallest = {smallest}")
+        
+        index_of_smallest = new_lst.index(smallest)
+        print(f"index_of_smallest = {index_of_smallest}")
         
         next_element = new_lst.pop(index_of_smallest)
         
         sorted_new_lst.append(next_element)
-        
-        # popped_element = new_lst.pop(0)
-        # print(f"popped_element = {popped_element}")
-        # print(f"UPDATED new_lst = {new_lst}")
-        
-        # sorted_new_lst.append(current_largest)
-        # print(f"UPDATED sorted_new_lst = {sorted_new_lst}\n")
-        
-
-        
-        # j += 1
-        # print(f"**UPDATED j = {j}**\n")
-    
-    # for j in range(0, len(new_lst)):
-    #     element_j = new_lst[j]
-    #     print(f"element_j = {element_j}")
-        
-    #     if len(sorted_new_lst) == 0:
-    #         sorted_new_lst.append(element_j)
-    #         print("ADD 1ST ELEMENT")
-    #         print(f"UPDATED sorted_new_lst = {sorted_new_lst}\n")
-            
-    #     else:
-    #         while j < len(new_lst) and (element_previous_index_checked == False or element_previous_index_checked == False):
-    #             element_following = new_lst[j+1]
-    #             print(f"element_following = {element_following}")
-                
-    #             if element_j > element_following:
-    #                 element_previous_index_checked = True
-    #                 print(f"UPDATED element_previous_index_checked = {element_previous_index_checked}\n")
-                    
-    #             else: # element_j <= element_following:
-    #                 element_following_index_checked = True
-    #                 print(f"UPDATED element_previous_index_checked = {element_previous_index_checked}\n")
-                    
-    #                 sorted_new_lst.append
-                
-    # print("-----ALL ELEMENTS HAVE BEEN SORTED-----\n")
 
     return sorted_new_lst
 
 print(unique_sort([1, 2, 4, 3]))  # -> [1, 2, 3, 4]
+print(unique_sort([1, 4, 4, 4, 4, 4, 3, 2, 1, 2]))  # -> [1, 2, 3, 4]
+print(unique_sort([6, 7, 3, 2, 1]))  # -> [1, 2, 3, 6, 7]
