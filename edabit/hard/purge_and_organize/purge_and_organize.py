@@ -117,58 +117,27 @@ PHASE III: EXECUTE (PLEASE SEE BELOW)
 PHASE IV: REFLECT/REFACTOR
 """
 
-
-
 def remove_duplicates(lst):
     cache = dict()
-    # print(f"INITIAL cache = {cache}")
-    # print(f"\n---------- {lst} ----------")
     new_lst = []
-    # print(f"INITIAL new_lst = {new_lst}")
-    
+
     for i in range(0, len(lst)):
         element_i = lst[i]
-        print(f"element_i = {element_i}")
-        
+
         if element_i not in cache:
             cache[element_i] = True
-            print(f"UPDATED cache = {cache}")  
-            
             new_lst.append(element_i)
-        # else:
-        #     print("This element already exists in 'cache'. No need to add it.")
-        print(f"UPDATED new_lst = {new_lst}\n")
-    # print("-----ALL DUPLICATES HAVE BEEN REMOVED-----\n")
+            
     return new_lst
             
-# print(remove_duplicates([1, 2, 4, 3]))  # -> [1, 2, 4, 3]
-# print(remove_duplicates([1, 4, 4, 4, 4, 4, 3, 2, 1, 2]))  # -> [1, 4, 3, 2]
-# print(remove_duplicates([6, 7, 3, 2, 1]))  # -> [6, 7, 3, 2, 1]
-            
 def unique_sort(lst):
-    print(f"UNIQUE_SORT lst = {lst}")
     new_lst = remove_duplicates(lst)
-    
-    print(f"INITIAL new_lst = {new_lst}")
-    
     sorted_new_lst = []
-    print(f"sorted_new_lst = {sorted_new_lst}")
     
     while len(new_lst) > 0:
-        print(f"INITIAL sorted_new_lst = {sorted_new_lst}\n")
-        
         smallest = int(min(new_lst))
-        print(f"smallest = {smallest}")
-        
         index_of_smallest = new_lst.index(smallest)
-        print(f"index_of_smallest = {index_of_smallest}")
-        
         next_element = new_lst.pop(index_of_smallest)
-        
         sorted_new_lst.append(next_element)
 
     return sorted_new_lst
-
-print(unique_sort([1, 2, 4, 3]))  # -> [1, 2, 3, 4]
-print(unique_sort([1, 4, 4, 4, 4, 4, 3, 2, 1, 2]))  # -> [1, 2, 3, 4]
-print(unique_sort([6, 7, 3, 2, 1]))  # -> [1, 2, 3, 6, 7]
