@@ -212,7 +212,7 @@ def unique_sort(lst):
                     
     #                 sorted_new_lst.append
                 
-    print("-----ALL ELEMENTS HAVE BEEN SORTED-----\n")
+    # print("-----ALL ELEMENTS HAVE BEEN SORTED-----\n")
 
     return sorted_new_lst
 
