@@ -135,7 +135,11 @@ def unique_sort(lst):
     sorted_new_lst = []
     
     while len(new_lst) > 0:
-        smallest = int(min(new_lst))
+        if type(min(new_lst)) == float:
+            smallest = float(min(new_lst))
+        else:
+            smallest = int(min(new_lst))
+            
         index_of_smallest = new_lst.index(smallest)
         next_element = new_lst.pop(index_of_smallest)
         sorted_new_lst.append(next_element)
