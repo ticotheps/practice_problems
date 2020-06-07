@@ -15,3 +15,35 @@ Notes:
     - Return an empty list if no uppercase letters are found in the string.
     - Special characters ($#A%) and numbers will be included in some test cases.
 """
+"""
+PHASE I: UNDERSTAND the problem
+
+- Objective:
+    - Write an algorithm that takes in a single input (of string data type) and
+      returns a single output (of list data type) containing the indices of any
+      uppercase letters from the given input string.
+      
+- Expected Inputs:
+    - Number Of: 1
+    - Data Type(s): string
+    - Var Name(s): 'str'
+    
+- Expected Outputs:
+    - Number Of: 1
+    - Data Type(s): list
+    - Var Name(s): 'caps_indices'
+    
+- Constraints:
+    - Can the input be an empty string?
+        - Yes. In this case, just return an empty list as the output.
+    - Can the input include non-alphnumeric characters?
+        - Yes.
+    - Can the input be a negative number?
+        - Yes.
+    - Can the input be a floating point number?
+        - Yes.
+
+PHASE II: devise a PLAN
+PHASE III: EXECUTE the plan
+PHASE IV: REFLECT on/REFACTOR the solution
+"""
