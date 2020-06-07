@@ -57,13 +57,15 @@ PHASE II: devise a PLAN
     (3) Iterate through each character of the given input 'input_str' input_string with a
     'for' loop using the iterator, 'i'.
     
-        (4) Evaluate the iterated-on character, 'i', for its 'is_capitalized' status.
+        (4) Declare a var, 'char', and initialize it with the value 'input_str[i]'.
+    
+        (5) Evaluate the iterated-on character, 'i', for its 'is_capitalized' status.
         
             (a) If 'input_str[i]' is a letter of the alphabet AND it is capitalized, append() 'i' to the 'caps_indices_list'.
             
             (b) If 'i' is NOT a capitalized letter, do nothing.
             
-    (5) Return the value of 'caps_indices_list'.
+    (6) Return the value of 'caps_indices_list'.
     
 PHASE III: EXECUTE the plan (Please see below)
 
@@ -71,20 +73,13 @@ PHASE IV: REFLECT on/REFACTOR the solution
 """
 
 def index_of_caps(input_str):
-    print(f"input_str = {input_str}")
-    
     caps_indices_list = []
-    print(f"caps_indices_list = {caps_indices_list}")
     
     for i in range(0, len(input_str)):
         char = input_str[i]
-        print(f"char = {char}")
         
         if char.isalpha() == True and char.isupper() == True:
-            print(f"{char} is an alphabetic letter and it is capitalized.")
             caps_indices_list.append(i)
-            print(f"UPDATED caps_indices_list = {caps_indices_list}")
-            
     return caps_indices_list
 
 print(index_of_caps("eDaBiT"))  # -> [1, 3, 5]
