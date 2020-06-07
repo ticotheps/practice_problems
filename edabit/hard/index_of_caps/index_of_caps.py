@@ -16,6 +16,8 @@ Notes:
     - Special characters ($#A%) and numbers will be included in some test cases.
 """
 """
+U.P.E.R. Problem-Solving Framework
+
 PHASE I: UNDERSTAND the problem
 
 - Objective:
@@ -31,7 +33,7 @@ PHASE I: UNDERSTAND the problem
 - Expected Outputs:
     - Number Of: 1
     - Data Type(s): list
-    - Var Name(s): 'caps_indices'
+    - Var Name(s): 'caps_indices_list'
     
 - Constraints:
     - Can the input be an empty string?
@@ -44,6 +46,27 @@ PHASE I: UNDERSTAND the problem
         - Yes.
 
 PHASE II: devise a PLAN
-PHASE III: EXECUTE the plan
+
+- Brute Force Solution:
+    (1) Define a function that takes in a single input string, 'str', and
+    returns a single output list, 'caps_indices_list'.
+    
+    (2) Declare a local var, 'caps_indices_list', that will be returned as the
+    output. Initialize it with an empty list.
+    
+    (3) Iterate through each character of the given input 'str' string with a
+    'for' loop using the iterator, 'i'.
+    
+        (4) Evaluate the iterated-on character, 'i', for its 'is_capitalized' status.
+        
+            (a) If 'str[i]' is a letter of the alphabet AND it is capitalized, append() 'i' to the 'caps_indices_list'.
+            
+            (b) If 'i' is NOT a capitalized letter, do nothing.
+            
+    (5) Return the value of 'caps_indices_list'.
+    
+PHASE III: EXECUTE the plan (Please see below)
+
 PHASE IV: REFLECT on/REFACTOR the solution
 """
+
