@@ -74,10 +74,8 @@ PHASE IV: REFLECT on/REFACTOR the solution
 
 def index_of_caps(input_str):
     caps_indices_list = []
-    
     for i in range(0, len(input_str)):
         char = input_str[i]
-        
         if char.isalpha() == True and char.isupper() == True:
             caps_indices_list.append(i)
     return caps_indices_list
