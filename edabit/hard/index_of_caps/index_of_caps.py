@@ -81,5 +81,3 @@ def index_of_caps(input_str):
         if char.isalpha() == True and char.isupper() == True:
             caps_indices_list.append(i)
     return caps_indices_list
-
-print(index_of_caps("eDaBiT"))  # -> [1, 3, 5]
