@@ -153,11 +153,18 @@ PHASE II: devise a PLAN
     (18) Return the value of 'is_correct'.
 
 
-PHASE III: EXECUTE the plan PHASE IV: REFLECT on/REFACTOR the plan
+PHASE III: EXECUTE the plan (Please See Below)
+
+PHASE IV: REFLECT on/REFACTOR the plan
 """
 
 def correct_signs(txt):
-    return txt
+    print(f"txt = {txt}")
+    
+    is_correct = False
+    print(f"is_correct = {is_correct}")
+    
+    return is_correct
 
 print(correct_signs("3 < 7 < 11"))
 print(correct_signs("13 > 44 > 33 > 1"))
