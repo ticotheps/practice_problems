@@ -80,20 +80,20 @@ PHASE II: devise a PLAN
 
     (6) Declare a var, 'txt_nums_list', and initialize it with an empty pair of
     square brackets.
-    
-    (7) Declare a var, 'txt_operators_list', and initialize it with an empty pair of
-    square brackets.  
+
+    (7) Declare a var, 'txt_operators_list', and initialize it with an empty
+    pair of square brackets.  
 
     (8) Iterate through the 'txt_split_list' with a 'for' loop.
 
         (a) Declare a var, 'element', and set its value equal to the element 
         (from 'txt_split_list') being iterated on.
-        
+
         (b) If 'element' is of 'integer' data type, append it to 'txt_nums_list'.
-        
+
         (c) Otherwise, append 'element' to the 'txt_operators_list'.
 
-    (9) Declare a var, 'valid_operators_cache', and initialize it with the 
+    (9) Declare a var, 'valid_operators_cache', and initialize it with the
     following values: 
         {
             '<': True,
@@ -103,9 +103,54 @@ PHASE II: devise a PLAN
             '>=': True,
             '!=': True
         }
-        
-    (10)
 
+    (10) Declare a var, 'all_operators_valid', and initialize it with a value of
+    True (Boolean).
+
+    (11) Iterate through each element of the 'txt_operators_list' with a 'for'
+    loop.
+
+        (12) Use an 'if' statement and the 'valid_operators_cache' to validate each element.
+
+            (a) If the element is NOT a valid operator, update the value of 
+            'all_operators_valid' to be False (Boolean).
+            
+            (b) Else, do nothing.
+            
+    (13) Declare a var, 'index_a', and initialize it with a value of 0
+    (integer).
+    
+    (14) Declare a var, 'index_b', and initialize it with a value of 'index_a
+    + 1' (integer).
+    
+    (15) Declare a var, 'index_operator', and initialize it with a value of 0
+    (integer).
+    
+    (16) Iterate through a range (start = index_a, stop = len(txt_nums_list)) using
+    a 'for' loop and vars 'index_a', 'index_b', and 'index_operator'.
+    
+        (a) Declare a var, 'element_a', and initialize it with a value of 
+        'int(txt_nums_list[index_a])'.
+        
+        (b) Declare a var, 'element_b', and initialize it with a value of 
+        'int(txt_nums_list[index_b])'.
+        
+        (c) Declare a var, 'valid_comparison', and initialize it with a value 
+        of True (Boolean).
+        
+        (d) Declare a var, 'compare_a_b', and set it equal to 'element_a + 
+        'txt_operators_list[index_operator]' + element_b'.
+        
+        (f) If 'compare_a_b' is False, update 'valid_comparison' to be False 
+        (Boolean) and return the value of 'is_correct'.
+        
+        (g) Else, do nothing.
+        
+        (h) Add 1 to the value of 'index_a'
+        
+    (17) Update the value of 'is_correct' to be True (Boolean).
+
+    (18) Return the value of 'is_correct'.
 
 
 PHASE III: EXECUTE the plan PHASE IV: REFLECT on/REFACTOR the plan
