@@ -197,7 +197,6 @@ def correct_signs(txt):
     
     for operator in txt_operators_list: 
         if operator not in valid_operators_cache:
-            all_operators_valid = False
             return is_correct
     
     k = 0
