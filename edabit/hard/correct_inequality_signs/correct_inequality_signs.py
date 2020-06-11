@@ -73,8 +73,7 @@ PHASE II: devise a PLAN
     (5) Validate the length of 'txt_split_list' to ensure that there is an odd
     number of elements in it.
 
-        (a) If there is an EVEN number of elements in it, return the value of 
-        'is_correct' (which should still be False).
+        (a) If there is an EVEN number of elements in it, return a string that says, 'Invalid input. Please provide an input of string with a valid number of integers and operators in it.'
 
         (b) If there is an ODD number of elements in it, do nothing.
 
@@ -159,13 +158,25 @@ PHASE IV: REFLECT on/REFACTOR the plan
 """
 
 def correct_signs(txt):
-    print(f"txt = {txt}")
+    print(f"\ntxt = {txt}")
+    print(f"type(txt) = {type(txt)}")
     
     is_correct = False
     print(f"is_correct = {is_correct}")
     
+    if type(txt) != str:
+        return 'Invalid input. Please provide an input of string data type.'
+    
+    txt_split_list = txt.split(' ')
+    print(f"txt_split_list = {txt_split_list}")
+    
+    if len(txt_split_list) % 2 == 0:
+        return 'Invalid input. Please provide an input of string with a valid number of integers and operators in it.'
+    
     return is_correct
 
-print(correct_signs("3 < 7 < 11"))
-print(correct_signs("13 > 44 > 33 > 1"))
-print(correct_signs("1 < 2 < 6 < 9 > 3"))
+print(correct_signs(3)) # 'Invalid input. Please provide an input of string data type.'
+print(correct_signs("3 < 7 < 11"))          # True
+print(correct_signs("3 < 7 <")) # 'Invalid input. Please provide an input of string with a valid number of integers and operators in it.'
+print(correct_signs("13 > 44 > 33 > 1"))    # False
+print(correct_signs("1 < 2 < 6 < 9 > 3"))   # True
