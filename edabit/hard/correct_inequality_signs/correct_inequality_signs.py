@@ -239,10 +239,3 @@ def correct_signs(txt):
         
     is_correct = True
     return is_correct
-
-
-# print(correct_signs(3)) # 'Invalid input. Please provide an input of string data type.'
-# print(correct_signs("3 < 7 < 11"))          # True
-# print(correct_signs("3 < 7 <")) # 'Invalid input. Please provide an input of string with a valid number of integers and operators in it.'
-# print(correct_signs("13 > 44 > 33 > 1"))    # False
-# print(correct_signs("1 < 2 < 6 < 9 > 3"))   # True
