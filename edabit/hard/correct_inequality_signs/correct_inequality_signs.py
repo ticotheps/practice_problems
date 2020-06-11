@@ -242,12 +242,28 @@ def correct_signs(txt):
         num_2 = int(txt_nums_list[index_num_2])
         print(f"num_2 = {num_2}")
         
-        compare_nums = f"{num_1} {comparison_operator} {num_2}"
+        if comparison_operator == '<':
+            compare_nums = num_1 < num_2
+            
+        elif comparison_operator == '>':
+            compare_nums = num_1 > num_2
+            
+        elif comparison_operator == '==':
+            compare_nums = num_1 == num_2
+            
+        elif comparison_operator == '<=':
+            compare_nums = num_1 <= num_2
+            
+        elif comparison_operator >= '>=':
+            compare_nums = num_1 >= num_2
+            
+        elif comparison_operator == '!=':      
+            compare_nums = num_1 != num_2
         print(f"compare_nums = {compare_nums}")
         
         if compare_nums == False:
             valid_comparison = False
-            print("This comparison, '{num_1 + comparison_operator + num_2}' in invalid.")
+            print(f"This comparison, {str(num_1)} {comparison_operator} {str(num_2)}, in invalid.")
             return is_correct
         else:
             print("This is a valid inequality expression.")
@@ -258,8 +274,8 @@ def correct_signs(txt):
     return is_correct
 
 
-print(correct_signs(3)) # 'Invalid input. Please provide an input of string data type.'
-print(correct_signs("3 < 7 < 11"))          # True
-print(correct_signs("3 < 7 <")) # 'Invalid input. Please provide an input of string with a valid number of integers and operators in it.'
-print(correct_signs("13 > 44 > 33 > 1"))    # False
+# print(correct_signs(3)) # 'Invalid input. Please provide an input of string data type.'
+# print(correct_signs("3 < 7 < 11"))          # True
+# print(correct_signs("3 < 7 <")) # 'Invalid input. Please provide an input of string with a valid number of integers and operators in it.'
+# print(correct_signs("13 > 44 > 33 > 1"))    # False
 print(correct_signs("1 < 2 < 6 < 9 > 3"))   # True
