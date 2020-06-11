@@ -165,40 +165,26 @@ PHASE IV: REFLECT on/REFACTOR the plan
 """
 
 def correct_signs(txt):
-    # print(f"\ntxt = {txt}")
-    # print(f"type(txt) = {type(txt)}")
-    
     is_correct = False
-    # print(f"is_correct = {is_correct}")
     
     if type(txt) != str:
         return 'Invalid input. Please provide an input of string data type.'
     
     txt_split_list = txt.split(' ')
-    # print(f"txt_split_list = {txt_split_list}")
     
     if len(txt_split_list) % 2 == 0:
         return 'Invalid input. Please provide an input of string with a valid number of integers and operators in it.'
     
     txt_nums_list = []
-    # print(f"txt_nums_list = {txt_nums_list}")
-    
     txt_operators_list = []
-    # print(f"txt_operators_list = {txt_operators_list}")
     
     for i in range(0, len(txt_split_list), 2):
         num = txt_split_list[i]
-        # print(f"num = {num}")
-        
         txt_nums_list.append(num)
-        # print(f"*UPDATED* txt_nums_list = {txt_nums_list}")
         
     for j in range(1, len(txt_split_list), 2):
         operator = txt_split_list[j]
-        # print(f"operator = {operator}")
-        
         txt_operators_list.append(operator)
-        # print(f"*UPDATED* txt_operators_list = {txt_operators_list}")
         
     valid_operators_cache = {
         '<': True,
@@ -208,39 +194,25 @@ def correct_signs(txt):
         '>=': True,
         '!=': True,
     }
-    # print(f"valid_operators_cache = {valid_operators_cache}")
     
     all_operators_valid = True
-    # print(f"all_operators_valid = {all_operators_valid}")
     
-    for operator in txt_operators_list:
-        # print(f"operator = {operator}")
-        # print(f"type(operator) = {type(operator)}")
-        
+    for operator in txt_operators_list: 
         if operator not in valid_operators_cache:
             all_operators_valid = False
-            # print(f"'{operator}' is not considered a valid operator.")
             return is_correct
-            
-    # print("All operators from the 'txt_operators_list' were considered valid!")
     
     k = 0
     while k < len(txt_nums_list) - 1:
-        valid_comparison = True
-        # print(f"valid_comparison = {valid_comparison}")
-        
         index_num_1 = k
         index_num_2 = k + 1
         index_operator = k
         
         num_1 = int(txt_nums_list[index_num_1])
-        # print(f"num_1 = {num_1}")
         
         comparison_operator = txt_operators_list[index_operator]
-        # print(f"comparison_operator = {comparison_operator}")
         
         num_2 = int(txt_nums_list[index_num_2])
-        # print(f"num_2 = {num_2}")
         
         if comparison_operator == '<':
             compare_nums = num_1 < num_2
@@ -259,11 +231,8 @@ def correct_signs(txt):
             
         elif comparison_operator == '!=':      
             compare_nums = num_1 != num_2
-        # print(f"compare_nums = {compare_nums}")
         
         if compare_nums == False:
-            valid_comparison = False
-            # print(f"This comparison, {str(num_1)} {comparison_operator} {str(num_2)}, in invalid.")
             return is_correct
         
         k += 1
@@ -272,8 +241,8 @@ def correct_signs(txt):
     return is_correct
 
 
-print(correct_signs(3)) # 'Invalid input. Please provide an input of string data type.'
-print(correct_signs("3 < 7 < 11"))          # True
-print(correct_signs("3 < 7 <")) # 'Invalid input. Please provide an input of string with a valid number of integers and operators in it.'
-print(correct_signs("13 > 44 > 33 > 1"))    # False
-print(correct_signs("1 < 2 < 6 < 9 > 3"))   # True
+# print(correct_signs(3)) # 'Invalid input. Please provide an input of string data type.'
+# print(correct_signs("3 < 7 < 11"))          # True
+# print(correct_signs("3 < 7 <")) # 'Invalid input. Please provide an input of string with a valid number of integers and operators in it.'
+# print(correct_signs("13 > 44 > 33 > 1"))    # False
+# print(correct_signs("1 < 2 < 6 < 9 > 3"))   # True
