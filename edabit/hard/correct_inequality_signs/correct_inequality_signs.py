@@ -83,16 +83,21 @@ PHASE II: devise a PLAN
     (7) Declare a var, 'txt_operators_list', and initialize it with an empty
     pair of square brackets.  
 
-    (8) Iterate through the 'txt_split_list' with a 'for' loop.
+    (8) Iterate through odd-numbered indices of the 'txt_split_list' with a 'for' loop.
 
-        (a) Declare a var, 'element', and set its value equal to the element 
+        (a) Declare a var, 'num', and set its value equal to the element 
         (from 'txt_split_list') being iterated on.
 
-        (b) If 'element' is of 'integer' data type, append it to 'txt_nums_list'.
+        (b) Append 'num' to the 'txt_nums_list'.
+        
+    (9) Iterate through even-numbered indices of the 'txt_split_list' with a 'for' loop.
 
-        (c) Otherwise, append 'element' to the 'txt_operators_list'.
+        (a) Declare a var, 'operator', and set its value equal to the element 
+        (from 'txt_split_list') being iterated on.
 
-    (9) Declare a var, 'valid_operators_cache', and initialize it with the
+        (b) Append 'operator' to the 'txt_operators_list'.
+
+    (10) Declare a var, 'valid_operators_cache', and initialize it with the
     following values: 
         {
             '<': True,
@@ -103,29 +108,29 @@ PHASE II: devise a PLAN
             '!=': True
         }
 
-    (10) Declare a var, 'all_operators_valid', and initialize it with a value of
+    (11) Declare a var, 'all_operators_valid', and initialize it with a value of
     True (Boolean).
 
-    (11) Iterate through each element of the 'txt_operators_list' with a 'for'
+    (12) Iterate through each element of the 'txt_operators_list' with a 'for'
     loop.
 
-        (12) Use an 'if' statement and the 'valid_operators_cache' to validate each element.
+        (13) Use an 'if' statement and the 'valid_operators_cache' to validate each element.
 
             (a) If the element is NOT a valid operator, update the value of 
             'all_operators_valid' to be False (Boolean).
             
             (b) Else, do nothing.
             
-    (13) Declare a var, 'index_a', and initialize it with a value of 0
+    (14) Declare a var, 'index_a', and initialize it with a value of 0
     (integer).
     
-    (14) Declare a var, 'index_b', and initialize it with a value of 'index_a
+    (15) Declare a var, 'index_b', and initialize it with a value of 'index_a
     + 1' (integer).
     
-    (15) Declare a var, 'index_operator', and initialize it with a value of 0
+    (16) Declare a var, 'index_operator', and initialize it with a value of 0
     (integer).
     
-    (16) Iterate through a range (start = index_a, stop = len(txt_nums_list)) using
+    (17) Iterate through a range (start = index_a, stop = len(txt_nums_list)) using
     a 'for' loop and vars 'index_a', 'index_b', and 'index_operator'.
     
         (a) Declare a var, 'element_a', and initialize it with a value of 
@@ -147,9 +152,9 @@ PHASE II: devise a PLAN
         
         (h) Add 1 to the value of 'index_a'
         
-    (17) Update the value of 'is_correct' to be True (Boolean).
+    (18) Update the value of 'is_correct' to be True (Boolean).
 
-    (18) Return the value of 'is_correct'.
+    (19) Return the value of 'is_correct'.
 
 
 PHASE III: EXECUTE the plan (Please See Below)
@@ -177,7 +182,21 @@ def correct_signs(txt):
     print(f"txt_nums_list = {txt_nums_list}")
     
     txt_operators_list = []
-    print(f"txt_operators_list = {txt_operators_list}\n")
+    print(f"txt_operators_list = {txt_operators_list}")
+    
+    for i in range(0, len(txt_split_list), 2):
+        num = txt_split_list[i]
+        # print(f"num = {num}")
+        
+        txt_nums_list.append(num)
+        print(f"*UPDATED* txt_nums_list = {txt_nums_list}")
+        
+    for j in range(1, len(txt_split_list), 2):
+        operator = txt_split_list[j]
+        # print(f"operator = {operator}")
+        
+        txt_operators_list.append(operator)
+        print(f"*UPDATED* txt_operators_list = {txt_operators_list}")
     
     return is_correct
 
