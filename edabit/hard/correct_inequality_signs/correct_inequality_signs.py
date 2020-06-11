@@ -121,36 +121,38 @@ PHASE II: devise a PLAN
             
             (b) Else, do nothing.
             
-    (14) Declare a var, 'index_a', and initialize it with a value of 0
+    (14) Declare a var, 'index_num_1', and initialize it with a value of 0
     (integer).
     
-    (15) Declare a var, 'index_b', and initialize it with a value of 'index_a
+    (15) Declare a var, 'index_num_2', and initialize it with a value of 'index_num_1
     + 1' (integer).
     
     (16) Declare a var, 'index_operator', and initialize it with a value of 0
     (integer).
     
-    (17) Iterate through a range (start = index_a, stop = len(txt_nums_list)) using
-    a 'for' loop and vars 'index_a', 'index_b', and 'index_operator'.
+    (17) Iterate through a range (start = index_num_1, stop = len(txt_nums_list)) using
+    a 'while' loop and vars 'index_num_1', 'index_num_2', and 'index_operator'.
     
-        (a) Declare a var, 'element_a', and initialize it with a value of 
-        'int(txt_nums_list[index_a])'.
+        (a) Declare a var, 'valid_comparison', and initialize it with True (Boolean).
+    
+        (b) Declare a var, 'num_1', and initialize it with a value of 
+        'int(txt_nums_list[index_num_1])'.
         
-        (b) Declare a var, 'element_b', and initialize it with a value of 
-        'int(txt_nums_list[index_b])'.
+        (c) Declare a var, 'num_2', and initialize it with a value of 
+        'int(txt_nums_list[index_num_2])'.
         
-        (c) Declare a var, 'valid_comparison', and initialize it with a value 
-        of True (Boolean).
+        (d) Declare a var, 'comparison_operator', and initialize it with a value 
+        of 'txt_operators_list[index_operator]'.
         
-        (d) Declare a var, 'compare_a_b', and set it equal to 'element_a + 
-        'txt_operators_list[index_operator]' + element_b'.
+        (e) Declare a var, 'compare_nums', and set it equal to 'num_1 + 
+        comparison_operator + num_2'.
         
-        (f) If 'compare_a_b' is False, update 'valid_comparison' to be False 
+        (f) If 'compare_nums' is False, update 'valid_comparison' to be False 
         (Boolean) and return the value of 'is_correct'.
         
         (g) Else, do nothing.
         
-        (h) Add 1 to the value of 'index_a'
+        (h) Add 1 to the value of 'k' (iterator).
         
     (18) Update the value of 'is_correct' to be True (Boolean).
 
@@ -197,7 +199,62 @@ def correct_signs(txt):
         
         txt_operators_list.append(operator)
         print(f"*UPDATED* txt_operators_list = {txt_operators_list}")
+        
+    valid_operators_cache = {
+        '<': True,
+        '>': True,
+        '==': True,
+        '<=': True,
+        '>=': True,
+        '!=': True,
+    }
+    # print(f"valid_operators_cache = {valid_operators_cache}")
     
+    all_operators_valid = True
+    print(f"all_operators_valid = {all_operators_valid}")
+    
+    for operator in txt_operators_list:
+        print(f"operator = {operator}")
+        print(f"type(operator) = {type(operator)}")
+        
+        if operator not in valid_operators_cache:
+            all_operators_valid = False
+            print(f"'{operator}' is not considered a valid operator.")
+            return is_correct
+            
+    print("All operators from the 'txt_operators_list' were considered valid!")
+    
+    k = 0
+    while k < len(txt_nums_list) - 1:
+        valid_comparison = True
+        print(f"valid_comparison = {valid_comparison}")
+        
+        index_num_1 = k
+        index_num_2 = k + 1
+        index_operator = k
+        
+        num_1 = int(txt_nums_list[index_num_1])
+        print(f"num_1 = {num_1}")
+        
+        comparison_operator = txt_operators_list[index_operator]
+        print(f"comparison_operator = {comparison_operator}")
+        
+        num_2 = int(txt_nums_list[index_num_2])
+        print(f"num_2 = {num_2}")
+        
+        compare_nums = f"{num_1} {comparison_operator} {num_2}"
+        print(f"compare_nums = {compare_nums}")
+        
+        if compare_nums == False:
+            valid_comparison = False
+            print("This comparison, '{num_1 + comparison_operator + num_2}' in invalid.")
+            return is_correct
+        else:
+            print("This is a valid inequality expression.")
+        
+        k += 1
+        
+    is_correct = True
     return is_correct
 
 
