@@ -173,7 +173,14 @@ def correct_signs(txt):
     if len(txt_split_list) % 2 == 0:
         return 'Invalid input. Please provide an input of string with a valid number of integers and operators in it.'
     
+    txt_nums_list = []
+    print(f"txt_nums_list = {txt_nums_list}")
+    
+    txt_operators_list = []
+    print(f"txt_operators_list = {txt_operators_list}\n")
+    
     return is_correct
+
 
 print(correct_signs(3)) # 'Invalid input. Please provide an input of string data type.'
 print(correct_signs("3 < 7 < 11"))          # True
