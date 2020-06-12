@@ -74,7 +74,22 @@ PHASE II: [Devise a] PLAN
         
     (7) Return the value of 'factorial'.
 
-PHASE III: EXECUTE [the plan] PHASE IV: REFLECT ON/REFACTOR [the plan/solution]
+PHASE III: EXECUTE [the plan]
+    - First-Pass Solution (PLEASE SEE BELOW)
+
+PHASE IV: REFLECT ON/REFACTOR [the plan/solution]
+    - First-Pass Solution:
+        - Asymptotic Analysis:
+            - Time Complexity:
+                - O(n) -> 'linear'
+            - Space Complexity:
+                - O(1) -> 'constant'
+        - Can this solution be optimized?
+            - Yes.
+        - How?
+    - Use a 'factorial_cache' object that stores key/value pairs where the
+    'keys' are previously inputs, 'Z', and the 'values' are previously
+    calculated factorials for the corresponding 'keys'.
 """
 
 
