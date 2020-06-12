@@ -92,7 +92,6 @@ PHASE IV: REFLECT ON/REFACTOR [the plan/solution]
     calculated factorials for the corresponding 'keys'.
 """
 
-
 def factorial(Z):
     # print(f"\nZ = {Z}")
     
@@ -115,9 +114,63 @@ def factorial(Z):
     
     return factorial
 
+# print(factorial(-2))    # "Invalid input. Please try a positive integer instead."
+# print(factorial(2.133)) # "Invalid input. Please try a positive integer instead."
+# print(factorial(4))     # 24
+# print(factorial(0))     # 1
+# print(factorial(9))     # 362880
 
-print(factorial(-2))    # "Invalid input. Please try a positive integer instead."
-print(factorial(2.133)) # "Invalid input. Please try a positive integer instead."
-print(factorial(4))     # 24
-print(factorial(0))     # 1
-print(factorial(9))     # 362880
+
+# factorial_cache = {}
+# print(f"factorial_cache = {factorial_cache}")
+
+# def optimized_factorial(Z):
+#     # print(f"\nZ = {Z}")
+    
+#     factorial = 1
+#     # print(f"factorial = {factorial}")
+    
+#     if Z < 0 or type(Z) == float:
+#         return "Invalid input. Please try a positive integer instead."
+    
+#     elif Z == 0:
+#         return factorial
+    
+#     else:
+#         largest_cached_Z = 0
+        
+#         for k in factorial_cache:
+#             if int(k) < Z:
+#                 print(f"{k} is less {Z} so we could potentially use the previously calculated factorial ({factorial_cache[k]}) for Z.")
+                
+#                 if int(k) > largest_cached_Z:
+#                     largest_cached_Z = int(k)
+        
+#         print(f"largest_cached_Z = {largest_cached_Z}")
+        
+#         new_Z = Z - largest_cached_Z
+#         print(f"new_Z = {new_Z}")
+#         factorial *= factorial_cache[largest_cached_Z]
+#         print(f"factorial = {factorial}")
+        
+#         for i in range(1, new_Z + 1):
+#             int_below_z = i
+#             # print(f"int_below_z = {int_below_z}")
+            
+#             factorial *= int_below_z
+#             # print(f"*UPDATED* factorial = {factorial}")
+    
+#     if Z not in factorial_cache:
+#         factorial_cache[Z] = factorial
+#         print(f"factorial_cache[{Z}] = {factorial}")
+#         print(f"*UPDATED* factorial_cache = {factorial_cache}")
+        
+    
+#     return factorial
+
+# # print(optimized_factorial(-2))    # "Invalid input. Please try a positive integer instead."
+# # print(optimized_factorial(2.133)) # "Invalid input. Please try a positive integer instead."
+# print(optimized_factorial(0))     # 1
+# print(optimized_factorial(4))     # 24
+# print(optimized_factorial(9))     # 362880
+# print(optimized_factorial(12))     # 1
