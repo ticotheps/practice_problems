@@ -93,10 +93,7 @@ PHASE IV: REFLECT ON/REFACTOR [the plan/solution]
 """
 
 def factorial(Z):
-    # print(f"\nZ = {Z}")
-    
     factorial = 1
-    # print(f"factorial = {factorial}")
     
     if Z < 0 or type(Z) == float:
         return "Invalid input. Please try a positive integer instead."
@@ -107,10 +104,7 @@ def factorial(Z):
     else:
         for i in range(1, Z + 1):
             int_below_z = i
-            # print(f"int_below_z = {int_below_z}")
-            
             factorial *= int_below_z
-            # print(f"*UPDATED* factorial = {factorial}")
     
     return factorial
 
