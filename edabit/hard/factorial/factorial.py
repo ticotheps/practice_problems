@@ -56,12 +56,15 @@ PHASE II: [Devise a] PLAN
     (2) Declare a var, 'factorial', that will be returned as the output.
     Initialize it with a value of 1
 
-    (3) If 'Z' is LESS THAN 0, return a string that says "Invalid input. Please
+    (3) If 'Z' is LESS THAN 0, return a string that says, "Invalid input. Please
     try a positive integer instead."
 
     (4) If 'Z' is equal to 0, return the value of 'factorial'.
+    
+    (5) If 'Z' is of 'float' data type, return a string that says, "Invalid
+    input. Please try a positive integer instead."
 
-    (5) Use a 'for' loop to iterate through a range of numbers (1 -> Z)...
+    (6) Use a 'for' loop to iterate through a range of numbers (1 -> Z)...
 
         (a) Declare a var, 'int_below_z', and set it equal to the iterator used
         in the 'for' loop.
@@ -69,7 +72,7 @@ PHASE II: [Devise a] PLAN
         (b) Multiply the value of 'factorial' by the value of 'int_below_z' and
         set that value equal to 'factorial'.
         
-    (6) Return the value of 'factorial'.
+    (7) Return the value of 'factorial'.
 
 PHASE III: EXECUTE [the plan] PHASE IV: REFLECT ON/REFACTOR [the plan/solution]
 """
@@ -78,11 +81,14 @@ PHASE III: EXECUTE [the plan] PHASE IV: REFLECT ON/REFACTOR [the plan/solution]
 def factorial(Z):
     print(f"\nZ = {Z}")
     
-    factorial = 0
+    factorial = 1
     print(f"factorial = {factorial}")
     
     return factorial
 
-print(factorial(4))  # 24
-print(factorial(0))  # 1
-print(factorial(9))  # 362880
+
+print(factorial(-2))    # "Invalid input. Please try a positive integer instead."
+print(factorial(2.133)) # "Invalid input. Please try a positive integer instead."
+print(factorial(4))     # 24
+print(factorial(0))     # 1
+print(factorial(9))     # 362880
