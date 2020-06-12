@@ -8,3 +8,6 @@ class Test(unittest.TestCase):
         self.assertEqual(factorial(4), 24)
         self.assertEqual(factorial(0), 1)
         self.assertEqual(factorial(9), 362880)
+        
+if __name__ == '__main__':
+    unittest.main()
