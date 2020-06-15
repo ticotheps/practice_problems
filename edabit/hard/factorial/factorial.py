@@ -110,7 +110,7 @@ def factorial(Z):
 
 
 
-factorial_cache = {"2":2, "3":6, "5":120, "7":5040}
+factorial_cache = {}
 
 def optimized_factorial(Z):
     factorial = 1
@@ -124,7 +124,7 @@ def optimized_factorial(Z):
     else:
         largest_cached_Z = 0
         precalculated_factorial = 0
-        new_Z_min = 0
+        new_Z_min = 1
         
         for key in factorial_cache:
             key_int = int(key)
