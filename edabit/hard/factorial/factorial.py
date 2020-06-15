@@ -92,27 +92,27 @@ PHASE IV: REFLECT ON/REFACTOR [the plan/solution]
     calculated factorials for the corresponding 'keys'.
 """
 
-# def factorial(Z):
-#     factorial = 1
+def factorial(Z):
+    factorial = 1
     
-#     if Z < 0 or type(Z) == float:
-#         return "Invalid input. Please try a positive integer instead."
+    if Z < 0 or type(Z) == float:
+        return "Invalid input. Please try a positive integer instead."
     
-#     elif Z == 0:
-#         return factorial
+    elif Z == 0:
+        return factorial
     
-#     else:
-        # for i in range(1, Z + 1):
-        #     int_below_z = i
-        #     factorial *= int_below_z
+    else:
+        for i in range(1, Z + 1):
+            int_below_z = i
+            factorial *= int_below_z
     
-#     return factorial
+    return factorial
 
-# print(factorial(-2))    # "Invalid input. Please try a positive integer instead."
-# print(factorial(2.133)) # "Invalid input. Please try a positive integer instead."
-# print(factorial(4))     # 24
-# print(factorial(0))     # 1
-# print(factorial(9))     # 362880
+print(factorial(-2))    # "Invalid input. Please try a positive integer instead."
+print(factorial(2.133)) # "Invalid input. Please try a positive integer instead."
+print(factorial(4))     # 24
+print(factorial(0))     # 1
+print(factorial(9))     # 362880
 
 
 # Declare a cache object to store previously calculated factorials.
