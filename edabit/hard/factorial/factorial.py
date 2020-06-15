@@ -115,23 +115,38 @@ PHASE IV: REFLECT ON/REFACTOR [the plan/solution]
 # print(factorial(9))     # 362880
 
 
-factorial_cache = {"3":6}
+# Declare a cache object to store previously calculated factorials.
+factorial_cache = {"2":2, "3":6, "5":120, "7":5040}
 print(f"factorial_cache = {factorial_cache}")
 
+# Define a function that optimizes the time complexity for your first-pass solution.
 def optimized_factorial(Z):
     print(f"\nZ = {Z}")
     
+    # Declare a var that keeps track of the factorial of 'Z'.
     factorial = 1
     print(f"factorial = {factorial}")
     
+    # Evaluate for a valid input data type of 'int'.
     if Z < 0 or type(Z) == float:
         return "Invalid input. Please try a positive integer instead."
     
+    # Evaluate for a case where 'Z' is 0.
     elif Z == 0:
         return factorial
     
     else:
+        # Declare a var that keeps track of the largest cached key that we can
+        # can use to help us reduce the number of calculations to be done.
         largest_cached_Z = 0
+        print(f"*INITAL* largest_cached_Z = {largest_cached_Z}")
+        
+        # for i in range(Z, 0, -1):
+        #     new_z = i
+        #     print(f"new_z = {new_z}")
+            
+        #     if i in factorial_cache:
+        #         print(f"{new_z} exists as a key in the 'factorial_cache' object!")
         
         for k in factorial_cache:
             if int(k) < Z and int(k) > largest_cached_Z:
