@@ -108,96 +108,36 @@ def factorial(Z):
     
     return factorial
 
-print(factorial(-2))    # "Invalid input. Please try a positive integer instead."
-print(factorial(2.133)) # "Invalid input. Please try a positive integer instead."
-print(factorial(4))     # 24
-print(factorial(0))     # 1
-print(factorial(9))     # 362880
 
 
-# Declare a cache object to store previously calculated factorials.
 factorial_cache = {"2":2, "3":6, "5":120, "7":5040}
-print(f"factorial_cache = {factorial_cache}")
 
-# Define a function that optimizes the time complexity for your first-pass solution.
 def optimized_factorial(Z):
-    print(f"\nZ = {Z}")
-    
-    # Declare a var that keeps track of the factorial of 'Z'.
     factorial = 1
-    print(f"*INITIAL* factorial = {factorial}")
-    
-    # Evaluate for a valid input data type of 'int'.
+
     if Z < 0 or type(Z) == float:
         return "Invalid input. Please try a positive integer instead."
     
-    # Evaluate for a case where 'Z' is 0.
     elif Z == 0:
         return factorial
     
     else:
-        # Declare a var that keeps track of the largest cached KEY that we can
-        # can use to help us reduce the number of calculations to be done.
         largest_cached_Z = 0
-        print(f"*INITAL* largest_cached_Z = {largest_cached_Z}")
-        
-        # Declare a var that keeps track of the largest cached [pre-calculated]
-        # VALUE that we can use to help reduce the number of calculations.
         precalculated_factorial = 0
-        print(f"*INITAL* precalculated_factorial = {precalculated_factorial}")
-        
-        # Declare a var that keeps track of the new 'Z' value based on the what
-        # key we utilize from the 'factorial_cache' object.
         new_Z_min = 0
-        print(f"*INITAL* new_Z_min = {new_Z_min}")
         
-        # Compare each key in the 'factorial_cache' object to 'Z'.
         for key in factorial_cache:
             key_int = int(key)
-            print(f"\nkey_int = {key_int}")
-            
-            # Find the largest key in the 'factorial_cache' object that is LESS
-            # than 'Z'.
+
             if key_int < Z and key_int > largest_cached_Z:
-                print(
-                    f"{key} is less than {Z} so we could use the previously "
-                    f"calculated factorial for {key} (which is "
-                    f"{factorial_cache[key]})."
-                )
-                
-                # Set current 'largest_cached_Z' to the value of 'k' (as an 
-                # integer).
                 largest_cached_Z = key_int
-                print(f"**UPDATED** largest_cached_Z = {int(largest_cached_Z)}")
-                
-                # Set current 'precalculated_factorial' to the value associated 
-                # with 'largest_cached_Z' key from the 'factorial_cache' object.
                 precalculated_factorial = factorial_cache[key]
-                print(f"**UPDATED** precalculated_factorial = {precalculated_factorial}")
-                
-                # Multiply the value of 'precalculated_factorial' by the value 
-                # of 'factorial'.
                 factorial = precalculated_factorial
-                print(f"**UPDATED** factorial = {factorial}")
-                
-                # Set the value of 'new_Z' to the difference of 'Z' and
-                # 'largest_cached_Z'.
                 new_Z_min = largest_cached_Z + 1
-                print(f"**UPDATED** new_Z_min = {new_Z_min}")
                 
         
         for i in range(new_Z_min, Z + 1):
             multiplier = i
-            print(f"multiplier = {multiplier}")
             factorial *= multiplier
-            print(f"***CURRENT*** factorial = {factorial}")
-            print(f"(last 'for' loop) **UPDATED** factorial = {factorial}")
     
     return factorial
-
-# print(optimized_factorial(-2))    # "Invalid input. Please try a positive integer instead."
-# print(optimized_factorial(2.133)) # "Invalid input. Please try a positive integer instead."
-# print(optimized_factorial(0))     # 1
-print(optimized_factorial(4))     # 24
-# print(optimized_factorial(9))     # 362880
-# print(optimized_factorial(12))     # 479001600
