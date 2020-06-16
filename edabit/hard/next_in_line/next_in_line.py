@@ -22,20 +22,20 @@ PHASE I: UNDERSTAND [the problem]
 
 - Objective:
     - Write an algorithm that takes in two arguments, a list and an integer, and
-      returns a single output, which is an updated list, where the first element
-      of the original given input list is removed and the given integer input is
-      added to the end of the original given input list.
-      
+    returns a single output, which is an updated list, where the first element
+    of the original given input list is removed and the given integer input is
+    added to the end of the original given input list.
+
 - Expected Input(s):
     - Number Of: 2
     - Data Type(s): list, integer
     - Var Name(s): 'lst', 'num'
-    
+
 - Expected Output(s):
     - Number Of: 1
     - Data Type(s): list
     - Var Name(s): 'new_lst'
-    
+
 - Edge Cases & Constraints:
     - What happens when the given input list is empty?
         - Return a string that says, "No list has been selected".
@@ -45,10 +45,27 @@ PHASE I: UNDERSTAND [the problem]
         - Yes.
     - Can the given input integer be a floating point number?
         - No. The given input must be an integer.
-    
-    
+
+
 PHASE II: [devise a] PLAN
-PHASE III: EXECUTE [the plan]
+
+- Brute Force Solution: 
+
+    (1) Define a function that takes in two inputs, 'lst'
+    and 'num', and returns a single output, 'new_lst'.
+
+    (2) Declare a var, 'new_lst', and set it equal to the value of the given
+    input 'lst'.
+    
+    (3) Use the '.pop(0)' method to remove the first item from 'new_lst'.
+    
+    (4) Use '.append()' method to add the given integer input to the end of
+    'new_lst'.
+    
+    (5) Return the value of 'new_lst'.
+    
+PHASE III: EXECUTE [the plan] 
+
 PHASE IV: REFLECT ON + REFACTOR [the plan/solution]
 
 """
