@@ -75,21 +75,10 @@ PHASE IV: REFLECT ON + REFACTOR [the plan/solution]
 """
 
 def next_in_line(lst, num):
-    print(f"\nlst = {lst}")
-    print(f"num = {num}")
-    
     if len(lst) >= 1:
         new_lst = lst
-        print(f"*INITIAL* new_lst = {new_lst}")
-        
         new_lst.pop(0)
-        print(f"**UPDATED** new_lst = {new_lst}")
-        
         new_lst.append(num)
-        print(f"***UPDATED*** new_lst = {new_lst}")
-        
         return new_lst
     else:
         return "No list has been selected"
-    
-print(next_in_line([5, 6, 7, 8, 9], 1))
