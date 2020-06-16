@@ -51,21 +51,45 @@ PHASE II: [devise a] PLAN
 
 - Brute Force Solution: 
 
-    (1) Define a function that takes in two inputs, 'lst'
+    (1) Define a function, 'next_in_line()', that takes in two inputs, 'lst'
     and 'num', and returns a single output, 'new_lst'.
+    
+    (2) Validate that the given input 'lst' has at least 1 element.
+        (a) If 'lst' does NOT have a length of one or greater, return a string
+        that says, "No list has been selected".
 
-    (2) Declare a var, 'new_lst', and set it equal to the value of the given
+    (3) Declare a var, 'new_lst', and set it equal to the value of the given
     input 'lst'.
     
-    (3) Use the '.pop(0)' method to remove the first item from 'new_lst'.
+    (4) Use the '.pop(0)' method to remove the first item from 'new_lst'.
     
-    (4) Use '.append()' method to add the given integer input to the end of
+    (5) Use '.append()' method to add the given integer input to the end of
     'new_lst'.
     
-    (5) Return the value of 'new_lst'.
+    (6) Return the value of 'new_lst'.
     
-PHASE III: EXECUTE [the plan] 
+PHASE III: EXECUTE [the plan] (Please see below)
 
 PHASE IV: REFLECT ON + REFACTOR [the plan/solution]
 
 """
+
+def next_in_line(lst, num):
+    print(f"\nlst = {lst}")
+    print(f"num = {num}")
+    
+    if len(lst) >= 1:
+        new_lst = lst
+        print(f"*INITIAL* new_lst = {new_lst}")
+        
+        new_lst.pop(0)
+        print(f"**UPDATED** new_lst = {new_lst}")
+        
+        new_lst.append(num)
+        print(f"***UPDATED*** new_lst = {new_lst}")
+        
+        return new_lst
+    else:
+        return "No list has been selected"
+    
+print(next_in_line([5, 6, 7, 8, 9], 1))
