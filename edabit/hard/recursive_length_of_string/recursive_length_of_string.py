@@ -53,6 +53,29 @@ PHASE I: UNDERSTAND [the problem]
 
 PHASE II: [devise a] PLAN
 
+- [Iterative] Brute Force Solution:
+    (1) Define a function that takes in a single string input and returns the
+    length of the given input string as an integer.
+    
+    (2) Declare a variable, 'len_of_txt', and initialize it with an integer 
+    value of 0.
+    
+    (3) Find the length of 'txt' by calling the '.len()' method on 'txt' and
+    then set the value of 'len_of_txt' equal to the resulting length.
+    
+    (4) Return the value of 'len_of_txt'.
+    
+    
+- [Recursive] Brute Force Solution:
+    (1) Define a function that takes in a single string input and returns the
+    length of the given input string as an integer.
+    
+    (2) Define a base case where if 'txt' is an empty string, return 0.
+    
+    (3) Return 1 and make a recursive call to the 'length()' function, passing
+    in the range of indices for the given input string where the 'start' is the
+    next index and the 'stop' is the end of the string.
+
 -------------------------------------------------------------------------------
 
 PHASE III: EXECUTE [the plan]
@@ -61,12 +84,24 @@ PHASE III: EXECUTE [the plan]
 
 PHASE IV: REFLECT ON/REFACTOR [the plan]
 """
-
-def length(txt):
-    len_of_txt = 0
-    print(f"len_of_txt = {len_of_txt}")
+# ITERATIVE SOLUTION
+# def length(txt):
+#     len_of_txt = len(txt)
+#     print(f"len_of_txt = {len_of_txt}")
     
-    return len_of_txt
+#     return len_of_txt
+
+# print(length('apple'))  # 5
+# print(length('make'))  # 4
+# print(length('a'))  # 1
+# print(length(''))  # 0
+
+
+# RECURSIVE SOLUTION
+def length(txt):
+    if txt == '':
+        return 0
+    return 1 + length(txt[1:])
 
 print(length('apple'))  # 5
 print(length('make'))  # 4
