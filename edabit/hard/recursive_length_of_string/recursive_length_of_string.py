@@ -102,8 +102,3 @@ def length(txt):
     if txt == '':
         return 0
     return 1 + length(txt[1:])
-
-print(length('apple'))  # 5
-print(length('make'))  # 4
-print(length('a'))  # 1
-print(length(''))  # 0
