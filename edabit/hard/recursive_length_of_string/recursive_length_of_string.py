@@ -78,11 +78,21 @@ PHASE II: [devise a] PLAN
 
 -------------------------------------------------------------------------------
 
-PHASE III: EXECUTE [the plan]
+PHASE III: EXECUTE [the plan] (Please See Below)
 
 -------------------------------------------------------------------------------
 
 PHASE IV: REFLECT ON/REFACTOR [the plan]
+
+- Asymptotic Analysis:
+
+    - Iterative Solution:
+        - Time Complexity: O(n) -> 'linear'
+        - Space Complexity: O(1) -> 'constant'
+        
+    - Recursive Solution:
+        - Time Complexity: O(n) -> 'linear'
+        - Space Complexity: O(nm) -> 'm' = maximum depth of recursion tree
 """
 # ITERATIVE SOLUTION
 # def length(txt):
