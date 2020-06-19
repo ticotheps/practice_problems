@@ -17,3 +17,13 @@ Examples:
     - triangle(6) -> 21
     - triangle(215) -> 23220
 """
+"""
+The U.P.E.R. Problem-Solving Framework
+
+PHASE I: UNDERSTAND
+
+
+PHASE II: PLAN
+PHASE III: EXECUTE
+PHASE IV: REFLECT ON/REFACTOR
+"""
