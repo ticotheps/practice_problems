@@ -43,6 +43,25 @@ PHASE I: UNDERSTAND
         - Return a string that says, "Invalid input. Please enter a positive integer."
 
 PHASE II: PLAN
+
+- Brute Force Solution:
+    (1) Declare a cache object, 'tri_nums_cache', and initialize it with
+    key:value pairs where the keys indicate the "triangle number" (the index of
+    the triangle number in the sequence) and the values indicated the number of
+    total dots used to form a triangle at that triangle number. 
+        - i.e.  {
+                    1: 1,
+                    2: 2,
+                    3: 6,
+                    4: 10,
+                    5: 15
+                }
+    
+    (2) Define a function, 'triangle', that takes in a single input, 'n', and
+    returns a single output, 'num_of_dots'.
+    
+    (3)
+    
 PHASE III: EXECUTE
 PHASE IV: REFLECT ON/REFACTOR
 """
