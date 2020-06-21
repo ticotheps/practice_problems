@@ -60,7 +60,22 @@ PHASE II: PLAN
     (2) Define a function, 'triangle', that takes in a single input, 'n', and
     returns a single output, 'num_of_dots'.
     
-    (3)
+    (3) Declare a var, 'num_of_dots', that will be returned as the output. This
+    var will represent the total number of dots required to make an equilateral
+    triangle at the given 'n' (triangle number).
+    
+    (4) Declare a var, 'largest_cache_key', and set it equal to the largest key
+    in the 'tri_nums_cache' object. If no keys exist, set it equal to 0.
+    
+    (5) Declare a var, 'tri_start_num', and set it equal to 1.
+    
+    (6) Compare the given input, 'n', to the 'largest_cache_key' value.
+        (a) If they are equal to one another, return the value of 
+        "tri_nums_cache[largest_cache_key]".
+        
+        (b) If 'largest_cache_key' is not 0 and 'largest_cache_key' is less 
+        than 'n', set the value of 'tri_start_num' equal to the value of
+        'largest_cache_key'.
     
 PHASE III: EXECUTE
 PHASE IV: REFLECT ON/REFACTOR
