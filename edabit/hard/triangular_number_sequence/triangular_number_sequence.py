@@ -76,6 +76,9 @@ PHASE II: PLAN
         (b) If 'largest_cache_key' is not 0 and 'largest_cache_key' is less 
         than 'n', set the value of 'tri_start_num' equal to the value of
         'largest_cache_key'.
+        
+    (7) Return the value of 'num_of_dots'.
+    
     
 PHASE III: EXECUTE
 PHASE IV: REFLECT ON/REFACTOR
