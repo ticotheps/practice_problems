@@ -80,6 +80,26 @@ PHASE II: PLAN
     (7) Return the value of 'num_of_dots'.
     
     
-PHASE III: EXECUTE
+PHASE III: EXECUTE (Please see below)
+
 PHASE IV: REFLECT ON/REFACTOR
 """
+
+tri_nums_cache = {
+    1: 1,
+    2: 2,
+    3: 6,
+    4: 10,
+    5: 15
+}
+
+def triangle(n):
+    num_of_dots = 0
+    
+    return num_of_dots
+
+print(triangle(1))  # 1
+print(triangle(2))  # 2
+print(triangle(3))  # 6
+print(triangle(4))  # 10
+print(triangle(5))  # 15
