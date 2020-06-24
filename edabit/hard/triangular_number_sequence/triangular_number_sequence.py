@@ -65,6 +65,12 @@ PHASE II: PLAN
 PHASE III: EXECUTE (Please see below)
 
 PHASE IV: REFLECT ON/REFACTOR
+
+- Brute Force Solution:
+    - Asypmptotic Analysis:
+        - Time Complexity: O(n) -> "linear"
+        - Space Complexity: O(1) -> "constant"
+
 """
 
 def triangle(n):
