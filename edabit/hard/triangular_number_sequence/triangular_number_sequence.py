@@ -85,45 +85,56 @@ PHASE III: EXECUTE (Please see below)
 PHASE IV: REFLECT ON/REFACTOR
 """
 
-tri_nums_cache = {
-    1: 1,
-    2: 2,
-    3: 6,
-    4: 10,
-    5: 15
-}
+# tri_nums_cache = {
+#     1: 1,
+#     2: 2,
+#     3: 6,
+#     4: 10,
+#     5: 15
+# }
+
+# def triangle(n):
+#     num_of_dots = 0
+#     # print(f"\nINITIAL num_of_dots = {num_of_dots}")
+    
+#     largest_cache_key = 0
+#     # print(f"INITIAL largest_cache_key = {largest_cache_key}")
+    
+#     for key in tri_nums_cache:
+#         if key > largest_cache_key and key < n:
+#             largest_cache_key = key
+#             # print(f"UPDATED largest_cache_key = {largest_cache_key}")
+            
+#             num_of_dots = tri_nums_cache[largest_cache_key]
+#             # print(f"UPDATED num_of_dots = {num_of_dots}")
+            
+#         if key == n:
+#             num_of_dots = tri_nums_cache[key]
+#             # print(f"UPDATED num_of_dots = {num_of_dots}")
+#             return num_of_dots
+    
+#     tri_start_num = 1
+#     # print(f"INITIAL tri_start_num = {tri_start_num}")
+    
+#     if largest_cache_key != 0 and largest_cache_key != n:
+#         tri_start_num = largest_cache_key + 1
+#         # print(f"UPDATED tri_start_num = {tri_start_num}")
+        
+#     for j in range(tri_start_num, n):
+#         print(f"j = {j}")
+#         num_of_dots += j
+#         # print(f"UPDATED num_of_dots = {num_of_dots}")
+    
+#     return num_of_dots
 
 def triangle(n):
     num_of_dots = 0
-    # print(f"\nINITIAL num_of_dots = {num_of_dots}")
-    
-    largest_cache_key = 0
-    # print(f"INITIAL largest_cache_key = {largest_cache_key}")
-    
-    for key in tri_nums_cache:
-        if key > largest_cache_key and key < n:
-            largest_cache_key = key
-            # print(f"UPDATED largest_cache_key = {largest_cache_key}")
-            
-            num_of_dots = tri_nums_cache[largest_cache_key]
-            # print(f"UPDATED num_of_dots = {num_of_dots}")
-            
-        if key == n:
-            num_of_dots = tri_nums_cache[key]
-            # print(f"UPDATED num_of_dots = {num_of_dots}")
-            return num_of_dots
-    
-    tri_start_num = 1
-    # print(f"INITIAL tri_start_num = {tri_start_num}")
-    
-    if largest_cache_key != 0 and largest_cache_key != n:
-        tri_start_num = largest_cache_key + 1
-        # print(f"UPDATED tri_start_num = {tri_start_num}")
+    print(f"\nINITIAL num_of_dots = {num_of_dots}")
         
-    for j in range(tri_start_num, n):
+    for j in range(1, n+1):
         print(f"j = {j}")
         num_of_dots += j
-        # print(f"UPDATED num_of_dots = {num_of_dots}")
+        print(f"UPDATED num_of_dots = {num_of_dots}")
     
     return num_of_dots
 
@@ -132,3 +143,4 @@ print(triangle(2))  # 2
 print(triangle(3))  # 6
 print(triangle(4))  # 10
 print(triangle(5))  # 15
+print(triangle(6))  # 24
