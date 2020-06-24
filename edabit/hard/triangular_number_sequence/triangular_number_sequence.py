@@ -129,18 +129,8 @@ PHASE IV: REFLECT ON/REFACTOR
 
 def triangle(n):
     num_of_dots = 0
-    print(f"\nINITIAL num_of_dots = {num_of_dots}")
         
-    for j in range(1, n+1):
-        print(f"j = {j}")
-        num_of_dots += j
-        print(f"UPDATED num_of_dots = {num_of_dots}")
+    for i in range(1, n+1):
+        num_of_dots += i
     
     return num_of_dots
-
-print(triangle(1))  # 1
-print(triangle(2))  # 2
-print(triangle(3))  # 6
-print(triangle(4))  # 10
-print(triangle(5))  # 15
-print(triangle(6))  # 24
