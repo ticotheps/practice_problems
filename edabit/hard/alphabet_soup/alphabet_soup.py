@@ -107,6 +107,10 @@ PHASE IV: REFLECT/REFACTOR
         - Time Complexity: O(n^2) -> 'quadratic'
         - Space Complexity: O(1) -> 'constant'
 
+    - Can you improve the time or space complexity of this solution?
+        - Yes.
+        - How?
+            - Use a cache object instead of a list for faster lookups.
 """
 
 def alphabet_soup(str):
