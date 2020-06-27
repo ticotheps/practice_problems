@@ -44,7 +44,62 @@ PHASE I: UNDERSTAND
           alphabetic characters.
 
 PHASE II: PLAN
-PHASE III: EXECUTE
+
+- First-Pass Solution:
+    (1) Define a function that takes in a single input string of alphabetic 
+    characters, 'str', and returns a single output, 'new_str', which is a 
+    modified version of the original given input string where all the characters
+    are alphabetized.
+    
+    (2) Declare a var, 'alphabet', and initialize it with a list that includes
+    each letter of the alphabet (Upper-case & lower-case).
+    - i.e. - [
+        A, a, 
+        B, b, 
+        C, c, 
+        D, d, 
+        E, e, 
+        F, f, 
+        G, g, 
+        H, h, 
+        I, i, 
+        J, j, 
+        K, k,
+        L, l, 
+        M, m, 
+        N, n, 
+        O, o, 
+        P, p, 
+        Q, q, 
+        R, r, 
+        S, s, 
+        T, t, 
+        U, u, 
+        V, v,
+        W, w,
+        X, x,
+        Y, y,
+        Z, z 
+      ]
+      
+    (3) Declare a var, 'new_str', and initialize it with an empty string ('').
+    
+    (4) Use a 'for' loop to iterate through each letter of the 'alphabet' list.
+    
+        (a) Use another nested 'for' loop to iterate through each character from
+        the given input string, 'str'.
+        
+            (i) If the iterated-on character from 'str' matches the iterated-on
+            letter from 'alphabet', concatenate the former on to the 'new_str' 
+            string.
+            
+            (ii) Otherwise, do nothing.
+            
+    (5) Return the value of 'new_str'.
+    
+    
+PHASE III: EXECUTE (Please see below)
+
 PHASE IV: REFLECT/REFACTOR
 
 """
