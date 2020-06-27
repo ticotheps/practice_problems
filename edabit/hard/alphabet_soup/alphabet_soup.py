@@ -102,6 +102,11 @@ PHASE III: EXECUTE (Please see below)
 
 PHASE IV: REFLECT/REFACTOR
 
+- First-Pass Solution:
+    - Asymptotic Analysis:
+        - Time Complexity: O(n^2) -> 'quadratic'
+        - Space Complexity: O(1) -> 'constant'
+
 """
 
 def alphabet_soup(str):
