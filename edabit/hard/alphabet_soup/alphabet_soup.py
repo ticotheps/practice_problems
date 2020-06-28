@@ -113,32 +113,32 @@ PHASE IV: REFLECT/REFACTOR
             - Use a cache object instead of a list for faster lookups.
 """
 
-# def alphabet_soup(str):
-#     alphabet = ['A', 'a', 'B', 'b', 'C', 'c', 'D', 'd', 'E', 'e', 'F', 'f',
-#                 'G', 'g', 'H', 'h', 'I', 'i', 'J', 'j', 'K', 'k', 'L', 'l',
-#                 'M', 'm', 'N', 'n', 'O', 'o', 'P', 'p', 'Q', 'q', 'R', 'r',
-#                 'S', 's', 'T', 't', 'U', 'u', 'V', 'v', 'W', 'w', 'X', 'x',
-#                 'Y', 'y', 'Z', 'z']
+def alphabet_soup(str):
+    alphabet = ['A', 'a', 'B', 'b', 'C', 'c', 'D', 'd', 'E', 'e', 'F', 'f',
+                'G', 'g', 'H', 'h', 'I', 'i', 'J', 'j', 'K', 'k', 'L', 'l',
+                'M', 'm', 'N', 'n', 'O', 'o', 'P', 'p', 'Q', 'q', 'R', 'r',
+                'S', 's', 'T', 't', 'U', 'u', 'V', 'v', 'W', 'w', 'X', 'x',
+                'Y', 'y', 'Z', 'z']
     
-#     new_str = ''
+    new_str = ''
     
-#     for i in alphabet:
-#         # print(f"i = {i}")
+    for i in alphabet:
+        # print(f"i = {i}")
         
-#         for j in str:
-#             # print(f"j = {j}")
+        for j in str:
+            # print(f"j = {j}")
             
-#             if j == i:
-#                 # print(f"j ({j}) == i ({i})")
-#                 new_str += f"{j}"
+            if j == i:
+                # print(f"j ({j}) == i ({i})")
+                new_str += f"{j}"
     
-#     return new_str
+    return new_str
 
-# print(alphabet_soup('hello'))  # 'ehllo'
-# print(alphabet_soup('edabit'))  # 'abdeit'
-# print(alphabet_soup('hacker'))  # 'acehkr'
-# print(alphabet_soup('geek'))  # 'eegk'
-# print(alphabet_soup('javascript'))  # 'aacijprstv'
+print(alphabet_soup('hello'))  # 'ehllo'
+print(alphabet_soup('edabit'))  # 'abdeit'
+print(alphabet_soup('hacker'))  # 'acehkr'
+print(alphabet_soup('geek'))  # 'eegk'
+print(alphabet_soup('javascript'))  # 'aacijprstv'
 
 def alphabet_soup_optimized(str):
     alphabet = {
@@ -198,14 +198,14 @@ def alphabet_soup_optimized(str):
     
     new_str = ''
     
-    for i in alphabet:
-        # print(f"i = {i}")
+    for key in alphabet:
+        # print(f"key = {key}")
         
         for j in str:
             # print(f"j = {j}")
             
-            if j == i:
-                # print(f"j ({j}) == i ({i})")
+            if j == key:
+                # print(f"j ({j}) == key ({key})")
                 new_str += f"{j}"
     
     return new_str
