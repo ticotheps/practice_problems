@@ -25,7 +25,26 @@ The U.P.E.R. Problem-Solving Framework
 PHASE I: UNDERSTAND
 
 - Objective: 
-    - 
+    - Write an algorithm that takes in two string inputs (each containing positive
+      integers) and returns one output that is the sum of those positive
+      integers.
+      
+- Expected Inputs:
+    - Number Of: 2
+    - Data Types: string, string
+    - Var Names: 'num1', 'num2'
+    
+- Expected Outputs:
+    - Number Of: 1
+    - Data Type: string or integer
+    - Var Name: 'sum'
+    
+- Edge Cases & Constraints:
+    - Can the input strings be empty?
+        - Yes. However, only ONE of the input strings can be empty. The other
+          must contain an integer.
+    - Can the input strings have negative numbers?
+    - Can the input strings have floating point numbers?
 
 
 PHASE II: PLAN
