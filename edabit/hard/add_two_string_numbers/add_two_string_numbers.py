@@ -88,19 +88,22 @@ def add_str_nums(num1, num2):
     if num1.isalpha() == True or num2.isalpha() == True:
         return '-1'
 
-    if num1 == '':      
+    if num1 == '' and num2.isnumeric() == True:      
         num1_int = 0
         num2_int = int(num2)
-        # print(f"num1_int = {num1_int}")
         
-    if num2 == '':
+    if num2 == '' and num1.isnumeric() == True:
         num1_int = int(num1)
         num2_int = 0
-        # print(f"num2_int = {num2_int}")
+        
+    if num1 == '' and num1 == '':
+        num1_int = 0
+        num2_int = 0
         
     if num1.isnumeric() == True and num2.isnumeric() == True:
         num1_int = int(num1)
         num2_int = int(num2)
+        
         
     sum = num1_int + num2_int
     sum_str = str(sum)
@@ -112,3 +115,4 @@ print(add_str_nums('4', '5'))  # '9'
 print(add_str_nums('abcdefg', '3'))  # '-1'
 print(add_str_nums('1', ''))  # '1'
 print(add_str_nums('1874682736267235927359283579235789257', '32652983572985729'))  # '1874682736267235927391936562808774986'
+print(add_str_nums("", ""))  # '0'
