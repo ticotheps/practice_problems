@@ -50,6 +50,29 @@ PHASE I: UNDERSTAND
 
 
 PHASE II: PLAN
+
+- Brute Force Solution:
+    (1) Define a function that takes in two string inputs, 'num1' & 'num2', and
+    returns a single output string (the sum of the positive integers inside of
+    the input strings).
+    
+    (2) Evaluate both arguments to make sure that the contents of both strings
+    are, in fact, positive whole numbers.
+    
+        (a) If they are both positive whole numbers, proceed.
+        
+        (b) If they are not BOTH positive whole numbers, return the string, '-1'.
+        
+    (3) Convert each argument from a string data type to a number data type.
+    
+    (4) Declare a new var, 'sum', that adds up the values of the converted
+    string arguments together.
+    
+    (5) Convert the 'sum' var into a string data type and set it equal to a new
+    var, 'sum_str'.
+    
+    (6) Return the value of 'sum_str'.
+    
 PHASE III: EXECUTE
 PHASE IV: REFLECT/REFACTOR
 """
