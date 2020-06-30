@@ -44,7 +44,9 @@ PHASE I: UNDERSTAND
         - Yes. However, only ONE of the input strings can be empty. The other
           must contain an integer.
     - Can the input strings have negative numbers?
+        - No. They must only contain positive whole numbers.
     - Can the input strings have floating point numbers?
+        - No. They must only contain positive whole numbers.
 
 
 PHASE II: PLAN
