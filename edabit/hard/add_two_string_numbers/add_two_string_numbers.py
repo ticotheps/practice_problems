@@ -85,7 +85,7 @@ def add_str_nums(num1, num2):
     if type(num1) != str or type(num2) != str:
         return 'Invalid inputs. Please use two arguments of string data type.'
     
-    if num1.isalpha() == True or num2.isalpha() == True:
+    if num1.isnumeric() == False or num2.isnumeric() == False:
         return '-1'
 
     if num1 == '' and num2.isnumeric() == True:      
