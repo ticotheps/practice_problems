@@ -79,12 +79,15 @@ PHASE IV: REFLECT/REFACTOR
 """
 
 def add_str_nums(num1, num2):
-    num1_int = None
-    num2_int = None
+    num1_int = 0
+    num2_int = 0
     
     if type(num1) != str or type(num2) != str:
         return 'Invalid inputs. Please use two arguments of string data type.'
-    
+    if num1 == '' and num2 == '':
+        num1_int = 0
+        num2_int = 0    
+
     if num1.isnumeric() == False or num2.isnumeric() == False:
         return '-1'
 
@@ -94,10 +97,6 @@ def add_str_nums(num1, num2):
         
     if num2 == '' and num1.isnumeric() == True:
         num1_int = int(num1)
-        num2_int = 0
-        
-    if num1 == '' and num1 == '':
-        num1_int = 0
         num2_int = 0
         
     if num1.isnumeric() == True and num2.isnumeric() == True:
