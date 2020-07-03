@@ -78,36 +78,50 @@ PHASE III: EXECUTE (Please See Below)
 PHASE IV: REFLECT/REFACTOR
 """
 
-def add_str_nums(num1, num2):
-    num1_int = 0
-    num2_int = 0
+# def add_str_nums(num1, num2):
+#     num1_int = 0
+#     num2_int = 0
     
-    if type(num1) != str or type(num2) != str:
-        return 'Invalid inputs. Please use two arguments of string data type.'
-    if num1 == '' and num2 == '':
-        num1_int = 0
-        num2_int = 0    
+#     if type(num1) != str or type(num2) != str:
+#         return 'Invalid inputs. Please use two arguments of string data type.'
+#     if num1 == '' and num2 == '':
+#         num1_int = 0
+#         num2_int = 0    
 
-    if num1.isnumeric() == False or num2.isnumeric() == False:
-        return '-1'
+#     if num1.isnumeric() == False or num2.isnumeric() == False:
+#         return '-1'
 
-    if num1 == '' and num2.isnumeric() == True:      
-        num1_int = 0
-        num2_int = int(num2)
+#     if num1 == '' and num2.isnumeric() == True:      
+#         num1_int = 0
+#         num2_int = int(num2)
         
-    if num2 == '' and num1.isnumeric() == True:
-        num1_int = int(num1)
-        num2_int = 0
+#     if num2 == '' and num1.isnumeric() == True:
+#         num1_int = int(num1)
+#         num2_int = 0
         
-    if num1.isnumeric() == True and num2.isnumeric() == True:
-        num1_int = int(num1)
-        num2_int = int(num2)
+#     if num1.isnumeric() == True and num2.isnumeric() == True:
+#         num1_int = int(num1)
+#         num2_int = int(num2)
         
         
-    sum = num1_int + num2_int
-    sum_str = str(sum)
+#     sum = num1_int + num2_int
+#     sum_str = str(sum)
         
-    return sum_str
+#     return sum_str
+
+def add_str_nums(num1, num2):
+    # evaluate both input strings to make sure that they are not empty
+        # if "num1" is empty, set it's value to 0.
+        # if "num2" is empty, set it's value to 0.
+    # concatenate the two input strings together
+    # create a var, 'sum', to keep track of a running total sum
+    # use a 'for' loop to iterate through each char
+        # evaluate each char and make sure that it is an integer
+            # if it is NOT an integer, return "-1"
+        # convert each char from a string to an integer
+        # add the integer to the current value of 'sum'
+    # return the value of 'sum'
+        
 
 
 print(add_str_nums('4', '5'))  # '9'
