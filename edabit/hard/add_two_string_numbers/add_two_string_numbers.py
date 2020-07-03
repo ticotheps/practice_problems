@@ -74,40 +74,7 @@ PHASE II: PLAN
     (6) Return the value of 'sum_str'.
     
 PHASE III: EXECUTE (Please See Below)
-
-PHASE IV: REFLECT/REFACTOR
 """
-
-# def add_str_nums(num1, num2):
-#     num1_int = 0
-#     num2_int = 0
-    
-#     if type(num1) != str or type(num2) != str:
-#         return 'Invalid inputs. Please use two arguments of string data type.'
-#     if num1 == '' and num2 == '':
-#         num1_int = 0
-#         num2_int = 0    
-
-#     if num1.isnumeric() == False or num2.isnumeric() == False:
-#         return '-1'
-
-#     if num1 == '' and num2.isnumeric() == True:      
-#         num1_int = 0
-#         num2_int = int(num2)
-        
-#     if num2 == '' and num1.isnumeric() == True:
-#         num1_int = int(num1)
-#         num2_int = 0
-        
-#     if num1.isnumeric() == True and num2.isnumeric() == True:
-#         num1_int = int(num1)
-#         num2_int = int(num2)
-        
-        
-#     sum = num1_int + num2_int
-#     sum_str = str(sum)
-        
-#     return sum_str
 
 def add_str_nums(num1, num2):
     # create a var, 'sum', to keep track of a running total sum
@@ -158,3 +125,13 @@ print(add_str_nums("1", ""))  # "1"
 print(add_str_nums("198547982570192857109283570192837509218375091283750192835710298357019237509125710925710923759012375901275901285701925712035712983571092562945875310962518235712385971230956127856123571209358712905610923587102395716258125612095710298","510298570192857910827519027510982561875691857120958371029586187585198273501982573091857091875901875809175091659812750918275091875091857918265901265918659816591750981750981759817598175089175891720570129571098758901750917501975"))  #   "198548492868763049967194397711865020200936966975607313794081327943206822707399212908284015616104251803151710460793585524786631258662967654803793576863784154372202562981937878837883388807533802081502644157231966815017027363013212273"
 print(add_str_nums("0000001", "020006"))  # "20007"
 print(add_str_nums("1325123515s238579875987", "38698592523525325"))  # "-1"
+
+
+"""
+PHASE IV: REFLECT/REFACTOR
+
+- FIRST-PASS SOLUTION:
+    - Asymptotic Analysis:
+        - Time Complexity: O(n) -> "linear"
+        - Space Complexity: O(1) -> "constant"
+"""
