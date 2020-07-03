@@ -110,22 +110,51 @@ PHASE IV: REFLECT/REFACTOR
 #     return sum_str
 
 def add_str_nums(num1, num2):
-    # evaluate both input strings to make sure that they are not empty
-        # if "num1" is empty, set it's value to 0.
-        # if "num2" is empty, set it's value to 0.
-    # concatenate the two input strings together
     # create a var, 'sum', to keep track of a running total sum
-    # use a 'for' loop to iterate through each char
-        # evaluate each char and make sure that it is an integer
-            # if it is NOT an integer, return "-1"
-        # convert each char from a string to an integer
-        # add the integer to the current value of 'sum'
-    # return the value of 'sum'
+    sum = 0
+    
+    # evaluate both input strings to make sure that they are both positive
+    # integers and are also not empty strings
+    if type(num1) == str and type(num2) == str:
+        # print(f"\nnum1 = {num1}")
+        # print(f"num2 = {num2}")
+        
+        if num1 == "":
+            print("num1 is an empty string")
+        
+        else:
+            for i in num1:          
+                if i.isnumeric() == True:
+                    print(f"i = {i}, which is numeric")
+                    
+                else:
+                    print(f"i = {i}, which is NOT numeric")
+                    return "-1"
+            sum += int(num1)
+            # print(f"***UPDATED sum = {sum}")
+                
+        if num2 == "":
+            print("num2 is an empty string")
+        
+        else:  
+            for j in num2:
+                if j.isnumeric() == True:
+                    print(f"i = {j}, which is numeric")
+                else:
+                    print(f"i = {j}, which is NOT numeric")
+                    return "-1"
+            sum += int(num2)
+            print(f"***UPDATED sum = {sum}")
+
+        return str(sum)
+    
+    else:
+        return "The provided inputs are both not of string data type. Please enter a valid input."
         
 
-
-print(add_str_nums('4', '5'))  # '9'
-print(add_str_nums('abcdefg', '3'))  # '-1'
-print(add_str_nums('1', ''))  # '1'
-print(add_str_nums('1874682736267235927359283579235789257', '32652983572985729'))  # '1874682736267235927391936562808774986'
-print(add_str_nums("", ""))  # '0'
+print(add_str_nums("", ""))  # "0"
+print(add_str_nums("1", "01"))  # "2"
+print(add_str_nums("1", ""))  # "1"
+print(add_str_nums("198547982570192857109283570192837509218375091283750192835710298357019237509125710925710923759012375901275901285701925712035712983571092562945875310962518235712385971230956127856123571209358712905610923587102395716258125612095710298","510298570192857910827519027510982561875691857120958371029586187585198273501982573091857091875901875809175091659812750918275091875091857918265901265918659816591750981750981759817598175089175891720570129571098758901750917501975"))  #   "198548492868763049967194397711865020200936966975607313794081327943206822707399212908284015616104251803151710460793585524786631258662967654803793576863784154372202562981937878837883388807533802081502644157231966815017027363013212273"
+print(add_str_nums("0000001", "020006"))  # "20007"
+print(add_str_nums("1325123515s238579875987", "38698592523525325"))  # "-1"
