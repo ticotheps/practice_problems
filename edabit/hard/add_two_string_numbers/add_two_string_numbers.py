@@ -9,7 +9,7 @@ Examples:
     - add_str_nums("abcdefg", "3") -> "-1"
     - add_str_nums("1", "") -> "1"
     - add_str_nums("1874682736267235927359283579235789257", "32652983572985729")
-   -> 1874682736267235927391936562808774986
+   -> "1874682736267235927391936562808774986"
    
 Notes:
     - If there are any non-numerical characters, return "-1".
