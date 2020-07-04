@@ -42,24 +42,16 @@ E = EXECUTE the plan (please see below)
 """
 # Brute Force Solution
 def find_unique_num(lst):
-	# create a var that will be returned as the output
 	unique_num = None
 
-	# use a "for" loop to iterate through the given input list
 	for i in range(0, len(lst)):
-		# use a nested "for" loop to iterate through the given input list again
 		for j in range(i+1, len(lst)):
-			# print(f"\nlst[{i}] = {lst[i]}")
-			# print(f"lst[{j}] = {lst[j]}")
    
 			if lst[0] != lst[1] and lst[0] != lst[2]:
 				unique_num = lst[0]
 				return unique_num
 
 			if lst[i] != lst[j]:
-				# print(f"\nlst[{i}] = {lst[i]}")
-				# print(f"lst[{j}] = {lst[j]}")
-				# print(f"{lst[j]} is the unique number!")
 				unique_num = lst[j]
 				return unique_num
 	return 'There are no unique numbers in the given input list'
