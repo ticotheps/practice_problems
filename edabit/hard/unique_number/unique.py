@@ -49,7 +49,10 @@ def find_unique_num(lst):
     
     return unique_num
 
-print(find_unique_num([3, 3, 3, 7, 3, 3]))  # 7
-print(find_unique_num([0, 0, 0.77, 0, 0]))  # 0.77
-print(find_unique_num([0, 1, 1, 1, 1, 1, 1, 1]))  # 0
+print(find_unique_num([3, 3, 3, 7, 3, 3]))           # 7
+print(find_unique_num([0, 0, 0.77, 0, 0]))           # 0.77
+print(find_unique_num([0, 1, 1, 1, 1, 1, 1, 1]))     # 0
+print(find_unique_num([-4, -4, -4, 4]))              # 4
+print(find_unique_num([8, 8, 8, 8, 8, 8, 8, 0.5]))   # 0.5
+print(find_unique_num([2, 1, 2, 2, 2, 2, 2, 2]))     # 1
 
