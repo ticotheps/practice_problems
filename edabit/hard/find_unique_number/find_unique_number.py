@@ -31,23 +31,38 @@ U = UNDERSTAND the problem
     
 - Edge Cases & Constraints:
     - Can the elements in the given input list be negative numbers?
-        - No. The elements must be positive integers.
+        - Yes.
     - Can the elements in the given input list be floating point numbers?
-        - No. The elements must be positive, whole integers.
+        - Yes.
     - Can the elements in the given input list be empty strings?
         - No. The elements must be positive, whole integers.
 
-P = devise a PLAN
-E = EXECUTE the plan
-R = REFLECT/REFACTOR the plan
-
-
+P = devise a PLAN (please see below)
+E = EXECUTE the plan (please see below)
 """
-
+# Brute Force Solution
 def find_unique_num(lst):
-    unique_num = None
-    
-    return unique_num
+	# create a var that will be returned as the output
+	unique_num = None
+
+	# use a "for" loop to iterate through the given input list
+	for i in range(0, len(lst)):
+		# use a nested "for" loop to iterate through the given input list again
+		for j in range(i+1, len(lst)):
+			# print(f"\nlst[{i}] = {lst[i]}")
+			# print(f"lst[{j}] = {lst[j]}")
+   
+			if lst[0] != lst[1] and lst[0] != lst[2]:
+				unique_num = lst[0]
+				return unique_num
+
+			if lst[i] != lst[j]:
+				# print(f"\nlst[{i}] = {lst[i]}")
+				# print(f"lst[{j}] = {lst[j]}")
+				# print(f"{lst[j]} is the unique number!")
+				unique_num = lst[j]
+				return unique_num
+	return 'There are no unique numbers in the given input list'
 
 print(find_unique_num([3, 3, 3, 7, 3, 3]))           # 7
 print(find_unique_num([0, 0, 0.77, 0, 0]))           # 0.77
@@ -56,3 +71,6 @@ print(find_unique_num([-4, -4, -4, 4]))              # 4
 print(find_unique_num([8, 8, 8, 8, 8, 8, 8, 0.5]))   # 0.5
 print(find_unique_num([2, 1, 2, 2, 2, 2, 2, 2]))     # 1
 
+"""
+R = REFLECT/REFACTOR the plan
+"""

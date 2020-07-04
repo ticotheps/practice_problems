@@ -1,5 +1,5 @@
 import unittest
-from unique import find_unique_num
+from find_unique_number import find_unique_num
 
 class Test(unittest.TestCase):
     def test_find_unique_num(self):
