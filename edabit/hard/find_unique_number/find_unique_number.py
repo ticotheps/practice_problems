@@ -65,4 +65,8 @@ print(find_unique_num([2, 1, 2, 2, 2, 2, 2, 2]))     # 1
 
 """
 R = REFLECT/REFACTOR the plan
+- Asymptotic Analysis:
+	- Brute Force Solution:
+		- Time Complexity: O(n^2) -> 'quadratic time'
+		- Space Complexity: O(1) -> 'constant space'
 """
