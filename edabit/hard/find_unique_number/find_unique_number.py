@@ -89,18 +89,26 @@ R = REFLECT/REFACTOR the plan
 
 # Optimized Solution
 def find_unique_num_optimized(lst):
-	unique_num = None
-
+	# create  a cache object/dict to store encountered numbers
+	encountered_nums_cache = {}
+	print(f"encountered_nums_cache = {encountered_nums_cache}")
+    
+	# use a 'for' loop to iterate through the given input list
 	for i in range(0, len(lst)):
-		for j in range(i+1, len(lst)):
-   
-			if lst[0] != lst[1] and lst[0] != lst[2]:
-				unique_num = lst[0]
-				return unique_num
+		if lst[i] in encountered_nums_cache:
+			print("This number already exists in our cache!")
+			encountered_nums_cache[lst[i]] += 1
+   			
+		else:
+			print("This is a new number! Add it to our cache!")
+			encountered_nums_cache[lst[i]] = 1
 
-			if lst[i] != lst[j]:
-				unique_num = lst[j]
-				return unique_num
+	print(f"***UPDDATED*** encountered_nums_cache = {encountered_nums_cache}")
+   
+	for key in encountered_nums_cache:
+		if encountered_nums_cache[key] == 1:
+			return key
+
 	return 'There are no unique numbers in the given input list'
 
 print(find_unique_num_optimized([3, 3, 3, 7, 3, 3]))           # 7
