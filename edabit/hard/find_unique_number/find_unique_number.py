@@ -56,13 +56,6 @@ def find_unique_num(lst):
 				return unique_num
 	return 'There are no unique numbers in the given input list'
 
-print(find_unique_num([3, 3, 3, 7, 3, 3]))           # 7
-print(find_unique_num([0, 0, 0.77, 0, 0]))           # 0.77
-print(find_unique_num([0, 1, 1, 1, 1, 1, 1, 1]))     # 0
-print(find_unique_num([-4, -4, -4, 4]))              # 4
-print(find_unique_num([8, 8, 8, 8, 8, 8, 8, 0.5]))   # 0.5
-print(find_unique_num([2, 1, 2, 2, 2, 2, 2, 2]))     # 1
-
 """
 R = REFLECT/REFACTOR the plan
 - Asymptotic Analysis:
@@ -89,31 +82,17 @@ R = REFLECT/REFACTOR the plan
 
 # Optimized Solution
 def find_unique_num_optimized(lst):
-	# create  a cache object/dict to store encountered numbers
 	encountered_nums_cache = {}
-	print(f"encountered_nums_cache = {encountered_nums_cache}")
     
-	# use a 'for' loop to iterate through the given input list
 	for i in range(0, len(lst)):
 		if lst[i] in encountered_nums_cache:
-			print("This number already exists in our cache!")
 			encountered_nums_cache[lst[i]] += 1
    			
 		else:
-			print("This is a new number! Add it to our cache!")
 			encountered_nums_cache[lst[i]] = 1
-
-	print(f"***UPDDATED*** encountered_nums_cache = {encountered_nums_cache}")
    
 	for key in encountered_nums_cache:
 		if encountered_nums_cache[key] == 1:
 			return key
 
 	return 'There are no unique numbers in the given input list'
-
-print(find_unique_num_optimized([3, 3, 3, 7, 3, 3]))           # 7
-print(find_unique_num_optimized([0, 0, 0.77, 0, 0]))           # 0.77
-print(find_unique_num_optimized([0, 1, 1, 1, 1, 1, 1, 1]))     # 0
-print(find_unique_num_optimized([-4, -4, -4, 4]))              # 4
-print(find_unique_num_optimized([8, 8, 8, 8, 8, 8, 8, 0.5]))   # 0.5
-print(find_unique_num_optimized([2, 1, 2, 2, 2, 2, 2, 2]))     # 1
