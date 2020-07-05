@@ -69,4 +69,20 @@ R = REFLECT/REFACTOR the plan
 	- Brute Force Solution:
 		- Time Complexity: O(n^2) -> 'quadratic time'
 		- Space Complexity: O(1) -> 'constant space'
+  
+- Could the time/space complexity of your Brute Force Solution be improved?
+    - Yes.
+    
+- If so, how?
+    - Instead of using nested 'for' loops to compare numbers in the given input
+      list to each other, we could use a cache object/dictionary that would
+      store key:value pairs that we've already encountered before.
+    - Using a cache object/dictionary would improve the time complexity from
+      "quadratic" to "linear" because there would only be a single "for" loop
+      instead of nested "for" loops.
+    - The tradeoff here would be the worsened space complexity. With the
+      creation of a cache object/dictionary, this would require more space in
+      memory, thereby depending on the number of entries that we added into the
+      cache object/dictionary. Therefore, the new space complexity for the
+      optimized solution would be "linear" (instead of "constant").
 """
