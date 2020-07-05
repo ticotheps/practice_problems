@@ -86,3 +86,26 @@ R = REFLECT/REFACTOR the plan
       cache object/dictionary. Therefore, the new space complexity for the
       optimized solution would be "linear" (instead of "constant").
 """
+
+# Optimized Solution
+def find_unique_num_optimized(lst):
+	unique_num = None
+
+	for i in range(0, len(lst)):
+		for j in range(i+1, len(lst)):
+   
+			if lst[0] != lst[1] and lst[0] != lst[2]:
+				unique_num = lst[0]
+				return unique_num
+
+			if lst[i] != lst[j]:
+				unique_num = lst[j]
+				return unique_num
+	return 'There are no unique numbers in the given input list'
+
+print(find_unique_num_optimized([3, 3, 3, 7, 3, 3]))           # 7
+print(find_unique_num_optimized([0, 0, 0.77, 0, 0]))           # 0.77
+print(find_unique_num_optimized([0, 1, 1, 1, 1, 1, 1, 1]))     # 0
+print(find_unique_num_optimized([-4, -4, -4, 4]))              # 4
+print(find_unique_num_optimized([8, 8, 8, 8, 8, 8, 8, 0.5]))   # 0.5
+print(find_unique_num_optimized([2, 1, 2, 2, 2, 2, 2, 2]))     # 1
