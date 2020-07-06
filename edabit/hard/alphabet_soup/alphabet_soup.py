@@ -108,108 +108,23 @@ PHASE IV: REFLECT/REFACTOR
         - Space Complexity: O(1) -> 'constant'
 
     - Can you improve the time or space complexity of this solution?
-        - Yes.
-        - How?
-            - Use a cache object instead of a list for faster lookups.
+        - No. If we tried to use a cache object, we would lose the ability to
+          control the ordering of the elements of the dictionary, whereas with
+          the list, that is something that we can ensure.
 """
 
-def alphabet_soup(str):
+def alphabet_soup(txt):
     alphabet = ['A', 'a', 'B', 'b', 'C', 'c', 'D', 'd', 'E', 'e', 'F', 'f',
                 'G', 'g', 'H', 'h', 'I', 'i', 'J', 'j', 'K', 'k', 'L', 'l',
                 'M', 'm', 'N', 'n', 'O', 'o', 'P', 'p', 'Q', 'q', 'R', 'r',
                 'S', 's', 'T', 't', 'U', 'u', 'V', 'v', 'W', 'w', 'X', 'x',
                 'Y', 'y', 'Z', 'z']
     
-    new_str = ''
+    new_txt = ''
     
     for i in alphabet:
-        for j in str:
+        for j in txt:
             if j == i:
-                new_str += j
+                new_txt += j
     
-    return new_str
-
-print("\nalphabet_soup()")
-print(alphabet_soup('hello'))  # 'ehllo'
-print(alphabet_soup('edabit'))  # 'abdeit'
-print(alphabet_soup('hacker'))  # 'acehkr'
-print(alphabet_soup('geek'))  # 'eegk'
-print(alphabet_soup('javascript'))  # 'aacijprstv'
-
-def alphabet_soup_optimized(str):
-    alphabet = {
-        'A': True, 
-        'a': True,
-        'B': True,
-        'b': True,
-        'C': True, 
-        'c': True, 
-        'D': True, 
-        'd': True, 
-        'E': True, 
-        'e': True, 
-        'F': True, 
-        'f': True,
-        'G': True, 
-        'g': True, 
-        'H': True, 
-        'h': True, 
-        'I': True, 
-        'i': True, 
-        'J': True, 
-        'j': True, 
-        'K': True, 
-        'k': True, 
-        'L': True, 
-        'l': True,
-        'M': True, 
-        'm': True, 
-        'N': True, 
-        'n': True, 
-        'O': True, 
-        'o': True, 
-        'P': True, 
-        'p': True, 
-        'Q': True, 
-        'q': True, 
-        'R': True, 
-        'r': True,
-        'S': True, 
-        's': True, 
-        'T': True, 
-        't': True, 
-        'U': True, 
-        'u': True, 
-        'V': True, 
-        'v': True, 
-        'W': True, 
-        'w': True, 
-        'X': True, 
-        'x': True,
-        'Y': True, 
-        'y': True, 
-        'Z': True, 
-        'z': True
-    }
-    
-    new_str = ''
-    
-    for key in alphabet:
-        for j in str:
-            if j == key:
-                new_str += j
-    
-    return new_str
-
-print("\nalphabet_soup_optimized()")
-print(alphabet_soup_optimized('hello'))  # 'ehllo'
-print(alphabet_soup_optimized('edabit'))  # 'abdeit'
-print(alphabet_soup_optimized('hacker'))  # 'acehkr'
-print(alphabet_soup_optimized('geek'))  # 'eegk'
-print(alphabet_soup_optimized('javascript'))  # 'aacijprstv'
-
-print(alphabet_soup_optimized("credibility"))  # "bcdeiiilrty"
-print(alphabet_soup_optimized("apostrophe"))  # "aehoopprst")
-print(alphabet_soup_optimized("determination"))  # "adeeiimnnortt")
-print(alphabet_soup_optimized("win"))  # "inw"
-print(alphabet_soup_optimized("synthesis"))  # "ehinsssty")
+    return new_txt
