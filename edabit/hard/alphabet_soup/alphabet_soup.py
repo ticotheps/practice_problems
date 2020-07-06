@@ -123,17 +123,13 @@ def alphabet_soup(str):
     new_str = ''
     
     for i in alphabet:
-        # print(f"i = {i}")
-        
         for j in str:
-            # print(f"j = {j}")
-            
             if j == i:
-                # print(f"j ({j}) == i ({i})")
-                new_str += f"{j}"
+                new_str += j
     
     return new_str
 
+print("\nalphabet_soup()")
 print(alphabet_soup('hello'))  # 'ehllo'
 print(alphabet_soup('edabit'))  # 'abdeit'
 print(alphabet_soup('hacker'))  # 'acehkr'
@@ -199,19 +195,21 @@ def alphabet_soup_optimized(str):
     new_str = ''
     
     for key in alphabet:
-        # print(f"key = {key}")
-        
         for j in str:
-            # print(f"j = {j}")
-            
             if j == key:
-                # print(f"j ({j}) == key ({key})")
-                new_str += f"{j}"
+                new_str += j
     
     return new_str
 
+print("\nalphabet_soup_optimized()")
 print(alphabet_soup_optimized('hello'))  # 'ehllo'
 print(alphabet_soup_optimized('edabit'))  # 'abdeit'
 print(alphabet_soup_optimized('hacker'))  # 'acehkr'
 print(alphabet_soup_optimized('geek'))  # 'eegk'
 print(alphabet_soup_optimized('javascript'))  # 'aacijprstv'
+
+print(alphabet_soup_optimized("credibility"))  # "bcdeiiilrty"
+print(alphabet_soup_optimized("apostrophe"))  # "aehoopprst")
+print(alphabet_soup_optimized("determination"))  # "adeeiimnnortt")
+print(alphabet_soup_optimized("win"))  # "inw"
+print(alphabet_soup_optimized("synthesis"))  # "ehinsssty")
