@@ -22,8 +22,7 @@ Notes:
 """
 The U.P.E.R. Problem-Solving Framework
 
-U = UNDERSTAND
-
+***** U = UNDERSTAND *****
 - Objective:
     - Write an algorithm that takes in two inputs, "lst" (an unsorted list) and
       "n" (the desired index when first input is sorted), and returns a single
@@ -45,9 +44,29 @@ U = UNDERSTAND
     - Can the input list include 0 elements?
         - No. The given input list will have at least 1 element.
     
+***** P = PLAN *****
+- Brute Force Solution:
+    (1) Define a function that takes in 2 parameters, "lst" and "n", and 
+    returns a single output, "nth_smallest".
     
-P = PLAN
-E = EXECUTE
-R = REFLECT/REFACTOR
+    (2) Sort the given input list using the ".sorted()" function (this returns 
+    a new sorted copy of the given input list unlike ".sort()" would do) and 
+    set it equal to a new var, "sorted_lst".
+    
+    (3) Evaluate the length of "sorted_lst".
+    
+        (a) If the length of "sorted_lst" is greater than or equal to "n", return 
+        the "n" element from "sorted_lst".
+        
+        (b) If the length of "sorted_lst" is less than "n", return None.
+    
+
+***** E = EXECUTE ***** (please see below)
+"""
+
+
+
+"""
+***** R = REFLECT/REFACTOR *****
 
 """
