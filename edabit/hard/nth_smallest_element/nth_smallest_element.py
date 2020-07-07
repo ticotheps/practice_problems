@@ -66,31 +66,18 @@ The U.P.E.R. Problem-Solving Framework
 ***** E = EXECUTE ***** (please see below)
 """
 def nth_smallest(lst, n):
-    print(f"lst = {lst}")
     nth_smallest = None
-    print(f"nth_smallest = {nth_smallest}")
-    
     sorted_lst = sorted(lst)
-    print(f"sorted_lst = {sorted_lst}")
     
     if len(sorted_lst) >= n:
-        print(f"The {n}th smallest number of sorted_lst is {sorted_lst[n-1]}!")
-        return sorted_lst[n-1]
+        nth_smallest = sorted_lst[n-1]
     
     return nth_smallest
 
-print(nth_smallest([1, 3, 5, 7], 1))            # 1
-print(nth_smallest([1, 3, 5, 7], 3))            # 5
-print(nth_smallest([1, 3, 5, 7], 5))            # None
-print(nth_smallest([7, 3, 5, 1], 2))            # 3
-print(nth_smallest([5, 4, 3, 2, 1, -3], 1))     # -3
-print(nth_smallest([5, 4, 3, 2, 1, -3], 5))     # 4
-print(nth_smallest([4, 5], 3))                  # None
-print(nth_smallest([4, 5], 2))                  # 5
-print(nth_smallest([4, 5], 1))                  # 4
-
-
 """
 ***** R = REFLECT/REFACTOR *****
-
+- Asymptotic Analysis:
+    - Brute Force Solution:
+        - Time Complexity: O(n log n)
+        - Space Complexity: O(n)
 """
