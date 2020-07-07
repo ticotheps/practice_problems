@@ -47,13 +47,15 @@ The U.P.E.R. Problem-Solving Framework
 ***** P = PLAN *****
 - Brute Force Solution:
     (1) Define a function that takes in 2 parameters, "lst" and "n", and 
-    returns a single output, "nth_smallest".
+    returns a single output, "nth_smallest".\
     
-    (2) Sort the given input list using the ".sorted()" function (this returns 
+    (2) Declare a var, "nth_smallest", and initialize it with a value of None.
+    
+    (3) Sort the given input list using the ".sorted()" function (this returns 
     a new sorted copy of the given input list unlike ".sort()" would do) and 
     set it equal to a new var, "sorted_lst".
     
-    (3) Evaluate the length of "sorted_lst".
+    (4) Evaluate the length of "sorted_lst".
     
         (a) If the length of "sorted_lst" is greater than or equal to "n", return 
         the "n" element from "sorted_lst".
@@ -63,7 +65,29 @@ The U.P.E.R. Problem-Solving Framework
 
 ***** E = EXECUTE ***** (please see below)
 """
+def nth_smallest(lst, n):
+    print(f"lst = {lst}")
+    nth_smallest = None
+    print(f"nth_smallest = {nth_smallest}")
+    
+    sorted_lst = sorted(lst)
+    print(f"sorted_lst = {sorted_lst}")
+    
+    if len(sorted_lst) >= n:
+        print(f"The {n}th smallest number of sorted_lst is {sorted_lst[n-1]}!")
+        return sorted_lst[n-1]
+    
+    return nth_smallest
 
+print(nth_smallest([1, 3, 5, 7], 1))            # 1
+print(nth_smallest([1, 3, 5, 7], 3))            # 5
+print(nth_smallest([1, 3, 5, 7], 5))            # None
+print(nth_smallest([7, 3, 5, 1], 2))            # 3
+print(nth_smallest([5, 4, 3, 2, 1, -3], 1))     # -3
+print(nth_smallest([5, 4, 3, 2, 1, -3], 5))     # 4
+print(nth_smallest([4, 5], 3))                  # None
+print(nth_smallest([4, 5], 2))                  # 5
+print(nth_smallest([4, 5], 1))                  # 4
 
 
 """
