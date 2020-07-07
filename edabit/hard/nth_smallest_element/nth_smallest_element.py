@@ -18,3 +18,36 @@ Notes:
     - Given an out of bounds parameter (e.g. a list is of size 'k'), and you are
     asked to find the m < k smallest element, return None.
 """
+
+"""
+The U.P.E.R. Problem-Solving Framework
+
+U = UNDERSTAND
+
+- Objective:
+    - Write an algorithm that takes in two inputs, "lst" (an unsorted list) and
+      "n" (the desired index when first input is sorted), and returns a single
+      output, "nth_smallest".
+      
+- Expected Inputs:
+    - Number Of: 2
+    - Data Types: list, integer
+    - Var Names: "lst", "n"
+    
+- Expected Outputs:
+    - Number Of: 1
+    - Data Types: integer or None
+    - Var Name: "nth_smallest"
+    
+- Edge Cases & Constraints:
+    - Can the input list include elements that are not of integer data type?
+        - No. The elements of any given list must be of integer data type.
+    - Can the input list include 0 elements?
+        - No. The given input list will have at least 1 element.
+    
+    
+P = PLAN
+E = EXECUTE
+R = REFLECT/REFACTOR
+
+"""
