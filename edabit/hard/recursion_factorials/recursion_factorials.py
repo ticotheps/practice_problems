@@ -48,14 +48,13 @@ The U.P.E.R. Problem-Solving Framework
     (1) Define a function that takes in a single input, "n", and returns a
     single output, "factorial".
     
-    (2) Declare a var, "factorial", that will be returned as the output.
-    Initialize it with a value of 1.
+    (2) Use an "if" statement to define a base case. 
+        (a) If "n" equals 0 or 1, return 1.
     
-    (3) Use an "if" statement to define a base case. 
+        (b) Else, do nothing.
     
-        (a) If "n" equals 0, return "factorial", which should already equal 1.
-    
-        (b) Else, 
+    (3) Return the value of "n" multiplied by a recursive call to the
+    find_factorial() function passing in "n-1" as the argument.
     
 ***** E = EXECUTE *****
 ***** R = REFLECT/REFACTOR *****
@@ -63,12 +62,6 @@ The U.P.E.R. Problem-Solving Framework
 
 """
 def find_factorial(n):
-    print(f"n = {n}")
-    # the returned output
-    factorial = 1
-    print(f"factorial = {factorial}")
-    
-    # base case
     if n == 0 or n == 1:
         return 1
     
