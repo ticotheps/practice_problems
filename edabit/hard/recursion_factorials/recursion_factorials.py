@@ -59,7 +59,10 @@ The U.P.E.R. Problem-Solving Framework
 ***** E = EXECUTE ***** (please see below)
 
 ***** R = REFLECT/REFACTOR *****
-
+- Asymptotic Analysis:
+    - Brute Force Solution:
+        - Time Complexity: O(n) -> "linear"
+        - Space Complexity: O(n) -> "linear"
 
 """
 
