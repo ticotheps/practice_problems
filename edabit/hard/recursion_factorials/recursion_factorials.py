@@ -46,29 +46,26 @@ The U.P.E.R. Problem-Solving Framework
 ***** P = PLAN *****
 - Brute Force Solution
     (1) Define a function that takes in a single input, "n", and returns a
-    single output, "factorial".
+    single output (an integer).
     
-    (2) Use an "if" statement to define a base case. 
+    (2) Use an "if" statement to define the base case. 
         (a) If "n" equals 0 or 1, return 1.
     
         (b) Else, do nothing.
     
     (3) Return the value of "n" multiplied by a recursive call to the
-    find_factorial() function passing in "n-1" as the argument.
+    find_factorial() function passing in "n-1" as the next consecutive argument.
     
-***** E = EXECUTE *****
+***** E = EXECUTE ***** (please see below)
+
 ***** R = REFLECT/REFACTOR *****
 
 
 """
+
 def find_factorial(n):
     if n == 0 or n == 1:
         return 1
     
     return n * find_factorial(n-1)
-
-print(find_factorial(0))     # 1
-print(find_factorial(1))     # 1
-print(find_factorial(3))     # 6
-print(find_factorial(5))     # 120
     
