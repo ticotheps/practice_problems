@@ -44,6 +44,7 @@ R = REFLECT/REFACTOR Phase
 
 ***** The PLAN & EXECUTE Phases (please see below) *****
 """
+# FIRST PASS SOLUTION
 
 # (1) Define a function that takes in 1 input, 'txt', and returns 1 output, 
 # 'movie_title'.
@@ -81,5 +82,9 @@ print(letters_only('R!=:~0o0./c&}9k`60=y'))  # 'Rocky'
 
 """
 ***** The REFLECT/REFACTOR Phase *****
+- Asymptotic Analysis:
+    - FIRST PASS SOLUTION:
+        - Time Complexity: O(n^2) -> "quadratic"
+        - Space Complexity: O(1) -> "constant"
 """
 
