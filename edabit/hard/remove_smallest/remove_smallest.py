@@ -21,3 +21,7 @@ Notes:
     - If there are multiple items with the same value, remove the item with the
     lower index (i.e. - look at the 3rd example above).
 """
+
+def remove_smallest(lst):
+    pass
+
