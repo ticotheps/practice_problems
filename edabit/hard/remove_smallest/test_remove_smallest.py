@@ -1,0 +1,2 @@
+import unittest
+from remove_smallest import remove_smallest
