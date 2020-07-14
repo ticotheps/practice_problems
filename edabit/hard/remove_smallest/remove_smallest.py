@@ -21,6 +21,41 @@ Notes:
     - If there are multiple items with the same value, remove the item with the
     lower index (i.e. - look at the 3rd example above).
 """
+"""
+The 4 Phases of the U.P.E.R. Problem-Solving Framework
+
+***** U = UNDERSTAND Phase *****
+
+- Objective:
+    - Write an algorithm that takes in a single input list of integers and removes the
+      smallest integer (or the duplicate of the smallest with the smallest index
+      if there are more than one), returning the revised list (without the
+      smallest integer included) as a single output.
+      
+- Expected Input(s):
+    - Number Of: 1
+    - Data Type(s): list
+    - Var Names: 'lst'
+    
+- Expected Output(s):
+    - Number Of: 1
+    - Data Type(s): list
+    - Var Names: 'new_lst'
+    
+Edge Cases & Constraints:
+    - Can the input list be empty?
+        - Yes, but you must return an empty list ("[]") if the given input is an
+        empty list.
+    - Can the numbers in the given input list be negative?
+        - No. These are "ratings" so they must be positive.
+    - Can the numbers in the given input list be floating point numbers?
+        - No. They must be whole integers
+    
+
+***** P = PLAN Phase *****
+***** E = EXECUTE Phase *****
+***** R = REFLECT/REFACTOR Phase *****
+"""
 
 def remove_smallest(lst):
     pass
