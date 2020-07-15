@@ -51,8 +51,14 @@ Edge Cases & Constraints:
     - Can the numbers in the given input list be floating point numbers?
         - No. They must be whole integers
     
-
 ***** P = PLAN Phase *****
+- Brute Force Solution
+    (1) Define a function that takes in a single input list of integers, "lst",
+    and returns a copy of that list where the smallest (or a copy of the
+    smallest) has been removed from that list.
+    
+    (2) Declare a var, "new_lst", that will be returned as the output and
+    initialize it with a set of empty square brackets. 
 ***** E = EXECUTE Phase *****
 ***** R = REFLECT/REFACTOR Phase *****
 """
