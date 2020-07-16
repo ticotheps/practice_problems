@@ -93,7 +93,43 @@ Edge Cases & Constraints:
 """
 
 def remove_smallest(lst):
-    pass
+    new_lst = []
+    print(f"new_lst = {new_lst}")
+    
+    smallest_rating = None
+    print(f"smallest_rating = {smallest_rating}")
+    
+    for count,num in enumerate(lst):
+        if smallest_rating == None:
+            smallest_rating = num
+        
+        if num < smallest_rating:
+            smallest_rating = num
+        
+        print(f"**UPDATED** smallest_rating = {smallest_rating}")
+
+    print(f"**AFTER 1st FOR loop** smallest_rating = {smallest_rating}")
+            
+    removed_smallest = False
+    
+    for count,num in enumerate(lst):
+        print(f"index #{count}: {num}")
+        if num == smallest_rating:
+            if removed_smallest == False:
+                print("Do NOT append this element to the 'new_lst' list")
+                removed_smallest = True
+            
+            else:
+                print("Go ahead and append this element. We've already removed a copy of the smallest.")
+                new_lst.append(num)
+            
+        else:
+            new_lst.append(num)
+            print(f"**UPDATED** new_lst = {new_lst}")
+        
+    return new_lst
+
+print(remove_smallest([1, 2, 3, 4, 5]))  # [2, 3, 4, 5]
 
 """
 ***** R = REFLECT/REFACTOR Phase *****
