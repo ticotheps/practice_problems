@@ -14,7 +14,7 @@ UNDERSTAND PHASE
 
 - Objective:
     - Create a function, 'depthFirstSearch()', that takes in a single input,
-      'empty_arr', and returns a single output, 'result_arr'. 
+      'lst' (an empty list), and returns a single output, 'lst'. 
       
 - Defining Terms:
     - "Node": the smallest unit of measure that can combine with others like it
@@ -27,15 +27,36 @@ UNDERSTAND PHASE
     - Inputs:
         - Number: 1
         - Data Type: array (Python list)
-        - Name: 'empty_arr'
+        - Name: 'lst'
         
     - Outputs:
         - Number: 1
         - Data Type: array (Python list)
-        - Name: 'result_arr'
+        - Name: 'lst
 """
 """
 PLAN PHASE
+
+- BRUTE FORCE SOLUTION:
+    (1) Create a "Node" class.
+    
+    (2) Define an "__init__()" method that takes in two parameters, "self" and
+    "name".
+    
+    (3) Define an "addChild()" method that takes in two parameters, "self" and
+    "name", that will append a child node to the "self.children" property.
+    
+    (4) Define a "depthFirstSearch()" method that takes in two parameters,
+    "self" and "lst" (an empty list), and returns a list of each node that was
+    traversed through.
+    
+        (a) Append the node's name to the "lst" list.
+        
+        (b) Use a "for" loop to iterate through all the children nodes of that node...
+
+            (i) ...and make a recursive function call to "depthFirstSearch()" on each child node, passing in the "lst" var as the argument.
+            
+        (c) Return the "lst" list.
 
 """
 # EXECUTE PHASE
@@ -46,25 +67,27 @@ class Node:
         self.name = name
         
     def __repr__(self):
-        return f"{self.name}: {self.children}";
+        return f"{self.name}: {self.children}"
         
     def addChild(self, name):
         self.children.append(Node(name))
         return self
     
-    def depthFirstSearch(self, array):
-        cur_node = self
-        if not cur_node:
-            return "No nodes in this graph"
-        else:
-            return cur_node
+    def depthFirstSearch(self, lst):
+        print(f"Node name = {self.name}")
+        lst.append(self.name)
+        
+        for child in self.children:
+            print(f"----Child Node name = {child.name}")
+            child.depthFirstSearch(lst)
+            
+        return lst
             
     
-my_node = Node(3)
+my_node = Node(1)
+my_node.addChild(2)
+my_node.addChild(3)
 my_node.addChild(4)
-my_node.addChild(5)
-my_node.addChild(14)
 
-# print(f"\nmy_node: {my_node}")
 print(my_node.depthFirstSearch([]))
     
