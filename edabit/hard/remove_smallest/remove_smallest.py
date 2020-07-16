@@ -58,11 +58,46 @@ Edge Cases & Constraints:
     smallest) has been removed from that list.
     
     (2) Declare a var, "new_lst", that will be returned as the output and
-    initialize it with a set of empty square brackets. 
-***** E = EXECUTE Phase *****
-***** R = REFLECT/REFACTOR Phase *****
+    initialize it with an empty list.
+    
+    (3) Declare another var, "smallest_rating", and initialize it with a value of 0.
+    
+    (4) Use a "for" loop to iterate through the given input list.
+    
+        (a) If the iterated-on element is less than the current value of 
+        "smallest_rating", set the value of "smallest_rating" to be equal to the 
+        value of that element.
+        
+        (b) Else, do nothing.
+        
+    (5) Declare another var, "removed_smallest", and initialize it with a value
+    of False (Boolean).
+        
+    (6) Use another "for" loop to iterate through the given input list again.
+    
+        (a) If the value of the iterated-on element is equal to the value of
+        "smallest_rating"...
+            
+            (i) ...and if the value of "removed_smallest" equals False (Boolean), 
+            then do NOT append the element's value to the "new_lst" list.
+            
+            (ii) ...and if the value of "removed_smallest" equals True (Boolean),
+            then append the element's value to the "new_lst" list.
+        
+        (b) If the value of the iterated-on element is NOT equal to the value of
+        "smallest_rating", then append the element to the "new_lst" list.
+        
+    (7) Return the value of "new_lst".
+        
+***** E = EXECUTE Phase ***** (Please see below)
 """
 
 def remove_smallest(lst):
     pass
+
+"""
+***** R = REFLECT/REFACTOR Phase *****
+"""
+
+
 
