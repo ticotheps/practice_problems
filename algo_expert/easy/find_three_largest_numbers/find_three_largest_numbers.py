@@ -25,7 +25,7 @@ Hints:
 """
 
 """
-UNDERSTAND PHASE
+***** UNDERSTAND PHASE *****
 
 Objective:
     - Write an algorithm that takes in a list of integers and returns a
@@ -49,19 +49,89 @@ Constraints:
         - No.
     - Can the input list be empty?
         - No.
+
+***** PLAN PHASE *****
+
+***** EXECUTE PHASE ***** (Please see below)
 """
-
-# PLAN PHASE & EXECUTE PHASE
-
 def find_three_largest_numbers(lst):
-    # Declare a var that will store the current three largest values from the 
-    #   input list, in ascending order.
+    print(lst)
+    # Declare a var, "largest_3_lst", and initialize it with an empty list.
     largest_3_lst = []
     print(f"INITIAL largest_3_lst = {largest_3_lst}")
+    
+    for num in lst:
+        print(f"num = {num}")
+        
+        if not len(largest_3_lst):
+            print("There are no numbers in the largest_3_lst")
+            largest_3_lst.append(num)
+            
+        # if there's only 1 number in the "largest_3_lst"...
+        if len(largest_3_lst) == 1:
+            # if num is GREATER than the only number in "largest_3_lst"...
+            if num > largest_3_lst[0]:
+                largest_3_lst.append(num)
+            # if num is LESS than the only number in "largest_3_lst"...  
+            if num < largest_3_lst[0]:
+                largest_3_lst.insert(0, num)
+                
+        # if there's only 2 numbers in the "largest_3_lst"...
+        if len(largest_3_lst) == 2: 
+            # if num is LESS than the first number in "largest_3_lst"...  
+            if num < largest_3_lst[0]:
+                largest_3_lst.insert(0, num)
+            
+            # if num is GREATER than the first number in "largest_3_lst", but
+            # LESS than the second number...
+            if num > largest_3_lst[0] and num < largest_3_lst[1]:
+                largest_3_lst.insert(1, num)
+                
+            # if num is GREATER than the first and second numbers in 
+            # "largest_3_lst"...
+            if num > largest_3_lst[0] and num > largest_3_lst[1]:
+                largest_3_lst.append(num)
+        
+        # if there's 3 numbers in the "largest_3_lst"....     
+        if len(largest_3_lst) == 3:
+            # if num is GREATER than the first number in "largest_3_lst", but
+            # LESS than the second number...
+            if largest_3_lst[0] < num < largest_3_lst[1]:
+                # remove the first number
+                largest_3_lst.pop(0)
+                # "num" becomes the new first number
+                largest_3_lst.insert(0, num)
+
+            # if num is GREATER than the first number in "largest_3_lst", AND
+            # GREATER than the second number, but LESS than the third number...
+            if largest_3_lst[1] < num < largest_3_lst[2]:
+                # remove the first number
+                largest_3_lst.pop(0)
+                # "num" becomes the new second number
+                largest_3_lst.insert(1, num)
+                
+            # if num is GREATER than the first, second, AND third numbers in 
+            # "largest_3_lst"...  
+            if num > largest_3_lst[0] and num > largest_3_lst[1] and num > largest_3_lst[2]:
+                # the second number becomes the new first number
+                largest_3_lst[0] = largest_3_lst[1]
+                # the third number becomes the new second number
+                largest_3_lst[1] = largest_3_lst[2]
+                # "num" becomes the new third number
+                largest_3_lst[2] = num
+                
+        print(f"***UPDATED*** largest_3_lst = {largest_3_lst}")
+            
 
     # Return the value of the 'largest_3_lst'.
     return largest_3_lst
 
-print(find_three_largest_numbers([0, 5, 1, 4, 2, 3]))
-# print(find_three_largest_numbers([20, 39, 2, 412, 32, 232]))
-# print(find_three_largest_numbers([0, -5, 1, 14, 22, -3]))
+print(find_three_largest_numbers([0, 5, 1, 4, 2, 3]))           # [3, 4, 5]
+print(find_three_largest_numbers([20, 39, 2, 412, 32, 232]))    # [39, 232, 412]
+print(find_three_largest_numbers([0, -5, 1, 14, 22, -3]))       # [1, 14, 22]
+
+"""
+***** REFLECT/REFACTOR PHASE *****
+
+
+"""
