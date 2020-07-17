@@ -26,17 +26,55 @@ Notes:
 """
 
 """
+***** UNDERSTAND PHASE *****
+- Objective: 
+    - Fix the starter code that was provided so that it outputs the proper
+      statement when a user passes an exam and when a user fails an exam.
+      
+- Expected Inputs:
+    - Number Of: 2
+    - Data Type: string, string
+    - Var Names: "user_score", "pass_score"
+    
+- Expected Outputs:
+    - Number Of: 1
+    - Data Type: string
+    - Var Names: None
+    
+- Edge Cases & Constraints:
+    - None
+
+***** PLAN PHASE *****
+- Brute Force Solution:
+    (1) Define a function that takes in two inputs ("user_score", "pass_score")
+    and returns a single output (an 'f-string') that determines whether or not a
+    user "PASSED" or "FAILED" their exam.
+    
+    (2) Declare a var, "result", and initialize it with an empty string.
+    
+    (3) If the "user_score" was LESS THAN the "pass_score", set the value of
+    "result" to "FAILED".
+    
+    (4) If the "user_score" was GREATER THAN the "pass_score", set the value of
+    "result" to "PASSED".
+    
+    (5) Return an f-string that says: "You {result} the Exam".
+
+***** EXECUTE PHASE ***** (Please see below)
+
+
+***** UNDERSTAND PHASE *****
 """
 
 def grade_percentage(user_score, pass_score):
-    s = ''
+    result = ''
     
-    if int(user_score[:-1] <= int(pass_score[:-1]):
-        s = s + 'FAILED'
+    if int(user_score[:-1]) < int(pass_score[:-1]):
+        result = "FAILED"
     
-    if int(user_score[:-1] >= int(pass_score[:-1]):
-        s = s + 'PASSED'
-        
-    return 'You' + ' ' + s + ' ' + 'the Exam'
+    if int(user_score[:-1]) >= int(pass_score[:-1]):
+        result = "PASSED"
+    
+    return f"You {result} the Exam"
     
 print(grade_percentage("85%", "85%"))  # "You PASSED the Exam"
