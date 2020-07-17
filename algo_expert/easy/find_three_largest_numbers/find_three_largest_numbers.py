@@ -28,56 +28,39 @@ Hints:
 UNDERSTAND PHASE
 
 Objective:
-    - Write an algorithm that takes in a [Python] list of integers and returns a
+    - Write an algorithm that takes in a list of integers and returns a
         list of the three largest numbers from the input array, in ascending order.
         
 Expected Inputs & Outputs:
     - Inputs:
         - Number: 1
         - Data Type: list
-        - Variable Name: 'input_array'
+        - Variable Name: 'lst'
         
     - Outputs:
         - Number: 1
         - Data Type: list
-        - Variable Name: 'largest_three_nums_array'
+        - Variable Name: 'largest_3_lst'
         
 Constraints:
-    - Can the input include negative integers?
+    - Can the input list include negative integers?
         - Yes.
-    - Can the input include floating point numbers?
+    - Can the input list include floating point numbers?
         - No.
-    - Can the input be empty?
+    - Can the input list be empty?
         - No.
 """
 
 # PLAN PHASE & EXECUTE PHASE
 
-def find_three_largest_numbers(input_array):
+def find_three_largest_numbers(lst):
     # Declare a var that will store the current three largest values from the 
     #   input list, in ascending order.
-    largest_three_nums_array = []
-    print(f"INITIAL largest_three_nums_array = {largest_three_nums_array}")
-    
-    # Use a 'for' loop to iterate through the 'input_array'.
-    for num1 in input_array:
-        print(f"num1 = {num1}")
-        
-        if len(largest_three_nums_array) >= 3:
-            # Return the value of the 'largest_three_nums_array'.
-            return largest_three_nums_array
-        elif len(largest_three_nums_array) < 3 and len(largest_three_nums_array) > 0:
-            for num2 in largest_three_nums_array:
-                print(f"---num2 = {num2}")
-        else:
-            # Append 'num1' value to 'largest_three_nums_array'.
-            largest_three_nums_array.append(num1)
-            print(f"UPDATED largest_three_nums_array = {largest_three_nums_array}")
-            
-            
-    
-    # Return the value of the 'largest_three_nums_array'.
-    return largest_three_nums_array
+    largest_3_lst = []
+    print(f"INITIAL largest_3_lst = {largest_3_lst}")
+
+    # Return the value of the 'largest_3_lst'.
+    return largest_3_lst
 
 print(find_three_largest_numbers([0, 5, 1, 4, 2, 3]))
 # print(find_three_largest_numbers([20, 39, 2, 412, 32, 232]))
