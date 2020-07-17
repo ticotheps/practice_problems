@@ -61,9 +61,6 @@ Notes:
     (5) Return an f-string that says: "You {result} the Exam".
 
 ***** EXECUTE PHASE ***** (Please see below)
-
-
-***** UNDERSTAND PHASE *****
 """
 
 def grade_percentage(user_score, pass_score):
@@ -78,3 +75,16 @@ def grade_percentage(user_score, pass_score):
     return f"You {result} the Exam"
     
 print(grade_percentage("85%", "85%"))  # "You PASSED the Exam"
+
+"""
+***** REFLECT/REFACTOR PHASE *****
+- Asypmtotic Analysis:
+    - Brute Force Solution:
+        - Time Complexity: O(1) -> "constant time"
+        - Space Complexity: O(1) -> "constant space"
+        
+    - Can/should we improve the time/space complexity of the Brute Force
+      Solution?
+        - Nope. O(1) is pretty darn good for both time & space complexity!
+"""
+
