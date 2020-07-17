@@ -63,8 +63,9 @@ Notes:
 ***** EXECUTE PHASE ***** (Please see below)
 """
 
+# Python3 compatibile solution
 def grade_percentage(user_score, pass_score):
-    result = ''
+    result = ""
     
     if int(user_score[:-1]) < int(pass_score[:-1]):
         result = "FAILED"
@@ -73,6 +74,17 @@ def grade_percentage(user_score, pass_score):
         result = "PASSED"
     
     return f"You {result} the Exam"
+
+# Python2 compatible solution
+# def grade_percentage(user_score, pass_score):
+#     passed = "PASSED"
+# 	failed = "FAILED"
+	
+# 	if int(user_score[:-1]) < int(pass_score[:-1]):
+# 		return "You %s the Exam" % (failed)
+	
+# 	if int(user_score[:-1]) >= int(pass_score[:-1]):
+# 		return "You %s the Exam" % (passed)
     
 print(grade_percentage("85%", "85%"))  # "You PASSED the Exam"
 
