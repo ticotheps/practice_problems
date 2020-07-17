@@ -54,13 +54,13 @@ Constraints:
 
 ***** EXECUTE PHASE ***** (Please see below)
 """
-def find_three_largest_numbers(lst):
-    print(lst)
+def findThreeLargestNumbers(array):
+    print(f"\n{array}")
     # Declare a var, "largest_3_lst", and initialize it with an empty list.
     largest_3_lst = []
     print(f"INITIAL largest_3_lst = {largest_3_lst}")
     
-    for num in lst:
+    for num in array:
         print(f"num = {num}")
         
         if not len(largest_3_lst):
@@ -68,35 +68,38 @@ def find_three_largest_numbers(lst):
             largest_3_lst.append(num)
             
         # if there's only 1 number in the "largest_3_lst"...
-        if len(largest_3_lst) == 1:
+        elif len(largest_3_lst) == 1:
             # if num is GREATER than the only number in "largest_3_lst"...
             if num > largest_3_lst[0]:
                 largest_3_lst.append(num)
             # if num is LESS than the only number in "largest_3_lst"...  
-            if num < largest_3_lst[0]:
+            elif num < largest_3_lst[0]:
+                largest_3_lst.insert(0, num)
+            # if num is EQUAL to the only number in "largest_3_lst"...  
+            else:
                 largest_3_lst.insert(0, num)
                 
         # if there's only 2 numbers in the "largest_3_lst"...
-        if len(largest_3_lst) == 2: 
-            # if num is LESS than the first number in "largest_3_lst"...  
-            if num < largest_3_lst[0]:
+        elif len(largest_3_lst) == 2: 
+            # if num is LESS than or EQUAL to the first number in "largest_3_lst"...  
+            if num <= largest_3_lst[0]:
                 largest_3_lst.insert(0, num)
             
             # if num is GREATER than the first number in "largest_3_lst", but
             # LESS than the second number...
-            if num > largest_3_lst[0] and num < largest_3_lst[1]:
+            elif num > largest_3_lst[0] and num <= largest_3_lst[1]:
                 largest_3_lst.insert(1, num)
                 
             # if num is GREATER than the first and second numbers in 
             # "largest_3_lst"...
-            if num > largest_3_lst[0] and num > largest_3_lst[1]:
+            elif num > largest_3_lst[0] and num > largest_3_lst[1]:
                 largest_3_lst.append(num)
         
         # if there's 3 numbers in the "largest_3_lst"....     
-        if len(largest_3_lst) == 3:
+        elif len(largest_3_lst) == 3:
             # if num is GREATER than the first number in "largest_3_lst", but
             # LESS than the second number...
-            if largest_3_lst[0] < num < largest_3_lst[1]:
+            if num >= largest_3_lst[0] and num < largest_3_lst[1]:
                 # remove the first number
                 largest_3_lst.pop(0)
                 # "num" becomes the new first number
@@ -104,7 +107,7 @@ def find_three_largest_numbers(lst):
 
             # if num is GREATER than the first number in "largest_3_lst", AND
             # GREATER than the second number, but LESS than the third number...
-            if largest_3_lst[1] < num < largest_3_lst[2]:
+            if largest_3_lst[1] <= num < largest_3_lst[2]:
                 # remove the first number
                 largest_3_lst.pop(0)
                 # "num" becomes the new second number
@@ -126,9 +129,9 @@ def find_three_largest_numbers(lst):
     # Return the value of the 'largest_3_lst'.
     return largest_3_lst
 
-print(find_three_largest_numbers([0, 5, 1, 4, 2, 3]))           # [3, 4, 5]
-print(find_three_largest_numbers([20, 39, 2, 412, 32, 232]))    # [39, 232, 412]
-print(find_three_largest_numbers([0, -5, 1, 14, 22, -3]))       # [1, 14, 22]
+print(findThreeLargestNumbers([0, 5, 1, 4, 2, 3]))           # [3, 4, 5]
+print(findThreeLargestNumbers([20, 39, 2, 412, 32, 232]))    # [39, 232, 412]
+print(findThreeLargestNumbers([0, -5, 1, 14, 22, -3]))       # [1, 14, 22]
 
 """
 ***** REFLECT/REFACTOR PHASE *****
