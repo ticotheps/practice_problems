@@ -55,16 +55,11 @@ Constraints:
 ***** EXECUTE PHASE ***** (Please see below)
 """
 def findThreeLargestNumbers(array):
-    print(f"\n{array}")
-    # Declare a var, "largest_3_lst", and initialize it with an empty list.
     largest_3_lst = []
-    print(f"INITIAL largest_3_lst = {largest_3_lst}")
     
     for num in array:
-        print(f"num = {num}")
         
         if not len(largest_3_lst):
-            print("There are no numbers in the largest_3_lst")
             largest_3_lst.append(num)
             
         # if there's only 1 number in the "largest_3_lst"...
@@ -116,15 +111,10 @@ def findThreeLargestNumbers(array):
             # if num is GREATER than the first, second, AND third numbers in 
             # "largest_3_lst"...  
             if num > largest_3_lst[0] and num > largest_3_lst[1] and num > largest_3_lst[2]:
-                # the second number becomes the new first number
-                largest_3_lst[0] = largest_3_lst[1]
-                # the third number becomes the new second number
-                largest_3_lst[1] = largest_3_lst[2]
+                # remove first number
+                largest_3_lst.pop(0)
                 # "num" becomes the new third number
-                largest_3_lst[2] = num
-                
-        print(f"***UPDATED*** largest_3_lst = {largest_3_lst}")
-            
+                largest_3_lst.append(num)
 
     # Return the value of the 'largest_3_lst'.
     return largest_3_lst
