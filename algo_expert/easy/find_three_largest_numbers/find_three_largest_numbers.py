@@ -125,6 +125,9 @@ print(findThreeLargestNumbers([0, -5, 1, 14, 22, -3]))       # [1, 14, 22]
 
 """
 ***** REFLECT/REFACTOR PHASE *****
-
+- Asymptotic Analysis:
+    - First Pass Solution:
+        - Time Complexity: O(n) -> "linear"
+        - Space Complexity: O(n) -> "linear"
 
 """
