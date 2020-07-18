@@ -49,9 +49,31 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
         - Yes. However, you should return False for those instances.
 
 ****** PLAN Phase ******
+- First Pass Solution:
 
+    (1) Define a function that takes in a single input, "s", and returns a
+    single output, "meets_criteria".
+    
+    (2) Declare a var, "meets_critera", and initialize it with a Boolean value
+    of False.
+    
+    (3) Use an "if" statement and the ".isalpha()" method to determine if all of
+    the characters in the given input string are alphabetic.
+    
+        (a) If all the characters are alphabetic, set "meets_criteria" to True.
+        
+        (b) Otherwise, do nothing.
+    
+    (4) Use an "elif" statement and the ".isnumeric()" method to determine if all
+    of the characters in the given input string are numeric.
+    
+        (a) If all the characters are numeric, set "meets_criteria" to True.
+        
+        (b) Otherwise, do nothing.
+    
+    (5) Return the value of "meets_criteria".
 
-****** EXECUTE Phase ******
+****** EXECUTE Phase ****** (Please see below)
 
 
 
