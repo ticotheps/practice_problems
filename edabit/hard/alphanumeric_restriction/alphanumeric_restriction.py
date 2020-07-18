@@ -74,18 +74,20 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
     (5) Return the value of "meets_criteria".
 
 ****** EXECUTE Phase ****** (Please see below)
-
-
-
 """
 
-
 def alphanumeric_restriction(s):
-    pass
-
-print(alphanumeric_restriction("Bold"))  # True
+    meets_criteria = False
+    
+    if s.isalpha() == True or s.isnumeric() == True:
+        meets_criteria = True
+        
+    return meets_criteria
 
 """
 ****** REFLECT/REFACTOR ******
-
+- Asymptotic Analysis:
+    - First Pass Solution:
+        - Time Complexity: O(n) -> "linear time"
+        - Space Complexity: O(1) -> "constant space"
 """
