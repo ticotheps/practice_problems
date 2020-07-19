@@ -17,3 +17,32 @@ inclusive.
     - Return 0 if there is no number between 'a' and 'b' that can be evenly
       divided by 'c'.
 """
+
+"""
+The 4 Phases of the U.P.E.R. Problem-Solving Framework
+
+****** UNDERSTAND ******
+- Objective:
+    - Write an algorithm that takes in 3 inputs (integer data types; 'a', 'b',
+      'c') and returns the sum of all the numbers (within the range of 'a' to
+      'b', inclusive) that are evenly divisible by 'c' as the output.
+
+
+****** PLAN ******
+
+****** EXECUTE ****** (Please see below)
+
+"""
+
+def evenly_divisible(a, b, c)
+    pass
+
+print(evenly_divisible(1, 10, 20))  # 0
+print(evenly_divisible(1, 10, 2))  # 30
+print(evenly_divisible(1, 10, 3))  # 18
+
+"""
+****** REFLECT/REFACTOR ******
+
+"""
+
