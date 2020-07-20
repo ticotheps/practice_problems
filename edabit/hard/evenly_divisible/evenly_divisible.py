@@ -66,24 +66,11 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
 """
 
 def evenly_divisible(a, b, c):
-    print(f"\na = {a}\nb = {b}\nc = {c}")
     sum = 0
-    print(f"\n***INITIAL*** sum = {sum}")
-    
     for num in range(a, b+1):
-        print(f"num = {num}")
-        
         if num % c == 0:
-            print(f"{num} is evenly divisible by {c}")
             sum += num
-            print(f"***UPDATED*** sum = {sum}")
-        
     return sum
-            
-
-print(evenly_divisible(1, 10, 20))  # 0
-print(evenly_divisible(1, 10, 2))  # 30
-print(evenly_divisible(1, 10, 3))  # 18
 
 """
 ****** REFLECT/REFACTOR ******
