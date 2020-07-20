@@ -83,3 +83,11 @@ def bubbleSort(array):
                 array[i+1] = element_a
                 swap_occurred = True
     return array
+
+"""
+****** REFLECT/REFACTOR Phase ******
+- Asymptotic Analysis:
+    - First Pass Solution:
+        - Time Complexity: O(n^2) -> "quadratic time"
+        - Space Complexity: O(1) -> "constant time"
+"""
