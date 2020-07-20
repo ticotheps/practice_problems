@@ -39,9 +39,34 @@ Notes:
     - Otherwise, repeat the steps laid out in this hint until the array is sorted.
 
 ****** PLAN Phase ******
+- First Pass Solution:
+    (1) Define a function that takes in an unsorted list, "array", and returns
+    the same list, but with all of the elements of that list sorted in ascending
+    order.
+    
+    (2) Declare a var, "swap_occurred", and initialize it with a Boolean value
+    of True.
+    
+    (3) Use a 'while' loop to iterate through the given input "array" list,
+    while "swap_occurred" is equal to True.
+    
+        (a) Set the Boolean value of "swap_occurred" to False.
 
+        (b) Use a 'for' loop to iterate through the given input "array" list...
+        
+            (i) If "array[i]" is GREATER than "array[i+1]"...
+            
+                (1) Swap the values of the indices, where the value of "array[i]" now becomes the value of "array[i+1]" and vice versa.
+                
+                (2) Set the Boolean value of "swap_occurred" back to True.
+            
+            (ii) Else...
+                
+                (1) Do nothing.
+                
+    (4) Return the value of "array" after it has been sorted in ascending order.
 
-****** EXECUTE Phase ******
+****** EXECUTE Phase ****** (Please see below)
 
 """
 
