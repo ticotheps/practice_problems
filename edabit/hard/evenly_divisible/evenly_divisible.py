@@ -42,8 +42,24 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
         - Yes. However, only inputs 'a' and 'b' can be negative.
     - Can the given input integers be floating point numbers?
         - No. They must be integers.
+    - What happens when there is no number between 'a' and 'b' that can be
+      evenly divisible by 'c'?
+        - Return 0.
 
 ****** PLAN ******
+- First Pass Solution:
+    (1) Define a function that takes in 3 inputs and returns a single output.
+    
+    (2) Declare a var, 'sum', and initialize it with a value of 0.
+    
+    (3) Use a 'for' loop to iterate through a range of numbers ('a' to 'b',
+    inclusive)...
+
+        (a) If the iterated-on number, 'num', is evenly divisible by 'c', then add the value of 'num' to the value of 'sum'.
+        
+        (b) If the iterated-on number, 'num', is NOT evenly divisibly by 'c', then do nothing.
+        
+    (4) Return the value of 'sum'.
 
 ****** EXECUTE ****** (Please see below)
 
