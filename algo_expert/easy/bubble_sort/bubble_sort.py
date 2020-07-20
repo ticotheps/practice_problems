@@ -71,32 +71,15 @@ Notes:
 """
 
 def bubbleSort(array):
-    print(f"array = {array}")
-    
     swap_occurred = True
-    print(f"***INITIAL*** swap_occurred = {swap_occurred}")
-    
     while swap_occurred == True:
         swap_occurred = False
-        print(f"\n***WHILE loop update*** swap_occurred = {swap_occurred}")
-        
         for i in range(0, len(array)-1):
             element_a = array[i]
-            print(f"\n***INITIAL*** element_a = {element_a}")
             element_b = array[i+1]
-            print(f"element_b = {element_b}")
             
             if element_a > element_b:
-                print("\nelement_a and element_b are out of order!")
                 array[i] = element_b
-                print(f"******SWAP #1****** array[{i}] = {array[i]}")
-                
                 array[i+1] = element_a
-                print(f"******SWAP #2****** array[{i+1}] = {array[i+1]}")
-                
                 swap_occurred = True
-                print(f"******FOR loop update****** = {swap_occurred}")
-                
     return array
-
-print(bubbleSort([8, 5, 2, 9, 5, 6, 3]))  # [2, 3, 5, 5, 6, 8, 9]
