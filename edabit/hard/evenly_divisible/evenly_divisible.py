@@ -74,6 +74,10 @@ def evenly_divisible(a, b, c):
 
 """
 ****** REFLECT/REFACTOR ******
+- Asymptotic Analysis:
+    - First Pass Solution:
+        - Time Complexity: O(n) -> 'linear time'
+        - Space Complexity: O(1) -> 'constant space'
 
 """
 
