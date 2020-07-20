@@ -27,6 +27,21 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
       'c') and returns the sum of all the numbers (within the range of 'a' to
       'b', inclusive) that are evenly divisible by 'c' as the output.
 
+- Expected Input(s):
+    - Number Of: 3
+    - Data Type(s): integer, integer, integer
+    - Var Name(s): 'a', 'b', 'c'
+    
+- Expected Output(s):
+    - Number Of: 1
+    - Data Type(s): integer
+    - Var Name(s): 'sum'
+    
+- Edge Cases & Constraints:
+    - Can the given input integers be negative?
+        - Yes. However, only inputs 'a' and 'b' can be negative.
+    - Can the given input integers be floating point numbers?
+        - No. They must be integers.
 
 ****** PLAN ******
 
