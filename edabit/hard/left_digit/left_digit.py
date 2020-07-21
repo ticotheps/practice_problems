@@ -66,24 +66,13 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
 def left_digit(num):
     if not len(num):
         return "Invalid input. Please check to make sure the given input is a string and that it is not empty."
-    
     left_most_int = None
-    print(f"\nleft_most_int = {left_most_int}")
-    
     num_list = [char for char in num]
-    print(f"num_list = {num_list}")
-    
     for char in num_list:
-        print(f"char = {char}")
-        
         if char.isnumeric() == True:
             left_most_int = int(char)
             return left_most_int
-    
     return "The given input string does NOT include any numbers."
-
-print(left_digit("TrAdE2W1n95!"))   # 2
-print(left_digit("V3r1ta$"))        # 3
 
 """
 ****** REFLECT/REFACTOR ******
