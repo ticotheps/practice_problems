@@ -76,5 +76,8 @@ def left_digit(num):
 
 """
 ****** REFLECT/REFACTOR ******
-
+- Asymptotic Analysis:
+    - First Pass Solution:
+        - Time Complexity: O(n) -> "linear time"
+        - Space Complexity: O(n) -> "linear space"
 """
