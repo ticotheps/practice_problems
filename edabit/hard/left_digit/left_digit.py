@@ -41,6 +41,23 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
         - No. They must be positive integers.
 
 ****** PLAN ******
+- First Pass Solution:
+    (1) Define a function that takes in a single input, "str", and returns a
+    single output, "left_most_int".
+    
+    (2) Declare a var, "left_most_int", that will be returned as the output.
+    Initialize it with a value of None.
+    
+    (3) Declare another var, "str_list", that splits the given input string's
+    characters into a list.
+    
+    (4) Use a 'for' loop to iterate through the "str_list" list...
+
+        (a) Use the "isnumeric()" method to determine if the iterated-on character is a number. If the character is a number, set the value of "left_most_int" to the value of the iterated-on character.
+        
+        (b) If it is NOT a number, do nothing.
+        
+    (5) Return the value of "left_most_int".
 
 
 ****** EXECUTE ****** (Please see below)
