@@ -16,6 +16,39 @@ of that array. Use the insertion sort algorithm to sort the array.
       the sorted subarray in the correct position by swapping them into place.
     - Eventually, the entire array will be sorted.
 """
+"""
+The 4 Phases of the U.P.E.R. Problem-Solving Framework
+
+****** UNDERSTAND ******
+- Objective:
+  - Write an algorithm that takes in an unsorted list of numbers and returns the
+    same list, but in sorted order, using only an "insertion sort" algorithm.
+    
+- Expected Input(s):
+  - Number Of: 1
+  - Data Type(s): list
+  - Var Name(s): "array"
+  
+- Expected Output(s):
+  - Number Of: 1
+  - Data Type(s): list
+  - Var Name(s): "array"
+  
+- Edge Cases & Constraints:
+  - Can the given input array include negative numbers?
+    - Yes.
+  - Can the given input array include floating point numbers?
+    - No. They must be integers.
+  - Can the given input array be empty?
+    - No. If it is empty, return a string that says, "Invalid input. Please
+      provide an array that has at least one element."
+
+****** UNDERSTAND ******
+
+
+****** UNDERSTAND ******
+
+"""
 
 def insertionSort(array):
     pass
