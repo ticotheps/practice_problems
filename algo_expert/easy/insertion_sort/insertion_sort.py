@@ -139,31 +139,22 @@ def insertionSort(array):
                 "array[j-1]", and "array" as the arguments. 
             
         (4)	Return the value of "array"
+
+- Asymptotic Analysis:
+	- Optimized Solution:
+		- Time Complexity: O(n^2) -> "quadratic time"
+		- ***Space Complexity: ***O(1) -> "constant time"
+  
+*** = IMPROVED
 """
 
 def insertionSort_optimized(array):
-    print(f"\n***INITIAL*** array = {array}")
-    
     for i in range(1, len(array)):
-        print(f"\ni = {i}")
-        
         j = i
         while j > 0 and array[j] < array[j-1]:
             swap(j, j-1, array)
-            print(f"***SWAP*** array = {array}")
-            j -= 1
-            print(f"j = {j}")
-            
+            j -= 1      
     return array
 
-# helper function
 def swap(b, a, array):
-    print(f"array[j] = {array[b]}")
-    print(f"array[j-1] = {array[a]}")
-    
     array[b], array[a] = array[a], array[b]
-    
-    print(f"***UPDATED*** array[j] = {array[b]}")
-    print(f"***UPDATED*** array[j-1] = {array[a]}")
-
-print(insertionSort_optimized([8, 5, 2, 9, 5, 6, 3]))
