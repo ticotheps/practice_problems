@@ -69,10 +69,11 @@ def mapping(letters):
         if letter not in letters_dict:
             letters_dict[letter] = letter.upper()
     return letters_dict
-            
-print(mapping(["p", "s"]))  # { "p": "P", "s": "S" }
 
 """
 ****** REFLECT/REFACTOR ******
-
+- Asymptotic Analysis:
+    - First Pass Solution:
+        - Time Complexity: O(n) -> "linear time"
+        - Space Complexity: O(n) -> "linear space"
 """
