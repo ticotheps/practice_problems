@@ -99,4 +99,8 @@ def insertionSort(array):
 
 """
 ****** REFLECT/REFACTOR ******
+- Asymptotic Analysis:
+	- First Pass Solution:
+		- Time Complexity: O(n^2) -> "quadratic time"
+		- Space Complexity: O(n) -> "linear space"
 """
