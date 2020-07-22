@@ -76,59 +76,26 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
 """
 
 def insertionSort(array):
-    # print(f"\narray = {array}")
-    
     sorted_list = []
-    # print(f"***INITIAL*** sorted_list = {sorted_list}")
-    
     popped_first = array.pop(0)
-    # print(f"popped_first = {popped_first}")
-    
     sorted_list.append(popped_first)
-    # print(f"***ADD FIRST ELEMENT*** sorted_list = {sorted_list}")
-    # print(f"***UPDATED*** array = {array}")
     
     while len(array) > 0:
-        # print(f"\nsorted_list[-1] = {sorted_list[-1]}")
-        # print(f"array[0] = {array[0]}")
-        
-        if sorted_list[-1] > array[0]:
-            
+        if sorted_list[-1] > array[0]:    
             last_sorted = sorted_list.pop(-1)
-            # print(f"last_sorted = {last_sorted}")
-            
             first_unsorted = array.pop(0)
-            # print(f"first_unsorted = {first_unsorted}")
-            
             sorted_list.append(first_unsorted)
-            # print(f"***SWAP*** sorted_list = {sorted_list}")
-            
             array.insert(0, last_sorted)
-            # print(f"***SWAP*** array = {array}")
-            
         if sorted_list[-1] <= array[0]:
-            
             first_unsorted = array.pop(0)
-            # print(f"first_unsorted = {first_unsorted}")
-            
             sorted_list.append(first_unsorted)
-            # print(f"***ADD TO SORTED*** sorted_list = {sorted_list}")
-            
             for i in range(len(sorted_list)-1, 0, -1):
-                # print(f"\nsorted_list[{i}] = {sorted_list[i]}")
-                # print(f"sorted_list[{i-1}] = {sorted_list[i-1]}")
-                
                 if sorted_list[i] < sorted_list[i-1]:
                     new_b = sorted_list[i-1]
                     new_a = sorted_list[i]
                     sorted_list[i] = new_b
                     sorted_list[i-1] = new_a
-                    # print(f"***UPDATED*** sorted_list[{i}] = {sorted_list[i]}")
-                    # print(f"***UPDATED*** sorted_list[{i-1}] = {sorted_list[i-1]}")
-                    
     return sorted_list
-
-# print(insertionSort([8, 5, 2, 9, 5, 6, 3]))  # [2, 3, 5, 5, 6, 8, 9]
 
 """
 ****** REFLECT/REFACTOR ******
