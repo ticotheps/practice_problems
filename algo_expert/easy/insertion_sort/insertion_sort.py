@@ -103,4 +103,67 @@ def insertionSort(array):
 	- First Pass Solution:
 		- Time Complexity: O(n^2) -> "quadratic time"
 		- Space Complexity: O(n) -> "linear space"
+
+- Can you improve upon the time or space complexity of your first pass solution?
+    - Yes. You can improve upon the space complexity by doing the sorting "in
+      place".
+
+- How?
+	- Optimized Solution:
+        (1) Define a helper function, "swap()", that takes in 3 parameters
+        ("item1", "item2", and "array") and swaps the values of item1 and item2.
+ 
+		(2) Define a function that takes in an unsorted list of integers and returns
+    	the same list, but in sorted order.
+     
+        (3) Create two subarrays, "sorted" & "unsorted", within the given input 
+        "array" through the use of a 'for' loop.
+        
+        	(a) Create the "unsorted" subarray by starting the range for the 
+            "for" loop at index 1. 
+            	(i) This means that the 0th element in "array" is considered 
+        		the first & only item in the "sorted" subarray (for the time 
+				being), while all the consecutive elements after the 0th 
+            	element belong to the "unsorted" subarray.
+            
+            (b) Declare another var, "j", inside the 'for' loop to give us
+            access to the "sorted" subarray from within the "unsorted" subarray.
+            
+            (c) Use a 'while' loop to iterate through the "sorted" subarray 
+            so long as "j" is GREATER than 0 (the end of the "sorted" subarray)
+            and the value of array[j] (the last item in the "sorted" subarray) is
+            LESS than the value of array[j-1] (the item previous to the last
+            item in the "sorted" subarray).
+            
+                (i) Call the "swap()" helper function and pass in "array[j]",
+                "array[j-1]", and "array" as the arguments. 
+            
+        (4)	Return the value of "array"
 """
+
+def insertionSort_optimized(array):
+    print(f"\n***INITIAL*** array = {array}")
+    
+    for i in range(1, len(array)):
+        print(f"\ni = {i}")
+        
+        j = i
+        while j > 0 and array[j] < array[j-1]:
+            swap(j, j-1, array)
+            print(f"***SWAP*** array = {array}")
+            j -= 1
+            print(f"j = {j}")
+            
+    return array
+
+# helper function
+def swap(b, a, array):
+    print(f"array[j] = {array[b]}")
+    print(f"array[j-1] = {array[a]}")
+    
+    array[b], array[a] = array[a], array[b]
+    
+    print(f"***UPDATED*** array[j] = {array[b]}")
+    print(f"***UPDATED*** array[j-1] = {array[a]}")
+
+print(insertionSort_optimized([8, 5, 2, 9, 5, 6, 3]))
