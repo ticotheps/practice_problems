@@ -40,6 +40,25 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
           dictionary.
 
 ****** PLAN ******
+- First Pass Solution:
+    (1) Define a function that takes in a single input list of letters and
+    returns a single output dictionary that maps each letter of the given input
+    list into key/value pairs where the "keys" are the lower-case versions of a
+    letter and the "values" are the upper-case versions of the letter.
+    
+    (2) Declare a var, "letters_dict", and initialize it with an empty
+    dictionary.
+    
+    (3) Use a 'for' loop to iterate through the given input list...
+
+        (a) If the letter already exists as a key in the dictionary, do nothing.
+        
+        (b) If the letter does NOT already exist as a key in the dictionary, 
+        add it as a new entry to the "letters_dict" dictionary and set its 
+        value equal to the upper-case version of the letter.
+        
+    (4) Return the value of "letters_dict".
+    
 
 ****** EXECUTE ****** (Please see below)
 
