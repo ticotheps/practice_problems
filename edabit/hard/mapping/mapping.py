@@ -65,13 +65,9 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
 
 def mapping(letters):
     letters_dict = {}
-    print(f"***INITIAL*** letters_dict = {letters_dict}")
-
     for letter in letters:
         if letter not in letters_dict:
             letters_dict[letter] = letter.upper()
-            print(f"*****UPDATED***** letters_dict = {letters_dict}")
-        
     return letters_dict
             
 print(mapping(["p", "s"]))  # { "p": "P", "s": "S" }
