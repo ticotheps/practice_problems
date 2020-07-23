@@ -42,8 +42,37 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
         - Yes.
 
 ****** PLAN ******
+- First Pass Solution:
+    (1) Declare a var, "elements_dict", and initialize it with an empty
+    dictionary.
+    
+    (2) Define a function, "advanced_sort()", that takes in 1 input list and
+    returns 1 output list.
+    
+    (3) Declare a var, "list_of_sublists", and initialize it with an empty list.
+    
+    (4) Use a 'for' loop to iterate through the given input list...
 
+        (a) If the iterated-on element is NOT already a key in the 
+        "elements_dict" dictionary add it as a new entry and set its value 
+        equal to 1 (integer data type) in order to represent the total current
+        number of occurrences in the given input list.
+        
+        (b) If the iterated-on element IS already a key in the "elements_dict" 
+        dictionary, increase the value of the matching key by 1.
+            
+    (5) Use another 'for' loop to iterate through the give input list...
+    
+        (a) Declare a var, "occurrences", and initialize it with the value for 
+        the iterated-on element's matching key in the "elements_dict" 
+        dictionary.
+        
+        (b) Declare another var, "sublist", and initialize it with a list comprehension that appends 'n' number of copies of the iterated-on element into "sublist".
+        
+        (c) Append "sublist" to the "list_of_sublists" list.
+        
+    (6) Return the value of "list_of_sublists".
 
-****** EXECUTE ******
+****** EXECUTE ****** (Please see below)
 
 """
