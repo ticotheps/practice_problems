@@ -26,6 +26,15 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
       same list, but in sorted order using the Selection Sort algorithm.
     - This sorting mechanism occurs "in place", meaning that it does not require
       storage of any external copies of the given input list.
+      
+- Sorting Strategy:
+    - Divide the unsorted input list into 2 subarrays, "sorted" and "unsorted".
+    - The first element of the given input array will automatically be
+      considered the first and only element of the "sorted" subarray.
+    - Iterate through the "unsorted" subarray, finding the smallest value and
+      swapping that value with the last element of the "sorted" subarray.
+    - Continue iterating in this fashion until all the elements are sorted and
+      there are 0 elements left remaining in the "unsorted" subarray.
 
 - Expected Input(s):
     - Number Of: 1
@@ -45,9 +54,31 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
     - Can the given input list include floating point numbers?
         - No.
 
-****** UNDERSTAND ******
+****** PLAN ******
+- First Pass Solution:
+    (1) Define a helper function, "swap()", that takes in 3 parameters,
+    "curr_index", "index_of_min", and "array", and has no outputs.
+    
+    (2) Define a function, "selectionSort()", that takes in an unsorted list and
+    returns a sorted version of that same list.
+    
+    (3) Declare a var, "curr_index", and initialize it with the value of the
+    given input's zeroith element.
+    
+    (4) Declare another var, "index_of_min", and initialize it with the value
+    of the given input's zeroith element.
+    
+    (5) Use a 'for' loop to iterate through the "unsorted" subarray by starting
+    the range() at the value of "curr_index" and ending at the value of the
+    length of the given input array.
+    
+        (a) If the value of the array at the iterated-on element is LESS than the current value of "index_of_min", call the "swap()" helper function and pass in the "curr_index", the "index_of_min", and the given input "array" as arguments.
+        
+        (b) Else, do nothing.
+        
+    (6) Return the value of "array".
 
-****** UNDERSTAND ******
+****** EXECUTE ****** (Please see below)
 
 """
 
