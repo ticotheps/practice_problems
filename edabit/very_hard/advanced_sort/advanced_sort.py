@@ -43,11 +43,11 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
 
 ****** PLAN ******
 - First Pass Solution:
-    (1) Declare a var, "elements_dict", and initialize it with an empty
-    dictionary.
-    
-    (2) Define a function, "advanced_sort()", that takes in 1 input list and
+    (1) Define a function, "advanced_sort()", that takes in 1 input list and
     returns 1 output list.
+
+    (2) Declare a var, "elements_dict", and initialize it with an empty
+    dictionary.
     
     (3) Declare a var, "list_of_sublists", and initialize it with an empty list.
     
@@ -74,5 +74,9 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
     (6) Return the value of "list_of_sublists".
 
 ****** EXECUTE ****** (Please see below)
-
 """
+
+def advanced_sort(lst):
+    pass
+
+print(advanced_sort([2, 1, 2, 1]))  # [[2, 2], [1, 1]]
