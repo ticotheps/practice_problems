@@ -100,3 +100,11 @@ def advanced_sort(lst):
             list_of_sublists.append(sublist)
             elements_dict[k][1] = True
     return list_of_sublists
+
+"""
+****** REFLECT/REFACTOR ******
+- Asymptotic Analysis:
+    - First Pass Solution:
+        - Time Complexity: O(n) -> "linear time"
+        - Space Complexity: O(n) -> "linear space"
+"""
