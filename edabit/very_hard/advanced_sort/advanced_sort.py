@@ -61,13 +61,14 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
         (b) If the iterated-on element IS already a key in the "elements_dict" 
         dictionary, increase the value of the matching key by 1.
             
-    (5) Use another 'for' loop to iterate through the give input list...
+    (5) Use another 'for' loop to iterate through the entries in the
+    "elements_dict" dictionary...
     
         (a) Declare a var, "occurrences", and initialize it with the value for 
         the iterated-on element's matching key in the "elements_dict" 
         dictionary.
         
-        (b) Declare another var, "sublist", and initialize it with a list comprehension that appends 'n' number of copies of the iterated-on element into "sublist".
+        (b) Declare another var, "sublist", and initialize it with a list that only has one element (the value of the iterated-on element) and is multiplied by the value of "occurrences".
         
         (c) Append "sublist" to the "list_of_sublists" list.
         
@@ -77,6 +78,35 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
 """
 
 def advanced_sort(lst):
-    pass
+    elements_dict = {}
+    print(f"*INITIAL* elements_dict = {elements_dict}")
+    
+    list_of_sublists = []
+    print(f"*INITIAL* list_of_sublists = {list_of_sublists}")
+    
+    for i in lst:
+        print(f"i = {i}")
+        if i not in elements_dict:
+            elements_dict[i] = 1
+            print(f"***UPDATED*** elements_dict = {elements_dict}")
+            
+        else:
+            print(f"elements_dict[{i}] = {elements_dict[i]}")
+            elements_dict[i] += 1
+            print(f"***UPDATED*** elements_dict[{i}] = {elements_dict[i]}")
+            
+    for k in elements_dict:
+        print(f"k = {k}")
+        
+        occurrences = elements_dict[k]
+        print(f"occurrences = {occurrences}")
+        
+        sublist = [k] * occurrences
+        print(f"*INITIAL* sublist = {sublist}")
+
+        list_of_sublists.append(sublist)
+        print(f"***UPDATED*** list_of_sublists = {list_of_sublists}")
+        
+    return list_of_sublists
 
 print(advanced_sort([2, 1, 2, 1]))  # [[2, 2], [1, 1]]
