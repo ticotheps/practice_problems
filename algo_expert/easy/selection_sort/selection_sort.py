@@ -17,6 +17,39 @@ of that array. Use the Selection Sort algorithm to sort the array.
       unsorted subarray and inserting it in its correct position in the sorted
       subarray with a swap until the entire array is sorted.
 """
+"""
+The 4 Phases of the U.P.E.R. Problem-Solving Framework
+
+****** UNDERSTAND ******
+- Objective:
+    - Write an algorithm that takes in a single unsorted list and returns the
+      same list, but in sorted order using the Selection Sort algorithm.
+    - This sorting mechanism occurs "in place", meaning that it does not require
+      storage of any external copies of the given input list.
+
+- Expected Input(s):
+    - Number Of: 1
+    - Data Type(s): list
+    - Var Name(s): "array"
+    
+- Expected Output(s):
+    - Number Of: 1
+    - Data Type(s): list
+    - Var Name(s): "array"
+    
+- Edge Cases & Constraints:
+    - Does the unsorted input list need to be sorted in-place only?
+        - Yes.
+    - Can the given input list include negative numbers?
+        - Yes.
+    - Can the given input list include floating point numbers?
+        - No.
+
+****** UNDERSTAND ******
+
+****** UNDERSTAND ******
+
+"""
 
 def selectionSort(array):
     pass
