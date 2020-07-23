@@ -55,22 +55,30 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
 
         (a) If the iterated-on element is NOT already a key in the 
         "elements_dict" dictionary add it as a new entry and set its value 
-        equal to 1 (integer data type) in order to represent the total current
-        number of occurrences in the given input list.
+        equal to a list of two items: 1 (integer data type; represents the 
+        total current number of occurrences in the given input list) and False
+        (Boolean data type; represents whether or the second 'for' loop should
+        add a "sublist" to the "list_of_sublists" for this entry).
         
         (b) If the iterated-on element IS already a key in the "elements_dict" 
-        dictionary, increase the value of the matching key by 1.
+        dictionary, increase the value of the matching key's zeroith element by 1.
             
-    (5) Use another 'for' loop to iterate through the entries in the
-    "elements_dict" dictionary...
+    (5) Use another 'for' loop to iterate through the given input list again...
     
-        (a) Declare a var, "occurrences", and initialize it with the value for 
-        the iterated-on element's matching key in the "elements_dict" 
-        dictionary.
+        (a) Declare a var, "occurrences", and initialize it with the value of 
+        the zeroith element in the list value for the "elements_dict" at the 
+        index of the iterated-on element.
         
-        (b) Declare another var, "sublist", and initialize it with a list that only has one element (the value of the iterated-on element) and is multiplied by the value of "occurrences".
+        (b) Declare another var, "sublist", and initialize it with a list that 
+        only has one element (the value of the iterated-on element) and then
+        multiply that element by the value of "occurrences".
         
         (c) Append "sublist" to the "list_of_sublists" list.
+        
+        (d) Set the value of the first index of the iterated-on item's matching
+        entry (a list) in the "elements_dict" dictionary to a value of True (a
+        Boolean data type) to indicate that this value has already had a 
+        "sublist" appended to the "list_of_sublists")
         
     (6) Return the value of "list_of_sublists".
 
@@ -79,34 +87,16 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
 
 def advanced_sort(lst):
     elements_dict = {}
-    print(f"*INITIAL* elements_dict = {elements_dict}")
-    
     list_of_sublists = []
-    print(f"*INITIAL* list_of_sublists = {list_of_sublists}")
-    
     for i in lst:
-        print(f"i = {i}")
         if i not in elements_dict:
-            elements_dict[i] = 1
-            print(f"***UPDATED*** elements_dict = {elements_dict}")
-            
+            elements_dict[i] = [1, False]
         else:
-            print(f"elements_dict[{i}] = {elements_dict[i]}")
-            elements_dict[i] += 1
-            print(f"***UPDATED*** elements_dict[{i}] = {elements_dict[i]}")
-            
-    for k in elements_dict:
-        print(f"k = {k}")
-        
-        occurrences = elements_dict[k]
-        print(f"occurrences = {occurrences}")
-        
-        sublist = [k] * occurrences
-        print(f"*INITIAL* sublist = {sublist}")
-
-        list_of_sublists.append(sublist)
-        print(f"***UPDATED*** list_of_sublists = {list_of_sublists}")
-        
+            elements_dict[i][0] += 1
+    for k in lst:
+        if elements_dict[k][1] == False:
+            occurrences = elements_dict[k][0]
+            sublist = [k] * occurrences
+            list_of_sublists.append(sublist)
+            elements_dict[k][1] = True
     return list_of_sublists
-
-print(advanced_sort([2, 1, 2, 1]))  # [[2, 2], [1, 1]]
