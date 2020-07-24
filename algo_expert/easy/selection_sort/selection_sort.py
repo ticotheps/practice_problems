@@ -23,18 +23,18 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
 ****** UNDERSTAND ******
 - Objective:
     - Write an algorithm that takes in a single unsorted list and returns the
-      same list, but in sorted order using the Selection Sort algorithm.
+    	same list, but in sorted order using the Selection Sort algorithm.
     - This sorting mechanism occurs "in place", meaning that it does not require
-      storage of any external copies of the given input list.
+    	storage of any external copies of the given input list.
       
 - Sorting Strategy:
     - Divide the unsorted input list into 2 subarrays, "sorted" and "unsorted".
     - The first element of the given input array will automatically be
-      considered the first and only element of the "sorted" subarray.
+    	considered the first and only element of the "sorted" subarray.
     - Iterate through the "unsorted" subarray, finding the smallest value and
-      swapping that value with the last element of the "sorted" subarray.
+    	swapping that value with the last element of the "sorted" subarray.
     - Continue iterating in this fashion until all the elements are sorted and
-      there are 0 elements left remaining in the "unsorted" subarray.
+    	there are 0 elements left remaining in the "unsorted" subarray.
 
 - Expected Input(s):
     - Number Of: 1
@@ -57,24 +57,30 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
 ****** PLAN ******
 - First Pass Solution:
     (1) Define a helper function, "swap()", that takes in 3 parameters,
-    "curr_index", "index_of_min", and "array", and has no outputs.
+    	"curr_index", "index_of_min", and "array", and has no outputs.
     
     (2) Define a function, "selectionSort()", that takes in an unsorted list and
-    returns a sorted version of that same list.
+    	returns a sorted version of that same list.
     
     (3) Declare a var, "curr_index", and initialize it with the value of the
-    given input's zeroith element.
+    	given input's zeroith element.
     
     (4) Declare another var, "index_of_min", and initialize it with the value
-    of the given input's zeroith element.
+    	of the given input's zeroith element.
     
     (5) Use a 'for' loop to iterate through the "unsorted" subarray by starting
-    the range() at the value of "curr_index" and ending at the value of the
-    length of the given input array.
+    	the range() at the value of "curr_index" and ending at the value of the
+    	length of the given input array minus 1.
     
-        (a) If the value of the array at the iterated-on element is LESS than the current value of "index_of_min", call the "swap()" helper function and pass in the "curr_index", the "index_of_min", and the given input "array" as arguments.
+        (a) If the value of the array at the iterated-on element is LESS than 
+        the current value of array at the index of "index_of_min"...
+        	
+        	(i) call the "swap()" helper function and pass in the "curr_index",
+        	the "index_of_min", and the given input "array" as arguments.
         
-        (b) Else, do nothing.
+		(b) Increase the "curr_index" value by 1.
+  
+		(c) Set the value of "index_of_min" to 
         
     (6) Return the value of "array".
 
@@ -82,7 +88,39 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
 
 """
 
-def selectionSort(array):
-    pass
+def swap(index_of_min, curr_index, array):
+    array[index_of_min], array[curr_index] = array[curr_index], array[index_of_min]
 
-print(selectionSort([8, 5, 2, 9, 5, 6, 3]),[2, 3, 5, 5, 6, 8, 9])
+
+def selectionSort(array):
+    # curr_index = 0
+    # print(f"\n*INITIAL* curr_index = {curr_index}")
+    
+    # index_of_min = 0
+    # print(f"*INITIAL* index_of_min = {index_of_min}")
+    
+    # curr_value = array[curr_index]
+    # print(f"\n*INITIAL* curr_value = {curr_value}")
+    
+    # curr_min_value = array[index_of_min]
+    # print(f"\n*INITIAL* curr_min_value = {curr_min_value}")
+    
+    for i in range(0, len(array)-1):
+        index_of_min = i
+        print(f"*INITIAL* index_of_min = {index_of_min}")
+        smallest = array[i]
+        print(f"*INITIAL* smallest = {smallest}")
+        # print(f"i = {i}")
+        for j in range(i+1, len(array)):
+            curr_index = j
+            
+            if array[index_of_min] > array[curr_index]:
+                print(f"*INITIAL* current value = {array[curr_index]}")
+                print(f"*INITIAL* min value = {array[index_of_min]}")
+                swap(index_of_min, curr_index, array)
+                print(f"***UPDATED*** current value = {array[curr_index]}")
+                print(f"***UPDATED*** min value = {array[index_of_min]}")
+                
+    return array
+
+print(selectionSort([8, 5, 2, 9, 5, 6, 3]))  # [2, 3, 5, 5, 6, 8, 9]
