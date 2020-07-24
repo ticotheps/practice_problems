@@ -87,40 +87,16 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
 ****** EXECUTE ****** (Please see below)
 
 """
-
+# helper function
 def swap(index_of_min, curr_index, array):
     array[index_of_min], array[curr_index] = array[curr_index], array[index_of_min]
 
-
 def selectionSort(array):
-    # curr_index = 0
-    # print(f"\n*INITIAL* curr_index = {curr_index}")
-    
-    # index_of_min = 0
-    # print(f"*INITIAL* index_of_min = {index_of_min}")
-    
-    # curr_value = array[curr_index]
-    # print(f"\n*INITIAL* curr_value = {curr_value}")
-    
-    # curr_min_value = array[index_of_min]
-    # print(f"\n*INITIAL* curr_min_value = {curr_min_value}")
-    
     for i in range(0, len(array)-1):
         index_of_min = i
-        print(f"*INITIAL* index_of_min = {index_of_min}")
         smallest = array[i]
-        print(f"*INITIAL* smallest = {smallest}")
-        # print(f"i = {i}")
         for j in range(i+1, len(array)):
             curr_index = j
-            
             if array[index_of_min] > array[curr_index]:
-                print(f"*INITIAL* current value = {array[curr_index]}")
-                print(f"*INITIAL* min value = {array[index_of_min]}")
                 swap(index_of_min, curr_index, array)
-                print(f"***UPDATED*** current value = {array[curr_index]}")
-                print(f"***UPDATED*** min value = {array[index_of_min]}")
-                
     return array
-
-print(selectionSort([8, 5, 2, 9, 5, 6, 3]))  # [2, 3, 5, 5, 6, 8, 9]
