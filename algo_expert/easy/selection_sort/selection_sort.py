@@ -85,7 +85,6 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
     (6) Return the value of "array".
 
 ****** EXECUTE ****** (Please see below)
-
 """
 # helper function
 def swap(index_of_min, curr_index, array):
@@ -100,3 +99,11 @@ def selectionSort(array):
             if array[index_of_min] > array[curr_index]:
                 swap(index_of_min, curr_index, array)
     return array
+
+"""
+****** REFLECT/REFACTOR ******
+- Asymptotic Analysis:
+	- First Pass Solution:
+		- Time Complexity: O(n^2) -> "quadratic time"
+		- Space Complexity: O(1) -> "constant space"
+"""
