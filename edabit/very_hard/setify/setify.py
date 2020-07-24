@@ -18,8 +18,9 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
 
 ****** UNDERSTAND Phase ******
 - Objective:
-    - Write an algorithm that takes in a single input list, removes any
-      duplicates, and returns a single output list that contains no duplicates.
+    - Write an algorithm that takes in a single input list and then returns a
+      version of that list where any duplicates have been removed and all
+      elements have been sorted.
       
 - Expected Input(s):
     - Number Of: 1
@@ -29,7 +30,7 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
 - Expected Output(s):
     - Number Of: 1
     - Data Type(s): list
-    - Var Name(s): "new_lst"
+    - Var Name(s): "set_lst"
     
 - Edge Cases & Constraints:
     - Can the given input list include strings?
@@ -43,6 +44,36 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
         - Yes.
     
 ****** PLAN Phase ******
+- First Pass Solution:
+    (1) Define a function that takes in 1 input, "lst", and returns 1 output,
+    "set_lst".
+    
+    (2) Declare a var, "lst_dict", and initialize it with an empty dictionary.
+    
+    (3) Declare a var, "lst_set", and initialize it with an empty list.
+    
+    (4) Declare a var, "sorted_lst", and initialize it with a sorted version of
+    the given input "lst" using the '.sort()' method.
+    
+    (5) Use a 'for' loop to iterate through the "sorted_lst" where "element"
+    will be the iterator...
+
+        (a) If "element" does NOT exist in the "lst_dict" as a key, then add 
+        an entry for it where "element" is the key and True (Boolean data type)
+        is the value (in a key/value pair).
+        
+        (b) If "element" DOES already exist in the "lst_dict" as a key, do 
+        nothing.
+        
+    (6) Use another 'for' loop to iterate through the "sorted_lst" where "item"
+    will be the iterator...
+    
+        (a) If "item" DOES exist as a key in the "lst_dict", then append the 
+        value for "item" to the "lst_set" list.
+        
+        (b) Else, do nothing.
+        
+    (7) Return the value of "lst_set".
 
 ****** EXECUTE Phase ****** (Please see below)
 
