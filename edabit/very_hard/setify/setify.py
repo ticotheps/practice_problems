@@ -80,39 +80,15 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
 """
 
 def setify(lst):
-    print(f"/nlst = {lst}")
-    
     lst_dict = {}
-    print(f"*INITIAL* lst_dict = {lst_dict}")
-    
     lst_set = []
-    print(f"*INITIAL* lst_set = {lst_set}")
-    
     sorted_lst = sorted(lst)
-    print(f"sorted_lst = {sorted_lst}")
-    
     for element in sorted_lst:
-        print(f"element = {element}")
-        
         if element not in lst_dict:
             lst_dict[element] = False
-            print(f"***UPDATED*** lst_dict = {lst_dict}")
-            
-        else:
-            print(f"{element} already exists as a key in the 'lst_dict'!")
         
     for item in sorted_lst:
-        print(f"item = {item}")
-        
         if item in lst_dict and lst_dict[item] == False:
-            print(f"*INITIAL* lst_dict[{item}] = {lst_dict[item]}")
-            
             lst_dict[item] = True
-            print(f"***UPDATED*** lst_dict[{item}] = {lst_dict[item]}")
-            
             lst_set.append(item)
-            print(f"***UPDATED*** lst_set = {lst_set}")
-            
     return lst_set
-
-print(setify([1, 3, 3, 5, 5, 5]))  # [1, 3, 5]
