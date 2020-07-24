@@ -53,13 +53,13 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
     (3) Declare a var, "lst_set", and initialize it with an empty list.
     
     (4) Declare a var, "sorted_lst", and initialize it with a sorted version of
-    the given input "lst" using the '.sort()' method.
+    the given input "lst" using the '.sorted()' method.
     
     (5) Use a 'for' loop to iterate through the "sorted_lst" where "element"
     will be the iterator...
 
         (a) If "element" does NOT exist in the "lst_dict" as a key, then add 
-        an entry for it where "element" is the key and True (Boolean data type)
+        an entry for it where "element" is the key and False (Boolean data type)
         is the value (in a key/value pair).
         
         (b) If "element" DOES already exist in the "lst_dict" as a key, do 
@@ -68,14 +68,51 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
     (6) Use another 'for' loop to iterate through the "sorted_lst" where "item"
     will be the iterator...
     
-        (a) If "item" DOES exist as a key in the "lst_dict", then append the 
-        value for "item" to the "lst_set" list.
+        (a) If "item" DOES exist as a key in the "lst_dict" and the value for 
+        it is False (Boolean data type), then change the value from True to
+        False and append "item" to the "lst_set" list.
         
         (b) Else, do nothing.
         
     (7) Return the value of "lst_set".
 
 ****** EXECUTE Phase ****** (Please see below)
-
-
 """
+
+def setify(lst):
+    print(f"/nlst = {lst}")
+    
+    lst_dict = {}
+    print(f"*INITIAL* lst_dict = {lst_dict}")
+    
+    lst_set = []
+    print(f"*INITIAL* lst_set = {lst_set}")
+    
+    sorted_lst = sorted(lst)
+    print(f"sorted_lst = {sorted_lst}")
+    
+    for element in sorted_lst:
+        print(f"element = {element}")
+        
+        if element not in lst_dict:
+            lst_dict[element] = False
+            print(f"***UPDATED*** lst_dict = {lst_dict}")
+            
+        else:
+            print(f"{element} already exists as a key in the 'lst_dict'!")
+        
+    for item in sorted_lst:
+        print(f"item = {item}")
+        
+        if item in lst_dict and lst_dict[item] == False:
+            print(f"*INITIAL* lst_dict[{item}] = {lst_dict[item]}")
+            
+            lst_dict[item] = True
+            print(f"***UPDATED*** lst_dict[{item}] = {lst_dict[item]}")
+            
+            lst_set.append(item)
+            print(f"***UPDATED*** lst_set = {lst_set}")
+            
+    return lst_set
+
+print(setify([1, 3, 3, 5, 5, 5]))  # [1, 3, 5]
