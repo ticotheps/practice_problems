@@ -43,6 +43,30 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
           and ranging from 1-10.
 
 ****** PLAN Phase ******
+- First Pass Solution:
+    (1) Define a function, "missing_num()", that takes in a single input list
+    (of numbers ranging from 1-10) and returns a single integer (which
+    represents the missing integer from the list of integers ranging from 1-10).
+    
+    (2) Declare a var, "missing_int", and initalize it with a value of 1 (of
+    integer data type).
+    
+    (3) Declare a var, "sorted_lst", and initialize it with a sorted version of
+    the given input list using the ".sorted()" method.
+    
+    (4) Use a 'for' loop and the 'enumerate()' method to iterate through the 
+    "sorted_lst", where the iterators will be "element" and "index"...
+    
+        (a) Define a var, "place_in_lst", and initialize it with a value of 
+        "index + 1".
+
+        (b) If the "element" is NOT EQUAL TO the "index+1", then:
+            
+            (i) add "place_in_lst" to the value of "missing_int".
+        
+        (c) Else, do nothing.
+        
+    (5) Return the value of "missing_int".
 
 ****** EXECUTE Phase ****** (Please see below)
 """
