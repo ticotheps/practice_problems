@@ -73,22 +73,19 @@ The 4 Phases of the U.P.E.R. Problem-Solving Framework
 
 def missing_num(lst):
     missing_int = 10
-    print(f"*INITIAL* missing_int = {missing_int}")
-    
     sorted_lst = sorted(lst)
-    print(f"sorted_lst = {sorted_lst}")
-    
     for i in range(0, len(sorted_lst)):
         place_in_sorted_lst = i+1
-        print(f"place_in_sorted_lst = {place_in_sorted_lst}")
         element = sorted_lst[i]
-        print(f"element = {element}")
-
         if element != place_in_sorted_lst:
             missing_int = place_in_sorted_lst
-            print(f"***UPDATED*** missing_int = {missing_int}")
             return missing_int
-            
     return missing_int
-    
-print(missing_num([7, 2, 3, 6, 5, 9, 1, 4, 8]))  # 10
+
+"""
+****** REFLECT/REFACTOR ******
+- Asymptotic Analysis:
+    - First Pass Solution:
+        - Time Complexity: O(n log n) -> "linearithmic time"
+        - Space Complexity: O(n) -> "linear space"
+"""
