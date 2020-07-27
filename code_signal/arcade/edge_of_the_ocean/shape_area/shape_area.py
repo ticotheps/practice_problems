@@ -51,6 +51,10 @@ appending "1-interesting polygons" to its rim, side by side. You can see the
 ****** EXECUTE phase ****** (Please see below)
 
 ****** REFLECT/REFACTOR phase ******
+- Asymptotic Analysis:
+    - First Pass Solution:
+        - Time Complexity: O(1) -> "constant time"
+        - Space Complexity: O(1) -> "constant space"
 """
 
 def shapeArea(n):
