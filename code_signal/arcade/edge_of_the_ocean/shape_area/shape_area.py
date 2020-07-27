@@ -54,19 +54,8 @@ appending "1-interesting polygons" to its rim, side by side. You can see the
 """
 
 def shapeArea(n):
-    total_area = 0
-    print(f"\ntotal_area = {total_area}")
-        
+    total_area = 0 
     curr_polygon_side_length = n**2
     prev_polygon_side_length = (n-1)**2
-    print(f"\ncurr_polygon_side_length = {curr_polygon_side_length}")
-    print(f"\nprev_polygon_side_length = {prev_polygon_side_length}")
-    
     total_area += curr_polygon_side_length + prev_polygon_side_length
-    print(f"*tota_area* = {total_area}")
-        
     return total_area
-
-print(shapeArea(1))  # 1 (1^2 + 0^2 = 1)
-print(shapeArea(2))  # 5 (2^2 + 1^2 = 5)
-print(shapeArea(3))  # 13 (3^2 + 2^2 = 13)
