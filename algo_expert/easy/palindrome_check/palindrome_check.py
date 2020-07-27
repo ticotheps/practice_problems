@@ -19,6 +19,37 @@ Hints:
     problem: start with a pointer at the first index of the string and a pointer
     at the final index of the string. What can you do from there?
 """
+"""
+****** UNDERSTAND Phase ******
+- Objective: 
+    - Write an algorithm, "isPalindrome()", that takes in 1 input (string data
+      type; "string"), evaluates the input, and then returns 1 output (Boolean 
+      data type; True or False).
+      
+- Expected Input(s): 
+    - Number Of: 1
+    - Data Type: string
+    - Var Name(s): "string"
+    
+- Expected Output(s): 
+    - Number Of: 1
+    - Data Type: Boolean
+    - Var Name(s): "verified_palindrome"
+    
+- Edge Cases & Constraints:
+    - Can the input string ever be empty?
+        - No.
+    - Can the string include non-alphabetic characters?
+        - Yes.
+    - How do you handle single character strings?
+        - Treat them as palindromes.
+
+****** PLAN Phase ******
+
+****** EXECUTE Phase ******
+
+****** REFLECT/REFACTOR Phase ******
+"""
 
 def isPalindrome(string):
     pass
