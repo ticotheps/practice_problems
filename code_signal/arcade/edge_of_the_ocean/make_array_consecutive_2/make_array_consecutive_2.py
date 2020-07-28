@@ -1,5 +1,5 @@
-
-
+# Time Complexity: O(n log n)
+# Space Complexity: O(n)
 def makeArrayConsecutive2(statues):
     sizes_dict = {}
     sorted_statues = sorted(statues)
