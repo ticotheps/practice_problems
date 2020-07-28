@@ -48,25 +48,10 @@ Hints:
 """
 
 def isPalindrome(string):
-    # define a var, "verified_palindrome", and initialize it with a value of
-    # True.
     verified_palindrome = True
-    
-    # define a new var, "rev_string", that reverses the given input string 
-    # using a special ".slice()" technique.
     rev_string = string[::-1]
-    print(f"rev_string = {rev_string}")
-    
-    # iterate through the "rev_string" and check to make sure that each
-    # character matches with each character of the "string" input.
     for i in range(0, len(rev_string) - 1):
-        # if the two iterated-on characters don't match, set the value of
-        # "verified_palindrome" equal to False and return the value.
         if string[i] != rev_string[i]:    
             verified_palindrome = False
             return verified_palindrome
-    
     return verified_palindrome
-
-print(isPalindrome("abcdcba"))  # True
-print(isPalindrome("tico"))  # False
