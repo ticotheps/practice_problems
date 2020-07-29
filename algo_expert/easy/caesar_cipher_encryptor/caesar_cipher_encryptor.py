@@ -19,7 +19,15 @@ Hints:
     - Consider using such functions to determine which letters the input
     string's letters should be mapped to.
 """
+"""
+****** UNDERSTAND Phase ******
 
+****** PLAN Phase ******
+
+****** EXECUTE Phase ******
+
+****** REFLECT/REFACTOR Phase ******
+"""
 
 def caesarCipherEncryptor(string, key):
     pass
