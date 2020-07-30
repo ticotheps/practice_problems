@@ -77,4 +77,29 @@ Constraints:
             (v) If they are NOT in strictly increasing order, do nothing.
         
         (c) Return the value of "verified_strictly_increasing".
+        
+
+****** EXECUTE Phase (Please see below) ******
 """
+
+def isStrictlyIncreasing(lst):
+    # print(f"lst = {lst}")
+    
+    verified_strictly_increasing = True
+    # print(f"\nverified_strictly_increasing = {verified_strictly_increasing}")
+
+    prev_element_index = 0
+    # print(f"prev_element_index = {prev_element_index}")
+
+    for i in range(1, len(lst)):
+        # print(f"Is {lst[i]} less than {lst[prev_element_index]}?")
+        if lst[i] <= lst[prev_element_index]:
+            verified_strictly_increasing = False
+            # print(f"***verified_strictly_increasing = {verified_strictly_increasing}")
+            return verified_strictly_increasing
+        prev_element_index += 1
+        # print(f"***prev_element_index = {prev_element_index}")
+    return verified_strictly_increasing
+        
+print(isStrictlyIncreasing([1, 3, 2]))  # False
+print(isStrictlyIncreasing([1, 2, 3]))  # True
