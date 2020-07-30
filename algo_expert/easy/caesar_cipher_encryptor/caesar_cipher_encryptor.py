@@ -34,8 +34,33 @@ Hints:
 """
 """
 ****** UNDERSTAND Phase ******
+- Objective: Write an algorithm that takes in two inputs, a string of lowercase
+  letters and an integer represting the number of positions to shift each letter
+  forwards in the alphabet, and returns a new string with the shifted characters.
 
 ****** PLAN Phase ******
+- First Pass Solution:
+    (1) Define a function that takes in 2 inputs (string, integer) and returns 1
+    output (string).
+    
+    (2) Declare a var, "new_string_list", and intitialize it with an empty list.
+    
+    (3) Use a 'for' loop to iterate through the given input string where the
+    iterator will be "char"...
+    
+        (a) Declare a var, "uni_of_char", and initialize it with the Unicode value for 
+        "string[i]" using the ".ord()" built-in Python function.
+        
+        (b) Declare a var, "new_char_uni", and initialize it with the Unicode value of "uni_of_char" + "key" (given input).
+        
+        (c) Declare another var, "new_char", and initialize it with the matching character using the ".chr()" built-in Python method.
+        
+        (d) Append the "new_char" to the "new_string_list".
+        
+    (4) Join all of the elements in the "new_string_list" using the ".join()"
+    built-in Python method and set it equal to a new var, "new_string".
+    
+    (5) Return the value of "new_string".
 
 ****** EXECUTE Phase ******
 
@@ -43,6 +68,9 @@ Hints:
 """
 
 def caesarCipherEncryptor(string, key):
-    pass
+    # for i in string:
+    uni = ord(string[0])
+    print(f"UNICODE for '{string[0]}' = {uni}")
+    print(f"CHAR for unicode 120 = {chr(120)}")
 
 print(caesarCipherEncryptor("xyz", 2))  # "zab"
