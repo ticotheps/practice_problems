@@ -78,27 +78,16 @@ def caesarCipherEncryptor(string, key):
         alphabet_dict[letter] = index
         alphabet_dict[index] = letter
         index += 1
-        
-    print(f"alphabet_dict = {alphabet_dict}")
     
     for char in string:
         key_of_char = alphabet_dict[char]
         adjusted_key = key_of_char + key
-        print(f"\nkey_of_char = {key_of_char}")
-        print(f"adjusted_key = {adjusted_key}")
         
         if adjusted_key > 26:
             adjusted_key_modulo = adjusted_key % 26
-            print(f"adjusted_key_modulo = {adjusted_key % 26}")
-            
             new_char = alphabet_dict[adjusted_key_modulo]
         else:
             new_char = alphabet_dict[adjusted_key]   
-            
         new_string_list.append(new_char)
-        
     new_string = "".join(new_string_list)
-                
     return new_string
-
-print(caesarCipherEncryptor("xyz", 2))  # "zab"
