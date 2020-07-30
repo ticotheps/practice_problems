@@ -62,9 +62,12 @@ Hints:
     
     (5) Return the value of "new_string".
 
-****** EXECUTE Phase ******
+****** EXECUTE Phase (Please see below) ******
 
 ****** REFLECT/REFACTOR Phase ******
+- First Pass Solution:
+    - Time Complexity: O(n) -> "linear time"
+    - Space Complexity: O(n) -> "linear space"
 """
 
 def caesarCipherEncryptor(string, key):
