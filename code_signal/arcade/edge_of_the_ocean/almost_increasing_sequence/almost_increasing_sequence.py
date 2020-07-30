@@ -26,6 +26,23 @@ Examples:
 Constraints:
     - The length of sequence will be between 2(inclusive) and 10^5(1,000,000;
     inclusive).
-    - The values of sequence will be between -10^5(-1,000,000; inclusive) and 10^5(1,000,000;
+    - The values of the sequence will be between -10^5(-1,000,000; inclusive) and 10^5(1,000,000;
     inclusive).
+"""
+
+"""
+****** UNDERSTAND Phase ******
+
+- Objective: Write an algorithm that takes in a single input list, evaluates
+  whether or not a single element could be removed from the list to make its order
+  "strictly ascending", and then returns True or False (Boolean value) depending on
+  whether or not it can do that.
+  
+- Expected Input(s): 1; list data type; "sequence"
+- Expected Output(s): 1; Boolean data type; True or False
+
+- Edge Cases & Constraints:
+    - The length of any given input list will be between 2 and 1000000.
+    - The value of any element in any given input list will be between -1000000
+      and 1000000.
 """
