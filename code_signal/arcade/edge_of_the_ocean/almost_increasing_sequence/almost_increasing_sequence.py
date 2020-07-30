@@ -83,51 +83,21 @@ Constraints:
 """
 
 def isStrictlyIncreasing(lst):
-    # print(f"lst = {lst}")
-    
     verified_strictly_increasing = True
-    # print(f"\nverified_strictly_increasing = {verified_strictly_increasing}")
-
     prev_element_index = 0
-    # print(f"prev_element_index = {prev_element_index}")
-
     for i in range(1, len(lst)):
-        # print(f"Is {lst[i]} less than {lst[prev_element_index]}?")
         if lst[i] <= lst[prev_element_index]:
             verified_strictly_increasing = False
-            # print(f"***verified_strictly_increasing = {verified_strictly_increasing}")
             return verified_strictly_increasing
         prev_element_index += 1
-    
-    print(f"verified_strictly_increasing = {verified_strictly_increasing}")
     return verified_strictly_increasing
-        
-# print(isStrictlyIncreasing([1, 3, 2]))  # False
-# print(isStrictlyIncreasing([1, 2, 3]))  # True
 
 def almostIncreasingSequence(sequence):
-    print(f"\nsequence = {sequence}")
-    
     is_strictly_increasing = False
-    print(f"is_strictly_increasing = {is_strictly_increasing}")
-    
     for i in range(0, len(sequence)):
-        print(f"\ni = {i}")
-        
-        test_list = sequence.copy()
-        print(f"test_list = {test_list}")
-        
+        test_list = sequence.copy() 
         test_list.pop(i)
-        print(f"***test_list = {test_list}")
-
         if isStrictlyIncreasing(test_list) == True:
             is_strictly_increasing = True
-            print(f"***is_strictly_increasing = {is_strictly_increasing}")
-            return is_strictly_increasing
-        else:
-            print("The test_list, {test_list}, is NOT strictly increasing")
-        
+            return is_strictly_increasing   
     return is_strictly_increasing
-                
-print(almostIncreasingSequence([1, 3, 2, 1]))  # False
-print(almostIncreasingSequence([1, 3, 2]))  # True
