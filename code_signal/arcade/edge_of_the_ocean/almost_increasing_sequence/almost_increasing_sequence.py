@@ -24,9 +24,9 @@ Examples:
         [1, 3].
         
 Constraints:
-    - The length of sequence will be between 2(inclusive) and 10^5(1,000,000;
+    - The length of sequence will be between 2(inclusive) and 10^5(100,000;
     inclusive).
-    - The values of the sequence will be between -10^5(-1,000,000; inclusive) and 10^5(1,000,000;
+    - The values of the sequence will be between -10^5(-100,000; inclusive) and 10^5(100,000;
     inclusive).
 """
 
@@ -81,23 +81,31 @@ Constraints:
 
 ****** EXECUTE Phase (Please see below) ******
 """
-
-def isStrictlyIncreasing(lst):
-    verified_strictly_increasing = True
-    prev_element_index = 0
-    for i in range(1, len(lst)):
-        if lst[i] <= lst[prev_element_index]:
-            verified_strictly_increasing = False
-            return verified_strictly_increasing
-        prev_element_index += 1
-    return verified_strictly_increasing
-
 def almostIncreasingSequence(sequence):
-    is_strictly_increasing = False
-    for i in range(0, len(sequence)):
-        test_list = sequence.copy() 
-        test_list.pop(i)
-        if isStrictlyIncreasing(test_list) == True:
-            is_strictly_increasing = True
-            return is_strictly_increasing   
-    return is_strictly_increasing
+    
+    if len(sequence) <= 2:
+        return True
+
+    def IncreasingSequence(test_sequence):
+        if len(test_sequence) == 2:
+            if test_sequence[0] < test_sequence[1]:
+                return True
+        else:
+            for i in range(0, len(test_sequence)-1):
+                if test_sequence[i] >= test_sequence[i+1]:
+                    return False
+                else:
+                    pass
+            return True
+
+    for i in range (0, len(sequence) - 1):
+        if sequence[i] >= sequence [i+1]:
+            #Either remove the current one or the next one
+            test_seq1 = sequence[:i] + sequence[i+1:]
+            test_seq2 = sequence[:i+1] + sequence[i+2:]
+            if IncreasingSequence(test_seq1) == True:
+                return True
+            elif IncreasingSequence(test_seq2) == True:
+                return True
+            else:
+                return False
