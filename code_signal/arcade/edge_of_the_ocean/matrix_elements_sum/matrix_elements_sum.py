@@ -46,3 +46,31 @@ Guaranteed constraints:
 
 The total price of all the rooms that are suitable for the CodeBots to live in.
 """
+
+def matrixElementsSum(matrix):
+    print(f"\nmatrix = {matrix}")
+    
+    sum = 0
+    print(f"sum = {sum}")
+    
+    bad_room_indices = {}
+    print(f"bad_room_indices = {bad_room_indices}")
+    
+    for outer_arr_index in range(0, len(matrix)):
+        print(f"\nouter_arr_index = {matrix[outer_arr_index]}")
+        
+        for inner_arr_index in range(0, len(matrix[outer_arr_index])):
+            inner_arr_element = matrix[outer_arr_index][inner_arr_index]
+            print(f"inner_arr_element = {inner_arr_element}")
+            
+            if inner_arr_index not in bad_room_indices:
+                sum += inner_arr_element
+                print(f"*** sum = {sum} ***")
+            
+            if inner_arr_element == 0:
+                bad_room_indices[inner_arr_index] = True
+                print(f"*** bad_room_indices = {bad_room_indices} ***")
+
+    return sum
+
+print(matrixElementsSum([[0,1,1,2], [0,5,0,0], [2,0,5,3]]))
