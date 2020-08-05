@@ -49,6 +49,19 @@ Hints:
     recursively traversing its children nodes, passing the correctly updated
     running sum to them.
 """
+"""
+****** PLAN Phase ******
+
+- Brute Force (Recursive) Solution:
+
+    (1) Define a recursive function that takes in a single input (of object data
+    type) that contains a key, "tree", which is equal to another object that
+    contains 2 more keys, "nodes" (an array of objects) and "root" (a string
+    representing the integer value of a node). This function returns a single
+    output (of array data type).
+    
+    (2) 
+"""
 class BinaryTree:
     def __init__(self, value):
         self.value = value
