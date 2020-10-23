@@ -14,13 +14,13 @@
 # - Expected Input(s)
 #   - Number of Expected Parameters: 2 
 #   - Names/Data Types of Expected Parameters
-#     - "height" (integer data type)
-#     - "width" (integer data type)
+#     - "gridHeight" (integer data type)
+#     - "gridWidth" (integer data type)
 
 # - Expected Output(s)
 #   - Number of Expected Outputs: 1 
-#   - Names/Data Types of Expected Output
-#     - "possPaths" (integer data type)
+#   - Names/Data Types of Expected Output:
+#     - "numOfPossiblePaths" (integer data type)
 
 # - Constraints
 #   - Will the following make the algorithm fail?
@@ -37,12 +37,26 @@
 #       - Sometimes.
 #       - Inputs must be positive integers.
 
-# - Example #1
-#   - Example #1 Input(s)
-#     - 'height' = 2
-#     - 'width' = 2
-#   - Example #1 Output(s)
-#     - 'numOfPossPaths' = 6
+# - Example #1:
+#   - Expected Inputs:
+#     - 'gridHeight' = 1
+#     - 'gridWidth' = 1
+#   - Expected Output:
+#     - 'numOfPossiblePaths' = 2
+
+# - Example #2:
+#   - Expected Inputs:
+#     - 'gridHeight' = 2
+#     - 'gridWidth' = 2
+#   - Expected Output:
+#     - 'numOfPossiblePaths' = 6
+
+# - Example #3:
+#   - Expected Inputs:
+#     - 'gridHeight' = 3
+#     - 'gridWidth' = 3
+#   - Expected Output:
+#     - 'numOfPossiblePaths' = 2
 
 
 # ---------------DEVISING A PLAN---------------
