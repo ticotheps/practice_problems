@@ -71,16 +71,33 @@ U.P.E.R.
 
 # (C) EXECUTE:
 
+# def how_many_seconds(hrs_int):
+#     mins_int = None
+#     secs_int = None
+    
+#     if hrs_int > 0 and hrs_int is not None:
+#         mins_int = hrs_int * 60     # converts given hours into minutes
+#         secs_int = mins_int * 60    # converts given minutes into seconds
+#     else: 
+#         raise TypeError("Invalid input type")
+
+#     return secs_int
+
+# (D) REFLECT/REFACTOR:
+
+# Asymptotic Analysis:
+#   - Time Complexity = O(1)
+#   - Space Complexity = O(1)
+
+# Can the brute force solution be optimized further?
+#   - Yes, but only by reducing the total number of lines of code and NOT by
+#     improving time/space complexity of the solution.
+
 def how_many_seconds(hrs_int):
-    mins_int = None
     secs_int = None
     
     if hrs_int > 0 and hrs_int is not None:
-        mins_int = hrs_int * 60     # converts given hours into minutes
-        secs_int = mins_int * 60    # converts given minutes into seconds
+        secs_int = hrs_int * 60 * 60    # converts given hours into seconds
+        return secs_int
     else: 
         raise TypeError("Invalid input type")
-
-    return secs_int
-
-# (D) REFLECT/REFACTOR:
