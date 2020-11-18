@@ -16,7 +16,7 @@ Notes:
 """
 U.P.E.R.
 
-UNDERSTAND:
+(A) UNDERSTAND:
     - Objective:
         - Write an algorithm that takes in a single input integer (representing a
         given number of hours) and returns a single output (representing the 
@@ -49,22 +49,29 @@ UNDERSTAND:
         - Can the input be None?
             - No, because you cannot convert 'None' number of hours.
             
-PLAN:
+(B) PLAN:
 
     (1) Create a function that takes in a single given input, 'hrs_int', and returns a single output, 'secs_int'.
     
-    (2) Declare a variable, 'secs_int', that will store the 'hrs_int' equivalent number of seconds.
+    (2) Assign the value of 'None' to two new variables, 'mins_int' and 'secs_int'.
     
-    (3) Convert the number of hours from 'hrs_int' into an equivalent number of seconds that will be
-    stored in the 'secs_int' variable from step 2.
+    (3) Make sure that a conversion of hours to seconds will NOT occur unless the given input, 'hrs_int', is in fact of either "integer" or "float" data type.
+
+        (a) If the given input, 'hrs_int', is a valid argument, proceed with converting the given number of hours into an equivalent number of seconds.
+        
+            i. Convert the number of hours in 'hrs_int' into an equivalent number of minutes and store that value in the previously declared 'mins_int' variable.
+            
+            ii. Convert the number of minutes in 'mins_int' into an equivalent number of seconds and store that value in the previously declared 'secs_int' variable.
+        
+        (b) If the given input, 'hrs_int', is an INVALID argument (i.e. - negative value, not of 'integer' or 'float' data types, null), handle the error with a 'TypeError' exception.
     
-    (4) Return the value of 'secs_int' and make sure the data type is of 'integer' type.
+    (4) Return the value of 'secs_int', making sure the data type is of 'integer' type.
 
 """
 
-# EXECUTE:
+# (C) EXECUTE:
 
 def how_many_seconds(hrs_int):
-    pass
+    
 
-# REFLECT/REFACTOR:
+# (D) REFLECT/REFACTOR:
