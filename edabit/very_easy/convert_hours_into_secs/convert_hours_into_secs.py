@@ -65,13 +65,22 @@ U.P.E.R.
         
         (b) If the given input, 'hrs_int', is an INVALID argument (i.e. - negative value, not of 'integer' or 'float' data types, null), handle the error with a 'TypeError' exception.
     
-    (4) Return the value of 'secs_int', making sure the data type is of 'integer' type.
+    (4) Return the value of 'secs_int'.
 
 """
 
 # (C) EXECUTE:
 
 def how_many_seconds(hrs_int):
+    mins_int = None
+    secs_int = None
     
+    if hrs_int > 0 and hrs_int is not None:
+        mins_int = hrs_int * 60     # converts given hours into minutes
+        secs_int = mins_int * 60    # converts given minutes into seconds
+    else: 
+        raise TypeError("Invalid input type")
+
+    return secs_int
 
 # (D) REFLECT/REFACTOR:
