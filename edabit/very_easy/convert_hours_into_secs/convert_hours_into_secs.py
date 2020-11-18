@@ -51,7 +51,20 @@ UNDERSTAND:
             
 PLAN:
 
-EXECUTE:
+    (1) Create a function that takes in a single given input, 'hrs_int', and returns a single output, 'secs_int'.
+    
+    (2) Declare a variable, 'secs_int', that will store the 'hrs_int' equivalent number of seconds.
+    
+    (3) Convert the number of hours from 'hrs_int' into an equivalent number of seconds that will be
+    stored in the 'secs_int' variable from step 2.
+    
+    (4) Return the value of 'secs_int' and make sure the data type is of 'integer' type.
 
-REFLECT/REFACTOR:
 """
+
+# EXECUTE:
+
+def how_many_seconds(hrs_int):
+    pass
+
+# REFLECT/REFACTOR:
