@@ -78,18 +78,18 @@ U.P.E.R.
 # EXECUTE
 
 # Brute Force Solution
-def amplify(input_int):
-    output_lst = []
+# def amplify(input_int):
+#     output_lst = []
     
-    for i in range(1, input_int + 1): # O(n)
-        num = None # O(1)
-        if i % 4 == 0:
-            num = i * 10 # O(1)
-        else:
-            num = i # O(1)
-        output_lst.append(num) # O(1)
+#     for i in range(1, input_int + 1): # O(n)
+#         num = None # O(1)
+#         if i % 4 == 0:
+#             num = i * 10 # O(1)
+#         else:
+#             num = i # O(1)
+#         output_lst.append(num) # O(1)
         
-    return output_lst
+#     return output_lst
 
 """
 - REFLECT/REFACTOR
@@ -99,3 +99,6 @@ def amplify(input_int):
         - Space Complexity:
             - O(n) -> linear
 """
+
+def amplify(input_int):
+    return [i * 10 if i % 4 == 0 else i for i in range(1, input_int + 1)]
