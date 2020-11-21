@@ -62,8 +62,21 @@ U.P.E.R.
             - No. The constraints of the prompt clearly indicate that the given
               input must be an integer.
 - PLAN
+    - Brute Force Solution:
+        (1) Create an algorithm that takes in 1 input integer and returns 1
+        output list.
+        (2) Use a 'for' loop to iterate through a range of numbers, using the 1
+        as the starting index and 'input_int' as the ending index (included in
+        the range).
+        (3) For any integers that are evenly divisible by 4, return that number
+        multiplied by 10 instead.
+        (4) For all other integers not evenly divisibly by 4, simply return that number.
+"""
+# EXECUTE
 
-- EXECUTE
+def amplify(input_int):
+    pass
 
+"""
 - REFLECT/REFACTOR
 """
