@@ -25,3 +25,45 @@ Notes:
 
     - To perform this problem with its intended purpose, try doing it with list comprehensions. If that's too difficult, just solve the challenge any way you can.
 """
+
+"""
+U.P.E.R.
+
+- UNDERSTAND
+    - Objective: 
+        - Write an algorithm that takes in a single input (integer) and returns
+        a single output (list) where that output list contains all numbers from
+        1 to the given input integer and also where any number that is evenly
+        divisible by 4 is, instead, represented by that number multiplied by
+        10.
+        
+    - Expected Inputs:
+        - 1 input
+        - Integer data type
+        - "input_int"
+        
+    - Expected Outputs:
+        - 1 output
+        - List data type
+        - "output_lst"
+        
+    - Personal Examples:
+        - amplify(6) -> [1, 2, 3, 40, 5, 6]
+        - amplify(10) -> [1, 2, 3, 40, 5, 6, 7, 80, 9, 10]
+        
+    - Constraints & Edge Cases:
+        - Can the given input be empty?
+            - No. If it was empty, we wouldn't be able to generate a list of
+              numbers because we would not have an end point for the list.
+        - Can the given input be negative?
+            - No. The constraints clearly indicate that the given input will be
+              greater than or equal to 1.
+        - Can the given input be a floating point number?
+            - No. The constraints of the prompt clearly indicate that the given
+              input must be an integer.
+- PLAN
+
+- EXECUTE
+
+- REFLECT/REFACTOR
+"""
