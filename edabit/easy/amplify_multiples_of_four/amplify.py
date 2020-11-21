@@ -65,17 +65,31 @@ U.P.E.R.
     - Brute Force Solution:
         (1) Create an algorithm that takes in 1 input integer and returns 1
         output list.
+        
         (2) Use a 'for' loop to iterate through a range of numbers, using the 1
         as the starting index and 'input_int' as the ending index (included in
         the range).
+        
         (3) For any integers that are evenly divisible by 4, return that number
         multiplied by 10 instead.
+        
         (4) For all other integers not evenly divisibly by 4, simply return that number.
 """
 # EXECUTE
 
+# Brute Force Solution
 def amplify(input_int):
-    pass
+    output_lst = []
+    
+    for i in range(1, input_int + 1):
+        num = None
+        if i % 4 == 0:
+            num = i * 10
+        else:
+            num = i
+        output_lst.append(num)
+        
+    return output_lst
 
 """
 - REFLECT/REFACTOR

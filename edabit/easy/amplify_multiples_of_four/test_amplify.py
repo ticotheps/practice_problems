@@ -1,5 +1,5 @@
 import unittest
-from amplify_multiples_of_four import amplify
+from amplify import amplify
 
 class Test(unittest.TestCase):
     def test_amplify(self):
