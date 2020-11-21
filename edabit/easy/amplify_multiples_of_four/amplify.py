@@ -81,16 +81,21 @@ U.P.E.R.
 def amplify(input_int):
     output_lst = []
     
-    for i in range(1, input_int + 1):
-        num = None
+    for i in range(1, input_int + 1): # O(n)
+        num = None # O(1)
         if i % 4 == 0:
-            num = i * 10
+            num = i * 10 # O(1)
         else:
-            num = i
-        output_lst.append(num)
+            num = i # O(1)
+        output_lst.append(num) # O(1)
         
     return output_lst
 
 """
 - REFLECT/REFACTOR
+    - Asymptotic Analysis:
+        - Time Complexity:
+            - O(n) -> linear
+        - Space Complexity:
+            - O(n) -> linear
 """
