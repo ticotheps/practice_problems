@@ -30,18 +30,18 @@ U.P.E.R.
     - Expected Input(s):
         - 2 expected inputs
         - both are integers that are actually of the 'String' data type
-        - "num1", "num2"
+        - "num1_str", "num2_str"
     
     - Expected Output(s):
         - 1 expected output
         - an integer that is represented by a 'String' data type
-        - "sum"
+        - "sum_str"
         
     - Constraints and Edge Cases:
         - Constraint #1:
-            - len(num1) <= 1000
+            - len(num1_str) <= 1000
         - Constraint #2:
-            - len(num2) <= 1000
+            - len(num2_str) <= 1000
         - Can either of the given inputs be negative?
             - Yes, they can be negative because the prompt doesn't explicitly
               state that they must be positive integers.
