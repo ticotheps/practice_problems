@@ -73,15 +73,15 @@ U.P.E.R.
 """
 
 # - EXECUTE
-def sum2(num1_str, num2_str):
-    sum_long = 0                        # O(1)
-    num1_long = int(num1_str)           # O(1)
-    num2_long = int(num2_str)           # O(1)
+# def sum2(num1_str, num2_str):
+#     sum_long = 0                        # O(1)
+#     num1_long = int(num1_str)           # O(1)
+#     num2_long = int(num2_str)           # O(1)
     
-    sum_long = num1_long + num2_long    # O(1)
-    sum_str = str(sum_long)             # O(1)
+#     sum_long = num1_long + num2_long    # O(1)
+#     sum_str = str(sum_long)             # O(1)
 
-    return sum_str
+#     return sum_str
 
 """
 - REFLECT/REFACTOR
@@ -93,5 +93,15 @@ def sum2(num1_str, num2_str):
 
     - Can you optimize the time or space complexity of your brute force
       solution?
-    
+        - No, we could not improve the time or space complexity of our brute
+          force solution from a general 'Big O Analysis' perspective, but we could 
+          actually reduce the overall number of processes that gets compiled
+          and executed within our algorithm, as well as reduce the overall
+          number of constant variables we are creating to store values.
+        - How?
+            - Convert the 5 different steps into a single returned step.
+            - See optimized solution below.
 """
+
+def sum2(num1_str, num2_str):
+    return str(int(num1_str) + int(num2_str))
