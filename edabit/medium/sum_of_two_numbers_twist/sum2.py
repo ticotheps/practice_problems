@@ -52,7 +52,24 @@ U.P.E.R.
             - No, because 'None' is not a number than can be added with another number.
         
 - PLAN
-    -
+    - Brute Force Solution
+        - Use Python's new built-in 'long' type that handles operations of very
+          large integers with ease.
+        - This 'long' data type can store up to 832,951 digits in a single
+          number.
+    
+    - Steps:
+        (1) Define a function that takes in 2 input strings (that are each made
+        up of integers) and returns a single output string (that represents the
+        sum of both input strings' numeric values).
+        
+        (2) Convert both input strings to the respective numeric equivalents.
+        
+        (3) Add those numeric equivalents together and store that value as a
+        'long' data type in a new variable.
+        
+        (4) Return the 'string' value of the aforementioned variable that is
+        storing the sum of the 'long' equivalents for both input strings.
 """
 
 # - EXECUTE
