@@ -73,7 +73,20 @@ U.P.E.R.
 """
 
 # - EXECUTE
+def sum2(num1_str, num2_str):
+    sum_long = 0
+    num1_long = int(num1_str)
+    num2_long = int(num2_str)
+    
+    # print("num1_long = ", num1_long)
+    # print("num2_long = ", num2_long)
+    
+    sum_long = num1_long + num2_long
+    sum_str = str(sum_long)
 
+    return sum_str
+
+# print(sum2("5125515215521515", "125261616261626"))  # "5250776831783141"
 
 """
 - REFLECT/REFACTOR
