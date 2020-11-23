@@ -74,21 +74,24 @@ U.P.E.R.
 
 # - EXECUTE
 def sum2(num1_str, num2_str):
-    sum_long = 0
-    num1_long = int(num1_str)
-    num2_long = int(num2_str)
+    sum_long = 0                        # O(1)
+    num1_long = int(num1_str)           # O(1)
+    num2_long = int(num2_str)           # O(1)
     
-    # print("num1_long = ", num1_long)
-    # print("num2_long = ", num2_long)
-    
-    sum_long = num1_long + num2_long
-    sum_str = str(sum_long)
+    sum_long = num1_long + num2_long    # O(1)
+    sum_str = str(sum_long)             # O(1)
 
     return sum_str
 
-# print(sum2("5125515215521515", "125261616261626"))  # "5250776831783141"
-
 """
 - REFLECT/REFACTOR
-    - 
+    - What is the current time complexity of your brute force solution?
+        - O(5) -> O(1) -> 'constant' time
+        
+    - What is the current space complexity of your brute force solution?
+        - O(5) -> O(1) -> 'constant' space
+
+    - Can you optimize the time or space complexity of your brute force
+      solution?
+    
 """
