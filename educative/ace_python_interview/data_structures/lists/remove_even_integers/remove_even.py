@@ -94,6 +94,7 @@ REFLECT/REFACTOR:
 """
 
 # Alternate-more-elegant solution
+# Time Complexity: O(n)
 def remove_even(list):
     return [x for x in list if x % 2 != 0]
 
