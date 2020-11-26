@@ -44,4 +44,24 @@ UNDERSTAND:
             - No. It must contain at least 1 element.
         - What happens if we're given a list and that list contains all even numbers?
             - Return an empty list.
+            
+PLAN:
+    - Brute Force Solution:
+        (1) Create a new empty list where we can store only the odd integers that
+        we'll encounter while iterating through the given input list.
+        
+        (2) Iterate through the given input list.
+        
+        (3) Convert the element's value into it's absolute value in order to produce a
+        positive integer, which is required for use with the modulo operator.
+        
+        (4) Check to see if the absolute value of the iterated-on element can be
+        evenly divided by 2 (using the modulo operator):
+        
+            (a) If it can be, add the original iterated-on element to the new empty list
+            that was created in first step.
+            
+            (b) If it can't be, do nothing.
+            
+        (5) Return the list that was created in the first step.
 """
