@@ -69,17 +69,24 @@ PLAN:
 # EXECUTE
 
 def remove_even(list):
-    odd_list = []
+    odd_list = []                   # O(1)
     
-    for i in list:
-        abs_value = abs(i)
-        print("i = ", i)
-        print("abs_value = ", abs_value)
+    for i in list:                  # O(n)
+        abs_value = abs(i)          # O(1)
         
-        if abs_value % 2 != 0:
-            odd_list.append(i)
-    
-    print(odd_list)        
+        if abs_value % 2 != 0:      # O(1)
+            odd_list.append(i)      # O(1)
+
     return odd_list
 
 remove_even([1, 2, 4, 5, 10, 6, 3])
+
+
+"""
+REFLECT/REFACTOR:
+    - Brute Force Solution:
+        - Time Complexity: O(n) -> "linear time"
+        - Space Complexity: O(1) -> "constant space"
+    - Can this Brute Force Solution be optimized?
+        - Nope!
+"""
