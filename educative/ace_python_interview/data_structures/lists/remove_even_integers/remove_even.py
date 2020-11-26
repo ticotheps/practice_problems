@@ -65,3 +65,21 @@ PLAN:
             
         (5) Return the list that was created in the first step.
 """
+
+# EXECUTE
+
+def remove_even(list):
+    odd_list = []
+    
+    for i in list:
+        abs_value = abs(i)
+        print("i = ", i)
+        print("abs_value = ", abs_value)
+        
+        if abs_value % 2 != 0:
+            odd_list.append(i)
+    
+    print(odd_list)        
+    return odd_list
+
+remove_even([1, 2, 4, 5, 10, 6, 3])
