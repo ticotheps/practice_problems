@@ -68,18 +68,18 @@ PLAN:
 
 # EXECUTE
 
-def remove_even(list):
-    odd_list = []                   # O(1)
+# def remove_even(list):
+#     odd_list = []                   # O(1)
     
-    for i in list:                  # O(n)
-        abs_value = abs(i)          # O(1)
+#     for i in list:                  # O(n)
+#         abs_value = abs(i)          # O(1)
         
-        if abs_value % 2 != 0:      # O(1)
-            odd_list.append(i)      # O(1)
+#         if abs_value % 2 != 0:      # O(1)
+#             odd_list.append(i)      # O(1)
 
-    return odd_list
+#     return odd_list
 
-remove_even([1, 2, 4, 5, 10, 6, 3])
+# remove_even([1, 2, 4, 5, 10, 6, 3])
 
 
 """
@@ -89,4 +89,12 @@ REFLECT/REFACTOR:
         - Space Complexity: O(1) -> "constant space"
     - Can this Brute Force Solution be optimized?
         - Nope!
+    - Alternate solutions?
+        - Yes! We can do the same thing with a list comprehension!
 """
+
+# Alternate-more-elegant solution
+def remove_even(list):
+    return [x for x in list if x % 2 != 0]
+
+remove_even([1, 2, 4, 5, 10, 6, 3])     # 1, 5, 3
