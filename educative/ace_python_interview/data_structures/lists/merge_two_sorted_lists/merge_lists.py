@@ -66,3 +66,38 @@ PLAN:
     
     (5) Return 'lst_a'. 
 """
+
+# EXECUTE phase
+
+def merge_lists(lst_a, lst_b):
+    # Init a var for current index of 'lst_a'.
+    ind_a = 0
+    
+    # Init a var for current index of 'lst_b'.
+    ind_b = 0
+    
+    # Iterate through the longer list of the given input lists as long as
+    # 'ind_a' < len(lst_a) and 'ind_b' < len(lst_b):
+    while ind_a < len(lst_a) and ind_b < len(lst_b):
+        # Compare the values of each list at the current respective index as
+        # indicated by the associated variables from earlier steps above.
+        if lst_a[ind_a] < lst_b[ind_b]:
+            ind_a += 1
+        
+        # If 'lst_a[ind_a]' < 'lst_b[ind_b]', then NO INSERT and increment the
+        # value of 'ind_a' by 1. 
+        else:
+            # If 'lst_a[ind_a]' > 'lst_b[ind_b]', then INSERT the 'lst_b[ind_b]'
+            # into the index of 'ind_a' and increment both values of 'ind_a' and 'ind_b'
+            # by 1.
+            lst_a.insert(ind_a, lst_b[ind_b])
+            ind_a += 1
+            ind_b += 1
+        
+    # If 'ind_a' == len(lst_a) and 'ind_b' < len(lst_b):
+    if ind_a == len(lst_a) and ind_b < len(lst_b):
+        # add the remaining elements of 'lst_b' to the end of the 'lst_a'.
+        lst_a.extend(lst_b[ind_b:])
+        
+    # Return the value of 'lst_a'. 
+    return lst_a
