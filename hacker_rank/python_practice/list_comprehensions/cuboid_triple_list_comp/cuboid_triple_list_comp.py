@@ -10,6 +10,6 @@ def print_coordinates(x, y, z, n):
                 
     return possible_coordinates_lst
 
-print(print_coordinates(1, 1, 2, 3))
+print(print_coordinates(1, 1, 2, 3))  # [[0, 0, 0], [0, 0, 1], [0, 0, 2], [0, 1, 0], [0, 1, 1], [1, 0, 0], [1, 0, 1], [1, 1, 0], [1, 1, 2]]
 
 
