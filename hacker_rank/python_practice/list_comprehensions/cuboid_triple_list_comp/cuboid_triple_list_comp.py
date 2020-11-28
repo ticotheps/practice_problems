@@ -13,7 +13,7 @@
 
 # Alternate Solution with List Comprehensions
 def print_coordinates(x, y, z, n):
-    return [[i, j, k] for i in range(0, x+1) for j in range(0, y+1) for k in range(0, z+1) if i + j + k != 3]
+    return [[i, j, k] for i in range(0, x+1) for j in range(0, y+1) for k in range(0, z+1) if i + j + k != n]
 
 print(print_coordinates(1, 1, 2, 3))  # [[0, 0, 0], [0, 0, 1], [0, 0, 2], [0, 1, 0], [0, 1, 1], [1, 0, 0], [1, 0, 1], [1, 1, 0], [1, 1, 2]]
 
