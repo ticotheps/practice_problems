@@ -61,6 +61,7 @@ PLAN Phase:
 
 # EXECUTE Phase
 
+# Brute Force Solution
 def find_product(lst):
     # Declare a new var, 'output_lst', and initialize it with a value of '[]'.
     output_lst = []
@@ -78,5 +79,53 @@ def find_product(lst):
 REFLECT/REFACTOR Phase
     - Asymptotic Analysis:
         - Time Complexity: O(n^2) -> "quadratic time"
-        - Space Comlexity: O(1) -> "constant space"
+        - Space Comlexity: O(n) -> "linear space"
+        
+    - Can the time or space complexity of this brute force solution be improved upon?
+        - Yes. The time complexity could be improved to O(n), linear time.
+    
+    - If yes, how?
+        - Instead of using nested 'for' loops to gain access to a particular index AS WELL AS to the values at all the other indices, we can traverse through the list three times (at O(n) time complexity for each iteration), once going from left to right, another time going from right to left, and one more time through the "resulting_lst" where we will combine the products to the left and right at a given index.
+        
+        - Create a new "resulting_lst" variable that is set to a new list of equal size as the given input array and is initialized with a value of 1 for each element to start off.
+        
+        - While iterating through the given input list from left to right, we will keep track of the total product of all elements to the left of that particular index in a variable called "left_running_product".
+        
+        - While iterating through the given input list from right to left, we will keep track of the total product of all elements to the right of that particular index in a variable called "right_running_product".
+        
+        - During each of these iterations, we will be multiplying each element in the "resulting_lst" by the corresponding running total value at the given index.
+        
+        - Lastly, we will iterate through the "resulting_lst" and access the values of both "left_products_lst" and "right_products_lst" at the same time and multiply them together before setting the value of the given index in the "resulting_lst" list to that total product.
 """
+
+# Optimized Solution
+# Time Complexity: O(n) | Space Complexity: O(n)
+def find_product_optimized(lst):
+    resulting_lst = [1] * len(lst)
+    print("resulting_lst = ", resulting_lst)
+    
+    left_products_lst = [1] * len(lst)
+    print("left_products_lst = ", left_products_lst)
+    
+    right_products_lst = [1] * len(lst)
+    print("right_products_lst = ", right_products_lst)
+    
+    left_running_product = 1
+    for i in range(0, len(lst)):
+        left_products_lst[i] = left_running_product
+        left_running_product *= lst[i]
+    
+    right_running_product = 1
+    for j in range(len(lst)-1, -1, -1):
+        right_products_lst[j] = right_running_product
+        right_running_product *= lst[j]
+        
+    for k in range(0, len(resulting_lst)):
+        total_product = left_products_lst[k] * right_products_lst[k]
+        resulting_lst[k] = total_product
+        
+    print("resulting_lst = ", resulting_lst)
+    return resulting_lst
+        
+        
+        
