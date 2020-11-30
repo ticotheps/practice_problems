@@ -62,4 +62,21 @@ PLAN Phase:
 # EXECUTE Phase
 
 def find_product(lst):
-    pass
+    # Declare a new var, 'output_lst', and initialize it with a value of '[]'.
+    output_lst = []
+
+    # Iterate through the given input list.
+    for i in range(0, len(lst)):
+        product_of_other_indices = 1
+        
+        for j in range(0, len(lst)):
+            if j != i:
+                element = lst[j]
+                print("element = ", element)
+                
+                product_of_other_indices *= element
+                print("product_of_other_indices = ", product_of_other_indices)
+        
+        output_lst.append(product_of_other_indices)
+    
+    return output_lst        
