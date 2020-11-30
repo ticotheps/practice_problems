@@ -47,4 +47,14 @@ UNDERSTAND Phase:
             - Yes. This is clearly stated in the prompt.
         - Can the given input list be empty?
             - No. Products cannot be calculated without factors.
+            
+PLAN Phase:
+    - Brute Force Solution:
+        - Iterate through the given input list twice using nested 'for' loops.
+        - The inner 'for' loop will allow us to have access to the other values while
+        being able to modify the value at the index of the outer 'for' loop.
+        - The modification to this value will include finding the product of all the
+        other values at each index. 
+        - This will produce sub-par time complexity, but will get the job done until
+        it can be optimized later.
 """
