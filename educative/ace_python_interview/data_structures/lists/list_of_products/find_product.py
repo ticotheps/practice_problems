@@ -19,3 +19,32 @@ Sample Input/Output #2:
     - Input arr = [4, 2, 1, 5, 0]
     - Output arr = [0, 0, 0, 0, 40]
 """
+
+"""
+U.P.E.R. Problem-Solving Framework
+
+UNDERSTAND Phase:
+    - Objective: 
+        - Write an algorithm that takes in a single input list (containing integers
+        or floating point numbers) and returns a single output list such that each
+        index contains the product of all the numbers in the list except the number
+        at that index.
+        
+    - Inputs:
+        - Expecting: 1
+        - Data Type: list
+        - Var Name: "lst"
+        
+    - Outputs:
+        - Expecting: 1
+        - Data Type: list
+        - Var Name: "lst_of_products"
+        
+    - Constraints & Edge Cases:
+        - Can elements in the given input list be negative numbers?
+            - Yes.
+        - Can elements in the given input list be floating point numbers?
+            - Yes. This is clearly stated in the prompt.
+        - Can the given input list be empty?
+            - No. Products cannot be calculated without factors.
+"""
