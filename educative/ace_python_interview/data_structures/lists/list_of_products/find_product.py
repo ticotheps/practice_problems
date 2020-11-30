@@ -58,3 +58,8 @@ PLAN Phase:
         - This will produce sub-par time complexity, but will get the job done until
         it can be optimized later.
 """
+
+# EXECUTE Phase
+
+def find_product(lst):
+    pass
