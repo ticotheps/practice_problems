@@ -80,3 +80,11 @@ def find_product(lst):
         output_lst.append(product_of_other_indices)
     
     return output_lst        
+
+
+"""
+REFLECT/REFACTOR Phase
+    - Asymptotic Analysis:
+        - Time Complexity: O(n^2) -> "quadratic time"
+        - Space Comlexity: O(1) -> "constant space"
+"""
