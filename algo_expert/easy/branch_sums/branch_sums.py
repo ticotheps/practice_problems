@@ -54,13 +54,12 @@ Hints:
 
 - Brute Force (Recursive) Solution:
 
-    (1) Define a recursive function that takes in a single input (of object data
-    type) that contains a key, "tree", which is equal to another object that
-    contains 2 more keys, "nodes" (an array of objects) and "root" (a string
-    representing the integer value of a node). This function returns a single
-    output (of array data type).
+    (1) Traverse through the binary tree in a depth first traversal manner.
     
-    (2) 
+    (2) Keep track of the running sum and a list of sums for each branch as you traverse through the tree.
+    
+    (3) When you reach a 'leaf node' (a node with no children), add the new
+    running sum at that node to the list of sums.
 """
 class BinaryTree:
     def __init__(self, value):
