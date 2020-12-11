@@ -61,6 +61,7 @@ Hints:
     (3) When you reach a 'leaf node' (a node with no children), add the new
     running sum at that node to the list of sums.
 """
+# This is the class of the input root. Do not edit it.
 class BinaryTree:
     def __init__(self, value):
         self.value = value
@@ -69,5 +70,19 @@ class BinaryTree:
 
 
 def branchSums(root):
-    # Write your code here.
-    pass
+    branchSumsList = []
+	calculateBranchSum(root, 0, branchSumsList)
+	return branchSumsList
+	
+# Recursive function
+def calculateBranchSum(node, runningSum, branchSumsList):
+	if node is None:
+		return
+	
+	newRunningSum = node.value + runningSum
+	if node.left is None and node.right is None:
+		branchSumsList.append(newRunningSum)
+		return
+		
+	calculateBranchSum(node.left, newRunningSum, branchSumsList)
+	calculateBranchSum(node.right, newRunningSum, branchSumsList)
