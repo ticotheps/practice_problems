@@ -1,42 +1,38 @@
 def firstDuplicate(a):
     num_of_duplicates = 0
     duplicate_value = -1
-    duplicates_dict = {}
+    occurrences_dict = {}
     lowest_second_index = -1
     
-# Figure out how many duplicate values exist in the given array.
+    # Figure out how many duplicate values exist in the given array.
     for i in range(0, len(a)):
-        for j in range(i+1, len(a)):
-            if i < j and a[i] == a[j]:
-                print(f"a[{i}] = ", a[i])
-                print(f"a[{j}] = ", a[j])
-                print("We have a match!\n")
-                # Increase the running count of duplicates.
+        # If an iterated-on item does not exist in the dictionary, create a new entry for it.
+        if a[i] not in occurrences_dict:
+            occurrences_dict[a[i]] = False
+        # If an iterated-on item already exists in the dictionary, change the value from True to the index of the second occurrence
+        # of that item.
+        else:
+            if occurrences_dict[a[i]] == False:
+                occurrences_dict[a[i]] = i
                 num_of_duplicates += 1
-                # Store the duplicate value.
                 duplicate_value = a[i]
-                # Create a new entry in the 'duplicates_dict' dictionary if it doesn't already exist.
-                if a[i] in duplicates_dict:
-                    if j < duplicates_dict[a[i]]:
-                        duplicates_dict[a[i]] = j
-                else:
-                    duplicates_dict[a[i]] = j
+        
     # if 0 duplicates exist, return -1.
     # if 1 duplicate exists, return the value of that item.
     if num_of_duplicates <= 1:
         return duplicate_value
+
     # if 2 or more duplicates exist, return the value of the item which 
     # has the LOWEST index for its second occurrence.
-    for key in duplicates_dict:
-        print("key = ", key,)
-        print(f"duplicates_dict[{key}] = ", duplicates_dict[key])
-        if lowest_second_index == -1 or duplicates_dict[key] < lowest_second_index:
-            lowest_second_index = duplicates_dict[key]
-            print("lowest_second_index = ", lowest_second_index)
-            duplicate_value = key
-            print("duplicate_value = ", duplicate_value, "\n")
-            print("duplicates_dict = ", duplicates_dict)
+    
+    for key in occurrences_dict:
+        if type(occurrences_dict[key]) is int:
+            if lowest_second_index == -1 or occurrences_dict[key] < lowest_second_index:
+                lowest_second_index = occurrences_dict[key]
+                duplicate_value = key
+    
     print("output value: ", duplicate_value)
     return duplicate_value
 
-firstDuplicate([2, 1, 3, 5, 3, 2])
+arr = [1, 1, 2, 2, 1]
+firstDuplicate(arr)
